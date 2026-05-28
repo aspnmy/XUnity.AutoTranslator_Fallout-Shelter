@@ -1,0 +1,13 @@
+# Python工具文件
+*.py
+__pycache__/
+*.pyc
+
+# 临时文件
+temp_*
+system_messages.txt
+*.log
+
+# IDE文件
+.vscode/
+.idea/
