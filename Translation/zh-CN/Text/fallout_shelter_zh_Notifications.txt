@@ -1,0 +1,79 @@
+# ==============================================
+# Steam版本: 2.4.0
+# Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
+# 精翻作者: aspnmy
+# 技术支持: support@e2bank.cn
+# 最后更新: 2026-05-29 06:05:02
+# ==============================================
+# 系统通知
+# 本文件用于保存系统通知译文
+# 格式：英文=中文
+# ==============================================
+You are not connected. Play as a Guest?=你没有网络连接，想要以游客身份进行游戏吗？
+Life may be unforgiving, but you've become unstoppable.=生活也许是无情的，但是你已经无人可档了。
+From Modoc to Megaton, when you wear this, you are the law.=从莫多克到核弹镇，你穿上了这个之后，一切都由你说了算。
+You are silence. You are shadow. You are... ninja!=你无影无形，没错，你就是……忍者！
+Report the news? You ARE the news.=想要听新闻？你就是新闻。
+For those with honor, willing to help out at a minute's notice.=给那些富含荣誉感的，想要在第一时间帮助别人的人。
+Your best friend, as long as you have tuna.=他能成为你最好的朋友，只要你有金枪鱼。
+Welcome to our humble abode.=欢迎来到我们简陋的住所。
+Welcome to Super-Duper Mart!=欢迎来到超级大卖场！
+“I hear you've been searching for Rackie Jobinson's Jersey.=“我听说你们在寻找拉基·乔宾逊的运动衫。
+Here you are.=给你。
+Heh. Right you are.=嘿，你是对的。
+You have to help us, that Minuteman left us before we could find a way out of here!=你一定得帮帮我们，那个义勇军在我们找到逃出去的路之前就弃我们而去了！
+Medicine if you've got it.=如果有的话，药最好了。
+Here you are, then.=那么，这个给你了。
+Ding, ding, ding! Right you are!=Bingo！你答对了！
+You've done a remarkable job, soldier.=你干得非常漂亮，士兵。
+“Okay, fine. You've proven I can't avoid you forever.=“好吧，你们向我证明了一点 - 我没办法永远躲着你们。
+You've brought this upon yourself, Eli Calvert.=你要为此付出代价，艾里·卡尔弗特。
+You've found a Super-Duper Mart while out exploring!=你在探索的时候发现了一个大无敌超市。
+KA-KAW! Welcome to the Screeching Falcons, fledglings!=噶！欢迎加入尖啸猎鹰，新人！
+You have to do what's right for you.=你应该做些正确的事情。
+Welcome to the team, soldier!=欢迎来到我们的团队，士兵！
+D-did Nick send you? You've got to help us! The “Quantum Creeper.” It's been eating our people. We're all that's left.=是……是尼克派你来的？你一定得帮帮我们！“量子爬行者”。它在吃我们的人，我们这些是仅剩的人了。
+Why? For science! But I'm a fool. You have to put an end to this mayhem!=为什么？当然是为了科学！不过我犯了一个愚蠢的错误，我必须了解这一切！
+How about you hand over any other experiments you've got?=你把其它的实验交出来怎么样？
+Ack! You've got to help us! Our Tatos are dying left and right! We can't keep a crop alive!=你得帮我们！我们的食物马上就要没了！甚至连庄稼都活不成！
+You have no idea.=你不会懂的。
+You have any idea how much that venom sells for?=你知道那种毒药卖多少价格吗？
+You are welcome here always. Take these gifts, and our friendship.=这里的大门随时为你打开，带上这些礼物吧，它包含着我们的友谊。
+Ha ha! Here you are.=哈哈！你在这里。
+All I have is this, but you're welcome to it.=我有的只有这个，你可以随意。
+You've saved this settlement. Here. You deserve everything we can afford to give!=你保护了这里，拿着这个，这是你应得的！
+Alright, you've got a deal.=好吧，你已经决定好了。
+You have not received any Gifts.=你尚未收到任何礼物。
+Well, I'm busy. What about you? Don't YOU have somewhere else to be? Hint hint.=我都忙死了，你呢？你知不知道有什么别的地方可以去吗？给点提示。
+This is ridiculous. Do you have any idea how important I am?!=太荒谬了！你知道我有多重要吗？
+If I snuck outside, would anyone notice?=要是我偷跑出去，会有人发现吗？
+You have beautiful eyes.=你有明眸可倾城。
+Do you have a map? I'm getting lost in your eyes.=你有地图吗？我在你的眼睛里迷路了。
+Did your father sell diamonds? 'Cause you are flawless.=你爸爸卖钻石吗？不然你怎会如此完美。
+Like an irradiated post-apocalyptic parasitic organism, you are under my skin.=你就像末世后被辐射过的寄生虫一样，躲在我的皮肤下。
+You have beautiful thighs. Eyes! I meant eyes! But your thighs are nice too...=你的腿真是太美了！嘴！我说的是嘴！但是你的腿也很不错……
+Yeah, me too. Stay alert.=是啊，我也有同样的感觉，小心点。
+You are... By me.=你……被我盯着看。
+If you have to seek validation from me, then obviously not.=如果你要问我的话，我觉得肯定是不可能的。
+Don't worry, you've got me. And I'm pretty awesome.=别担心，你有我在，我可是很厉害的。
+Stay alert.=保持警惕。
+Don't worry you've got ME on the job.=别担心，这份工作有我。
+Wait, the projectile can go... even faster? You have no idea.=等等，这子弹还能飞得……更快？你想不到的。
+Here you are!==“给你这个！”
+Amazing! You got it right! You've won... Lose Your Head!=太令人惊奇了！你竟然答对了！你赢了这场……“掉脑袋”！
+Aw, too bad. Guess you have to... Lose Your Head!=噢，太糟糕了，我想你恐怕要……“掉脑袋”了！
+Do you have a watch? I think it's snuggle time.=现在几点？我想已经到了拥抱时间了。
+Ha, ha! Free range zebra anyone? You have to... Lose Your Head!=哈哈！真是木鱼脑袋，你要……“掉脑袋”了！
+Mmmm... No. You have to... Lose Your Head!=呃……错了，你要……“掉脑袋”了！
+Welcome to Lose Your Head!=欢迎来到“掉脑袋”！
+Wrong, wrong, wrong. Guess you have to... Lose Your Head!=错了错了，你要……“掉脑袋”了！
+Is this outfit some kind of joke? Nope, but you are, if you wear it.=这身服装是不是有点可笑？不过你穿着例外。
+Do you have any weapons that can help us?=你有什么武器能够帮上我们的忙的吗？
+“Protect the people at a minute's notice.” That was the idea.=“争分夺秒保护人们。”这就是那个办法。
+Do you have any idea what we've been through? That Outfit's Ours!=你有什么想法吗？那衣服是我们的！
+Halloween==万圣节
+Halloween Diner==万圣节餐厅
+Halloween Living Quarters==万圣节生活区
+Halloween.=万圣节。
+Labor Day.=劳动节。
+Shrove Tuesday.=忏悔日。

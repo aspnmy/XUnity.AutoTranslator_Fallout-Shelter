@@ -1,0 +1,115 @@
+# ==============================================
+# Steam版本: 2.4.0
+# Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
+# 精翻作者: aspnmy
+# 技术支持: support@e2bank.cn
+# 最后更新: 2026-05-29 06:05:02
+# ==============================================
+# 居民管理
+# 本文件用于保存居民管理译文
+# 格式：英文=中文
+# ==============================================
+Children and Pregnant Women will hide whenever an incident occurs.=儿童和孕妇在灾害发生时都会躲藏起来。
+Tapping on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。
+Clicking on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。
+Versatile and reliable. No Dweller should be without one.=万能又可靠，每个居民都应该配一个。
+There are too many Dwellers in the waiting line.=排队中的居民太多了。
+Any loot found on the Quest will be lost. Are you sure you want your Dwellers to give up?=在任务中获得的战利品将会丢失，确定要放弃吗？
+One of your babies has grown into a healthy Dweller!=你的一个宝宝已经健康地成长成正式居民了！
+Prove to everyone that in the future, print's not dead.=向未来的所有人证明，只有印刷品才是永恒的。
+Thank freeloading Dwellers for their service. By kicking them out!=居民驱逐
+Pets can be assigned to Dwellers to give them a unique bonus!=宠物可以分配给居民，并且为他们提供额外的加成！
+Loves children. Other dogs, not so much.=这种狗比其它犬类更喜欢小朋友。
+Raised by children, loved by all. Used to living underground.=它们被孩子们养大，被所有人喜爱，它们通常被养在后院。
+Maybe those disruptive Dwellers should be asked to leave.=也许应该让那些捣乱的居民离开。
+Dead men tell no tales.=死人是不会说话的。
+“All right, I've got to give you Dwellers credit.=“好吧，我得给你们居民一些信息。
+Well, all right, maybe the holidays aren't dead after all!=好吧，也许假期还没完呢！
+He'll give us free stuff? All right. You Dwellers can pass.=他会给我们免费的东西？好吧，你们这些居民可以通过了。
+Hah! Over our dead bodies.=哈！踏过我们的尸体。
+Send your Dwellers out to aid a nearby friendly settlement.=派遣居民前往附近的定居点提供帮助。
+What deadly creature lurks in the Salem Museum of Witchcraft?=哪种致命的生物潜伏在塞勒姆巫术博物馆中？
+Children of Adam.=亚当之子。
+Children of Atom.=原子教会。
+The Children of Atom make their home in what region of the Commonwealth?=原子教会的孩子们在联邦的哪里定居？
+What is the name of the Children of Atom base on Far Harbor island?=在远港岛上原子教会的基地名称是什么？
+We meet at last, you Dweller doofuses!=我们终于见面了，你们这些白痴居民！
+One of your Dwellers is feeling... “inspired” by a horror movie he watched.=一个居民从他看的一部电影中受到了……“启发”。
+Your boy came in with a shipment of other Dwellers and some Feral Ghouls.=那个孩子连通一些居民和尸鬼一起被装运出去了。
+He was a wild one! Most Dwellers can't win a Mexican knife fight!=他可算是野性的一个了！大多数居民可没本事在墨西哥刀战中获胜！
+This party's dead, and so are you.=这个派对完蛋了，还有，你也是。
+Lookie here. More Dwellers, need rescuing from their nightmare of endless labor.=看这里，有更多的居民，我们需要把他们从无休无尽的劳动中拯救出来。
+Talk to the Dwellers.=与居民们交谈。
+Hurray, it's the Dwellers!=万岁！是避难所的居民们！
+Ah, good, the Dwellers are here. I need your help with a serious scientific question.=哦，太好了，居民们来了。我需要你们的帮助来解决这个麻烦的科学问题。
+Do strong and perceptive Dwellers have what it takes?=强壮并且机智的居民们可以吗？
+Do charming and perceptive Dwellers have what it takes?=迷人且机智的居民可以吗？
+Do tough and lucky Dwellers have what it takes?=顽强且幸运的居民可以吗？
+Do tough and smart Dwellers have what it takes?=顽强且聪明的居民可以吗？
+Do charming and agile Dwellers have what it takes?=迷人且灵活的居民可以吗？
+Do strong and smart Dwellers have what it takes?=强壮且聪明的居民可以吗？
+Do lucky and agile Dwellers have what it takes?=幸运且机敏的居民可以吗？
+You're lying, and you're dead!=你在撒谎，你死定了！
+Finally! People who understand that writing is the deadliest art.=终于有人能理解这种死亡的艺术了！
+Thinking maybe I should retire. Start a farm. Grow some flowers.=也许我应该退休了，办个农场，种点花什么的也不错。
+You ain't from the Institute, are ya? Then you're dead meat!=你们不是学院来的，对吗？那么，你们死定了！
+He lives in that factory, training his “pretties.” Crazy man treats them like his children. Don't think he's right in the head.=他就住在那个工厂里，训练着他的“宝贝”，那个疯子对待它们就像对待孩子一样，千万别以为他的脑袋是正常的。
+Muwhahaha! Take this and run, little Dwellers!=哇哈哈哈！拿着这个赶紧跑！小居民们！
+You're too late, Dwellers!=太迟了，居民们！
+Hello, fellow Dwellers.=你好，居民伙计。
+What are the odds? Fellow Dwellers!=什么东西很奇怪？居民伙计。
+Step into the ring, Dwellers!=进圈子来，居民们！
+A Dweller found a Recipe Fragment!=一个居民发现了配方碎片！
+A famous author. They could write my biography: “Dweller: A Profile in Awesomeness.”=要是大作家的话，他们可能会写关于我的自传：“一个伟大的居民”。
+One day my perfect kid will grow into a perfect adult!=终有一天我家宝贝会长成一个完美的人！
+Could my child BE more wonderful?=我孩子还能更棒吗？
+The grown ups are always so busy!=他们总是长得这么快！
+No school, no babysitter - this is the life!=不用上学，不用看孩子 - 这就是生活！
+Maybe Hydroponics can grow some gardenias.=也许栀子花可以通过水培方式成长。
+If you lived outside, you'd be dead.=你一旦离开这里，就是死路一条。
+You think maybe... I could call you baby?=我可以叫你“宝贝儿”吗？
+Are you this nice to all the Dwellers?=你对其它居民也这么好吗？
+Baby, who cares about the sun? I'm the only light you need.=宝贝儿，我就是你的太阳，你的温暖之光。
+Hey, a dead rat on the floor. How charming.=嘿，地上有一只死老鼠，多么迷人啊。
+If I could, I'd grow a Venus flytrap to eat you alive.=如果可以的话，我真想养一棵捕蝇草生吞了你。
+The Lounge will allow you to train a Dweller's Charisma.=休息室可以让你的居民提升魅力。
+Raiders can strike any time, be sure to have Dwellers ready and on guard!=掠夺者会在任何时候发动攻击，请让居民做好准备！
+Dwellers with high Endurance gain more health when they level up.=高耐力的居民将会在升级时获得更多的生命值。
+Pets equipped to dead Dwellers that are not revived during Quests will return to the Vault.=装备在执行任务途中死亡的居民身上的宠物会自行回到避难所。
+Bring Pets on Quests to give Dwellers a damage boost!=在任务途中为居民配备宠物将会获得伤害提升！
+Dwellers that die on a Quest can only be revived once the Quest is over.=在任务中死亡的居民可以在任务结束后复活。
+Dwellers with high Agility attack faster during Quests.=拥有高敏捷的居民在任务中可以拥有更快的攻速。
+Your Baby needs a name.=你的孩子需要一个名字。
+Can't keep a good Dweller down!=不能让一个好居民死掉！
+Be careful! This baby may actually break the skin.=小心点！这小家伙会弄破你的皮肤的。
+A portable nuclear bomb catapult. “Deadly” is an understatement.=一个手提式核弹投射器，“致命”已经不能来形容它了。
+Out of the R&D lab and in the field, this thing is even more deadly.=从研究开发实验室里生产出来并且投入使用的武器，这东西更加的致命。
+You'd be surprised how deadly high-speed junk can be.=你不会知道高速运动的垃圾有多致命的。
+A few tweaks have made this baby even more deadly than normal.=进行了一些细微的改动，这家伙变得更加致命了。
+a bustling Children of Atom Camp blocking the road.=一群吵闹的原子教会的孩子封住了路。
+The Mirelurk Hunter became the hunted. It's dead.=泥沼蟹猎杀者反而成了被猎杀的对象，它死了。
+The Giant Worker Ant is dead. That was a close one.=巨型兵蚁死了，太险了。
+Name the new baby!==为新生儿命名！
+Oh baby!==哦，我的亲亲宝贝！
+Over my dead body!==除非我死了！
+Look! {NEW DWELLERS} have shown up at the {VAULT DOOR}.=瞧！{新的居民}出现在了{避难所大门}。
+Look! {MORE DWELLERS} have shown up at the {VAULT DOOR}.=瞧！更多{居民}出现在了{避难所门口}。
+Hint: Once evicted, a Dweller is gone for good, so be careful!=提示：遭到驱逐的居民永远不会再回来了，所以小心行事！
+DWELLER EVICTION\nThank freeloading Dwellers for their service. By kicking them out!=居民驱逐\n为了向这些只吃饭不干活的家伙表达一下敬意，你可以把他们踢出去！
+THE BABY GREW UP!=孩子长大了！
+Children. Brahmin. Deathclaws. She can herd them all.=小鬼、双头牛还有死爪，她都可以赶跑。
+It was a nasty fight, but the Feral Ghoul Reaver is dead.=这是场糟糕的战斗，那个狂尸鬼掠夺者死了。
+Like a bad child who is about to... Lose Your Head!=就像坏孩子一样，你要……“掉脑袋”了！
+My child is so perfect, I feel sorry for every other parent in here.=我孩子是那么完美，都觉得有点对不起其它家长了。
+One Mole rat? It's as good as dead!=才一只鼹鼠？它已经跟死了没差了！
+RED: Your Dweller is sad, cheer them up!=居民会根据你安排给他们的任务产生情绪变化。
+We went toe-to-toe, but the Super Mutant Overlord is finally dead.=我们不相上下，但最后超级变种人霸主还是死了。
+a deadly Deathclaw.=一只致命的死爪。
+If I go in there, they'll shoot me dead. Talk to 'em for me, will ya?=如果我进到里面，他们肯定会把我打死的，请你替我和他们谈谈，好吗？
+Only looks like a wild child. He's as calm and cuddly as they come.=他只是看起来像个野孩子，实际上他是十分安静可爱的。
+Plus, there's a group of Dwellers intimidating would-be suitors.=另外，还有一群居民在恐吓潜在的追求者。
+While exploring, Dwellers found a note warning everyone to stay away from an old industrial complex. If folks have kept clear, it might still hold something useful.=在探索的时候，居民们发现了一张便条，上面写着让人们远离一个旧工业生产基地。如果能把道路清理出来，也许在那里能够找到一些有用的东西。
+They're dead! Was it a weapons malfunction?=他们死了！这是武器出故障了吗？
+The Mirelurk is armored everywhere but the face, so I used that to my advantage. It's dead.=泥沼蟹出了脸之外都包着甲壳，我利用了它这个弱点把它干掉了。
+Suit yourself, Dwellers!==随你们便，居民们！
+A child's wooden blocks. From before the war. I wonder where... Oh.=小孩子的积木，是战前留下的。不知道从哪里……哦。

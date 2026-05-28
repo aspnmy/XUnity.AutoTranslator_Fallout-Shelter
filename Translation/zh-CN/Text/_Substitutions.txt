@@ -1,83 +1,41 @@
 # ==============================================
-# 辐射避难所 翻译正则规则
-# 合并全量词条 + 去重 + 语法统一 + 富文本兼容
-# 适配 XUnity.AutoTranslator 正则引擎
+# Steam版本: 2.4.0
+# Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
+# 精翻作者: aspnmy
+# 技术支持: support@e2bank.cn
+# 最后更新: 2026-05-29 05:45:03
 # ==============================================
 
-# ==============================================
 # 一、全局通用预处理（最高优先级）
-# ==============================================
 # 分数去除多余空格
 
 # 全大写英文统一转为标准大小写（抹平大小写差异）
 ^([A-Z ]+)$=\L$1
-
-# ==============================================
-# 二、数值、符号、货币、百分比（原样输出）
-# ==============================================
-# 纯数字（含千分位）
 ^\d+(,\d+)*$=$0
-# 小数
 ^\d+\.\d+$=$0
-# 百分比
 ^\d+%$=$0
-# 倍数 x开头
 ^x\d+$=$0
-# 美元价格
 ^\$\d+(\.\d+)?$=$0
-# 特殊符号组
 ^[+_%!:_]+$=$0
-# 2~4位纯数字
-# 分钟简写格式 xm → x分钟
 ^(\d+)m$=$1分钟
-
-# ==============================================
-# 三、中文语句精简/润色规则
-# ==============================================
-# 句式重构：建造XX来生产XX
 ^(.*)建造(.*)来生产(.*)。$=$1建$2，产出$3。
-# 句式重构：可以使用XX来XX
 ^(.*)可以使用(.*)来(.*)。$=$1$2可$3。
-# 句式重构：将/会让你XX
 ^(.*)将让你(.*)。$=$1可$2。
 ^(.*)会让你(.*)。$=$1可$2。
-
-# 冗余助词替换
 (以及|并且)=$、
-
-# 地点状语精简
 ^(.*)在(.*)中(.*)。$=$1$2内$3。
 ^(.*)在(.*)里(.*)。$=$1$2内$3。
-
-# 时间单位简写
-
-# 疑问句式精简
 ^(.*)对(.*)有疑问(.*)。$=$1$2有疑问$3。
-
-# ==============================================
-# 四、时间、时长格式转换
-# ==============================================
-# 天数+小时
 ^(\d+) DAYS (\d+) HOURS$=$1天$2小时
-# (xh xm) 时长格式
 ^\((\d+)h (\d+)m\)$=（$1小时$2分）
-# 时间单位
 ^SEC$=秒
 ^MIN$=分钟
 ^HOURS$=小时
 ^12 DAYS 3 HOURS$=12天3小时
 ^45 DAYS 2 HOURS$=45天2小时
-
-# ==============================================
-# 五、赛季倒计时相关
-# ==============================================
 ^SEASON ENDS IN (\d+) DAYS$=赛季剩余$1天
 ^SEASON AND EXPERIMENTAL VAULT END IN(\[\-\] \[FD0C0B\](\d+) DAYS\[\-\])$=[282828]赛季与实验避难所剩余$1
 ^\[282828\]SEASON AND EXPERIMENTAL VAULT END IN\[\-\] \[FD0C0B\](\d+) DAYS\[\-\]$=[282828]赛季和实验避难所在[-][FD0C0B]$1天后结束[-]
-
-# ==============================================
-# 六、界面通用短句 & 基础按钮
-# ==============================================
 ^PLEASE STAND BY$=请稍候
 ^Message$=消息
 ^ENTER VAULT$=进入避难所
@@ -172,8 +130,6 @@
 ^MAIN MENU$=主菜单
 ^Play$=开始游戏
 ^Quit$=退出游戏
-^Vault Name$=避难所名称
-^Vault Number$=避难所编号
 ^Save$=保存
 ^SAVE & EXIT$=保存并退出
 ^Load$=读取
@@ -197,12 +153,7 @@
 ^Success$=成功
 ^Loading$=加载中
 ^Saving$=保存中
-
-# ==============================================
-# 七、避难所/房间名称
-# ==============================================
 ^Living Quarters$=居住区
-^Power Plant$=发电站
 ^Power Generator$=发电机
 ^Water Treatment$=水处理室
 ^Diner$=餐厅
@@ -216,10 +167,8 @@
 ^Weight Room$=健身房
 ^Classroom$=教室
 ^Game Room$=游戏室
-^Vault Door$=避难所大门
 ^Elevator$=电梯
 ^Weapon Workshop$=武器工坊
-^Wasteland Siege$=废土围攻
 ^GARDEN$=花园
 ^NUCLEAR REACTOR$=核反应堆
 ^NUKA-COLA BOTTLER$=核子可乐装瓶厂
@@ -229,10 +178,6 @@
 ^OUTFIT WORKSHOP$=服装工坊
 ^THEME WORKSHOP$=主题工坊
 ^EXTERIOR THEME$=外观主题
-
-# ==============================================
-# 八、资源、物资相关
-# ==============================================
 ^Power$=电力
 ^Food$=食物
 ^Water$=水源
@@ -243,12 +188,7 @@
 ^Radaway$=抗辐宁
 ^Junk$=垃圾
 ^Materials$=材料
-^Wasteland Junk$=废土垃圾
 ^You don't have enough CAPS$=瓶盖数量不足
-
-# ==============================================
-# 九、产出/消耗统计
-# ==============================================
 ^(.*) Production/Minute$=每分钟$1产出
 ^(.*) Consumption/Minute$=每分钟$1消耗
 ^Power Production/Minute$=每分钟电力产出
@@ -257,10 +197,6 @@
 ^Power Consumption/Minute$=每分钟电力消耗
 ^Food Consumption/Minute$=每分钟食物消耗
 ^Water Consumption/Minute$=每分钟水源消耗
-
-# ==============================================
-# 十、袭击/战斗统计
-# ==============================================
 ^(\w+(?: \w+)*) Attacks Stopped$=已击退$1袭击
 ^Raider Attacks Stopped$=击退掠夺者袭击
 ^Deathclaw Attacks Stopped$=击退死爪袭击
@@ -272,23 +208,11 @@
 ^Fires Extinguished$=已扑灭火灾
 ^Failed Rushes$=加速生产失败
 ^Successful Rushes$=加速生产成功
-
-# ==============================================
-# 十一、居民相关（属性、操作、统计）
-# ==============================================
-# 避难所编号
 ^ENTER VAULT (\d+)$=进入$1号避难所
-# 居民数量面板
 ^Dwellers (\d+)/(\d+)$=居民 $1/$2
-^Have (\d+) Dwellers in your Vault$=避难所现有$1名居民
-^Send (\d+) Dweller to the Wasteland$=派遣$1名居民前往废土
-
-# 分配/升级居民
 ^Assign (\d+) Dwellers in the right room$=将$1名居民分配至对应房间
 ^Level up (\d+) Dweller$=提升$1名居民等级
 ^Successfully Rush 1 room$=成功加速一间房间生产
-
-# 指派生产/制作
 ^ASSIGN DWELLERS HERE TO PRODUCE (.*)$=指派居民在此生产$1
 ^ASSIGN DWELLERS HERE TO CRAFT (.*)$=指派居民在此制作$1
 ^ASSIGN DWELLERS HERE TO PRODUCE POWER$=指派居民在此发电
@@ -300,8 +224,6 @@
 ^ASSIGN DWELLERS HERE TO CRAFT OUTFITS$=指派居民在此制作服装
 ^ASSIGN DWELLERS HERE TO TRAIN THEIR STRENGTH$=指派居民在此训练力量
 ^ASSIGN DWELLERS HERE TO TRAIN THEIR AGILITY$=指派居民在此训练敏捷
-
-# 平均属性
 ^Average Dweller (.*)$=居民平均$1
 ^Average Dweller Level$=居民平均等级
 ^Average Dweller Strength$=居民平均力量
@@ -311,8 +233,6 @@
 ^Average Dweller Agility$=居民平均敏捷
 ^Average Dweller Luck$=居民平均运气
 ^Average Dweller Intelligence$=居民平均智力
-
-# 居民基础词汇
 ^Dweller[s]?$=居民
 ^Dweller Name$=居民姓名
 ^Male Dwellers$=男性居民
@@ -321,8 +241,6 @@
 ^Children$=孩童
 ^Child SPECIALs$=孩童属性
 ^Dwellers SPECIAL$=居民属性
-
-# 七维属性全称
 ^SPECIAL$=基础属性
 ^Strength$=力量
 ^Perception$=感知
@@ -338,8 +256,6 @@
 ^AGILITY$=敏捷
 ^INTELLIGENCE$=智力
 ^LUCK$=运气
-
-# 七维属性单字母缩写
 ^S$=力量
 ^P$=感知
 ^E$=耐力
@@ -347,8 +263,6 @@
 ^I$=智力
 ^A$=敏捷
 ^L$=幸运
-
-# 居民状态/功能
 ^Health$=生命值
 ^Radiation$=辐射值
 ^Happiness$=快乐度
@@ -361,24 +275,15 @@
 ^Unequip$=卸下
 ^Revive$=复活
 ^Training Time$=训练时长
-
-# 居民统计
-^Dwellers Sent to the Wasteland$=派往废土的居民
 ^Dwellers Evicted$=被驱逐居民
 ^Dwellers Customized$=形象定制居民
 ^Dead Dwellers$=死亡居民
 ^Dwellers Revived$=复活居民
-
-# ==============================================
-# 十二、全局统计数据
-# ==============================================
 ^Time Played \(All-Time\)$=累计游戏时长
 ^CUMULATIVE SINCE (\d+/\d+/\d+)$=$1起累计数据
 ^Since (\d+/\d+/\d+)$=自$1起
 ^Survival Guide$=生存指南
 ^DESTROY ROCK$=击碎岩石
-
-# 通用统计句式
 ^(\w+(?: \w+)*) Gained$=提升$1总数
 ^(\w+(?: \w+)*) Trained$=完成$1次数
 ^(\w+(?: \w+)*) Taken$=使用$1数量
@@ -387,8 +292,6 @@
 ^(\w+(?: \w+)*) Rides$=$1次数
 ^(\w+(?: \w+)*) Time$=$1总时长
 ^(\w+(?: \w+)*) Killed$=击杀$1总数
-
-# 细分统计项
 ^Levels Gained$=累计升级次数
 ^SPECIAL Stats Trained$=七项属性训练次数
 ^Stimpaks Taken$=已使用治疗针
@@ -398,22 +301,15 @@
 ^Food Collected$=累计收集食物
 ^Water Collected$=累计收集水源
 ^Elevator Rides$=电梯乘坐次数
-^Wasteland Exploration Time$=废土探索时长
-^Wasteland Creatures Killed$=击杀废土生物
 ^Lunchboxes Opened$=已开启避难所科技午餐盒
 ^Pet Carriers Opened$=已开启宠物箱
 ^Babies Born$=新生婴儿
 ^Junk Sold$=已出售垃圾
-
-# ==============================================
-# 十三、人名翻译
-# ==============================================
 ^John Smith$=约翰·史密斯
 ^Raymond Thompson$=雷蒙德·汤普森
 ^Teresa Hall$=德蕾莎·霍尔
 ^Randy Lord$=兰迪·洛德
 ^Linda Mason$=琳达·梅森
-^Gloria Campbell$=格洛丽亚·坎贝尔
 ^Donald Jackson$=唐纳德·杰克逊
 ^Carl Richards$=卡尔·理查兹
 ^Beverly Wright$=贝弗利·赖特
@@ -426,20 +322,11 @@
 ^Emma Lane$=爱玛巷
 ^Frank$=弗兰克
 ^Emma$=艾玛
-
-# ==============================================
-# 十四、杂项特殊文本 & 无效字符
-# ==============================================
 ^HOLAS COMO ESTAN KSDKJ AKJSDÑKLJDÑLKAJS DÑLKJASDÑLKJASDÑLKJA$=共同生活
 ^EXPLORING WASTELAND$=探索废土
 ^EXPORE$=探索
 ^sfdsfgsdfgdfsg\s+sfdsfgsdfgdfsg$=
 ^ASDASD+=$0
-
-# ==============================================
-# 十五、装备 & 制作
-# ==============================================
-# 服装分类与字段
 ^Outfit Name$=服装名称
 ^Common Outfits$=普通服装
 ^Rare Outfits$=稀有服装
@@ -449,8 +336,6 @@
 ^Outfits Sold$=已出售服装
 ^Outfits Scrapped$=已拆解服装
 ^Outfits Crafted$=已制作服装
-
-# 武器分类、名称与统计
 ^Common Weapons$=普通武器
 ^Rare Weapons$=稀有武器
 ^Legendary Weapons$=传奇武器
@@ -461,8 +346,6 @@
 ^Weapons Sold$=已出售武器
 ^Weapons Scrapped$=已拆解武器
 ^Weapons Crafted$=已制作武器
-
-# 武器单品
 ^Enhanced Combat Shotgun$=增强型战斗霰弹枪
 ^Mountain Momma$=山妈妈
 ^Enhanced Power Fist$=增强力量拳
@@ -482,8 +365,6 @@
 ^Mare's Leg$=马雷的腿
 ^Infiltrator$=渗透者
 ^Ghoul Revolver$=食尸鬼左轮手枪
-
-# 制作、属性类文本
 ^Crafting Time & Cost$=制作时长与消耗
 ^Damage$=伤害值
 ^Damage Resistance$=伤害抗性
@@ -494,16 +375,9 @@
 ^XP$=经验值
 ^Microscope$=显微镜
 ^Agent Provocateur$=代理人挑衅者
-
-# ==============================================
-# 十六、宠物相关
-# ==============================================
-# 宠物品级
 ^Common Pets$=普通宠物
 ^Rare Pets$=稀有宠物
 ^Legendary Pets$=传奇宠物
-
-# 犬类
 ^English Mastiffs$=英国獒
 ^Akitas$=秋田犬
 ^Australian Shepherds$=澳大利亚牧羊犬
@@ -524,8 +398,6 @@
 ^Poodles$=贵宾犬
 ^Rottweilers$=罗威纳犬
 ^St. Bernards$=圣伯纳犬
-
-# 猫类
 ^Toygers$=虎猫
 ^Rollerbrain$=滚脑怪
 ^Abyssinians$=阿比西尼亚猫
@@ -547,23 +419,13 @@
 ^Havana Browns$=哈瓦那棕猫
 ^Pallas's Cats$=帕拉斯猫
 ^Burmilla$=波米拉猫
-
-# 鹦鹉类
 ^Pirate Parrots$=海盗鹦鹉
 ^Trained Parrots$=驯养鹦鹉
-^Vault-Tec Parrots$=避难所科技鹦鹉
-
-# 宠物统计
 ^Pets Collected$=已收集宠物
 ^Pets Sold$=已出售宠物
-
-# ==============================================
-# 十七、赛季 & 商城 & 物品文本
-# ==============================================
 ^SHELTER SEASON: SYNTHETIC IDENTITY$=避难所赛季：合成身份
 ^EXPERIMENTAL VAULTS$=实验避难所
 ^SEASON 1 LEADERBOARD$=第一季排行榜
-^SeasonModal_Leaderboard_VaultScoreFull$=赛季界面_排行榜_避难所积分
 ^SEASON PASS$=季票
 ^ITEM NAME$=物品名称
 ^ITEM NAME description$=物品名称描述
@@ -576,14 +438,7 @@
 ^Cannot connect to the store, check your connection and try again!$=商店连接失败，请检查网络后重试！
 ^If you run out, you can always purchase more Nuka-Cola Quantum in the store\.$=量子核子可乐耗尽时，可前往商店补充。
 ^Rank up for 3 Nuka-Cola Quantum\?$=消耗3瓶量子核子可乐提升段位？
-
-# 赛季奖励长文本
-^Unlock all the Season rewards:\n- NEW Vault Exterior \[-\]\[F7C531\]THEME\[-\]\n- NEW Nuka-Cola Bottler \[-\]\[F7C531\]THEME\[-\]\n- \[-\]\[F7C531\]NEW DWELLERS\[-\] and \[-\]\[F7C531\]MORE!\[-\]$=解锁全部赛季奖励：全新外观、可乐灌装器主题、新居民及更多内容。
 ^All the benefits of the Season Pass plus:\n- Exclusive \[-\]\[F7C531\]LEGENDARY DWELLER\[-\] and \[-\]\[F7C531\]OUTFIT\[-\]\n- \[-\]\[F7C531\]BONUS\[-\] Pets, Outfits and Weapon\n- \[-\]\[F7C531\]25 BADGES\[-\] to gain season ranks instantly$=季票全部权益，额外赠送传奇居民、服装、道具与段位徽章。
-
-# ==============================================
-# 十八、房间功能说明
-# ==============================================
 ^ATTRACT NEW DWELLERS FROM THE WASTELAND$=吸引废土中的新居民
 ^INCREASES THE NUMBER OF ITEMS AND PETS YOU CAN HOLD$=提升物品与宠物存储上限
 ^INCREASES THE NUMBER OF DWELLERS YOU CAN HAVE IT ALSO ALLOWS YOU TO BREED NEW DWELLERS$=提升居民上限，可繁育新人
@@ -593,10 +448,6 @@
 ^Build a POWER GENERATOR\?$=是否建造发电机？
 ^Build a DINER\?$=是否建造餐厅？
 ^Build a WATER TREATMENT\?$=是否建造净水厂？
-
-# ==============================================
-# 十九、任务 & 目标
-# ==============================================
 ^Quest$=探索任务
 ^Raid$=突袭
 ^Collect$=收集
@@ -606,10 +457,6 @@
 ^Defend$=防御
 ^Kill$=击杀
 ^Rescue$=救援
-
-# ==============================================
-# 二十、怪物 & 威胁 & 灾害
-# ==============================================
 ^Radroach$=蟑螂
 ^Rat$=巨鼠
 ^Feral Ghoul$=狂尸鬼
@@ -620,31 +467,12 @@
 ^Radiation Leak$=辐射泄漏
 ^Radscorpion$=辐射蝎
 ^Alien Drones$=外星无人机
-
-# ==============================================
-# 二十一、游戏引导 & 教程长文本
-# ==============================================
-^Your Vault needs a steady supply of\nPower, Food and Water to run properly.$=避难所需稳定电力、食物、水源维持运转。
 ^Hint: The positive and negative effects of your resources are amplified by their distance from the required resource lines.$=提示：资源偏离标准线，效果会被放大。
-
 ^When you drag a Dweller into a room, a SPECIAL letter will appear above their head with a number.\n\nThe letter above their head corresponds to the SPECIAL stat associated with that room.\n\nIf the number is listed with a plus or minus sign, it means that dragging a Dweller into that room will replace a Dweller that is currently working in that room.\n\nThe Dweller's effect on that room will go up or down whatever the number is.\n\nWhen a Dweller is replaced this way, they switch jobs with the Dweller being moved.\n\nIf there is no plus or minus sign it means there's room for the Dweller to work in the room without replacing any Dwellers.$=拖动居民至房间，头顶显示对应属性与数值；带正负号会替换在岗人员，无符号可直接入驻。
-
 ^When you click on a Dweller, it brings up their information.\n\nFrom this page, you can equip your Dweller with Weapons, Outfits and a Pet, or heal them with Stimpaks and RadAway.\n\nClicking on their SPECIAL brings up more detailed information about their individual SPECIAL levels.$=点击居民查看信息，可装备道具、使用药品，点击属性查看详情。
-
-
-^The Vault keeps people safe from the dangers of the Wasteland\.$=避难所保护居民免受废土的危险。
 ^Each room has a SPECIAL attribute it uses. Assign Dwellers with the best SPECIAL to make them happy and produce extra Resources\.$=每个房间对应一项七项属性，指派属性匹配的居民工作，可提升效率并产出更多资源。
-^Vault-Tec will give you a daily rating based on your performance. Remember to keep your Dwellers happy, and do a great job!\.$=避难所科技会根据你的表现进行每日评级。记得关照居民，好好经营避难所！
-^Now you have to determine the ID of your Vault. Choose carefully, because once you select an ID, it can't be changed!\.$=请设置避难所编号，编号一旦确定将无法修改，请谨慎选择！
-
-# ==============================================
-# 二十二、富文本颜色标签剧情语句
-# ==============================================
 ^\[394039FF\]Build a Medbay to produce Stimpaks\.\[-\]$=[394039FF]建造一个医疗室来生产治疗针。[-]
-^\[394039FF\]Upgrading your Vault entrance will make it harder for invaders to break in\.\[-\]$=[394039FF]升级你的避难所入口将使入侵者更难闯入。[-]
 ^\[394039FF\]Bring Pets on Quests to give Dwellers a damage boost!\[-\]$=[394039FF]在任务中携带宠物，为居民增加伤害！[-]
-^\[394039FF\]If you are out of building space on a floor, build an elevator to access lower parts of your Vault\.\[-\]$=[394039FF]如果楼层没有空余建造位置，建造电梯前往避难所下层。[-]
-
 ^\[353F5C\]First let's \[BE6432\]BUILD\[353F5C\] a \[BE6432\]ROOM\[353F5C\]\. Click on the \[BE6432\]HAMMER ICON\[353F5C\] to open the \[BE6432\]BUILD MENU\[353F5C\]\.$=[353F5C]首先，让我们[BE6432]建造[353F5C]一个[BE6432]房间[353F5C]。点击[BE6432]锤子图标[353F5C]打开[BE6432]建造菜单[353F5C]。
 ^\[353F5C\]Rooms require \[BE6432\]POWER\[353F5C\] to function. Click again to \[BE6432\]CONFIRM\[353F5C\]\.$=[353F5C]房间需要[BE6432]电力[353F5C]才能正常工作。再次点击[BE6432]确认[353F5C]。
 ^\[353F5C\]We'll build a \[BE6432\]POWER GENERATOR\[353F5C\] that will produce \[BE6432\]POWER\[353F5C\]\. \[BE6432\]CLICK\[353F5C\] on the \[BE6432\]POWER ROOM\[353F5C\]\.$=[353F5C]我们将建造一台[BE6432]发电机[353F5C]用于生产[BE6432]电力[353F5C]。[BE6432]点击[353F5C]这个[BE6432]电力房间[353F5C]。
@@ -658,6 +486,745 @@
 ^\[353F5C\]Dwellers require \[BE6432\]FOOD\[353F5C\] to keep their \[BE6432\]HEALTH\[353F5C\] up. Click again to \[BE6432\]CONFIRM\[353F5C\]\.$=[353F5C]居民需要[BE6432]食物[353F5C]维持[BE6432]生命值[353F5C]，再次点击[BE6432]确认[353F5C]。
 ^\[353F5C\]Now let's build one more room\.$=[353F5C]现在我们再建造一个房间。
 ^\[353F5C\]You need a \[BE6432\]DINER\[353F5C\], which will produce \[BE6432\]FOOD\[353F5C\]. \[BE6432\]CLICK\[353F5C\] on the \[BE6432\]DINER\[353F5C\]\.$=[353F5C]你需要建造[BE6432]餐厅[353F5C]来生产[BE6432]食物[353F5C]，点击[BE6432]餐厅[353F5C]。
+# 格式: ^正则模式$=替换规则
+^Hint:\ (.*)$=提示：^Yes\$=是
+^No\$=否
+^SOS\$=SOS
+^ACTIVE\$=激活
+^ARRIVED\$=已到达
+^BEGIN\$=开始
+^RETURNED\$=已返回
+^Armor\ Piercing\ (.+)$=穿甲
+^Enhanced\ (.+)$=改良的
+^Hardened\ (.+)$=硬化
+^Rusty\ (.+)$=生锈的
+^Amplified\ (.+)$=增幅
+^Focused\ (.+)$=聚焦
+^Tuned\ (.+)$=微调
+^Scoped\ (.+)$=带镜
+^Improved\ (.+)$=优化
+^Incendiary\ (.+)$=燃烧
+^Scattered\ (.+)$=散射
+^Targeting\ (.+)$=瞄准型
+^Long\ (.+)$=长型
+^Auto\ (.+)$=自动
+^Heavy\ (.+)$=重型
+^Bayoneted\ (.+)$=刺刀
+^Calibrated\ (.+)$=校准
+^Electrified\ (.+)$=充能
+^Flaming\ (.+)$=火焰
+^Recoil\ Compensated\ (.+)$=后座补正
+^Tactical\ (.+)$=战术
+^Guided\ (.+)$=自动制导
+^Pressurized\ (.+)$=增压
+^Burnmaster\ (.+)$=炎魔
+^Mean\ Green\ (.+)$=凶暴的绿怪
+^Agitated\ (.+)$=不稳定
+^Boosted\ (.+)$=增压
+^Overcharged\ (.+)$=充能
+\n\n# ==============================================\n# 新增：全大写短句规则\n# ==============================================\nNEW DWELLERS & RADIO ROOM=新居民和广播室\nMR. HANDY=巧手先生\nSTORAGE SPACE:=储存空间：\nPASSWORD DOESN'T MATCH=密码不匹配\nPLEASE WAIT...=请稍等……\nEACH LUNCHBOX CONTAINS:=每个避难所科技午餐盒包含：\nWHAT'S NEW?=有什么消息吗？\nEACH PET CARRIER CONTAINS:=每个宠物笼里包含：\n*FUR NOT GUARANTEED.=*不保证皮毛状况。\nKA-KAW KA-KAW!=噶-噶！\nNUKA-COLA STATION=核子可乐生产站\nNUKA-COLA PLANT=核子可乐工厂\nOVERSEER'S OFFICE=监管者办公室\nOVERSEER'S CONTROL STATION=监管者的控制台\nOVERSEER'S COMMAND CENTER=监管者的指挥中心\nLEGENDARY JUNK RECOVERED!=传奇垃圾回收！\nRARE JUNK RECOVERED!=稀有垃圾回收！\nSHARE YOUR PHOTO!=分享图片！\nPRESS [A] TO CONTINUE=按[A]继续\nPRODUCTION BONUS :=生产奖励：\nRUSH READY!=加速准备完毕！\nSTARTING QUEST!=开始任务！\nTHE BABY GREW UP!=孩子长大了！\nCONGRATULATIONS! OBJECTIVE COMPLETED=恭喜！任务完成\nBOTTLE & CAPPY!=瓶瓶和盖盖！\nIT'S TIME TO START CRAFTING!=制作时间到！\nDWELLERS LEVEL & RARITY=居民等级和稀有度\nDAILY REPORT & VAULT RATING=每日报告和避难所分数\nMAKING BABIES & LIVING QUARTERS=生宝宝及起居室\nBUILD YOUR VAULT & ELEVATOR=建造你的避难所以及电梯\nROOM LEVEL & MERGING=房间等级以及房间融合\n
+SAVING...=正在保存……
+UPLOADING...=升级中……
+^You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by tapping on a Dweller.$=你可以点击一位居民查看他的身份信息栏，在这里你可以为他/她装备物品和武器以及使用治疗针和消辐宁。
+^You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by clicking on a Dweller.$=你可以点击居民信息面板，为居民装备物品或是武器，也可以为他们使用消福宁和治疗针。
+^You\ can\ try!$=你可以试试！
+^You can say that again.$=你可以再说一遍。
+^You can rename a Dweller by tapping their name on the Dweller information pop-up.$=你可以通过点击居民信息中的名字来进行更改。
+^You can rename a Dweller by clicking their name on the Dweller information pop-up.$=你可以通过点击居民的名字或是弹出的居民信息来更改他们的名字。
+^You can skip 1 Objective each day by tapping the X on the Objective screen.$=你每天都可以跳过一个任务，点击任务界面的X。
+^You can skip 1 Objective each day by clicking the X on the Objective screen.$=你每天都可以跳过一个任务，点击任务界面的X。
+^You can get free Lunchboxes for completing some Objectives.$=你可以通过完成某些特定目标来获得免费的避难所科技午餐盒。
+^You can sort the Dweller list by tapping on the column names.$=你可以通过点击列名分类来对居民的类别排序。
+^You can sort the Dweller list by clicking on the column names.$=你可以通过点击列名分类来对居民的类别排序。
+^You can use Nuka-Cola Quantum to instantly finish crafting an item.$=你可以使用量子型核子可乐加快生产的速度。
+^You can use Nuka-Cola Quantum to speed up the Barbershop.$=你可以使用量子型核子可乐加快理发的速度。
+^You can use Nuka-Cola Quantum to reach a Quest NOW!$=你可以使用量子型核子可乐立即完成任务！
+^You can craft Minutemen and Brotherhood of Steel Themes in the Theme Workshop.$=你可以在布局工坊制作钢铁兄弟会主题布局。
+^You can craft Railroad and Institute Themes in the Theme Workshop.$=你可以在布局工坊制作铁路协会主题布局。
+^You can use Nuka-Cola Quantum to skip certain Quests.$=你可以使用量子型核子可乐跳过一部分特定的任务。
+^You can use Nuka-Cola Quantum to speed up a Dweller’s SPECIAL training.$=你可以使用量子型核子可乐加速SPECIAL训练。
+^You can use Nuka-Cola Quantum to get missing Theme Recipe Fragments.$=你可以使用量子型核子可乐获得缺失的布局配方碎片。
+^Are\ you\ sure\ you\ want\ to\ keep\ the\ Local\ save\?$=你确定你想要保留本地存档吗？
+^Are\ you\ sure\ you\ want\ to\ logout\?$=确定注销吗？
+^Are\ you\ sure\ you\ want\ to\ quit\ Fallout\ Shelter\?$=确定退出游戏吗？
+^Are\ you\ sure\ you\ want\ to\ create\ a\ new\ save\?$=你确定要创建一个新存档吗？
+^Are\ you\ sure\ we\ can't\ just\ talk\ this\ over\?$=你确定我们用语言来沟通吗？
+^Are\ you\ sure\ about\ this\?\ Shouldn't\ love\ just\ run\ its\ course\?$=你确定吗？还是说婚姻是爱情的坟墓？
+^Are\ you\ sure\ you\ want\ to\ keep\ the\ Cloud\ save\?$=你确定你想保留云端存档吗？
+^Do\ you\ really\ want\ to\ destroy\ this\ rock\?$=你真的要摧毁这块岩石吗？
+^Do\ you\ really\ want\ to\ evict\ the\ Dweller\?$=你真的要驱逐这个居民吗？
+^Do\ you\ really\ want\ to\ remove\ the\ dead\ Dweller\?$=你真的要移除已死亡的居民吗？
+^Do\ you\ really\ want\ to\ remove\ any\ dead\ Dweller\(s\)\?$=确定要移除全部死亡的居民吗？
+^Do\ you\ really\ like\ me\?$=你真的喜欢我吗？
+- Customize Dwellers=你可以通过以下方式获得瓶盖。
+You don't have enough resources=资源不足
+[Content line 2]=[第二行的内容]
+Collect 1 piece of Junk=收集1件垃圾
+Collect 1 Daily Reward=获得1次每日奖励
+Deliver 1 baby Dweller=生下1个居民宝宝
+Merge 2 rooms together=合并2个房间
+Find the Mysterious Stranger=找到神秘陌生人
+Have 1 Female Dweller pregnant=让一名女居民怀孕
+Perform 1 successful Rush=完成1次加速
+Scrap 1 Weapon or Outfit=分解1件武器或服装
+Sell 1 Weapon or Outfit=出售1件武器或者服装
+Weekly Quest PLACEHOLDER=每周任务 PLACEHOLDER
+Fire Support [PL]=火力支援[PL]
+In Sheep Clothing [PL]=穿绵羊服[PL]
+Memory Interrupted [PL]=记忆中断[PL]
+Mercer Safehouse [PL]=布商的安全屋[PL]
+Spoils of War [PL]=战争恩赐[PL]
+Friend List PHR=好友列表 PHR
+1 gift remaining PHR=剩余1份礼物 PHR
+Increases Endurance training speed=提升【耐力】训练速度
+Killed 10 Quest Bosses=杀了10个任务 BOSS
+Killed 500 enemies on Quests=在任务中杀死了500个敌人
+Kill 10 Quest Bosses=杀死10个任务 BOSS
+Kill 500 enemies on Quests=在任务中杀死500个敌人
+Paint 'n Elbow Grease=涂抹肘部润滑脂
+Increases Charisma training speed=加快【魅力】训练速度
+Training Time (Continuous)=训练时间（持续）
+Press [A]=按[A]
+Increases Strength training speed=加快【力量】训练速度
+(Optional)=（可选）
+PLEASE STAND BY=请稍候
+ENTER VAULT 444=进入保险库444
+SEASON ENDS IN 45 DAYS=赛季将在45天后结束
+ITEM NAME description=项目名称描述
+TBD - RECALL=TBD-召回
+(3h 55m)=（3小时55分钟）
+(2h 55m)=（2小时55米）
+TURN TIPS OFF=关闭提示
+OUTFIT NAME NAME=服装名称
+SEASON 1 LEADERBOARD=第一季排行榜
+[282828]SEASON AND EXPERIMENTAL VAULT END IN[-] [FD0C0B]45 DAYS[-]=[282828]赛季和实验跳马在[-][FD0C0B]45天后结束[-]
+ASSIGN DWELLERS HERE TO CRAFT WEAPONS=指派这里的居民制造武器
+ATTRACTS NEW DWELLERS FROM THE WASTELAND=吸引荒地上的新居民
+SEND DWELLERS ON QUESTS FROM HERE=从这里派遣居民进行任务
+ASSIGN DWELLERS HERE TO PRODUCE RADAWAY=指派居民在这里建造雷达道
+INCREASES THE NUMBER OF ITEMS AND PETS YOU CAN HOLD=增加您可以携带的物品和宠物数量
+ASSIGN DWELLERS HERE TO PRODUCE WATER=指派居民在这里生产水
+ASSIGN DWELLERS HERE TO PRODUCE FOOD=指派居民在这里生产食物
+ASSIGN DWELLERS HERE TO PRODUCE POWER=指派居民在这里发电
+INCREASES THE NUMBER OF DWELLERS YOU CAN HAVE IT ALSO ALLOWS YOU TO BREED NEW DWELLERS=增加你可以拥有的居民数量，也可以让你繁殖新的居民
+USED TO ACCESS LOWER FLOORS OF YOUR VAULT=用于进入保险库的较低楼层
+QUEST NAME GOES HERE=任务名称在这里
+CLICK TO CONTINUE=单击继续
+[353F5C][BE6432]MALE[353F5C] and [BE6432]FEMALE[353F5C] Dwellers within the [BE6432]LIVING QUARTERS[353F5C] have a chance of making [BE6432]BABIES[353F5C].=[353F5C][BE6432]男[335F5C]女[353F53]住在[BE6432]LIVING QUARTERS[353F5C]的居民有机会制作[BE6432-]婴儿袋[353F58]。
+CUMULATIVE SINCE 2026/5/28=自2026/5/28以来累计
+Pet Carriers Opened=宠物背带打开
+SPECIAL Stats Trained=接受过特殊统计培训
+You can't destroy this room because it is connected with two rooms.=你不能破坏这个房间，因为它与两个房间相连。
+You can't destroy this room because it has Dwellers assigned to it.=你不能摧毁这个房间，因为它有指定的居民。
+Mole Rat Infestations Stopped=鼹鼠感染停止
+NEW DWELLERS & RADIO ROOM=新居民和广播室
+Hint: Rushing a room is the fastest way to earn CAPS.=提示：加速房间是赚瓶盖最快的方式。
+Hint: The percentage chance of a disaster cools down over time.=提示：灾难发生的概率会随时间流逝而降低。
+Production Rooms can be Rushed to earn CAPS and to instantly earn resources.\n\n- Rush completes the current production cycle and award a bonus amount of CAPS.\n\n- The CAPS bonus is based on the Risk value. The higher the risk is, the greater the amount of CAPS you earn.\n\n- Failing a Rush causes a disaster in the room.=生产间可以加速以获得瓶盖，立即收集资源。\n\n- 加速可立即完成当前生产周期并奖励额外的瓶盖。\n\n- 奖励瓶盖的数量会根据风险值浮动。加速风险越高，你获得的瓶盖越多。\n\n- 加速失败会在房间内引发一场灾难。
+Hint: A Dweller in the Wasteland can be Revived for CAPS.=提示：废土中的居民可用瓶盖复活。
+Hint: Rare and Legendary Dwellers can be found in Lunchboxes and have great stats.=提示：避难所科技午餐盒中能发现稀有甚至传说级别的居民，而且他们有很高的属性值。
+Hint: Equipping your Dwellers with Weapons will help fight off enemies.=提示：为你的居民装备武器能帮助他们击退敌人。
+Hint: The Dweller Menu icon shows the number of Dwellers in your Vault, as well as how many Dwellers you have waiting outside.=提示：居民图标会显示当前避难所内的居民数量，还有在避难所外等待的居民数量。
+1. Wasteland - Tap outside your Vault to pull up your Wasteland Logs.\n2. Dweller Menu - Use this for easy sorting and selection of your Dwellers.\n3. Happiness - Your overall Vault Happiness. Tap on it to see what bonuses it provides to your Vault.\n4. Resource Bars - Your current resource amounts. Don't let them fall below the required resources lines, or your Vault will start to deteriorate. Tap to see how many resources you have.\n5. CAPS - Tap on the CAPS to go to the Lunchbox Store.\n6. Build Hammer - Tap on the Build Hammer to build rooms.\n7. Pip-Boy - Tap the Pip-Boy to open the Pip-Boy menu. A number on the Pip-Boy means you have Lunchboxes to open. An exclamation point means you have Objective rewards to collect.\n8. Lunchboxes - Tap the Lunchboxes to go to the Lunchbox menu. A number means you have Lunchboxes to open.\n9. Objectives - Tap the ribbon to go to your Objectives page. An exclamation point means you have Objective rewards to collect.\n10. Inventory - Tap the boxes to go to the Inventory menu.\n11. VDSG - Tap the book to open the Vault Dweller Surivival Guide.\n12. Settings - Tap the gears to go to the settings menu.=1. 废土 - 点击避难所外部查看废土日志。\n2. 居民菜单 - 使用菜单更轻松地分类和选择居民。\n3. 幸福感 - 避难所总体愉悦度。点击查看它为你的避难所提供的奖励。\n4. 资源条 - 你当前的资源量。别让它们低于最低需求标准线，否则你的避难所会恶化。点击查看你拥有多少资源。\n5. 瓶盖 - 点击瓶盖转到避难所科技午餐盒商店。\n6. 建造锤 - 点击建造锤建造各类房间。\n7. 哔哔小子 - 点击哔哔小子打开菜单。数字表示你拥有的避难所科技午餐盒数量。感叹号表示你有未收集的任务奖励。\n8. 避难所科技午餐盒 - 点击避难所科技午餐盒转到避难所科技午餐盒菜单。数字表示你可以开启的避难所科技午餐盒数量。\n9. 目标 - 点击缎带图标跳转到目标页面。感叹号代表你有未收集的目标奖励。\n10. 物品栏 - 点击盒子转到物品栏菜单。\n11. 避难所居民生存指南 - 点击书本打开避难所居民生存指南。\n12. 设置 - 点击齿轮转到设置菜单。
+1. Wasteland - Click outside your Vault to pull up your Wasteland Logs.\n2. Dweller Menu - Use this for easy sorting and selection of your Dwellers.\n3. Happiness - Your overall Vault Happiness. Click on it to see what bonuses it provides to your Vault.\n4. Resource Bars - Your current resource amounts. Don't let them fall below the required resources lines, or your Vault will start to deteriorate. Click to see how many resources you have.\n5. CAPS - Click on the CAPS to go to the Lunchbox Store.\n6. Build Hammer - Click on the Build Hammer to build rooms.\n7. Pip-Boy - Click the Pip-Boy to open the Pip-Boy menu. A number on the Pip-Boy means you have Lunchboxes to open. An exclamation point means you have Objective rewards to collect.\n8. Lunchboxes - Click the Lunchboxes to go to the Lunchbox menu. A number means you have Lunchboxes to open.\n9. Objectives - Click the ribbon to go to your Objectives page. An exclamation point means you have Objective rewards to collect.\n10. Inventory - Click the boxes to go to the Inventory menu.\n11. VDSG - Click the book to open the Vault Dweller Surivival Guide.\n12. Settings - Click the gears to go to the settings menu.=1. 废土 - 点击避难所外部查看废土日志。\n2. 居民菜单 - 使用菜单更轻松地分类和选择居民。\n3. 幸福感 - 避难所总体愉悦度。点击查看它为你的避难所提供的奖励。\n4. 资源条 - 你当前的资源量。别让它们低于最低需求标准线，否则你的避难所会恶化。点击查看你拥有多少资源。\n5. 瓶盖 - 点击瓶盖转到避难所科技午餐盒商店。\n6. 建造锤 - 点击建造锤建造各类房间。\n7. 哔哔小子 - 点击哔哔小子打开菜单。数字表示你拥有的避难所科技午餐盒数量。感叹号表示你有未收集的任务奖励。\n8. 避难所科技午餐盒 - 点击避难所科技午餐盒转到避难所科技午餐盒菜单。数字表示你可以开启的避难所科技午餐盒数量。\n9. 目标 - 点击缎带图标跳转到目标页面。感叹号代表你有未收集的目标奖励。\n10. 物品栏 - 点击盒子转到物品栏菜单。\n11. 避难所居民生存指南 - 点击书本打开避难所居民生存指南。\n12. 设置 - 点击齿轮转到设置菜单。
+Hint: The positive and negative effects of your resources are amplified by their distance from the required resource lines.=提示：资源产量受其与需求生产线距离的影响。
+Hint: You can turn Windowed mode on/off from the Settings menu.=提示：你可以在设置菜单中开启/关闭窗口模式。
+Hint: Drag a Dweller around to a few rooms to see where they'd work best.=提示：把居民在房间之间来回拖动，找到最适合他/她的工作间。
+Hint: Move a Dweller around to a few rooms to see where they'd work best.=提示：把居民在房间之间来回移动，找到最适合他/她的工作间。
+When you drag a Dweller into a room, a SPECIAL letter will appear above their head with a number.\n\nThe letter above their head corresponds to the SPECIAL stat associated with that room.\n\nIf the number is listed with a plus or minus sign, it means that dragging a Dweller into that room will replace a Dweller that is currently working in that room.\n\nThe Dweller's effect on that room will go up or down whatever the number is.\n\nWhen a Dweller is replaced this way, they switch jobs with the Dweller being moved.\n\nIf there is no plus or minus sign it means there's room for the Dweller to work in the room without replacing any Dwellers.=你把一位居民拖到一间房间后，会出现SPECIAL七个属性值之中的一个字母和一个数字。\n\n字母相当于与该房间相关的属性值。\n\n如果出现的数字有一个加号或者减号，那就意味着新加入的居民会替换掉一位原来已经在工作的居民。\n\n居民对房间产量的影响会上升或下降，与数字无关。\n\n当一位居民被替换，他们会接手替换居民原来的工作。\n\n如果没有出现加减号，说明该房间内有多余的岗位，不需要替换其他居民。
+You can assign a Dweller to a room by dragging them there, or by using 3D Touch to first press on the Dweller and then on the room.\n\nWhen assigning a Dweller to a room, a SPECIAL letter will appear above their head with a number.\n\nThe letter above their head corresponds to the SPECIAL stat associated with that room.\n\nIf the number is listed with a plus or minus sign, it means that assigning the Dweller to that room will replace a Dweller that is currently working there.\n\nThe Dweller's effect on that room will go up or down whatever the number is.\n\nWhen a Dweller is replaced this way, they switch jobs with the Dweller being moved.\n\nIf there is no plus or minus sign it means there's room for the Dweller to work in the room without replacing any Dwellers.=你可以拖动居民，将居民分配到一个房间内，也可以使用3D触控进行分配。\n\n在将居民分配至一个房间后，SPECIAL的字母会出现在上方，并且显示具体的数值。\n\n显示在上方的文字表示其在房间内的SPECIAL的状态。\n\n如果数字上显示了加号或者减号，那么就意味着将居民分配到那个房间会\n\n在此房间内居民的效果会因为数字的浮动而改变。\n\n当居民被替换后，他们会交换彼此手头的工作。\n\n如果没有显示正负号，那么就意味着房间内居民手头的工作无需替换任何居民。
+Hint: Outfits boost a Dweller's SPECIAL stats. Blue bars on a Dweller's SPECIAL shows how the Outfit benefits the Dweller.=提示：服装可以提升居民的属性值。蓝条表示服装增加的属性。
+When you tap on a Dweller, it brings up their information.\n\nFrom this page, you can equip your Dweller with Weapons,Outfits and a Pet, or heal them with Stimpaks and RadAway.\n\nTapping on their SPECIAL brings up more detailed information about their individual SPECIAL levels.=点击一位居民，可以查看他们的信息。\n\n在该页面，你可以为他们装备武器、服装和宠物，或者使用治疗针和消辐宁恢复体力。\n\n点击他们的SPECIAL属性值可以查看更多详细信息，比如他们较为突出的属性值。
+When you click on a Dweller, it brings up their information.\n\nFrom this page, you can equip your Dweller with Weapons, Outfits and a Pet, or heal them with Stimpaks and RadAway.\n\nClicking on their SPECIAL brings up more detailed information about their individual SPECIAL levels.=点击一位居民，可以查看他们的信息。\n\n在该页面，你可以为他们装备武器、服装和宠物，或者使用治疗针和消辐宁恢复体力。\n\n点击他们的SPECIAL属性值可以查看更多详细信息，比如他们较为突出的属性值。
+Hint: Use this menu to quickly see how many Dwellers you have, and how much more room you have in your Vault.=提示：使用该菜单查看你拥有多少居民以及你的避难所中剩余多少空间。
+Tapping on the gear in the top left corner of the screen brings up the Dweller List.\n\nFrom here you can sort your Dwellers and find the best Dweller for a job.\n\nTapping on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。\n\n在这儿你可以分类居民，为他们选择最合适的工作。\n\n点击居民能放大镜头并移至居民所在位置。
+Clicking on the gear in the top left corner of the screen brings up the Dweller List.\n\nFrom here you can sort your Dwellers and find the best Dweller for a job.\n\nClicking on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。\n\n在这儿你可以分类居民，为他们选择最合适的工作。\n\n点击居民能放大镜头并移至居民所在位置。
+Hint: Build a bunch of production rooms on one floor to maximize Mr. Handy's ability.=提示：在同一层建造多个资源生产室能够最大化巧手先生的能力。
+MR. HANDY=巧手先生
+Hint: Move Pets around to the Dwellers that most need their bonuses.=提示：让宠物跟着最需要加成的居民。
+Hint: Dweller attack rates are based on their Agility.=提示：居民的攻击速度与他们的敏捷值有关。
+Hint: Some items cannot be found, only crafted.=提示：某些物品不能被找到，只能通过制作获得。
+Hint: Dwellers in Barbershops must fight Incidents alone, so equip them well.=提示：理发店中的居民只能独自面对突发灾难，所以将他们武装起来。
+Dwellers can get a whole new look in the Barbershop, but it can only work on one Dweller at a time.  \n\nUpgrade your Barbershop to unlock more customization options.  \n\nThe Barbershop works faster on Dwellers with high Charisma.=你可以在理发店中给居民换脸，一次一人。\n\n升级理发店解锁更多的换脸项目。 \n\n魅力值高的居民换脸速度更快。
+Hint: If you’re lucky, you can get Nuka-Cola Quantum in containers on Quests.=提示：如果运气好的话，你可以在任务中获得量子型核子可乐。
+HD ZOOM OUT=高清画面缩小
+REVERT TO DEFAULTS=恢复默认
+INVALID USERNAME OR PASSWORD=无效的用户名或密码
+PASSWORD DOESN'T MATCH=密码不匹配
+PLEASE WAIT...=请稍等……
+USERNAME ALREADY IN USE=用户名已被使用
+EACH LUNCHBOX CONTAINS:=每个避难所科技午餐盒包含：
+You don't have enough CAPS=你没有足够的瓶盖
+ENTER VAULT {0}=进入{0}避难所
+You can't destroy this room because it is being used=你无法摧毁这间房，因为它正在使用中。
+You can't destroy this room because it has a Mr. Handy assigned to it.=你无法摧毁这间房，因为巧手先生正在里面工作。
+You can't destroy this room because its storage space is being used.=你无法摧毁这间房，因为它的储存空间被占用。
+{0}X DAMAGE={0}X伤害
+Do you really want to destroy this room?\nRefund: {0} CAPS=你真的要摧毁该房间吗？\n退还：{0}瓶盖
+Each room has a SPECIAL attribute it uses. Assign Dwellers with the best SPECIAL to make them happy and produce extra Resources.=每个房间都对应SPECIAL的其中一项属性。安排居民去属性值最匹配的房间，这样会使他们感到快乐，生产更多的资源。
+You can't Craft during an Incident.=你无法在发生灾难时制作物品。
+You can't Customize a Dweller during an Incident.=你无法在发生灾难时给居民换脸。
+You can't rush this room right now.=此时你无法对该房间使用加速。
+{0} cannot be assigned to a Quest right now.={0}当前无法分配任务。
+You can't Rush a room during an Incident.=你无法在发生灾难时给房间加速。
+You can't collect an item you've crafted while your Inventory is full.=物品栏满时你无法收集制作完成的物品。
+You can't Scrap an item while your Inventory is full.=物品栏已满，您无法进行分解操作。
+Hint: The further above or below the required resource line your resources are, the greater the effect.=提示：距离最低标准资源刻度越远，受到的影响越大。
+Dwellers in the room automatically fight the Disaster.\nDwellers lose health while fighting a Disaster.\nIf Dwellers fail, the Disaster spreads to nearby rooms.=房间内的居民会自动处理灾害。\n战斗时居民会损失体力。\n当居民失败时，灾害会向邻近的房间扩散。
+Hint: Drag Dwellers into and out of Rooms affected by a Disaster to keep them alive.=提示：将居民拖入或拖出发生灾害的房间以保证他们能存活下来。
+Hint: Rebalance your Power by assigning better Dwellers or rushing the Power rooms.=提示：重新分配居民或者开启加速模式来保持电力平衡。
+Hint: A Dweller will die if left in the Wasteland too long=提示：把居民留在废土中太久会导致死亡
+Hint: Make sure you have enough Living Space in your Vault or else women can deliver their baby=提示：确保你的避难所有足够的居住空间，这样女性才可以生小孩
+Hint: A room merge only happens if all rooms are of the same level=提示：房间等级相同的情况下才会互相融合。
+Hint: Storage rooms are excellent holding bay for Dwellers in case all other Rooms are full=提示：其他房间全满时，储藏室是绝佳的居民收容间。
+Hint: Equipping a Dweller with RadAway and Stimpak before sending him to the Wasteland will increase his chance of survival=提示：派居民去废土之前为他们装备上治疗针和消辐宁可以增加他们的存活几率
+You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by tapping on a Dweller.=你可以点击一位居民查看他的身份信息栏，在这里你可以为他/她装备物品和武器以及使用治疗针和消辐宁。
+You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by clicking on a Dweller.=你可以点击居民信息面板，为居民装备物品或是武器，也可以为他们使用消福宁和治疗针。
+Pets can give your Dwellers a boost. \nRarer Pets provide better bonus effects. \nAssign Pets like you equip Weapons and Outfits.=宠物可以增加你的居民的属性。\n稀有度更高的宠物提供的奖励更多。\n配备宠物的方式与装备武器和服装的方式一致。
+Hint: Certain Pets make great companions for Dwellers exploring the Wasteland.=提示：某类特定的宠物专为探索废土的居民设计。
+Hint: Rumor has it that Legendary Junk can be found far into the Wasteland.=提示：传言说在废土深处可以找到传说等级的垃圾。
+If you run out, you can always purchase more Nuka-Cola Quantum in the store.=如果你的量子型核子可乐用完了，你也可以在商店里购买进行补充。
+Introducing Themes!\n\n- Find Theme Recipe Fragments on Quests.\n\n- Build the new Theme Workshop to craft Themes.\n\n- Apply Themes to fully merged and upgraded Diners and Living Quarters.=布局说明！\n\n- 在任务中可以发现布局配方碎片。\n\n- 建造新的布局工坊就可以生产布局。\n\n- 布局可以应用于餐厅和生活区。
+Hint: You can use Nuka-Cola Quantum to get missing Theme Recipe Fragments.=提示：你可以使用量子型核子可乐获得一些缺失的布局配方碎片。
+Click on the {NUKA CAPS} to open your {LUNCHBOX MENU}.=点击{核子可乐瓶盖}来打开{避难所科技午餐盒菜单}。
+{0} Floor={0}层
+Only 1 Mr. Handy per floor=每一层只允许有一个巧手先生
+Customize {0} Dwellers=给{0}个居民换脸
+Collect {0} CAP on Quests=在任务中收集{0}个瓶盖
+Collect {0} CAPS on Quests=在任务中收集{0}个瓶盖
+Collect {0} Food in under 1 minute=在1分钟内收集{0}食物
+Collect from {0} container on Quests=在任务中收集{0}个箱子
+Collect from {0} containers on Quests=在任务中收集{0}个箱子
+Collect {0} pieces of Junk=收集{0}件垃圾
+Collect {0} Outfits=收集{0}件服装
+Collect {0} Pets=获得{0}头宠物
+Collect {0} Power in under 1 minute=在1分钟内收集{0}电力
+Collect {0} Rare Outfit=获得{0}件稀有服装
+Collect {0} Rare Outfits=获得{0}件稀有服装
+Collect {0} Rare Weapon=获得{0}件稀有武器
+Collect {0} Rare Weapons=获得{0}件稀有武器
+Collect {0} Power/Food/Water in under 1 minute=在1分钟内获得{0}电力/食物/水
+Collect {0} Water in under 1 minute=在1分钟内获得{0}水
+Collect {0} Weapons=获得{0}件武器
+Have {0} Male and Female couples dance in the Living Quarters=让{0}对男女在起居室跳双人舞
+Craft {0} Outfits=制造{0}件服装
+Craft {0} Rare Outfits=制造{0}件稀有服装
+Craft {0} Rare Weapons=制造{0}件稀有武器
+Craft {0} Weapons=制造{0}件武器
+Collect {0} Daily Rewards=获得{0}次每日奖励
+Raise the happiness of {0} Dwellers to 100%=将{0}个居民的幸福感提升到100%
+Equip 1 Dweller with a {1}=给1个居民装备{1}
+Equip {0} Dwellers with a {1}=给{0}个居民装备{1}
+Collect {0} Food=获得{0}份食物
+Deliver {0} baby Dwellers=生下{0}个居民宝宝
+Level up 1 Dweller=升级1个居民
+Level up {0} Dwellers=升级{0}个居民
+Merge {0} pairs of rooms together=合并{0}个房间
+Find the Mysterious Stranger {0} times=找到神秘陌生人{0}次
+Open {0} Lunchboxes=打开{0}个避难所科技午餐盒
+Equip {0} Dwellers with an Outfit=给{0}个居民穿戴服装
+Perform {0} critical hit=完成{0}次致命一击
+Perform {0} critical hits=完成{0}次致命一击
+Perform {0} perfect critical hit=完成{0}次完美一击
+Perform {0} perfect critical hits=完成{0}次完美一击
+Collect {0} Power=收集{0}电力
+Have {0} Female Dwellers pregnant=让{0}名女居民怀孕
+Raise any SPECIAL stat of {0} Dwellers.=提升{0}个居民的任意属性。
+Raise the {1} of 1 Dweller.=提升1个居民的{1}。
+Raise the {1} of {0} Dwellers.=提升{0}个居民的{1}。
+Kill 1 {1} without a weapon=不使用武器杀死1个{1}
+Kill {0} {1} without a weapon=不使用武器杀死{0}个{1}
+Assign {0} Dwellers in the right room=将{0}个居民分配到正确房间
+Successfully Rush 1 room=成功加速1个房间
+Successfully Rush {0} rooms=成功加速{0}个房间
+Perform {0} successful Rushes=完成{0}次加速
+Scrap {0} Weapons or Outfits=分解{0}件武器或服装
+Sell {0} Weapons or Outfits=出售{0}件武器或者服装
+Sell {0} pieces of Junk=出售{0}份垃圾
+Collect 1 Stimpak=收集1个治疗针
+Collect {0} Stimpaks=收集{0}个治疗针
+Use {0} RadAway=使用{0}个消辐宁
+Stop 1 {1} infestation before they spread=在扩散之前，阻止1场{1}肆虐
+Stop {0} {1} infestations before they spread=在扩散之前，阻止{0}场{1}肆虐
+Stop {0} incidents=阻止{0}场灾难
+Survive {0} Radscorpion attack with no casualties=在{0}场辐射蝎的攻击中不受损伤
+Survive {0} Radscorpion attacks with no casualties=在{0}场辐射蝎的攻击中不受损伤
+Upgrade {0} rooms=升级{0}个房间
+Use 1 RadAway=使用1次消辐宁
+Use 1 Stimpak=使用1支治疗针
+Use {0} Stimpaks=使用{0}支治疗针
+Level up {0} times in the Wasteland=在废土升级{0}次
+Collect {0} Water=收集{0}水
+Equip 1 Dweller with a Weapon=为1个居民装备武器
+Equip {0} Dwellers with a Weapon=为{0}个居民装备武器
+Win {0} battle on Quests=在任务中获得{0}场战斗的胜利
+Win {0} battles on Quests=在任务中获得{0}场战斗的胜利
+NOT IN THIS VAULT=不在该避难所
+SELL, SELL, SELL!\nSell whole Storage stacks, or all of an Explorer's Common items, at once.=大甩卖啦！\n一次出售整个库存，还有探险家们的常用物品。
+WHAT'S NEW?=有什么消息吗？
+EACH PET CARRIER CONTAINS:=每个宠物笼里包含：
+*FUR NOT GUARANTEED.=*不保证皮毛状况。
+FREE PET CARRIER=免费宠物笼子
+Long hair, round face, maximum cuddle factor.=它的长毛圆脸是人们想抱它的最大原因。
+ASSEMBLE YOUR TEAM=集合你的队伍
+You can't call dibs on someone.=你不能随便追求一个人.
+You can't kill us! What would Santa think? That's permanent naughty list stuff.=你们不能杀了我们！圣诞老人会怎么想？也许你们这辈子都下不了淘气鬼名单了。
+Found this in the rubble. You want it, it's yours.=在废石堆里找到的，你要的话，就拿走吧。
+Long enough. Spikes and leather are totally in by the way.=够长了，尖刺都已经完完全全扎进皮里了。
+You can't have our secrets, Dwellers.=你绝对不能知道我们的秘密。
+{0} has discovered an Abandoned Cabin.={0}发现了遗弃的房子。
+{0} has discovered a Super Duper Mart.={0}发现了大无敌超市。
+{0} has discovered a Red Rocket Truck Stop.={0}发现了红火箭卡车停靠站。
+RETURN TO VAULT=返回避难所
+Got {0} points of radiation damage.=受到{0}点辐射伤害。
+REMIND ME LATER=稍后提醒我
+{0} Power={0}电力
+{0} Food={0}食物
+{0} CAPS={0}瓶盖
+{0} RadAway={0}消辐宁
+{0} Stimpak={0}治疗针
+{0} Water={0}水
+ASSIGN DWELLERS HERE TO TRAIN THEIR PERCEPTION=调派居民来此并训练他们的感知能力
+ASSIGN DWELLERS HERE TO CUSTOMIZE THEM=调派居民来此对他们进行自定义
+ASSIGN DWELLERS HERE TO TRAIN THEIR CHARISMA=调派居民来此并训练他们的魅力
+ASSIGN DWELLERS HERE TO TRAIN THEIR LUCK=调派居民来此提升他们的幸运
+ASSIGN DWELLERS HERE TO TRAIN THEIR INTELLIGENCE=调派居民来此训练他们的智力
+ASSIGN DWELLERS HERE TO CRAFT DECORATIONS=调派居民来此生产装饰品
+ASSIGN DWELLERS HERE TO CRAFT THEMES=在此处分配居民来生产布局
+ASSIGN DWELLERS HERE TO TRAIN THEIR AGILITY=调派居民来此训练他们的敏捷
+ASSIGN DWELLERS HERE TO TRAIN THEIR STRENGTH=调派居民来此训练力量
+ASSIGN DWELLERS HERE TO TAKE CARE OF THE DECEASED AND EARN CAPS=调派居民照看死者，并且赚取瓶盖
+ASSIGN DWELLERS HERE TO PRODUCE STIMPAKS=调派居民来此生产治疗针
+ASSIGN DWELLERS HERE TO CRAFT OUTFITS=调派居民制作服装
+OVERSEER'S CONTROL STATION=监管者的控制台
+OVERSEER'S COMMAND CENTER=监管者的指挥中心
+ASSIGN DWELLERS HERE TO TRAIN THEIR ENDURANCE=调派居民来此训练耐力
+{0} DWELLERS REQUIRED=需要{0}居民
+ADVANCED VAULT DOOR=高级避难所大门
+FORTIFIED VAULT DOOR=强化避难所大门
+WATER TREATMENT STATION=水处理站
+WATER TREATMENT PLANT=水处理厂
+SAVE FILE CONFLICT=保存文件冲突
+USE CLOUD SAVE=使用云存档
+USE LOCAL SAVE=使用本地存档
+NO JUNK RECOVERED=无垃圾回收
+SAVE YOUR PHOTO=保存图片
+Improved crafting speed and cost.=提升生产速度和消耗。
+and {0} more=剩余{0}份礼物
+You have: {0}=你拥有：{0}
+You can say that again.=你可以再说一遍。
+Since it's just lying here...=因为它就躺在这儿……
+SINCE {0}=自从{0}
+St. Bernards=圣伯纳犬
+Time Played (All-Time)=游戏时间（总计）
+RETURN TO WASTELAND=返回废土
+TAP TO CONTINUE=点击继续
+PRESS [A] TO CONTINUE=按[A]继续
+TERMS OF SERVICE=服务条款
+DWELLERS {0}/{1}=居民{0}/{1}
+ROOM FULLY UPGRADED=房间满级
+PRODUCTION BONUS :=生产奖励：
+UPGRADE TO LEVEL {0}=升级至{0}级
+Build a Medbay to produce Stimpaks.=建造一个药房来生产治疗针。
+Tap a Dweller's SPECIAL chart for more details.=点击居民的特性图标来显示更多详细信息。
+Click a Dweller's SPECIAL chart for more details.=点击一个居民的SPECIAL图标查看更多信息。
+You can rename a Dweller by tapping their name on the Dweller information pop-up.=你可以通过点击居民信息中的名字来进行更改。
+You can rename a Dweller by clicking their name on the Dweller information pop-up.=你可以通过点击居民的名字或是弹出的居民信息来更改他们的名字。
+You can skip 1 Objective each day by tapping the X on the Objective screen.=你每天都可以跳过一个任务，点击任务界面的X。
+You can skip 1 Objective each day by clicking the X on the Objective screen.=你每天都可以跳过一个任务，点击任务界面的X。
+You can get free Lunchboxes for completing some Objectives.=你可以通过完成某些特定目标来获得免费的避难所科技午餐盒。
+You can sort the Dweller list by tapping on the column names.=你可以通过点击列名分类来对居民的类别排序。
+You can sort the Dweller list by clicking on the column names.=你可以通过点击列名分类来对居民的类别排序。
+Tap on the resource bars at the top of the screen for more details on your resource storage.=点击界面顶端资源条可以获得更多的资源储存的详细信息。
+Click on the resource bars at the top of the screen for more details on your resource storage.=点击界面顶端资源条可以获得更多的资源储存的详细信息。
+You can use Nuka-Cola Quantum to instantly finish crafting an item.=你可以使用量子型核子可乐加快生产的速度。
+You can use Nuka-Cola Quantum to speed up the Barbershop.=你可以使用量子型核子可乐加快理发的速度。
+Tap the screen to skip dialogue during Quests.=点击画面跳过任务对话。
+Click anywhere to skip dialogue during Quests.=点击任意处跳过任务对话。
+You can craft Minutemen and Brotherhood of Steel Themes in the Theme Workshop.=你可以在布局工坊制作钢铁兄弟会主题布局。
+You can craft Railroad and Institute Themes in the Theme Workshop.=你可以在布局工坊制作铁路协会主题布局。
+You can use Nuka-Cola Quantum to skip certain Quests.=你可以使用量子型核子可乐跳过一部分特定的任务。
+You can use Nuka-Cola Quantum to speed up a Dweller’s SPECIAL training.=你可以使用量子型核子可乐加速SPECIAL训练。
+You can use Nuka-Cola Quantum to get missing Theme Recipe Fragments.=你可以使用量子型核子可乐获得缺失的布局配方碎片。
+LOW POWER SUPPLY=能源供应过低
+LOW FOOD SUPPLY=食物供应过低
+LOW OVERALL VAULT HAPPINESS=避难所愉悦度过低
+CONGRATULATIONS! OBJECTIVE COMPLETED=恭喜！任务完成
+LOW STORAGE SPACE=储存空间过低
+LOW WATER SUPPLY=用水供应过低
+Found {0}.=发现{0}。
+Got {0} XP=获得{0}经验
+I rescued a {0} from a Raider trap and now it's following me.=我从掠夺者手中救下了{0}，现在就在我身边。
+I've found a locker containing a {0}.=我发现了一个藏着{0}的柜子。
+REVIVE ALL AND RETRY=复活全部并重试
+Armor Piercing .32 Pistol=穿甲.32手枪
+Enhanced .32 Pistol=改良.32手枪
+Hardened .32 Pistol=硬化.32手枪
+Rusty .32 Pistol=生锈的.32手枪
+Armor Piercing Assault Rifle=穿甲突击步枪
+Armor Piercing BB Gun=穿甲BB枪
+Enhanced BB Gun=改良BB枪
+Hardened BB Gun=硬化BB枪
+Rusty BB Gun=生锈的BB枪
+Double-Barrel Combat Shotgun=双管战斗霰弹枪
+Armor Piercing Hunting Rifle=穿甲猎枪
+Recoil Compensated Junk Jet=后座补正垃圾发射器
+Armor Piercing Lever-Action Rifle=穿甲杠杆枪
+Enhanced Lever-Action Rifle=改良杠杆枪
+Hardened Lever-Action Rifle=硬化杠杆枪
+Rusty Lever-Action Rifle=生锈的杠杆枪
+Scoped .44=带镜.44格南
+Armor Piercing Scoped .44=穿甲带镜.44格南
+Enhanced Scoped .44=改良带镜.44格南
+Hardened Scoped .44=硬化带镜.44格南
+Rusty Scoped .44=生锈的带镜.44格南
+Armor Piercing 10mm Pistol=穿甲10mm手枪
+Enhanced 10mm Pistol=改良10mm手枪
+Hardened 10mm Pistol=硬化10mm手枪
+Rusty 10mm Pistol=生锈的10mm手枪
+Enhanced Sawed-Off Shotgun=改良锯断的霰弹枪
+Hardened Sawed-Off Shotgun=硬化锯断的霰弹枪
+Rusty Sawed-Off Shotgun=生锈的锯断的霰弹枪
+Armor Piercing Sniper Rifle=穿甲狙击步枪
+Craft 10 Weapons=制作10件武器
+Craft 10 Outfits=制作10件服装
+Crafting Time & Cost=制作耗时和成本
+-{0}% Training Time=-{0}% 训练时间
++{0}% XP=+{0}% 经验
+NOT ENOUGH CAPS=瓶盖不足
+Increases Luck training speed=加快【幸运】的提升速度
+Increases Intelligence training speed=加快【智力】训练速度
+{0}/{1} RECIPE FRAGMENTS FOUND={0}/{1}发现配方碎片
+CRAFTING IN PROGRESS=正在生产
+Craft {0}?=是否制作{0}？
+Increases Agility training speed=加快【敏捷】训练速度
+ROOM ON FIRE=房间着火了
+FERAL GHOUL ATTACK=狂尸鬼侵袭
+MOLE RAT ATTACK=鼹鼠侵袭
+Found a {0}.=找到了一个{0}。
+Detected {0}=检测到{0}
+Found {0}=找到{0}
+Located {0}=定位了{0}
+Discovered {0}=发现{0}
+Guess I'll head east for a bit.=也许我该向东走一段路。
+Guess I'll head north for a bit.=也许我该向北走一段路。
+Guess I'll head west for a bit.=也许我该向西走一段路。
+Guess I'll head south for a bit.=也许我该向南走一段路。
+SAVE & EXIT=保存并退出
+CAM SCROLL SPEED=画面滚动速度
+SELECT NEW HOTKEY=选择新快捷键
+CAM ZOOM SPEED=画面缩放速度
+There are always three Objectives you can work on.\n\nYou can abandon one Objective each day for free and receive a new Objective in its place.\n\nAdditional Objectives can be skipped per day with Nuka-Cola Quantum.\n\nHarder Objectives give better rewards.=总是会有三个目标供你完成。\n\n你每天可以放弃一个目标并接受一个新目标。\n\n可以消耗量子型核子可乐额外跳过目标。\n\n难度较大的目标同样地会有更好的奖励。
+Hint: Luck stat affects the probability of earning CAPS when collecting Resources.=提示：幸运会影响采集资源时捡到瓶盖的概率。
+Hint: Find RARE and LEGENDARY Dwellers in Lunchboxes.=提示：避难所科技午餐盒中含有稀有和传说级别的居民。
+DWELLERS LEVEL & RARITY=居民等级和稀有度
+Hint: The higher the Dweller's level, the more CAPS their revival will cost.=提示：居民等级越高，复活他们所花费的瓶盖越多。
+Hint: Pay close attention to what a Dweller is telling you to know more about what makes them happy.=提示：特别留意居民跟你说的话，了解如何使他们高兴。
+Hint: Playing for 7 days gives you a Lunchbox as a reward.=提示：游戏7天会奖励一个避难所科技午餐盒。
+DAILY REPORT & VAULT RATING=每日报告和避难所分数
+Hint: Babies will wait to be born if there is no space in your Vault.=提示：如果你的避难所空间不足，小宝宝不会出生。
+MAKING BABIES & LIVING QUARTERS=生宝宝及起居室
+Hint: Be careful not to build rooms before you need them, or expand too fast.=提示：避免建造多余的房间或者是扩展得太快。
+BUILD YOUR VAULT & ELEVATOR=建造你的避难所以及电梯
+Hint: A room merge only happens if all rooms are of the same level.=提示：同等级同类型的房间才能够互相融合。
+Upgrade your Rooms to increase their performance.\n\n- Most Rooms can be upgraded twice. Upgraded resource rooms produce more resources.\n\n- Up to 3 Rooms of the same type can be merged, by building them next to each other\n\n- Merged Rooms let you assign more Dwellers to the room, while also becoming more efficient.\n\n- Some rooms, like Workshops, begin as larger rooms and cannot be merged.\n\n- Themes can only be applied to fully merged and upgraded Diners and Living Quarters.=升级房间以增加产量。\n\n- 大多数房间能升级两次。升级资源室以获得更多资源。\n\n- 相同类型的房间左右紧挨着建造便可以融合，最多3间。\n\n- 融合后的房间可以分配工作给更多的居民，同时也更高产。\n\n- 大型房间，比如工作间，无法融合。\n\n- 布局只能够应用于合并升级过后的用餐区或是生活区。
+ROOM LEVEL & MERGING=房间等级以及房间融合
+Hint: If you run out of storage space, upgrade your storage, build more storage, equip your Dwellers or sell items.=提示：如果你的储存空间不足，请升级或建造更多仓库，或者把物品服装至居民或卖掉。
+Hint: Multiple Dwellers training together in the same room decrease the training time for all Dwellers in the room.=提示：不同类型的居民同时在一间房间内训练能够缩短该房内全部居民的训练时间。
+Putting Dwellers in a Training Room will increase their SPECIAL stats.\n\nThere is a Training Room for each one of the SPECIAL stats.\n\nStrength: Weight Room\nPerception: Armory\nEndurance: Fitness Room\nCharisma: Lounge\nIntelligence: Classroom\nAgility: Athletics Room \nLuck: Game Room\n\nYou can raise each stat up to 10.\n\nThe higher the SPECIAL stat of a Dweller is, the longer it takes them to train to the next level, but you can use Nuka-Cola Quantum to speed up the training time.=把居民拖到训练室能增加他们的SPECIAL属性。\n\n每个SPECIAL属性都有对应的训练室。\n\n力量：负重室\n感知：军械室\n耐力：健身房\n魅力：休闲室\n智力：教室\n敏捷：田径室\n幸运：赌场\n\n每条属性最高10点。\n\n居民的SPECIAL属性越高，升至下一级所需的时间越多，不过你可以使用量子型核子可乐来加快训练时间。
+Complete {{#}} Quest from the Overseer’s Office=完成{$1}次监管者办公室的任务
+Complete {{#}} Quests from the Overseer’s Office=完成{$1}次监管者办公室的任务
+Survive {{#}} Deathclaw attack with no casualties=保证{$1}在死爪的攻击中不受损伤
+Survive {{#}} Deathclaw attack without using stimpacks=在{$1}场死爪的攻击中不使用治疗针存活下来
+Survive {{#}} Deathclaw attacks with no casualties=在{$1}场死爪的攻击中不受损伤
+Survive {{#}} Deathclaw attacks without using stimpacks=在{$1}场死爪的攻击中不使用治疗针存活下来
+Survive {{#}} Feral Ghoul attack with no casualties=在{$1}场狂尸鬼的进攻中不受损伤
+Survive {{#}} Feral Ghoul attacks with no casualties=在{$1}场狂尸鬼的进攻中不受损伤
+Survive {{#}} Mole rat attack with no casualties=在{$1}场鼹鼠的攻击中不受损伤
+Survive {{#}} Mole rat attack without using stimpacks=不使用治疗针从{$1}场鼹鼠攻击中幸存下来
+Survive {{#}} Mole rat attacks with no casualties=在{$1}场鼹鼠的攻击中不受损伤
+Survive {{#}} Mole rat attacks without using stimpacks=不使用治疗针从{$1}场鼹鼠攻击中幸存下来
+Time for round {#} of... Lose Your Head!=第三轮……“掉脑袋”！
+x{{#}} Wasteland Return Speed=x{$1}废土返回速度
+{{#}}: Your Quest team has reached its destination.={$1}：你的任务小队已经到达目的地。
+{#}. Settings - Tap the gears to go to the settings menu.=$1. 设置 - 点击齿轮图标进入设置菜单。
+{#}. Settings - Click the gears to go to the settings menu.=$1. 设置 - 点击齿轮图标进入设置菜单。
+Make it rain like it's {#}.=让钱像$1年时那样满天飞。
+{#} Mr. Handys=$1个巧手先生
+Have a Male and a Female Dweller couple dancing in the Living Quarters=让$1对男女在起居室跳双人舞
+Raise the happiness of {#} Dweller to {#}%=将$1个居民的幸福感提升到$1%
+Equip {#} Dweller with an Outfit=给$1个居民穿戴服装
+Raise any SPECIAL stat of {#} Dweller=提升$1个居民的任意属性
+Assign {#} Dweller in the right room=将$1个居民分配到正确的房间
+Now all you need is a Rocket '{#} and a pompadour.=你需要的只有一枚$1式火箭炮还有一头高卷发。
++{#}% resistence against the Burned Condition=+$1%燃烧抗性
+The baseball legend may be dead, but his legend lives on! You are... number {#}!=棒球界的传奇已经结束了，但是他从传奇将会继续存在下去！你就是……$1号！
+Skeleton – The most popular Halloween costume of {#} - an American circa {#}=骷髅装 - $1年美国最流行的万圣节服装 - 一名美国人于$1年前后写下
+{#} Common, Rare or Legendary Pet.=$1只普通、稀有或传奇宠物！
+Has been known to play fetch... with five balls at once.=因为追球游戏出名……一次能带$1个球。
+Knows {#} words, but will only say “Tunnel Snakes Rule!”=懂$1多个字，不过只会说一句“洞中蛇才是一切！”
+Maybe the “Fancy {#}”... Whatever, you're dead!=也许“幻想$1”……算了，不管怎么样，你已经死了！
+Okay, maybe {#} is an exaggeration, but there are a lot of them, and only one of you. Have you got what it takes?=也许$1(个)是夸张了，但他们有很多人，而你(却)只有一个。你有这个能力吗？
+Kill the Psycho {#}'s leader.=杀死$1疯子的头领。
+Wipe out the Psycho {#}.=歼灭$1疯子。
+The Overseer of {#} appears to have a way to get in contact with the publisher of the New Boston Bugle. She's our ticket to stardom!=$1号的监督(者)似乎有办法与《新波士顿号(角)》的出版商取得联系，她是我们出名的入场券！
+We're almost {#}% certain that you're crazy.=我们几乎$1%确定你就是疯了。
+Duo of Destruction: Glowing One (x{#}!)=双重毁灭：发光者X$1
+Incredible! We bought a bottle of his water for only {#},{#} caps and everything got fixed!=难以置信! 我们买了一瓶他的水，只花了一万个瓶盖，然后一切都得到了解决！
+Ah, Sugar Bombs. Now with {#}% daily allowance of... death!=啊，甜麦炮弹，现在分分钟可以……炸死人！
+You do realize that stuff is, like, {#} years old?=你有感觉到，那东西，像是，$1年前的东西吗？
+A barbershop quartet.=理发店F$1。
+Can I get unleaded on pump number two?=我在$1号泵那里弄得到无铅汽油吗？
+Bottom of the Ninth. {#} Outs. Tie game. We swing for the fences!=第九局下半，两人出局，平局。我们必须全垒打！
+Bottom of the {#}th! Head to the Dugout and get that Jersey!=第九局下半场！让失败者滚回老家，然后夺回运动衫！
+They outnumbered us {#} to {#}... They took everything.=他们有我们$1倍还多的人……所有东西都被他们抢走了。
+Doors open at {#}! No early bird shoppers!=从$1点开始营业！早来也没用！
+First question: What is {#}-{#}?=第一个问题：$1-$1等于多少？
+What is the square root of {#}?=$1的平方根是多少？
+Our next stop is an old Chryslus Rocket '{#} plant. It's as good a place to look as any.=我们的下一站是一间$1式火箭工厂，这可是一个不错的地方。
+Raiders need a solid eight hours!=就算是掠夺者，也是需要踏踏实实地睡上$1个小时的！
+We're Batting {#}!=我们要打$1个！
+Merge {#} fully upgraded rooms to use Themes!=使用布局合并三个升至顶级的房间！
+Send Dwellers out on {#} Quests at a time=一次性派遣居民进行$1个任务
+Upgrade the room to Level {#} to craft Legendary Outfits.=升级房间到三级来制造传奇服装。
+Upgrade the room to Level {#} to craft Legendary Weapons.=升级房间到三级来制造传奇武器。
+Upgrade the room to Level {#} to craft Rare Outfits.=升级房间到二级来制造稀有服装。
+Upgrade the room to Level {#} to craft Rare Weapons.=升级房间到二级来制造稀有武器。
+Contains five random cards.=包含$1张随机卡片。
+Need help with this crossword. Nine letters. Starts with “c” and ends with “d.” Means, “A horror you can never escape.”=填词游戏求助啊，$1个字母的，以“c”为开头，以“d”为结尾，意思是“你逃不掉的噩梦”。
+Checkers? What are we, ten years old? We'll play chess.=跳棋？我们才$1岁，下国际象棋吧。
+What are you, {#}?=你现在几岁了？$1？
+Sure do. You can borrow it for {#} Caps.=当然，你可以花$1瓶盖来借。
+Sometimes, I imagine this room is actually a giant mansion, on {#} acres.=有时候我在想，这个房间可能是一个巨大的，面积$1英亩的大厦。
+Probably take my allocated {#}.{#} minute shower.=我估计要花上两分半钟洗个淋浴。
+Poker or blackjack - I'm the best dealer there is!=扑克还是$1点？ - 我是这里最好的发牌员！
+The best weapon in the world... for a {#} year-old.=世界上最好的武器……不过是十年前。
+After {#} shots, you just might knock a tin can off the fence.=大概得打$1发左右你才能把那个篱笆上的罐子打下来。
+Close-range death dealing... x{#}. Brutal.=距离越近，杀伤力就越大……太残忍了。
+For every misfired shell, there are {#} more that do the job.=每次哑火后，都得做一大堆的准备工作。
+Want to blow away a Metal Armored merc at {#} yards? Have fun.=想要把一个穿着重装盔甲的雇佣兵炸飞$1码吗？试试这个吧。
+The mean green melting machine that goes to {#}.=一台超级烘烤机。
+Lovingly modified to kill anything within {#} yards.=经过改进后，$1码范围内，寸草不留。
+The trigger is a bit loose, but it will still drop a Mirelurk at {#} yards.=扳机有点松了，但是瞄准$1码之外的沼蟹还是很轻松的。
+.{#} Pistol=.$1手枪
+Jones' Scoped .{#}=琼斯的带镜.$1马格南
+Made {#} dialogue choices on Quests=在任务中进行了$1次对话选择
+Collected all Fragments of {#} Theme Recipes=已收集 $1 个布局配方的所有碎片
+Collected {#} Stimpaks and {#} RadAway on Quests=在任务中收集了$1个治疗针和$1个消辐宁
+Changed the appearance of {#} Dwellers in the Barbershop=改变了理发店里$1位居民的模样
+Make {#} dialogue choices on Quests=在任务中做出$1个对话选择
+Collect all Fragments of {#} Theme Recipes=收集$1个布局配方的所有碎片
+Collect {#} Stimpaks and {#} RadAway on Quests=在任务中收集$1个治疗针和$1个消辐宁
+Craft an Outfit, a Weapon and a Theme=制作$1件服装，一件武器和一个布局
+Change the appearance of {#} Dwellers in the Barbershop=改变理发店里$1位居民的模样
+(\d+)\s+/\s+(\d+)=$$1/$$1
+(的|呢|吧|然后|并且|同时|因此)=$$1
+Complete this Theme Recipe for {{#}} Nuka-Cola Quantum?=确定消耗{$1}瓶量子型核子可乐完成该布局配方吗？
+Instantly craft this item for {{#}} Nuka-Cola Quantum?=确定消耗{$1}瓶量子型核子可乐立即完成制造吗？
+Instantly complete this customization for {{#}} Nuka-Cola Quantum?=确定立即完成{$1}量子型核子可乐的自定义吗？
+Are you sure you want to sell {{#}} for {{#}} CAPS?=你确定你想要以 {$1} 瓶盖的价格卖掉{$1}吗？
+Instantly start the Quest for {{#}} Nuka-Cola Quantum?=确定消耗{$1}瓶量子型核子可乐立即开始任务吗？
+Skip this Objective for {{#}} Nuka-Cola Quantum?=确定使用{$1}瓶量子型核子可乐跳过该任务吗？
+You need {{#}} more Nuka-Cola Quantum. Shop for more?=你需要{$1}瓶或是更多的量子型核子可乐，要前往商店购买吗？
+Skip this Quest for {{#}} Nuka-Cola Quantum?=使用{$1}瓶量子型核子可乐跳过该任务吗？
+Instantly craft this Theme for {{#}} Nuka-Cola Quantum?=确定使用{$1}瓶量子型核子可乐直接跳过该生产过程吗？
+Train your Dweller instantly for {{#}} Nuka-Cola Quantum?=确定使用{$1}瓶量子型核子可乐跳过该训练步骤吗？
+Your {{#}} Theme is ready!=你的{$1}布局已就位！
+A {{#}} just appeared and saved me from walking into a pit! Better take it with me to watch my back.={$1}出现了，然后救下了我！我最好把它带在身边。
+^Complete\ \{\#\}\ Quest\ from\ the\ Overseer’s\ Office$=完成$$1次监管者办公室的任务
+^Complete\ \{\#\}\ Quests\ from\ the\ Overseer’s\ Office$=完成$$1次监管者办公室的任务
+^Survive\ \{\#\}\ Deathclaw\ attack\ with\ no\ casualties$=保证$$1在死爪的攻击中不受损伤
+^Survive\ \{\#\}\ Deathclaw\ attack\ without\ using\ stimpacks$=在$$1场死爪的攻击中不使用治疗针存活下来
+^Survive\ \{\#\}\ Deathclaw\ attacks\ with\ no\ casualties$=在$$1场死爪的攻击中不受损伤
+^Survive\ \{\#\}\ Deathclaw\ attacks\ without\ using\ stimpacks$=在$$1场死爪的攻击中不使用治疗针存活下来
+^Whoa!\ I\ found\ a\ \{\#\}\ inside\ a\ metal\ chest!$=哇哦！我在铁箱子里发现了$$1！
+Suffered {{#}} damage.=受到了{$1}伤害。
+Earned {{#}} XP.=得到了{$1}经验。
+Also found {{#}}.=还找到了{$1}。
+Suffered {{#}} points of radiation damage=受到了{$1}点辐射伤害
+^\d{{#},{#}}$=$$1
+^Collect\ \{\#\}\ Food\ in\ under\ {#}\ minute$=在$1分钟内收集$$1食物
+^Collect\ \{\#\}\ Power\ in\ under\ {#}\ minute$=在$1分钟内收集$$1电力
+^Collect\ \{\#\}\ Power/Food/Water\ in\ under\ {#}\ minute$=在$1分钟内获得$$1电力/食物/水
+^Collect\ \{\#\}\ Water\ in\ under\ {#}\ minute$=在$1分钟内获得$$1水
+^Raise\ the\ happiness\ of\ \{\#\}\ Dwellers\ to\ {#}%$=将$$1个居民的幸福感提升到$1%
+^Equip\ {#}\ Dweller\ with\ a\ \{\#\}$=给$1个居民装备$$1
+^Raise\ the\ \{\#\}\ of\ {#}\ Dweller\.$=提升$1个居民的$$1。
+^Kill\ {#}\ \{\#\}\ without\ a\ weapon$=不使用武器杀死$1个$$1
+^Stop\ {#}\ \{\#\}\ infestation\ before\ they\ spread$=在扩散之前，阻止$1场$$1肆虐
++{{#}}% Health=+{$1}% 健康度
+-{{#}}% Crafting Cost=-{$1}% 制作成本
+{{#}}% Twins Chance={$1}% 双胞胎几率
++{{#}} Child SPECIALs=+{$1}儿童SPECIAL属性值
++{{#}} Damage=+{$1}伤害
+-{{#}}% Crafting Time & Cost=-{$1}% 制作耗时和成本
+-{{#}}% Crafting Time=-{$1}% 制作耗时
+-{{#}}% Pregnancy Time=-{$1}% 怀孕耗时
++{{#}}% Happiness=+{$1}% 愉悦度
+x{{#}} Healing Speed=x{$1}回复速度
+x{{#}} Stranger Chance=x{$1}陌生人出现几率
+x{{#}} Objective Completion=x{$1}目标完成
+x{{#}} Rad Healing Speed=x{$1}辐射损伤回复速度
+{{#}}% Damage Resistance={$1}% 减伤
+-{{#}}% Training Time (Continuous)=-{$1}% 训练时间 (持续)
+Observed {{#}}=观察到{$1}
+Identified {{#}}=鉴定出{$1}
+Spotted {{#}}=发现{$1}
+Saw {{#}}=看到{$1}
+Came upon {{#}}=来到{$1}
+Reached {{#}}=到达{$1}
+Stumbled across {{#}}=蹒跚穿过{$1}
+Met {{#}}=遇到{$1}
+Encountered {{#}}=遇到{$1}
+\s{{#},}==
+晚餐[{#}F{#}]==餐厅[$1F$1C]
+秩{#}==第一名
+{#}-Point Buck==凸缘猎刀
+{#}D Touch==$1D 触控
+Casual{#}==休闲款$1
+Collect {#} Outfit==收集$1件服装
+Collect {#} Weapon==获得$1件武器
+Complete {#} Quests==完成$1个任务
+Completed {#} Quests==已完成$1个任务
+Craft {#} Outfit==制造$1件服装
+Craft {#} Rare Outfit==制造$1件稀有服装
+Craft {#} Rare Weapon==制造$1件稀有武器
+Craft {#} Weapon==制造$1件武器
+Crafted {#} Outfits==制作了$1件服装
+Crafted {#} Weapons==制作了$1件武器
+Customize {#} Dweller==给$1个居民换脸
+Magnetron {#}==磁控管$1
+Open {#} Lunchbox==打开一个午餐盒
+Scrap {#} items==分解$1件物品
+Scrapped {#} items==分解了$1件物品
+Sell {#} piece of Junk==出售$1份垃圾
+Stop {#} Incident==阻止$1场灾难
+T-{#}a Power Armor==T-$1a 动力装甲
+T-{#}d Power Armor==T-$1d 动力装甲
+T-{#}f Power Armor==T-$1f 动力装甲
+The {#}th Inning==第$1局
+Upgrade {#} room==升级$1个房间
+{#}mm Pistol==$1mm手枪
+X-{#} Mk I Power Armor==X-$1 Mk I 动力装甲
+X-{#} Mk IV Power Armor==X-$1 Mk IV动力装甲
+X-{#} Mk VI Power Armor==X-$1 Mk VI 动力装甲
+x{#}=x$1
+LVL {#}=$1级
+REQUIREMENT {#}=要求$1
+ARRIVAL {#}/{#}=到达$1/$1
+{#}s=$1岁
+{#}m {#}s=$1米$1秒
+{#}m=$1万
+<{#}m=<$1m
+
+# 二、数值、符号、货币、百分比（原样输出）
+# 纯数字（含千分位）
+# 小数
+# 百分比
+# 倍数 x开头
+# 美元价格
+# 特殊符号组
+# 2~4位纯数字
+# 分钟简写格式 xm → x分钟
+
+# 三、中文语句精简/润色规则
+# 句式重构：建造XX来生产XX
+# 句式重构：可以使用XX来XX
+# 句式重构：将/会让你XX
+
+# 冗余助词替换
+
+# 地点状语精简
+
+# 时间单位简写
+
+# 疑问句式精简
+
+# 四、时间、时长格式转换
+# 天数+小时
+# (xh xm) 时长格式
+# 时间单位
+
+# 五、赛季倒计时相关
+
+# 六、界面通用短句 & 基础按钮
+
+# 七、避难所/房间名称
+
+# 八、资源、物资相关
+
+# 九、产出/消耗统计
+
+# 十、袭击/战斗统计
+
+# 十一、居民相关（属性、操作、统计）
+# 避难所编号
+# 居民数量面板
+
+# 分配/升级居民
+
+# 指派生产/制作
+
+# 平均属性
+
+# 居民基础词汇
+
+# 七维属性全称
+
+# 七维属性单字母缩写
+
+# 居民状态/功能
+
+# 居民统计
+
+# 十二、全局统计数据
+
+# 通用统计句式
+
+# 细分统计项
+
+# 十三、人名翻译
+
+# 十四、杂项特殊文本 & 无效字符
+
+# 十五、装备 & 制作
+# 服装分类与字段
+
+# 武器分类、名称与统计
+
+# 武器单品
+
+# 制作、属性类文本
+
+# 十六、宠物相关
+# 宠物品级
+
+# 犬类
+
+# 猫类
+
+# 鹦鹉类
+
+# 宠物统计
+
+# 十七、赛季 & 商城 & 物品文本
+
+# 赛季奖励长文本
+
+# 十八、房间功能说明
+
+# 十九、任务 & 目标
+
+# 二十、怪物 & 威胁 & 灾害
+
+# 二十一、游戏引导 & 教程长文本
+
+
+
+
+
+# 二十二、富文本颜色标签剧情语句
+
 
 ^Made (\d+) dialogue choices on Quests$|||在任务中进行了$1次对话选择
 ^Killed (\d+) Quest Bosses$|||杀了$1个任务 BOSS
@@ -1661,161 +2228,28 @@ L（幸运）
 居民的SPECIAL属性越高，升至下一级所需的时间越多，不过你可以使用量子型核子可乐来加快训练时间。
 ^TRAINING ROOMS$|||训练室
 
-# ==============================================
 # 新增：批量抽象规则（自动追加）
-# ==============================================
-# 格式: ^正则模式$=替换规则
 
-# ==============================================
 # 新增：带颜色前缀的提示文本规则
-# ==============================================
-# ==============================================
 # 新增：Hint提示、全大写短句、Yes/No等规则
-# ==============================================
-^Hint:\ (.*)$=提示：^Yes\$=是
-^No\$=否
-^SOS\$=SOS
-^ACTIVE\$=激活
-^ARRIVED\$=已到达
-^BEGIN\$=开始
-^RETURNED\$=已返回
-# ==============================================
 # 新增：武器前缀修饰词规则
-# ==============================================
-^Armor\ Piercing\ (.+)$=穿甲
-^Enhanced\ (.+)$=改良的
-^Hardened\ (.+)$=硬化
-^Rusty\ (.+)$=生锈的
-^Amplified\ (.+)$=增幅
-^Focused\ (.+)$=聚焦
-^Tuned\ (.+)$=微调
-^Scoped\ (.+)$=带镜
-^Improved\ (.+)$=优化
-^Incendiary\ (.+)$=燃烧
-^Scattered\ (.+)$=散射
-^Targeting\ (.+)$=瞄准型
-^Long\ (.+)$=长型
-^Auto\ (.+)$=自动
-^Heavy\ (.+)$=重型
-^Bayoneted\ (.+)$=刺刀
-^Calibrated\ (.+)$=校准
-^Electrified\ (.+)$=充能
-^Flaming\ (.+)$=火焰
-^Recoil\ Compensated\ (.+)$=后座补正
-^Tactical\ (.+)$=战术
-^Guided\ (.+)$=自动制导
-^Pressurized\ (.+)$=增压
-^Burnmaster\ (.+)$=炎魔
-^Mean\ Green\ (.+)$=凶暴的绿怪
-^Agitated\ (.+)$=不稳定
-^Boosted\ (.+)$=增压
-^Overcharged\ (.+)$=充能
-\n\n# ==============================================\n# 新增：全大写短句规则\n# ==============================================\nNEW DWELLERS & RADIO ROOM=新居民和广播室\nMR. HANDY=巧手先生\nSTORAGE SPACE:=储存空间：\nPASSWORD DOESN'T MATCH=密码不匹配\nPLEASE WAIT...=请稍等……\nEACH LUNCHBOX CONTAINS:=每个避难所科技午餐盒包含：\nWHAT'S NEW?=有什么消息吗？\nEACH PET CARRIER CONTAINS:=每个宠物笼里包含：\n*FUR NOT GUARANTEED.=*不保证皮毛状况。\nKA-KAW KA-KAW!=噶-噶！\nNUKA-COLA STATION=核子可乐生产站\nNUKA-COLA PLANT=核子可乐工厂\nOVERSEER'S OFFICE=监管者办公室\nOVERSEER'S CONTROL STATION=监管者的控制台\nOVERSEER'S COMMAND CENTER=监管者的指挥中心\nLEGENDARY JUNK RECOVERED!=传奇垃圾回收！\nRARE JUNK RECOVERED!=稀有垃圾回收！\nSHARE YOUR PHOTO!=分享图片！\nPRESS [A] TO CONTINUE=按[A]继续\nPRODUCTION BONUS :=生产奖励：\nRUSH READY!=加速准备完毕！\nSTARTING QUEST!=开始任务！\nTHE BABY GREW UP!=孩子长大了！\nCONGRATULATIONS! OBJECTIVE COMPLETED=恭喜！任务完成\nBOTTLE & CAPPY!=瓶瓶和盖盖！\nIT'S TIME TO START CRAFTING!=制作时间到！\nDWELLERS LEVEL & RARITY=居民等级和稀有度\nDAILY REPORT & VAULT RATING=每日报告和避难所分数\nMAKING BABIES & LIVING QUARTERS=生宝宝及起居室\nBUILD YOUR VAULT & ELEVATOR=建造你的避难所以及电梯\nROOM LEVEL & MERGING=房间等级以及房间融合\n
 
-# ==============================================
 # 新增：全大写短句规则
-# ==============================================
-SAVING...=正在保存……
-UPLOADING...=升级中……
 
 
-# ==============================================
 # 新增：You can/You can't 句式规则
-# ==============================================
-^You can only send a limited amount of Mr. Handys to the Wasteland.$=巧手先生会帮你收集所在楼层的资源。未进行游戏时，它们也会帮你收集一段时间。避难所每层最多只能指派一名巧手先生。
-^You can send Dwellers to explore the Wasteland. Drag a Dweller outside of the Vault and give them supplies to start their adventure.$=你可以派居民探索废土。把居民拖出避难所，给他们装备上补给，他们就能开始冒险了。
-^You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by tapping on a Dweller.$=你可以点击一位居民查看他的身份信息栏，在这里你可以为他/她装备物品和武器以及使用治疗针和消辐宁。
-^You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by clicking on a Dweller.$=你可以点击居民信息面板，为居民装备物品或是武器，也可以为他们使用消福宁和治疗针。
-^You can be my wingman any time!$=你永远是我的好伙伴！
-^You\ can\ try!$=你可以试试！
-^You can across a small cabin out in the Wasteland. Time to investigate!$=你在废土发现了一件小屋，是时候去调查一下了！
-^You can say that again.$=你可以再说一遍。
-^You can rename a Dweller by tapping their name on the Dweller information pop-up.$=你可以通过点击居民信息中的名字来进行更改。
-^You can rename a Dweller by clicking their name on the Dweller information pop-up.$=你可以通过点击居民的名字或是弹出的居民信息来更改他们的名字。
-^You can skip 1 Objective each day by tapping the X on the Objective screen.$=你每天都可以跳过一个任务，点击任务界面的X。
-^You can skip 1 Objective each day by clicking the X on the Objective screen.$=你每天都可以跳过一个任务，点击任务界面的X。
-^You can get free Lunchboxes for completing some Objectives.$=你可以通过完成某些特定目标来获得免费的避难所科技午餐盒。
-^You can assign Dwellers to the Vault entrance to act as guards.$=你可以派居民到避难所入口进行守卫。
-^You can sort the Dweller list by tapping on the column names.$=你可以通过点击列名分类来对居民的类别排序。
-^You can sort the Dweller list by clicking on the column names.$=你可以通过点击列名分类来对居民的类别排序。
-^You can only have one Mr. Handy assigned to a floor at a time. (Vault-Tec rules)$=你一次只能在同一层分配一个巧手先生。(避难所规定)
-^You can use Nuka-Cola Quantum to instantly finish crafting an item.$=你可以使用量子型核子可乐加快生产的速度。
-^You can use Nuka-Cola Quantum to speed up the Barbershop.$=你可以使用量子型核子可乐加快理发的速度。
-^You can use Nuka-Cola Quantum to reach a Quest NOW!$=你可以使用量子型核子可乐立即完成任务！
-^You can craft Minutemen and Brotherhood of Steel Themes in the Theme Workshop.$=你可以在布局工坊制作钢铁兄弟会主题布局。
-^You can craft Railroad and Institute Themes in the Theme Workshop.$=你可以在布局工坊制作铁路协会主题布局。
-^You can use Nuka-Cola Quantum to skip certain Quests.$=你可以使用量子型核子可乐跳过一部分特定的任务。
-^You can use Nuka-Cola Quantum to speed up a Dweller’s SPECIAL training.$=你可以使用量子型核子可乐加速SPECIAL训练。
-^You can use Nuka-Cola Quantum to get missing Theme Recipe Fragments.$=你可以使用量子型核子可乐获得缺失的布局配方碎片。
 
 
-# ==============================================
 # 新增：Are you sure 句式规则
-# ==============================================
-^Are\ you\ sure\ you\ want\ to\ keep\ the\ Local\ save\?$=你确定你想要保留本地存档吗？
-^Are\ you\ sure\ you\ want\ to\ logout\?$=确定注销吗？
-^Are\ you\ sure\ you\ want\ to\ quit\ Fallout\ Shelter\?$=确定退出游戏吗？
-^Are\ you\ sure\ you\ want\ your\ Dwellers\ to\ return\ to\ the\ Vault\?$=确定要居民返回避难所吗？
-^Are\ you\ sure\ you\ want\ to\ create\ a\ new\ save\?$=你确定要创建一个新存档吗？
-^Are\ you\ sure\ we\ can't\ just\ talk\ this\ over\?$=你确定我们用语言来沟通吗？
-^Are\ you\ sure\ about\ this\?\ Shouldn't\ love\ just\ run\ its\ course\?$=你确定吗？还是说婚姻是爱情的坟墓？
-^Are\ you\ sure\ you\ want\ to\ keep\ the\ Cloud\ save\?$=你确定你想保留云端存档吗？
-^Are\ you\ sure\ you\ want\ to\ erase\ this\ Vault\?$=你确定你想要清除这个避难所？
 
 
-# ==============================================
 # 新增：Do you really 句式规则
-# ==============================================
-^Do\ you\ really\ want\ to\ destroy\ this\ rock\?$=你真的要摧毁这块岩石吗？
-^Do\ you\ really\ want\ to\ evict\ the\ Dweller\?$=你真的要驱逐这个居民吗？
-^Do\ you\ really\ want\ to\ remove\ the\ dead\ Dweller\?$=你真的要移除已死亡的居民吗？
-^Do\ you\ really\ want\ to\ remove\ any\ dead\ Dweller\(s\)\?$=确定要移除全部死亡的居民吗？
-^Do\ you\ really\ like\ me\?$=你真的喜欢我吗？
 
-# ==============================================
 # 新增：短句物品名规则
-# ==============================================
-- Customize Dwellers=你可以通过以下方式获得瓶盖。
-You don't have enough resources=资源不足
-Wasteland slots are full=废土居民已满
-[Content line 2]=[第二行的内容]
-Collect 1 piece of Junk=收集1件垃圾
-Collect 1 Daily Reward=获得1次每日奖励
-Deliver 1 baby Dweller=生下1个居民宝宝
-Merge 2 rooms together=合并2个房间
-Find the Mysterious Stranger=找到神秘陌生人
-Have 1 Female Dweller pregnant=让一名女居民怀孕
-Perform 1 successful Rush=完成1次加速
-Scrap 1 Weapon or Outfit=分解1件武器或服装
-Sell 1 Weapon or Outfit=出售1件武器或者服装
-Stop 1 Vault invasion=阻止1场避难所侵略
-Weekly Quest PLACEHOLDER=每周任务 PLACEHOLDER
-Fire Support [PL]=火力支援[PL]
-In Sheep Clothing [PL]=穿绵羊服[PL]
-Memory Interrupted [PL]=记忆中断[PL]
-Mercer Safehouse [PL]=布商的安全屋[PL]
-Spoils of War [PL]=战争恩赐[PL]
-Craft Legendary Decorations=制造传奇装饰
-Friend List PHR=好友列表 PHR
-1 gift remaining PHR=剩余1份礼物 PHR
-Total Dwellers in Vault=避难所的全部居民
-Increases Endurance training speed=提升【耐力】训练速度
-Killed 10 Quest Bosses=杀了10个任务 BOSS
-Killed 500 enemies on Quests=在任务中杀死了500个敌人
-Kill 10 Quest Bosses=杀死10个任务 BOSS
-Kill 500 enemies on Quests=在任务中杀死500个敌人
-Paint 'n Elbow Grease=涂抹肘部润滑脂
-Increases Charisma training speed=加快【魅力】训练速度
-Training Time (Continuous)=训练时间（持续）
-Press [A]=按[A]
-Increases Strength training speed=加快【力量】训练速度
 
 
-# ==============================================
 # 自动提取规则
-# ==============================================
 # simple_sentences
-(Optional)=（可选）
 # ui_labels
 
 
@@ -1831,580 +2265,13 @@ Increases Strength training speed=加快【力量】训练速度
 
 
 
-# ==============================================
 # 从_AutoGeneratedTranslations.txt迁移
-# ==============================================
-PLEASE STAND BY=请稍候
-ENTER VAULT 444=进入保险库444
-SEASON ENDS IN 45 DAYS=赛季将在45天后结束
-ITEM NAME description=项目名称描述
-TBD - RECALL=TBD-召回
-(3h 55m)=（3小时55分钟）
-(2h 55m)=（2小时55米）
-[353F5C]Building 2 or 3 of the same type of room next to each other will merge them into a bigger version of the room.=[353F5C]相邻的同类型房间的2号或3号楼将它们合并成一个更大的房间。
-TURN TIPS OFF=关闭提示
-OUTFIT NAME NAME=服装名称
-SEASON 1 LEADERBOARD=第一季排行榜
-[282828]SEASON AND EXPERIMENTAL VAULT END IN[-] [FD0C0B]45 DAYS[-]=[282828]赛季和实验跳马在[-][FD0C0B]45天后结束[-]
-ASSIGN DWELLERS HERE TO CRAFT WEAPONS=指派这里的居民制造武器
-ATTRACTS NEW DWELLERS FROM THE WASTELAND=吸引荒地上的新居民
-SEND DWELLERS ON QUESTS FROM HERE=从这里派遣居民进行任务
-ASSIGN DWELLERS HERE TO PRODUCE RADAWAY=指派居民在这里建造雷达道
-INCREASES THE NUMBER OF ITEMS AND PETS YOU CAN HOLD=增加您可以携带的物品和宠物数量
-ASSIGN DWELLERS HERE TO PRODUCE WATER=指派居民在这里生产水
-ASSIGN DWELLERS HERE TO PRODUCE FOOD=指派居民在这里生产食物
-ASSIGN DWELLERS HERE TO PRODUCE POWER=指派居民在这里发电
-INCREASES THE NUMBER OF DWELLERS YOU CAN HAVE IT ALSO ALLOWS YOU TO BREED NEW DWELLERS=增加你可以拥有的居民数量，也可以让你繁殖新的居民
-[353F5C]You just used the last available space for Dwellers in the Vault. Build more [BE6432]LIVING QUARTERS[353F5C] to accommodate more Dwellers.=[353F5C]您刚刚使用了保险库中最后一个可供居住者使用的空间。建造更多[BE6432]居住区[353F5C]，以容纳更多居民。
-USED TO ACCESS LOWER FLOORS OF YOUR VAULT=用于进入保险库的较低楼层
-QUEST NAME GOES HERE=任务名称在这里
-CLICK TO CONTINUE=单击继续
-Unlock all the Season rewards:\n- NEW Vault Exterior [-][F7C531]THEME[-]\n- NEW Nuka-Cola Bottler [-][F7C531]THEME[-]\n- [-][F7C531]NEW DWELLERS[-] and [-][F7C531]MORE![-]=解锁所有赛季奖励：-新金库外观[-][F7C531]主题[-]新努卡可乐瓶[-][F7C531]-主题[-]-[-][P7C531]新DWELLER[-]和[-][7C531]更多！[-]
-[353F5C][BE6432]MALE[353F5C] and [BE6432]FEMALE[353F5C] Dwellers within the [BE6432]LIVING QUARTERS[353F5C] have a chance of making [BE6432]BABIES[353F5C].=[353F5C][BE6432]男[335F5C]女[353F53]住在[BE6432]LIVING QUARTERS[353F5C]的居民有机会制作[BE6432-]婴儿袋[353F58]。
-Average Dweller Level=平均居住水平
-Average Dweller Strength=平均居住强度
-Average Dweller Perception=平均居民感知
-Average Dweller Endurance=平均居住耐力
-Average Dweller Intelligence=平均居民智力
-Average Dweller Agility=平均居住者敏捷性
-Average Dweller Luck=平均居民运气
-CUMULATIVE SINCE 2026/5/28=自2026/5/28以来累计
-Pet Carriers Opened=宠物背带打开
-SPECIAL Stats Trained=接受过特殊统计培训
-You can't destroy this room because it is connected with two rooms.=你不能破坏这个房间，因为它与两个房间相连。
-You can't destroy this room because it has Dwellers assigned to it.=你不能摧毁这个房间，因为它有指定的居民。
-Raider Attacks Stopped=袭击者袭击停止
-Deathclaw Attacks Stopped=死爪袭击停止
-Feral Ghoul Attacks Stopped=凶猛的食尸鬼袭击停止
-Radroach Infestations Stopped=蟑螂感染已停止
-Radscorpion Infestations Stopped=Radscorpion感染已停止
-Mole Rat Infestations Stopped=鼹鼠感染停止
-Alien Attacks Stopped=外星人袭击停止
-Dwellers Sent to the Wasteland=被送往荒地的居民
-Wasteland Exploration Time=荒地勘探时间
-Wasteland Creatures Killed=荒地生物被杀死
 
 
-# ==============================================
 # 从fallout_shelter_zh.txt主文件补充
-# ==============================================
-NEW DWELLERS & RADIO ROOM=新居民和广播室
-Hint: Rushing a room is the fastest way to earn CAPS.=提示：加速房间是赚瓶盖最快的方式。
-Hint: The percentage chance of a disaster cools down over time.=提示：灾难发生的概率会随时间流逝而降低。
-Production Rooms can be Rushed to earn CAPS and to instantly earn resources.\n\n- Rush completes the current production cycle and award a bonus amount of CAPS.\n\n- The CAPS bonus is based on the Risk value. The higher the risk is, the greater the amount of CAPS you earn.\n\n- Failing a Rush causes a disaster in the room.=生产间可以加速以获得瓶盖，立即收集资源。\n\n- 加速可立即完成当前生产周期并奖励额外的瓶盖。\n\n- 奖励瓶盖的数量会根据风险值浮动。加速风险越高，你获得的瓶盖越多。\n\n- 加速失败会在房间内引发一场灾难。
-Hint: A Dweller in the Wasteland can be Revived for CAPS.=提示：废土中的居民可用瓶盖复活。
-Hint: Rare and Legendary Dwellers can be found in Lunchboxes and have great stats.=提示：避难所科技午餐盒中能发现稀有甚至传说级别的居民，而且他们有很高的属性值。
-Hint: Equipping your Dwellers with Weapons will help fight off enemies.=提示：为你的居民装备武器能帮助他们击退敌人。
-Hint: The Dweller Menu icon shows the number of Dwellers in your Vault, as well as how many Dwellers you have waiting outside.=提示：居民图标会显示当前避难所内的居民数量，还有在避难所外等待的居民数量。
-1. Wasteland - Tap outside your Vault to pull up your Wasteland Logs.\n2. Dweller Menu - Use this for easy sorting and selection of your Dwellers.\n3. Happiness - Your overall Vault Happiness. Tap on it to see what bonuses it provides to your Vault.\n4. Resource Bars - Your current resource amounts. Don't let them fall below the required resources lines, or your Vault will start to deteriorate. Tap to see how many resources you have.\n5. CAPS - Tap on the CAPS to go to the Lunchbox Store.\n6. Build Hammer - Tap on the Build Hammer to build rooms.\n7. Pip-Boy - Tap the Pip-Boy to open the Pip-Boy menu. A number on the Pip-Boy means you have Lunchboxes to open. An exclamation point means you have Objective rewards to collect.\n8. Lunchboxes - Tap the Lunchboxes to go to the Lunchbox menu. A number means you have Lunchboxes to open.\n9. Objectives - Tap the ribbon to go to your Objectives page. An exclamation point means you have Objective rewards to collect.\n10. Inventory - Tap the boxes to go to the Inventory menu.\n11. VDSG - Tap the book to open the Vault Dweller Surivival Guide.\n12. Settings - Tap the gears to go to the settings menu.=1. 废土 - 点击避难所外部查看废土日志。\n2. 居民菜单 - 使用菜单更轻松地分类和选择居民。\n3. 幸福感 - 避难所总体愉悦度。点击查看它为你的避难所提供的奖励。\n4. 资源条 - 你当前的资源量。别让它们低于最低需求标准线，否则你的避难所会恶化。点击查看你拥有多少资源。\n5. 瓶盖 - 点击瓶盖转到避难所科技午餐盒商店。\n6. 建造锤 - 点击建造锤建造各类房间。\n7. 哔哔小子 - 点击哔哔小子打开菜单。数字表示你拥有的避难所科技午餐盒数量。感叹号表示你有未收集的任务奖励。\n8. 避难所科技午餐盒 - 点击避难所科技午餐盒转到避难所科技午餐盒菜单。数字表示你可以开启的避难所科技午餐盒数量。\n9. 目标 - 点击缎带图标跳转到目标页面。感叹号代表你有未收集的目标奖励。\n10. 物品栏 - 点击盒子转到物品栏菜单。\n11. 避难所居民生存指南 - 点击书本打开避难所居民生存指南。\n12. 设置 - 点击齿轮转到设置菜单。
-1. Wasteland - Click outside your Vault to pull up your Wasteland Logs.\n2. Dweller Menu - Use this for easy sorting and selection of your Dwellers.\n3. Happiness - Your overall Vault Happiness. Click on it to see what bonuses it provides to your Vault.\n4. Resource Bars - Your current resource amounts. Don't let them fall below the required resources lines, or your Vault will start to deteriorate. Click to see how many resources you have.\n5. CAPS - Click on the CAPS to go to the Lunchbox Store.\n6. Build Hammer - Click on the Build Hammer to build rooms.\n7. Pip-Boy - Click the Pip-Boy to open the Pip-Boy menu. A number on the Pip-Boy means you have Lunchboxes to open. An exclamation point means you have Objective rewards to collect.\n8. Lunchboxes - Click the Lunchboxes to go to the Lunchbox menu. A number means you have Lunchboxes to open.\n9. Objectives - Click the ribbon to go to your Objectives page. An exclamation point means you have Objective rewards to collect.\n10. Inventory - Click the boxes to go to the Inventory menu.\n11. VDSG - Click the book to open the Vault Dweller Surivival Guide.\n12. Settings - Click the gears to go to the settings menu.=1. 废土 - 点击避难所外部查看废土日志。\n2. 居民菜单 - 使用菜单更轻松地分类和选择居民。\n3. 幸福感 - 避难所总体愉悦度。点击查看它为你的避难所提供的奖励。\n4. 资源条 - 你当前的资源量。别让它们低于最低需求标准线，否则你的避难所会恶化。点击查看你拥有多少资源。\n5. 瓶盖 - 点击瓶盖转到避难所科技午餐盒商店。\n6. 建造锤 - 点击建造锤建造各类房间。\n7. 哔哔小子 - 点击哔哔小子打开菜单。数字表示你拥有的避难所科技午餐盒数量。感叹号表示你有未收集的任务奖励。\n8. 避难所科技午餐盒 - 点击避难所科技午餐盒转到避难所科技午餐盒菜单。数字表示你可以开启的避难所科技午餐盒数量。\n9. 目标 - 点击缎带图标跳转到目标页面。感叹号代表你有未收集的目标奖励。\n10. 物品栏 - 点击盒子转到物品栏菜单。\n11. 避难所居民生存指南 - 点击书本打开避难所居民生存指南。\n12. 设置 - 点击齿轮转到设置菜单。
-Hint: The positive and negative effects of your resources are amplified by their distance from the required resource lines.=提示：资源产量受其与需求生产线距离的影响。
-Your FOOD, WATER and POWER resources are what keeps your Vault going.\n\n- FOOD: Dwellers need to eat to stay healthy. Run low on FOOD and your Dwellers will begin to lose Health.\n\n- WATER: Clean water is hard to come by in the Wasteland. Run low on WATER and your Dwellers will take Radiation damage.\n\n- POWER: Your Vault can't run without POWER. Run low on POWER and your rooms will begin shutting down.\n\nKeep your resources above the required resource lines to keep your Vault happy.\nResources continue to be consumed for a short time after closing the game.=你的食物，水和电力保证了你的避难所顺利运作。\n\n- 食物：居民需要进食来保持健康。食品生产速度过低会导致居民失去生命值。\n\n- 水：废土中很难得到干净的水。纯净水生产速度过低会导致居民受到辐射伤害。\n\n- 电力：你的避难所必须有充足的电力才能运作。低电力会导致房间无法工作。\n\n保持资源量高于最低标准刻度，这样才能使避难所整体愉悦度保持较高水平。\n退出游戏后一段时间内资源仍会继续消耗。
-Hint: You can turn Windowed mode on/off from the Settings menu.=提示：你可以在设置菜单中开启/关闭窗口模式。
-Hint: Drag a Dweller around to a few rooms to see where they'd work best.=提示：把居民在房间之间来回拖动，找到最适合他/她的工作间。
-Hint: Move a Dweller around to a few rooms to see where they'd work best.=提示：把居民在房间之间来回移动，找到最适合他/她的工作间。
-When you drag a Dweller into a room, a SPECIAL letter will appear above their head with a number.\n\nThe letter above their head corresponds to the SPECIAL stat associated with that room.\n\nIf the number is listed with a plus or minus sign, it means that dragging a Dweller into that room will replace a Dweller that is currently working in that room.\n\nThe Dweller's effect on that room will go up or down whatever the number is.\n\nWhen a Dweller is replaced this way, they switch jobs with the Dweller being moved.\n\nIf there is no plus or minus sign it means there's room for the Dweller to work in the room without replacing any Dwellers.=你把一位居民拖到一间房间后，会出现SPECIAL七个属性值之中的一个字母和一个数字。\n\n字母相当于与该房间相关的属性值。\n\n如果出现的数字有一个加号或者减号，那就意味着新加入的居民会替换掉一位原来已经在工作的居民。\n\n居民对房间产量的影响会上升或下降，与数字无关。\n\n当一位居民被替换，他们会接手替换居民原来的工作。\n\n如果没有出现加减号，说明该房间内有多余的岗位，不需要替换其他居民。
-You can assign a Dweller to a room by dragging them there, or by using 3D Touch to first press on the Dweller and then on the room.\n\nWhen assigning a Dweller to a room, a SPECIAL letter will appear above their head with a number.\n\nThe letter above their head corresponds to the SPECIAL stat associated with that room.\n\nIf the number is listed with a plus or minus sign, it means that assigning the Dweller to that room will replace a Dweller that is currently working there.\n\nThe Dweller's effect on that room will go up or down whatever the number is.\n\nWhen a Dweller is replaced this way, they switch jobs with the Dweller being moved.\n\nIf there is no plus or minus sign it means there's room for the Dweller to work in the room without replacing any Dwellers.=你可以拖动居民，将居民分配到一个房间内，也可以使用3D触控进行分配。\n\n在将居民分配至一个房间后，SPECIAL的字母会出现在上方，并且显示具体的数值。\n\n显示在上方的文字表示其在房间内的SPECIAL的状态。\n\n如果数字上显示了加号或者减号，那么就意味着将居民分配到那个房间会\n\n在此房间内居民的效果会因为数字的浮动而改变。\n\n当居民被替换后，他们会交换彼此手头的工作。\n\n如果没有显示正负号，那么就意味着房间内居民手头的工作无需替换任何居民。
-Hint: Outfits boost a Dweller's SPECIAL stats. Blue bars on a Dweller's SPECIAL shows how the Outfit benefits the Dweller.=提示：服装可以提升居民的属性值。蓝条表示服装增加的属性。
-When you tap on a Dweller, it brings up their information.\n\nFrom this page, you can equip your Dweller with Weapons,Outfits and a Pet, or heal them with Stimpaks and RadAway.\n\nTapping on their SPECIAL brings up more detailed information about their individual SPECIAL levels.=点击一位居民，可以查看他们的信息。\n\n在该页面，你可以为他们装备武器、服装和宠物，或者使用治疗针和消辐宁恢复体力。\n\n点击他们的SPECIAL属性值可以查看更多详细信息，比如他们较为突出的属性值。
-When you click on a Dweller, it brings up their information.\n\nFrom this page, you can equip your Dweller with Weapons, Outfits and a Pet, or heal them with Stimpaks and RadAway.\n\nClicking on their SPECIAL brings up more detailed information about their individual SPECIAL levels.=点击一位居民，可以查看他们的信息。\n\n在该页面，你可以为他们装备武器、服装和宠物，或者使用治疗针和消辐宁恢复体力。\n\n点击他们的SPECIAL属性值可以查看更多详细信息，比如他们较为突出的属性值。
-Hint: Use this menu to quickly see how many Dwellers you have, and how much more room you have in your Vault.=提示：使用该菜单查看你拥有多少居民以及你的避难所中剩余多少空间。
-Tapping on the gear in the top left corner of the screen brings up the Dweller List.\n\nFrom here you can sort your Dwellers and find the best Dweller for a job.\n\nTapping on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。\n\n在这儿你可以分类居民，为他们选择最合适的工作。\n\n点击居民能放大镜头并移至居民所在位置。
-Clicking on the gear in the top left corner of the screen brings up the Dweller List.\n\nFrom here you can sort your Dwellers and find the best Dweller for a job.\n\nClicking on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。\n\n在这儿你可以分类居民，为他们选择最合适的工作。\n\n点击居民能放大镜头并移至居民所在位置。
-Hint: Build a bunch of production rooms on one floor to maximize Mr. Handy's ability.=提示：在同一层建造多个资源生产室能够最大化巧手先生的能力。
-MR. HANDY=巧手先生
-Hint: Move Pets around to the Dwellers that most need their bonuses.=提示：让宠物跟着最需要加成的居民。
-Pets are found in Lunchboxes and Pet Carriers.\n\nPets provide a bonus effect to the Dweller they're assigned to and increase that Dweller’s damage in combat. They can even tag along and help in the Wasteland.\n\nOnly one to three Pets are allowed in a room at a time, depending on the room's size.\n\nPets come in COMMON, RARE and LEGENDARY versions. The rarer the Pet, the greater its bonus effect, but even identical Pets might grant bonuses with different strengths.\n\nAssign a Pet like you would equip a Weapon or an Outfit.=你可以在避难所科技午餐盒或者从宠物笼获得宠物。\n\n宠物会为跟随的主人提供加成，在战斗中提升主人的伤害。它们甚至会跟主人去废土探索并提供帮助。\n\n一间房内最多能容纳一到三只宠物，取决于房间的大小。\n\n宠物也分为普通，稀有和传说三个稀有度。宠物越稀有，提供的加成也越多，但是同一稀有度的宠物根据不同能力获得的加成也不同。\n\n像服装武器和服装那样，为居民配上宠物吧。
-Hint: Dweller attack rates are based on their Agility.=提示：居民的攻击速度与他们的敏捷值有关。
-Hint: Some items cannot be found, only crafted.=提示：某些物品不能被找到，只能通过制作获得。
-Hint: Dwellers in Barbershops must fight Incidents alone, so equip them well.=提示：理发店中的居民只能独自面对突发灾难，所以将他们武装起来。
-Dwellers can get a whole new look in the Barbershop, but it can only work on one Dweller at a time.  \n\nUpgrade your Barbershop to unlock more customization options.  \n\nThe Barbershop works faster on Dwellers with high Charisma.=你可以在理发店中给居民换脸，一次一人。\n\n升级理发店解锁更多的换脸项目。 \n\n魅力值高的居民换脸速度更快。
-Hint: If you’re lucky, you can get Nuka-Cola Quantum in containers on Quests.=提示：如果运气好的话，你可以在任务中获得量子型核子可乐。
-HD ZOOM OUT=高清画面缩小
-REVERT TO DEFAULTS=恢复默认
-INVALID USERNAME OR PASSWORD=无效的用户名或密码
-PASSWORD DOESN'T MATCH=密码不匹配
-PLEASE WAIT...=请稍等……
-USERNAME ALREADY IN USE=用户名已被使用
-EACH LUNCHBOX CONTAINS:=每个避难所科技午餐盒包含：
-You don't have enough CAPS=你没有足够的瓶盖
-ENTER VAULT {0}=进入{0}避难所
-You can't destroy this room because it is being used=你无法摧毁这间房，因为它正在使用中。
-You can't destroy this room because it has a Mr. Handy assigned to it.=你无法摧毁这间房，因为巧手先生正在里面工作。
-You can't destroy this room because its storage space is being used.=你无法摧毁这间房，因为它的储存空间被占用。
-{0}X DAMAGE={0}X伤害
-Do you really want to destroy this room?\nRefund: {0} CAPS=你真的要摧毁该房间吗？\n退还：{0}瓶盖
-Each room has a SPECIAL attribute it uses. Assign Dwellers with the best SPECIAL to make them happy and produce extra Resources.=每个房间都对应SPECIAL的其中一项属性。安排居民去属性值最匹配的房间，这样会使他们感到快乐，生产更多的资源。
-You can't Craft during an Incident.=你无法在发生灾难时制作物品。
-You can't Customize a Dweller during an Incident.=你无法在发生灾难时给居民换脸。
-You can't rush this room right now.=此时你无法对该房间使用加速。
-{0} cannot be assigned to a Quest right now.={0}当前无法分配任务。
-You can't Rush a room during an Incident.=你无法在发生灾难时给房间加速。
-You can't collect an item you've crafted while your Inventory is full.=物品栏满时你无法收集制作完成的物品。
-You can't Scrap an item while your Inventory is full.=物品栏已满，您无法进行分解操作。
-If you run low on any of these resources, the bars at the top of the screen will turn red.\n\nWhen low on Power, rooms will start shutting down.\nWhen low on Food, Dwellers start to lose health.\nWhen low on Water, Dwellers become irradiated.\n\nThe required resource line on the resource bar shows your Vault's current resource needs.=以下资源产量过低时，屏幕顶部的标尺会变红。\n\n电力低时，房间会逐个停电。\n食物紧缺时，居民会开始损失体力。\n水紧缺时，居民会开始受到辐射影响。\n\n最低标准资源刻度会显示你的避难所当前所需的资源量。
-Hint: The further above or below the required resource line your resources are, the greater the effect.=提示：距离最低标准资源刻度越远，受到的影响越大。
-Your Vault needs a steady supply of\nPower, Food and Water to run properly.=你的避难所需要稳定的\n电力，食物和水来保持正常运作。
-Dwellers in the room automatically fight the Disaster.\nDwellers lose health while fighting a Disaster.\nIf Dwellers fail, the Disaster spreads to nearby rooms.=房间内的居民会自动处理灾害。\n战斗时居民会损失体力。\n当居民失败时，灾害会向邻近的房间扩散。
-Hint: Drag Dwellers into and out of Rooms affected by a Disaster to keep them alive.=提示：将居民拖入或拖出发生灾害的房间以保证他们能存活下来。
-Hint: Rebalance your Power by assigning better Dwellers or rushing the Power rooms.=提示：重新分配居民或者开启加速模式来保持电力平衡。
-You can send Dwellers to explore the Wasteland. Drag a Dweller outside of the Vault and give them supplies to start their adventure.=你可以派居民探索废土。把居民拖出避难所，给他们装备上补给，他们就能开始冒险了。
-Hint: A Dweller will die if left in the Wasteland too long=提示：把居民留在废土中太久会导致死亡
-Hint: Make sure you have enough Living Space in your Vault or else women can deliver their baby=提示：确保你的避难所有足够的居住空间，这样女性才可以生小孩
-Hint: A room merge only happens if all rooms are of the same level=提示：房间等级相同的情况下才会互相融合。
-Your Vault Storage holds all the items your Dwellers get from the Wasteland or Lunchboxes.\nTap on the boxes icon in the Pip-Boy to see your stored items.=你的避难所储藏室会收集居民从废土或避难所科技午餐盒得到的物品。\n点击哔哔小子菜单中的盒子图标查看你收藏的物品。
-Your Vault Storage holds all the items your Dwellers get from the Wasteland or Lunchboxes.\nClick on the boxes icon in the Pip-Boy to see your stored items.=避难所的仓库会存放所有居民从废土或是避难所科技午餐盒获得的物品。\n点击哔哔小子菜单中的箱子按钮来查看你的库存。
-Hint: Storage rooms are excellent holding bay for Dwellers in case all other Rooms are full=提示：其他房间全满时，储藏室是绝佳的居民收容间。
-Hint: Equipping a Dweller with RadAway and Stimpak before sending him to the Wasteland will increase his chance of survival=提示：派居民去废土之前为他们装备上治疗针和消辐宁可以增加他们的存活几率
-You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by tapping on a Dweller.=你可以点击一位居民查看他的身份信息栏，在这里你可以为他/她装备物品和武器以及使用治疗针和消辐宁。
-You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by clicking on a Dweller.=你可以点击居民信息面板，为居民装备物品或是武器，也可以为他们使用消福宁和治疗针。
-Pets can give your Dwellers a boost. \nRarer Pets provide better bonus effects. \nAssign Pets like you equip Weapons and Outfits.=宠物可以增加你的居民的属性。\n稀有度更高的宠物提供的奖励更多。\n配备宠物的方式与装备武器和服装的方式一致。
-Hint: Certain Pets make great companions for Dwellers exploring the Wasteland.=提示：某类特定的宠物专为探索废土的居民设计。
-Find Junk in Lunchboxes and in the Wasteland.\nFind Recipes on Raiders and in the Wasteland.\nTurn Junk into Weapons and Outfits in the Workshop rooms.\nUpgrade your Workshops to craft Rare and Legendary items.=在避难所科技午餐盒和废土都能找到垃圾。\n在掠夺者和废土中都能找到配方。\n在工作间，你可以把垃圾制作成武器和服装。\n升级工作间以制作稀有及传说级物品。
-Hint: Rumor has it that Legendary Junk can be found far into the Wasteland.=提示：传言说在废土深处可以找到传说等级的垃圾。
-- Press first on a Dweller and then on a room or the Wasteland to send the Dweller there.\n\n- Press on a Storage Room to open your Inventory.\n\n- On your device's home screen, press on the Fallout Shelter icon to enter a Vault directly.=- 选择一个居民，可以将其分配到一个房间或是废土中。\n\n- 选择仓库可以打开你的物品栏。\n\n- 在设备的主界面，选择避难所图标可以直接进入避难所。
-If you run out, you can always purchase more Nuka-Cola Quantum in the store.=如果你的量子型核子可乐用完了，你也可以在商店里购买进行补充。
-Introducing Themes!\n\n- Find Theme Recipe Fragments on Quests.\n\n- Build the new Theme Workshop to craft Themes.\n\n- Apply Themes to fully merged and upgraded Diners and Living Quarters.=布局说明！\n\n- 在任务中可以发现布局配方碎片。\n\n- 建造新的布局工坊就可以生产布局。\n\n- 布局可以应用于餐厅和生活区。
-Hint: You can use Nuka-Cola Quantum to get missing Theme Recipe Fragments.=提示：你可以使用量子型核子可乐获得一些缺失的布局配方碎片。
-Click on the {NUKA CAPS} to open your {LUNCHBOX MENU}.=点击{核子可乐瓶盖}来打开{避难所科技午餐盒菜单}。
-You have already given Pets to {0} Dwellers, the maximum number of Pets allowed by Vault-Tec.=你已经把宠物分配给了{0}居民，已达到避难所科技的最大限度。
-{0} Floor={0}层
-Only 1 Mr. Handy per floor=每一层只允许有一个巧手先生
-Have {0} Bald Dwellers in the Vault=在避难所中拥有{0}名光头居民
-Customize {0} Dwellers=给{0}个居民换脸
-Collect 200 CAPS in the Vault=在避难所收集200个瓶盖
-Collect {0} CAP on Quests=在任务中收集{0}个瓶盖
-Collect {0} CAPS on Quests=在任务中收集{0}个瓶盖
-Collect {0} CAPS in the Vault=在避难所收集{0}个瓶盖
-Collect {0} Food in under 1 minute=在1分钟内收集{0}食物
-Collect from {0} container on Quests=在任务中收集{0}个箱子
-Collect from {0} containers on Quests=在任务中收集{0}个箱子
-Collect {0} pieces of Junk=收集{0}件垃圾
-Collect {0} Outfits=收集{0}件服装
-Collect {0} Pets=获得{0}头宠物
-Collect {0} Power in under 1 minute=在1分钟内收集{0}电力
-Collect {0} Rare Outfit=获得{0}件稀有服装
-Collect {0} Rare Outfits=获得{0}件稀有服装
-Collect {0} Rare Weapon=获得{0}件稀有武器
-Collect {0} Rare Weapons=获得{0}件稀有武器
-Collect {0} Power/Food/Water in under 1 minute=在1分钟内获得{0}电力/食物/水
-Collect {0} Water in under 1 minute=在1分钟内获得{0}水
-Collect {0} Weapons=获得{0}件武器
-Complete {0} Quest discovered in the Wasteland=完成{0}次废土探索任务
-Complete {0} Quests discovered in the Wasteland=完成{0}次废土探索任务
-Have {0} Male and Female couples dance in the Living Quarters=让{0}对男女在起居室跳双人舞
-Craft {0} Outfits=制造{0}件服装
-Craft {0} Rare Outfits=制造{0}件稀有服装
-Craft {0} Rare Weapons=制造{0}件稀有武器
-Craft {0} Weapons=制造{0}件武器
-Collect {0} Daily Rewards=获得{0}次每日奖励
-Raise the happiness of {0} Dwellers to 100%=将{0}个居民的幸福感提升到100%
-Equip 1 Dweller with a {1}=给1个居民装备{1}
-Equip {0} Dwellers with a {1}=给{0}个居民装备{1}
-Successfully extinguish {0} Vault fires=成功扑灭{0}次避难所火灾
-Collect {0} Food=获得{0}份食物
-Deliver {0} baby Dwellers=生下{0}个居民宝宝
-Kill {0} creatures in the Wasteland=杀死{0}个废土生物
-Kill 1 {1} at the Vault door=在避难所门口杀死一个{1}
-Kill {0} {1} at the Vault door=在避难所门口杀死{0}个{1}
-Level up 1 Dweller=升级1个居民
-Level up {0} Dwellers=升级{0}个居民
-Merge {0} pairs of rooms together=合并{0}个房间
-Find the Mysterious Stranger {0} times=找到神秘陌生人{0}次
-Open {0} Lunchboxes=打开{0}个避难所科技午餐盒
-Equip {0} Dwellers with an Outfit=给{0}个居民穿戴服装
-Perform {0} critical hit=完成{0}次致命一击
-Perform {0} critical hits=完成{0}次致命一击
-Perform {0} perfect critical hit=完成{0}次完美一击
-Perform {0} perfect critical hits=完成{0}次完美一击
-Collect {0} Power=收集{0}电力
-Have {0} Female Dwellers pregnant=让{0}名女居民怀孕
-Raise any SPECIAL stat of {0} Dwellers.=提升{0}个居民的任意属性。
-Raise the {1} of 1 Dweller.=提升1个居民的{1}。
-Raise the {1} of {0} Dwellers.=提升{0}个居民的{1}。
-Kill 1 {1} without a weapon=不使用武器杀死1个{1}
-Kill {0} {1} without a weapon=不使用武器杀死{0}个{1}
-Assign {0} Dwellers in the right room=将{0}个居民分配到正确房间
-Successfully Rush 1 room=成功加速1个房间
-Successfully Rush {0} rooms=成功加速{0}个房间
-Perform {0} successful Rushes=完成{0}次加速
-Scrap {0} Weapons or Outfits=分解{0}件武器或服装
-Sell {0} Weapons or Outfits=出售{0}件武器或者服装
-Sell {0} pieces of Junk=出售{0}份垃圾
-Collect 1 Stimpak=收集1个治疗针
-Collect {0} Stimpaks=收集{0}个治疗针
-Use {0} RadAway=使用{0}个消辐宁
-Stop 1 {1} infestation before they spread=在扩散之前，阻止1场{1}肆虐
-Stop {0} {1} infestations before they spread=在扩散之前，阻止{0}场{1}肆虐
-Stop {0} incidents=阻止{0}场灾难
-Stop {0} Vault invasions=阻止{0}场避难所侵略
-Survive {0} hour in the Vault with no casualties=在避难所中存活{0}小时并且不受损伤
-Survive {0} hours in the Vault with no casualties=在避难所中存活{0}小时并且不受损伤
-Survive {0} Radscorpion attack with no casualties=在{0}场辐射蝎的攻击中不受损伤
-Survive {0} Radscorpion attacks with no casualties=在{0}场辐射蝎的攻击中不受损伤
-Upgrade {0} rooms=升级{0}个房间
-Use 1 RadAway=使用1次消辐宁
-Use 1 Stimpak=使用1支治疗针
-Use {0} Stimpaks=使用{0}支治疗针
-Have a {1} happy Vault for 1 hour.=保持{1}避难所中居民心情愉悦1小时。
-Have a {1} happy Vault for {0} hours.=保持{1}避难所中居民心情愉悦{0}小时。
-Send 1 Dweller to the Wasteland=送1个居民去废土
-Collect {0} Caps in the Wasteland=在废土里收集{0}个瓶盖
-Explore {0} location in the Wasteland=探索{0}片废土场景
-Explore {0} locations in the Wasteland=探索{0}片废土场景
-Level up {0} times in the Wasteland=在废土升级{0}次
-Make {0} friends in the Wasteland=在废土交{0}个朋友
-Send {0} Dwellers to the Wasteland=送{0}个居民去废土
-Collect {0} Water=收集{0}水
-Equip 1 Dweller with a Weapon=为1个居民装备武器
-Equip {0} Dwellers with a Weapon=为{0}个居民装备武器
-Win {0} battle on Quests=在任务中获得{0}场战斗的胜利
-Win {0} battles on Quests=在任务中获得{0}场战斗的胜利
-Heavy Battle Armor=重型战斗装甲
-Heavy Combat Armor=重型战斗装甲
-Heavy Metal Armor=重型金属装甲
-Heavy Raider Armor=重型掠夺者装甲
-Heavy Merc Gear=重型佣兵服
-Heavy Synth Armor=重型合成人装甲
-Heavy Vault Suit=重型避难所服装
-Heavy Leather Armor=重型皮革装甲
-NOT IN THIS VAULT=不在该避难所
-PETS HAVE COME TO FALLOUT SHELTER\nHere's a free Pet Carrier to get you started!\nOpen it to welcome a furry* friend to your Vault.=宠物来到了辐射避难所\n这里有一个免费的宠物笼！\n打开它然后迎接一个毛茸茸的*朋友吧。
-SELL, SELL, SELL!\nSell whole Storage stacks, or all of an Explorer's Common items, at once.=大甩卖啦！\n一次出售整个库存，还有探险家们的常用物品。
-WHAT'S NEW?=有什么消息吗？
-EACH PET CARRIER CONTAINS:=每个宠物笼里包含：
-*FUR NOT GUARANTEED.=*不保证皮毛状况。
-FREE PET CARRIER=免费宠物笼子
-Long hair, round face, maximum cuddle factor.=它的长毛圆脸是人们想抱它的最大原因。
-ASSEMBLE YOUR TEAM=集合你的队伍
-You can't call dibs on someone.=你不能随便追求一个人.
-You can't kill us! What would Santa think? That's permanent naughty list stuff.=你们不能杀了我们！圣诞老人会怎么想？也许你们这辈子都下不了淘气鬼名单了。
-Found this in the rubble. You want it, it's yours.=在废石堆里找到的，你要的话，就拿走吧。
-Long enough. Spikes and leather are totally in by the way.=够长了，尖刺都已经完完全全扎进皮里了。
-You can't have our secrets, Dwellers.=你绝对不能知道我们的秘密。
-{0} has discovered an Abandoned Cabin.={0}发现了遗弃的房子。
-{0} has discovered a Super Duper Mart.={0}发现了大无敌超市。
-{0} has discovered a Red Rocket Truck Stop.={0}发现了红火箭卡车停靠站。
-RETURN TO VAULT=返回避难所
-Got {0} points of radiation damage.=受到{0}点辐射伤害。
-REMIND ME LATER=稍后提醒我
-{0} Power={0}电力
-{0} Food={0}食物
-{0} CAPS={0}瓶盖
-{0} RadAway={0}消辐宁
-{0} Stimpak={0}治疗针
-{0} Water={0}水
-ASSIGN DWELLERS HERE TO TRAIN THEIR PERCEPTION=调派居民来此并训练他们的感知能力
-ASSIGN DWELLERS HERE TO CUSTOMIZE THEM=调派居民来此对他们进行自定义
-ASSIGN DWELLERS HERE TO TRAIN THEIR CHARISMA=调派居民来此并训练他们的魅力
-ASSIGN DWELLERS HERE TO TRAIN THEIR LUCK=调派居民来此提升他们的幸运
-ASSIGN DWELLERS HERE TO TRAIN THEIR INTELLIGENCE=调派居民来此训练他们的智力
-ASSIGN DWELLERS HERE TO CRAFT DECORATIONS=调派居民来此生产装饰品
-ASSIGN DWELLERS HERE TO CRAFT THEMES=在此处分配居民来生产布局
-ASSIGN DWELLERS HERE TO TRAIN THEIR AGILITY=调派居民来此训练他们的敏捷
-ASSIGN DWELLERS HERE TO TRAIN THEIR STRENGTH=调派居民来此训练力量
-ASSIGN DWELLERS HERE TO TAKE CARE OF THE DECEASED AND EARN CAPS=调派居民照看死者，并且赚取瓶盖
-ASSIGN DWELLERS HERE TO PRODUCE STIMPAKS=调派居民来此生产治疗针
-ASSIGN DWELLERS HERE TO CRAFT OUTFITS=调派居民制作服装
-Craft Rare Outfits=制作稀有服装
-Craft Legendary Outfits=制作传奇服装
-OVERSEER'S CONTROL STATION=监管者的控制台
-OVERSEER'S COMMAND CENTER=监管者的指挥中心
-ASSIGN DWELLERS HERE TO TRAIN THEIR ENDURANCE=调派居民来此训练耐力
-{0} DWELLERS REQUIRED=需要{0}居民
-ADVANCED VAULT DOOR=高级避难所大门
-FORTIFIED VAULT DOOR=强化避难所大门
-WATER TREATMENT STATION=水处理站
-WATER TREATMENT PLANT=水处理厂
-Craft Rare Weapons=制造稀有武器
-Craft Legendary Weapons=制造传奇武器
-SAVE FILE CONFLICT=保存文件冲突
-USE CLOUD SAVE=使用云存档
-USE LOCAL SAVE=使用本地存档
-NO JUNK RECOVERED=无垃圾回收
-SAVE YOUR PHOTO=保存图片
-Improved crafting speed and cost.=提升生产速度和消耗。
-and {0} more=剩余{0}份礼物
-You have: {0}=你拥有：{0}
-You can say that again.=你可以再说一遍。
-Since it's just lying here...=因为它就躺在这儿……
-Average Dweller Charisma=居民平均魅力
-SINCE {0}=自从{0}
-Pit Bull Terriers=比特犬
-St. Bernards=圣伯纳犬
-Time Played (All-Time)=游戏时间（总计）
-Total Caps Collected=总共收集的瓶盖
-RETURN TO WASTELAND=返回废土
-TAP TO CONTINUE=点击继续
-PRESS [A] TO CONTINUE=按[A]继续
-TERMS OF SERVICE=服务条款
-DWELLERS {0}/{1}=居民{0}/{1}
-ROOM FULLY UPGRADED=房间满级
-PRODUCTION BONUS :=生产奖励：
-UPGRADE TO LEVEL {0}=升级至{0}级
-Build a Medbay to produce Stimpaks.=建造一个药房来生产治疗针。
-Tap a Dweller's SPECIAL chart for more details.=点击居民的特性图标来显示更多详细信息。
-Click a Dweller's SPECIAL chart for more details.=点击一个居民的SPECIAL图标查看更多信息。
-You can rename a Dweller by tapping their name on the Dweller information pop-up.=你可以通过点击居民信息中的名字来进行更改。
-You can rename a Dweller by clicking their name on the Dweller information pop-up.=你可以通过点击居民的名字或是弹出的居民信息来更改他们的名字。
-You can skip 1 Objective each day by tapping the X on the Objective screen.=你每天都可以跳过一个任务，点击任务界面的X。
-You can skip 1 Objective each day by clicking the X on the Objective screen.=你每天都可以跳过一个任务，点击任务界面的X。
-You can get free Lunchboxes for completing some Objectives.=你可以通过完成某些特定目标来获得免费的避难所科技午餐盒。
-You can assign Dwellers to the Vault entrance to act as guards.=你可以派居民到避难所入口进行守卫。
-You can sort the Dweller list by tapping on the column names.=你可以通过点击列名分类来对居民的类别排序。
-You can sort the Dweller list by clicking on the column names.=你可以通过点击列名分类来对居民的类别排序。
-Tap on the resource bars at the top of the screen for more details on your resource storage.=点击界面顶端资源条可以获得更多的资源储存的详细信息。
-Click on the resource bars at the top of the screen for more details on your resource storage.=点击界面顶端资源条可以获得更多的资源储存的详细信息。
-You can only have one Mr. Handy assigned to a floor at a time. (Vault-Tec rules)=你一次只能在同一层分配一个巧手先生。(避难所规定)
-You can use Nuka-Cola Quantum to instantly finish crafting an item.=你可以使用量子型核子可乐加快生产的速度。
-You can use Nuka-Cola Quantum to speed up the Barbershop.=你可以使用量子型核子可乐加快理发的速度。
-Tap the screen to skip dialogue during Quests.=点击画面跳过任务对话。
-Click anywhere to skip dialogue during Quests.=点击任意处跳过任务对话。
-You can craft Minutemen and Brotherhood of Steel Themes in the Theme Workshop.=你可以在布局工坊制作钢铁兄弟会主题布局。
-You can craft Railroad and Institute Themes in the Theme Workshop.=你可以在布局工坊制作铁路协会主题布局。
-You can use Nuka-Cola Quantum to skip certain Quests.=你可以使用量子型核子可乐跳过一部分特定的任务。
-You can use Nuka-Cola Quantum to speed up a Dweller’s SPECIAL training.=你可以使用量子型核子可乐加速SPECIAL训练。
-You can use Nuka-Cola Quantum to get missing Theme Recipe Fragments.=你可以使用量子型核子可乐获得缺失的布局配方碎片。
-Have {0} Dwellers in your Vault=拥有{0}居民在避难所
-LOW POWER SUPPLY=能源供应过低
-LOW FOOD SUPPLY=食物供应过低
-LOW OVERALL VAULT HAPPINESS=避难所愉悦度过低
-CONGRATULATIONS! OBJECTIVE COMPLETED=恭喜！任务完成
-LOW STORAGE SPACE=储存空间过低
-LOW WATER SUPPLY=用水供应过低
-Found {0}.=发现{0}。
-Got {0} XP=获得{0}经验
-I rescued a {0} from a Raider trap and now it's following me.=我从掠夺者手中救下了{0}，现在就在我身边。
-I've found a locker containing a {0}.=我发现了一个藏着{0}的柜子。
-REVIVE ALL AND RETRY=复活全部并重试
-Armor Piercing .32 Pistol=穿甲.32手枪
-Enhanced .32 Pistol=改良.32手枪
-Hardened .32 Pistol=硬化.32手枪
-Rusty .32 Pistol=生锈的.32手枪
-Amplified Alien Blaster=增幅外星冲击枪
-Focused Alien Blaster=聚焦外星冲击枪
-Rusty Alien Blaster=生锈的外星冲击枪
-Tuned Alien Blaster=微调外星冲击枪
-Armor Piercing Assault Rifle=穿甲突击步枪
-Enhanced Assault Rifle=改良突击步枪
-Hardened Assault Rifle=硬化突击步枪
-Rusty Assault Rifle=生锈的突击步枪
-Armor Piercing BB Gun=穿甲BB枪
-Enhanced BB Gun=改良BB枪
-Hardened BB Gun=硬化BB枪
-Rusty BB Gun=生锈的BB枪
-Double-Barrel Combat Shotgun=双管战斗霰弹枪
-Enhanced Combat Shotgun=改良战斗霰弹枪
-Hardened Combat Shotgun=硬化战斗霰弹枪
-Rusty Combat Shotgun=生锈的战斗霰弹枪
-Enhanced Fat Man=改良胖子
-Guided Fat Man=自动制导胖子
-Hardened Fat Man=硬化胖子
-Rusty Fat Man=生锈的胖子
-Amplified Gatling Laser=增幅激光加特林
-Focused Gatling Laser=聚焦激光加特林
-Rusty Gatling Laser=生锈的激光加特林
-Tuned Gatling Laser=微调激光加特林
-Enhanced Gauss Rifle=改良高斯步枪
-Hardened Gauss Rifle=硬化高斯步枪
-Rusty Gauss Rifle=生锈的高斯步枪
-Armor Piercing Hunting Rifle=穿甲猎枪
-Enhanced Hunting Rifle=改良猎枪
-Hardened Hunting Rifle=硬化猎枪
-Rusty Hunting Rifle=生锈的猎枪
-Improved Institute Pistol=优化学院手枪
-Incendiary Institute Pistol=燃烧学院手枪
-Scattered Institute Pistol=散射学院手枪
-Scoped Institute Pistol=带镜学院手枪
-Long Institute Rifle=长型学院步枪
-Targeting Institute Rifle=瞄准型学院步枪
-Electrified Junk Jet=充能垃圾发射器
-Flaming Junk Jet=火焰垃圾发射器
-Recoil Compensated Junk Jet=后座补正垃圾发射器
-Tactical Junk Jet=战术垃圾发射器
-Amplified Laser Pistol=增幅激光手枪
-Focused Laser Pistol=聚焦激光手枪
-Rusty Laser Pistol=生锈的激光手枪
-Tuned Laser Pistol=微调激光手枪
-Amplified Laser Rifle=增幅激光步枪
-Focused Laser Rifle=聚焦激光步枪
-Rusty Laser Rifle=生锈的激光步枪
-Tuned Laser Rifle=微调激光步枪
-Armor Piercing Lever-Action Rifle=穿甲杠杆枪
-Enhanced Lever-Action Rifle=改良杠杆枪
-Hardened Lever-Action Rifle=硬化杠杆枪
-Rusty Lever-Action Rifle=生锈的杠杆枪
-Scoped .44=带镜.44格南
-Armor Piercing Scoped .44=穿甲带镜.44格南
-Enhanced Scoped .44=改良带镜.44格南
-Hardened Scoped .44=硬化带镜.44格南
-Rusty Scoped .44=生锈的带镜.44格南
-Armor Piercing Minigun=穿甲多管机枪
-Enhanced Missile Launcher=改良导弹发射器
-Guided Missile Launcher=自动制导导弹发射器
-Hardened Missile Launcher=硬化导弹发射器
-Rusty Missile Launcher=生锈的导弹发射器
-Auto Pipe Pistol=自动铁管手枪
-Heavy Pipe Pistol=重型铁管手枪
-Scoped Pipe Pistol=带镜改良铁管手枪
-Bayoneted Pipe Rifle=刺刀铁管步枪
-Calibrated Pipe Rifle=校准铁管步枪
-Long Pipe Rifle=长铁管步枪
-Armor Piercing 10mm Pistol=穿甲10mm手枪
-Enhanced 10mm Pistol=改良10mm手枪
-Hardened 10mm Pistol=硬化10mm手枪
-Rusty 10mm Pistol=生锈的10mm手枪
-Amplified Plasma Pistol=增幅电浆手枪
-Focused Plasma Pistol=聚焦电浆手枪
-Rusty Plasma Pistol=生锈的电浆手枪
-Tuned Plasma Pistol=微调电浆手枪
-Amplified Plasma Rifle=增幅电浆步枪
-Focused Plasma Rifle=聚焦电浆步枪
-Mean Green Monster=凶暴的绿怪
-Rusty Plasma Rifle=生锈的电浆步枪
-Tuned Plasma Rifle=微调电浆步枪
-Agitated Plasma Thrower=不稳定电浆抛射器
-Boosted Plasma Thrower=增压电浆抛射器
-Overcharged Plasma Thrower=充能电浆抛射器
-Tactical Plasma Thrower=战术电浆抛射器
-Accelerated Railway Rifle=加速射钉步枪
-Enhanced Railway Rifle=改良射钉步枪
-Hardened Railway Rifle=硬化射钉步枪
-Rusty Railway Rifle=生锈射钉步枪
-Enhanced Sawed-Off Shotgun=改良锯断的霰弹枪
-Hardened Sawed-Off Shotgun=硬化锯断的霰弹枪
-Rusty Sawed-Off Shotgun=生锈的锯断的霰弹枪
-Armor Piercing Sniper Rifle=穿甲狙击步枪
-Enhanced Sniper Rifle=改良狙击步枪
-Hardened Sniper Rifle=硬化狙击步枪
-Rusty Sniper Rifle=生锈的狙击步枪
-Craft 10 Weapons=制作10件武器
-Craft 10 Outfits=制作10件服装
-Crafting Time & Cost=制作耗时和成本
-Rad Healing Speed=辐射损伤回复速度
--{0}% Training Time=-{0}% 训练时间
-+{0}% XP=+{0}% 经验
-NOT ENOUGH CAPS=瓶盖不足
-Increases Luck training speed=加快【幸运】的提升速度
-Increases Intelligence training speed=加快【智力】训练速度
-{0}/{1} RECIPE FRAGMENTS FOUND={0}/{1}发现配方碎片
-CRAFTING IN PROGRESS=正在生产
-Craft {0}?=是否制作{0}？
-Increases Agility training speed=加快【敏捷】训练速度
-ROOM ON FIRE=房间着火了
-FERAL GHOUL ATTACK=狂尸鬼侵袭
-MOLE RAT ATTACK=鼹鼠侵袭
-Found a {0}.=找到了一个{0}。
-Detected {0}=检测到{0}
-Found {0}=找到{0}
-Located {0}=定位了{0}
-Discovered {0}=发现{0}
-Explorer's journal. New entry. Fancy Lads snack cakes provide excellent sustenance.=探索者日志。最新记录：俏男孩夹心蛋糕很好地维持了生计。
-Explorer's journal. New entry. Whoever chose the name “Deathclaw” wasn't kidding.=探索者日志。最新记录：无论是谁，取名叫“死爪”，都不是闹着玩儿的。
-Explorer's journal. New entry. Societal infrastructure is completely dismantled.=探索者日志。最新记录：基础公共设施全部被拆。
-Explorer's journal. New entry. In the Wasteland, trust can get you killed.=探索者日志。最新记录：在废土，随便信任别人只会让你身陷死亡威胁。
-Explorer's journal. New entry. Old religions mostly gone, replaced by cults.=探索者日志。最新记录：旧的正派宗教大多都消失了，取而代之的都是些邪教。
-Explorer's journal. New entry. Everyone is armed. Guns are commonplace.=探索者日志。最新记录：每个人都全副武装，枪支早就司空见惯了。
-Explorer's journal. New entry. Fashion is dead. You wear what keeps you alive.=探索者日志。最新记录：时尚已经灭绝了，什么能让你活命你就穿什么。
-Explorer's journal. New entry. TVs don't work, but radio broadcasts are common.=探索者日志。最新记录：电视已经没用了，无线电广播倒是变得常见了。
-Explorer's journal. New entry. Old buildings have supplies, but they're often guarded.=探索者日志。最新记录：旧建筑里面有补给，但是通常被保护起来了。
-Explorer's journal. New entry. Everywhere I look, death. Suffering. And... hope.=探索者日志。最新记录：放眼望去，看到的都是死亡、痛苦，以及……希望。
-Explorer's journal. New entry. I've seen children, families. Life goes on.=探索者日志。最新记录：我见到了许多孩子，家庭。生活还在继续。
-Explorer's journal. New entry. Marriage is not uncommon. You can't kill love.=探索者日志。最新记录：婚姻仍然很常见，你无法扼杀爱情。
-Explorer's journal. New entry. Radscorpion. Stinger plus claws equals death.=探索者日志。最新记录：辐射蝎。毒刺加巨螯能让你一命呜呼。
-Explorer's journal. New entry. Lock picking is an essential skill for gaining access.=探索者日志。最新记录：撬锁是通行的必备技能。
-Explorer's journal. New entry. Many functional computer terminals. Hacking a necessity.=探索者日志。最新记录：对于许多仍在运作的终端机，入侵系统成了必然。
-Explorer's journal. New entry. Medical training is essential for survival.=探索者日志。最新记录：想要生存下来，医疗训练是必需的。
-Explorer's journal. New entry. The Brotherhood of Steel favors technology. Worships it.=探索者日志。最新记录：钢铁兄弟会热爱科技，甚至是崇拜。
-Explorer's journal. New entry. Training with a variety of guns is a must.=探索者日志。最新记录：练习使用各类枪支也成了必需。
-Explorer's journal. New entry. Music, painting, dance. Art and culture survive.=探索者日志。最新记录：音乐，绘画，舞蹈。艺术和文化存活了下来。
-Guess I'll head east for a bit.=也许我该向东走一段路。
-Guess I'll head north for a bit.=也许我该向北走一段路。
-Guess I'll head west for a bit.=也许我该向西走一段路。
-Guess I'll head south for a bit.=也许我该向南走一段路。
-Explorer's journal. New entry. Most dogs no longer man's best friend.=探索者日志。最新记录：大部分狗都不再是人类最好的朋友了。
-Explorer's journal. New entry. Squirrel tastes much better than you'd think.=探索者日志。最新记录：松鼠比你想象中好吃多了。
-Explorer's journal. New entry. Thought I saw a UFO, but that would be impossible...=探索者日志。最新记录：我认为我看到了一架UFO，但应该不太可能……
-Explorer's journal. New entry. Sea creatures now extremely dangerous. Still delicious.=探索者日志。最新记录：海洋生物现在极度危险，虽然还是很好吃。
-Explorer's journal. New entry. Sunsets, once romantic, are now terrifying. Fear the night.=探索者日志。最新记录：以前日落是很浪漫的，而如今却让人恐惧。惧怕黑夜。
-Explorer's journal. New entry. So very hungry. Wondering if human tastes like chicken.=探索者日志。最新记录：真的很饿，很好奇人肉尝起来像不像鸡肉呢。
-Explorer's journal. New entry. Money replaced by soda bottle Caps. Hands always sticky.=探索者日志。最新记录：钱已经被苏打水瓶盖取代了，手总是弄得黏黏的。
-Explorer's journal. New entry. The comics were wrong. Radiation does not grant super powers.=探索者日志。最新记录：漫画都错了，辐射并不会赋予一个人超能力。
-Explorer's journal. New entry. Love does not conquer all. Nukes come close.=探索者日志。最新记录：爱并不能征服一切，核武器倒是可以。
-Explorer's journal. New entry. Bigger not always better. Case in point – roaches and scorpions.=探索者日志。最新记录：大的并不总是好的，比如——蟑螂和蝎子。
-Explorer's journal. New entry. Junk is everywhere, but has multiple uses.=探索者日志。最新记录：到处都有垃圾，但是它们用途广泛。
-Explorer's journal. New entry. Power Armor still exists, but is rare. Affords maximum protection.=探索者日志。最新记录：动力装甲仍然存在，但很稀有，它能提供最大的保护。
-Explorer's journal. New entry. Found a fat man willing to share food. May live another day.=探索者日志。最新记录：找到一个愿意分享食物的胖子，能让你多活一天。
-Explorer's journal. New entry. Fruits and vegetables still grow, but are mutated, like so much else.=探索者日志。最新记录：水果和蔬菜还能长，但是都发生了突变，就像许多其他事物。
-Explorer's journal. New entry. Homemade weapons abound. Humans still excel at killing each other.=探索者日志。最新记录：现在到处都是自制武器，人类仍然精于自相残杀。
-Explorer's journal. New entry. Radio still widely used, remains an effective means of communication.=探索者日志。最新记录：收音机被广泛使用，仍旧是一项十分有效的交流工具。
-Explorer's journal. New entry. We were wrong – cats not, in fact, extinct. But still lazy.=探索者日志。最新记录：我们错了，猫事实上并没有灭绝，但还是那么懒。
-SAVE & EXIT=保存并退出
-CAM SCROLL SPEED=画面滚动速度
-SELECT NEW HOTKEY=选择新快捷键
-CAM ZOOM SPEED=画面缩放速度
-There are always three Objectives you can work on.\n\nYou can abandon one Objective each day for free and receive a new Objective in its place.\n\nAdditional Objectives can be skipped per day with Nuka-Cola Quantum.\n\nHarder Objectives give better rewards.=总是会有三个目标供你完成。\n\n你每天可以放弃一个目标并接受一个新目标。\n\n可以消耗量子型核子可乐额外跳过目标。\n\n难度较大的目标同样地会有更好的奖励。
-Hint: Luck stat affects the probability of earning CAPS when collecting Resources.=提示：幸运会影响采集资源时捡到瓶盖的概率。
-Every Dweller has stats called SPECIAL\n\nS (trength)\nP (erception)\nE (ndurance)\nC (harisma)\nI (ntelligence)\nA (gility)\nL (uck) \n\nEvery room in the Vault is linked to one of the SPECIAL stats. The better the Dweller's stat is for that room, the more they influence the room's effects.=每个居民都有属性值，称为SPECIAL\n\nS（力量）\nP（感知）\nE（耐力）\nC（魅力）\nI（智力）\nA（敏捷）\nL（幸运）\n\n避难所中的每个房间都与属性值中的其中一种相关联。居民与房间相对应的属性值越高，他们在该房间的工作效率越高。
-Hint: Find RARE and LEGENDARY Dwellers in Lunchboxes.=提示：避难所科技午餐盒中含有稀有和传说级别的居民。
-LEVEL\n\nDwellers level up over time while working in Production Rooms, exploring the Wasteland, and killing enemies on Quests.\n\nLeveling up increases the health of a Dweller. The higher their level is, the higher their health, but Dwellers with high Endurance gain more health when they level up. \nRooms unlock based on how many Dwellers you have in your Vault.\n\nRARITY\n\nThere are three types of rarity of Dwellers, COMMON, RARE, and LEGENDARY.\n\n- COMMON: Low level and SPECIAL stats\n\n- RARE: Average level and SPECIAL stats\n\n- LEGENDARY: High level and SPECIAL stats=等级 \n居民在生产间工作、去废土探索或是在任务中杀死敌人都会升级。\n\n升级会增加居民体力上限。等级越高，生命值越高，耐力越高的居民在升级时会获得更多的生命值。\n新的房间种类会根据你的避难所中的居民数量解锁。\n\n居民稀有度\n\n居民稀有度分为三级，普通，稀有和传说。\n\n- 普通：等级低，SPECIAL属性低\n\n- 稀有：等级中等，SPECIAL属性中等\n\n- 传说：等级高，SPECIAL属性高
-DWELLERS LEVEL & RARITY=居民等级和稀有度
-Hint: The higher the Dweller's level, the more CAPS their revival will cost.=提示：居民等级越高，复活他们所花费的瓶盖越多。
-Hint: Pay close attention to what a Dweller is telling you to know more about what makes them happy.=提示：特别留意居民跟你说的话，了解如何使他们高兴。
-Hint: Playing for 7 days gives you a Lunchbox as a reward.=提示：游戏7天会奖励一个避难所科技午餐盒。
-DAILY REPORT & VAULT RATING=每日报告和避难所分数
-Hint: Babies will wait to be born if there is no space in your Vault.=提示：如果你的避难所空间不足，小宝宝不会出生。
-When you need new Dwellers you can always encourage your Dwellers to procreate.\n\n- Put a man and a woman in the Living Quarters and see if they like each other.\n\n- If all goes well, the woman will become pregnant.\n\n- After some time, the pregnant Dweller will be ready to give birth.\n\n- Tap the icon above her head to welcome a new child in your Vault.\n\n- Once the child has grown up, you will have a new Dweller.=需要新的居民时，你可以鼓励自己的居民生育。\n\n- 将一名男性和一名女性拖至宿舍，看看他们是否互相喜欢。\n\n- 如果一切顺利，女性就会怀孕。\n\n- 一段时间后，怀孕的居民就会生育。\n\n- 轻按她头上的图标来迎接避难所里的新生命。\n\n- 当小孩长大后，你就有了一名新的居民。
-When you need new Dwellers you can always encourage your Dwellers to procreate.\n\n- Put a man and a woman in the Living Quarters and see if they like each other.\n\n- If all goes well, the woman will become pregnant.\n\n- After some time, the pregnant Dweller will be ready to give birth.\n\n- Click on the icon above her head to welcome a new child in your Vault.\n\n- Once the child has grown up, you will have a new Dweller.=需要新的居民时，你可以鼓励自己的居民生育。\n\n- 将一名男性和一名女性拖至宿舍，看看他们是否互相喜欢。\n\n- 如果一切顺利，女性就会怀孕。\n\n- 一段时间后，怀孕的居民就会生育。\n\n- 轻按她头上的图标来迎接避难所里的新生命。\n\n- 当小孩长大后，你就有了一名新的居民。
-MAKING BABIES & LIVING QUARTERS=生宝宝及起居室
-Hint: Be careful not to build rooms before you need them, or expand too fast.=提示：避免建造多余的房间或者是扩展得太快。
-Build Living Quarters to welcome new Dwellers to your Vault.\n\n- Expand your Vault by building rooms so you can produce more resources.\n\n- Pay attention to the Vault Resource Gauges, they are a good indicator to follow when choosing the next room to build.\n\n- Build an Elevator when you want to expand downwards.\n\n- You can not delete a room if it is connected on both sides.\n\n- Building multiple types of the same room will increase its price.=建造新的起居室以收容新的居民。\n\n- 建造更多的房间来扩展你的避难所，同时你也能够生产更多的资源。\n\n- 请注意避难所的资源度量表，它们会提示你下一步应该建造哪一类房间。\n\n- 想要向深处扩展时，建造一部电梯。\n\n- 如果一间房左右都连接着房间，你便无法将它拆除。\n\n- 同一类型的房间多次建造会提升它的建造成本。
-BUILD YOUR VAULT & ELEVATOR=建造你的避难所以及电梯
-Hint: A room merge only happens if all rooms are of the same level.=提示：同等级同类型的房间才能够互相融合。
-Upgrade your Rooms to increase their performance.\n\n- Most Rooms can be upgraded twice. Upgraded resource rooms produce more resources.\n\n- Up to 3 Rooms of the same type can be merged, by building them next to each other\n\n- Merged Rooms let you assign more Dwellers to the room, while also becoming more efficient.\n\n- Some rooms, like Workshops, begin as larger rooms and cannot be merged.\n\n- Themes can only be applied to fully merged and upgraded Diners and Living Quarters.=升级房间以增加产量。\n\n- 大多数房间能升级两次。升级资源室以获得更多资源。\n\n- 相同类型的房间左右紧挨着建造便可以融合，最多3间。\n\n- 融合后的房间可以分配工作给更多的居民，同时也更高产。\n\n- 大型房间，比如工作间，无法融合。\n\n- 布局只能够应用于合并升级过后的用餐区或是生活区。
-ROOM LEVEL & MERGING=房间等级以及房间融合
-Hint: If you run out of storage space, upgrade your storage, build more storage, equip your Dwellers or sell items.=提示：如果你的储存空间不足，请升级或建造更多仓库，或者把物品服装至居民或卖掉。
-Storage Rooms increase your Weapons, Outfit, Junk and Pets inventory space.\n\n- Upgrade your Storage Rooms to increase inventory capacity.\n\n- Sell unwanted items by visiting the inventory from the Pip-Boy menu.\n\n- Scrap Weapons and Outfits to turn them into Junk from their Recipes.\n\n- Use the Storage Room as a temporary holding bay for Dwellers in case all other Rooms are full.\n\n- Building MedBays and Science Labs will increase the number of Stimpaks and RadAway you can store.=仓库可以增加你的武器，服装，垃圾和宠物的储存空间。\n\n- 升级仓库以增加储物容量。\n\n- 在哔哔小子菜单的物品栏里可以卖掉不想要的物品。\n\n- 当其他房间都满了，可以将仓库用作暂时安置居民的房间。\n\n- 建造制药间和科学实验室能够增加治疗针和消辐宁的储存量。
-Storage Rooms increase your Weapons, Outfit, Junk and Pets inventory space.\n\n- Upgrade your Storage Rooms to increase inventory capacity.\n\n- Sell unwanted items by visiting the inventory from the Pip-Boy menu. You can also open the inventory with 3D Touch by pressing on a Storage Room.\n\n- Scrap Weapons and Outfits to turn them into Junk from their Recipes.\n\n- Use the Storage Room as a temporary holding bay for Dwellers in case all other Rooms are full.\n\n- Building MedBays and Science Labs will increase the number of Stimpaks and RadAway you can store.=仓库可以提升武器、服装、垃圾和宠物的物品栏空间。\n\n- 升级你的仓库可以提升物品栏容量。\n\n- 请查看哔哔小子菜单中的物品栏，筛选出不需要的物品进行出售。你还能通过3D触控点击仓库来打开物品栏。\n\n- 分解武器和服装可以将它们变为配方中需要的垃圾。\n\n- 请将仓库作为临时的暂住点让居民居住，这样可以暂时解决房间满员的问题。\n\n- 建造制药间和科学实验室可以提升治疗针和消辐宁的存储量。
-Hint: Multiple Dwellers training together in the same room decrease the training time for all Dwellers in the room.=提示：不同类型的居民同时在一间房间内训练能够缩短该房内全部居民的训练时间。
-Putting Dwellers in a Training Room will increase their SPECIAL stats.\n\nThere is a Training Room for each one of the SPECIAL stats.\n\nStrength: Weight Room\nPerception: Armory\nEndurance: Fitness Room\nCharisma: Lounge\nIntelligence: Classroom\nAgility: Athletics Room \nLuck: Game Room\n\nYou can raise each stat up to 10.\n\nThe higher the SPECIAL stat of a Dweller is, the longer it takes them to train to the next level, but you can use Nuka-Cola Quantum to speed up the training time.=把居民拖到训练室能增加他们的SPECIAL属性。\n\n每个SPECIAL属性都有对应的训练室。\n\n力量：负重室\n感知：军械室\n耐力：健身房\n魅力：休闲室\n智力：教室\n敏捷：田径室\n幸运：赌场\n\n每条属性最高10点。\n\n居民的SPECIAL属性越高，升至下一级所需的时间越多，不过你可以使用量子型核子可乐来加快训练时间。
-+{{#}}% Wasteland Caps=废土寻获的瓶盖+{$1}%
-+{{#}}% Wasteland Junk=废土寻获的垃圾+{$1}%
-+{{#}}% Wasteland Weapons & Outfits=废土寻获的武器和服装+{$1}%
-Complete {{#}} Quest from the Overseer’s Office=完成{$1}次监管者办公室的任务
-Complete {{#}} Quests from the Overseer’s Office=完成{$1}次监管者办公室的任务
-Find the Overseer of Vault {#}.=寻找$1号避难所的监管者。
-Go to Vault {#} and find the Overseer.=前往$1号避难所找到监管者。
-Have a Dweller exploring the Wasteland for {#} day=让一个居民探索废土$1天
-Have a Dweller exploring the Wasteland for {#} hour=让一个居民探索废土$1小时
-Have a Dweller exploring the Wasteland for {{#}} days=让一个居民探索废土{$1}天
-Have a Dweller exploring the Wasteland for {{#}} hours=让一个居民探索废土{$1}小时
-It's New Year's day... and the Vault threw one heck of a party last night. But the Overseer's son, Jack, is missing and we need to find him! We know he was with us before the clock struck {#}, but everything afterwards is a blur. And we're all wearing Radiation Suits. We must have been at the Corvega Auto Plant at some point...=今天是元旦节……昨晚避难所开了一个难得的晚会。但是监管者的儿子，杰克，却失踪了！我们必须找到他！在$1点之前，他一直都与我们待在一起，但是之后就没有印象了。我们都穿上了防辐射服，我们必须去汽车工场里调查一下……
-Paula Plumbkin escaped from the Feral Ghouls and headed to Vault {#}. Hopefully we can catch up with her there.=保拉·普朗布金从狂尸鬼手中逃脱了，并且向着$1号避难所行进。希望我们能在那里追上她。
-Send {#} Dweller to the Wasteland with a Pet=送一个带宠物的居民去废土
-Send {{#}} Dwellers to the Wasteland with a Pet=送{$1}个带宠物的居民去废土
-So! You have discovered my lair! Vault {#}! I am...=哦！你发现了我的巢穴！$1号避难所！我……
-Survive {{#}} Deathclaw attack with no casualties=保证{$1}在死爪的攻击中不受损伤
-Survive {{#}} Deathclaw attack without using stimpacks=在{$1}场死爪的攻击中不使用治疗针存活下来
-Survive {{#}} Deathclaw attacks with no casualties=在{$1}场死爪的攻击中不受损伤
-Survive {{#}} Deathclaw attacks without using stimpacks=在{$1}场死爪的攻击中不使用治疗针存活下来
-Survive {{#}} Feral Ghoul attack with no casualties=在{$1}场狂尸鬼的进攻中不受损伤
-Survive {{#}} Feral Ghoul attacks with no casualties=在{$1}场狂尸鬼的进攻中不受损伤
-Survive {{#}} Mole rat attack with no casualties=在{$1}场鼹鼠的攻击中不受损伤
-Survive {{#}} Mole rat attack without using stimpacks=不使用治疗针从{$1}场鼹鼠攻击中幸存下来
-Survive {{#}} Mole rat attacks with no casualties=在{$1}场鼹鼠的攻击中不受损伤
-Survive {{#}} Mole rat attacks without using stimpacks=不使用治疗针从{$1}场鼹鼠攻击中幸存下来
-Survive {{#}} hour in the Wasteland without using radaway=不使用消辐宁的情况下，在废土存活{$1}小时
-Survive {{#}} hours in the Wasteland without using radaway=不使用消辐宁的情况下，在废土存活{$1}小时
-Talk to the Overseer at Vault {#} about the New Bugle.=与$1号避难所的监管者谈谈关于新号角的事情。
-Talk to the Overseer of Vault {#} about the New Bugle.=与$1号避难所的监管者谈谈关于“新号角”的事情。
-Talk to the Overseer of Vault {#}.=与$1号避难所的监管者交谈。
-Talk to the Overseer of Vault {#}.=与$1号避难所监管者交谈。
-Time for round {#} of... Lose Your Head!=第三轮……“掉脑袋”！
-Vault {#}'s Overseer Alvarez told us the same thing he told Paula Plumbkin - to search the Vault-Tec offices for info on Vaultopolis!=$1号避难所的监管者阿尔瓦雷斯把他告诉保拉·普朗布金的事情都告诉了我们 - 去避难所科技办公室搜查一下避难所之城的信息！
-You found the holotape records of Maxson's Roughnecks, a Brotherhood of Steel team searching the Wasteland for technology. Track them down to discover their fate - starting at Vault {#}!=你发现了马克森蛮子的全息录影带，一个钢铁兄弟会小队正在废土寻找避难所科技。追踪下去，然后看看最后发生了什么 - 一切都是从$1号避难所开始的！
-You've found the journal of Paula Plumbkin, an Overseer who went searching for the mythical utopia, Vaultopolis. Follow in her footsteps! First stop - Vault {#}.=你找到了保拉·普朗布金的日记，一个前去调查神秘的乌托邦（避难所）的监管者，请跟着她的阻击！第一站 - $1号避难所。
-^Congratulations! Vault-Tec has selected you to be the Overseer of Vault {#}\.$=祝贺避难所科技选中你，成为$1号避难所的监管者。
-^\[{#}F{#}C\]Now that you know the basic rules of the Overseer role, keep expanding your Vault. Just remember to keep your Dwellers alive and happy. Good luck!\.$=[$1F$1C]熟悉监督官职责后，继续扩建避难所，保障居民生存与心情，祝你好运。
-x{{#}} Wasteland Return Speed=x{$1}废土返回速度
-{{#}}: Your Quest team has reached its destination.={$1}：你的任务小队已经到达目的地。
+
+# _Substitutions.txt
+#
+#
+#
+

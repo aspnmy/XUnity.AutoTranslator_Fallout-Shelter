@@ -1,0 +1,52 @@
+# ==============================================
+# Steam版本: 2.4.0
+# Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
+# 精翻作者: aspnmy
+# 技术支持: support@e2bank.cn
+# 最后更新: 2026-05-29 06:05:02
+# ==============================================
+# 避难所机制
+# 本文件用于保存避难所机制译文
+# 格式：英文=中文
+# ==============================================
+Every Lunchbox can give you COMMON, RARE, or LEGENDARY items. Each Lunchbox is guaranteed to either have a Dweller or a RARE item.=每个避难所科技午餐盒都可以提供普通、稀有或传奇物品。每个避难所科技午餐盒都保证包含一位居民或一件稀有物品。
+You don't have any LunchBoxes, would you like to buy one?=你没有避难所科技午餐盒，是否购买？
+The Overseer's son, Jack, is missing after a crazy New Year's party!=在一场新年晚会后，监管者的儿子，杰克失踪了！
+The Overseer's son got married to a Raider, but she sold him to Slavers! We have to catch them before they disappear west!=监管者的儿子与一个掠夺者结婚了，但是却被卖给了奴隶贩子！我们得在失去他们的踪迹之前找到他们！
+Recover the Lunchbox.=找到避难所科技午餐盒。
+Bring back that Lunchbox.=带回避难所科技午餐盒。
+Overseer Zilewski is that way.=监管者兹勒维斯基在那里。
+The Lunchbox sounds great! Thank you.=避难所科技午餐盒听上去不错啊！谢谢你了。
+Build an OVERSEER'S OFFICE?=确定要建造一个监管者办公室？
+The Overseer had better appreciate this.=监管者会更加欣赏这个的。
+The Overseer's going to love this!=监管者会喜欢这个的！
+The Overseer really made a smart move assigning me here.=监管者派我来这里真是一个明智的决定。
+The Overseer made the right choice, choosing me for this.=监管者选中我来完成这个任务是明智之选。
+Hint: Survival Mode is not for the faint of heart. Be prepared!=提示：胆小鬼可别轻易尝试生存模式，除非你做好充分的准备！
+Hint: Some objectives will reward you with Lunchboxes!=提示：一些目标会奖励避难所科技午餐盒！
+Hint: Some Objectives reward you with Lunchboxes, Pet Carriers or Mr. Handy Boxes!=提示：一些目标会奖励避难所科技午餐盒、宠物笼或是巧手先生箱子！
+Answer Overseer Zilewski's distress call.=回应兹勒维斯基监管者的求救信号。
+Can sing America the Beautiful... or swear at the Overseer.=可以歌颂美丽的美国……也可以怒喷监管者。
+Confront the Overseer.=遭遇监督(者)。
+Don’t worry. If you die, I’ll tell the Overseer you were a total hero.=别担心，如果你死了，我会告诉监管者，你绝对是个大英雄。
+Dwellers can’t beat a team of former Overseers.=居民怎么可能能赢过前任监管者组成的队伍。
+Fine. But where is Overseer Chang?=好吧，但是程监督(者)在哪儿？
+Hi there! I'm Overseer Emma.=嘿！我是监管者艾玛。
+How'd a dog get to be Overseer?=一条狗是怎么做监管者的？
+Huh, really? Maybe you should go speak to the Overseer then.=真的吗？也许这之后你应该和监管者聊聊。
+Make lists and check them twice. Santa: the original Overseer.=制作列表，然后反复审核，圣诞老人就是监管者的原型。
+Our Overseer wants us to kill you.=我们监管者派我们来杀你。
+Rescue Overseer Chang from Rubarb's Raiders.=从鲁巴布侵略者手里救出程监督(者)。
+Rescue Overseer Chang.=拯救程监督(者)。
+Rescue Overseer Mogabe from Rubarb's Raiders.=从鲁巴布的掠夺者手中救出监管者莫加布。
+Rescue Overseer Mogabe.=拯救监管者莫加布。
+Sometimes I feel the Overseer... watching me.=有时候，我觉得监管者好像在看我。
+Speak to Overseer Nicholas.=与尼古拉斯监管者交谈。
+Stay sharp! The Overseer's watching us!=保持警惕！监管者正在盯着我们！
+Talk to Overseer Zilewski.=与兹勒维斯基监管者交谈。
+Upgrade the Overseer’s Office to send more teams on Quests.=升级监管者办公室可以派遣更多的小队去参加任务。
+Wait ‘till the Overseer hears about this. Heads are going to roll!=要是被监管者听到了，小心人头落地！
+What? Huh? Seriously? Ugh. FINE. The Overseer's that way. Killjoy.=什么？恩？你是认真的吗？很好，监管者就在那儿，祝你杀戮愉快。
+Wow. That is... quite a predicament. I'm sure the Overseer will see to this personally. Really.=这真是……相当棘手。我肯定监管者会亲自负责这个的，我是说真的。
+You’ve already sent out the maximum number of Quest teams. Upgrade the Overseer’s Office to send more.=您派遣的任务小队人数已达最大值，请升级监管者办公室增加该数值。
+Pets are found in Lunchboxes and Pet Carriers.\n\nPets provide a bonus effect to the Dweller they're assigned to and increase that Dweller’s damage in combat. They can even tag along and help in the Wasteland.\n\nOnly one to three Pets are allowed in a room at a time, depending on the room's size.\n\nPets come in COMMON, RARE and LEGENDARY versions. The rarer the Pet, the greater its bonus effect, but even identical Pets might grant bonuses with different strengths.\n\nAssign a Pet like you would equip a Weapon or an Outfit.=你可以在避难所科技午餐盒或者从宠物笼获得宠物。\n\n宠物会为跟随的主人提供加成，在战斗中提升主人的伤害。它们甚至会跟主人去废土探索并提供帮助。\n\n一间房内最多能容纳一到三只宠物，取决于房间的大小。\n\n宠物也分为普通，稀有和传说三个稀有度。宠物越稀有，提供的加成也越多，但是同一稀有度的宠物根据不同能力获得的加成也不同。\n\n像服装武器和服装那样，为居民配上宠物吧。

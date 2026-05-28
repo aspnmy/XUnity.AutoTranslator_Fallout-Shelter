@@ -1,37 +1,29 @@
 # ==============================================
-# 颜色代码规则
+# Steam版本: 2.4.0
+# Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
+# 精翻作者: aspnmy
+# 技术支持: support@e2bank.cn
+# 最后更新: 2026-05-29 05:45:03
 # ==============================================
+
 # 这些规则包含颜色代码前缀，如 [394039FF]
 # 格式：原文 = 译文
-# ==============================================
-# ==============================================
 # 来源: _Substitutions.txt
-# ==============================================
 [394039FF]Build Medbays and Science Labs to increase your limit of Stimpaks and RadAway.[-]=[394039FF]建医疗室与实验室，提升药品存储上限。[-]
-[394039FF]Want to fill your Vault with Ghouls? Check out the upgraded Barbershop![-]=[394039FF]想收容尸鬼？试试升级后的理发店。[-]
 [394039FF]Deathclaws are tough, don't be a hero, bring your friends.[-]=[394039FF]死爪战力强悍，切勿单打独斗。[-]
 [394039FF]Confused how something works?  Check the VDSG in the Pip-Boy for help.[-]=[394039FF]玩法有疑问，可查阅哔哔小子内的指南。[-]
-[394039FF]Need extra CAPS? You can sell weapons and outfits from your Vault storage.[-]=[394039FF]缺少瓶盖？可出售仓库内武器与服装。[-]
-[394039FF]Each SPECIAL stat increases a Dweller's effectiveness in the Wasteland in its own way.[-]=[394039FF]各项属性，分别提升居民废土能力。[-]
 [394039FF]Dwellers with high Strength perform better in Power rooms.[-]=[394039FF]力量高的居民，发电岗位效率更高。[-]
 [394039FF]Dwellers with high Agility perform better in Food rooms.[-]=[394039FF]敏捷高的居民，餐饮岗位效率更高。[-]
-[394039FF]Dwellers exploring the Wasteland have a chance of finding surprise locations.[-]=[394039F]外出探索，有几率发现隐藏地点。[-]
 [394039FF]Dwellers that die on a Quest can only be revived once the Quest is over.[-]=[394039F]任务中阵亡居民，需任务结束后复活。[-]
 [394039FF]Find a shiny new gun while on a Quest? You can equip it right away![-]=[394039F]任务获得新武器，可直接装备使用。[-]
-[394039FF]Rescued Dwellers will wait outside your Vault when a Quest is completed.[-]=[394039F]任务完成，获救居民将在避难所外等候。[-]
 [394039FF]You can craft Minutemen and Brotherhood of Steel Themes in the Theme Workshop.[-]=[394039FF]主题工坊可制作民兵、钢铁兄弟会风格装饰。[-]
-[394039FF]Send Mr. Handy to the Wasteland to collect CAPS and items.[-]=[394039FF]派遣巧手先生，前往废土收集物资。[-]
 [394039FF]Already skipped an Objective today? You can use Nuka-Cola Quantum to skip more.[-]=[394039F]今日已跳过目标，可用可乐继续跳过。[-]
 [394039FF]Click on the resource bars at the top of the screen for more details on your resource storage.[-]=[394039FF]点击顶部资源栏，查看存储详情。[-]
-[394039FF]A nuclear winter is cold, keep warm with Vault-Tec![-]=[394039F]核冬天严寒，信赖避难所科技。[-]
 [394039FF]Assign Dwellers to production rooms to obtain resources.[-]=[394039FF]指派居民至生产房间，获取资源。[-]
-[394039FF]Vault-Tec rules limit Vault capacity to 200 Dwellers.[-]=[394039FF]避难所居民上限为200人。[-]
 [394039FF]You can sort the Dweller list by clicking on the column names.[-]=[394039FF]点击表头，可排序居民名单。[-]
 [394039FF]Deathclaws are faster, stronger and deadlier than Raiders.[-]=[394039FF]死爪综合战力强于掠夺者。[-]
 [394039FF]Critical Hits can turn the tide of battle... Use them wisely.[-]=[394039F]暴击可扭转战局，请合理使用。[-]
 [394039FF]You can craft Railroad and Institute Themes in the Theme Workshop.[-]=[394039FF]主题工坊可制作铁路、学院风格装饰。[-]
-[394039FF]Radio rooms attract new Dwellers and improve the happiness in your Vault.[-]=[394039FF]广播室吸引新人，提升全员快乐度。[-]
-[394039FF]You can only have one Mr. Handy assigned to a floor at a time. (Vault-Tec rules)[-]=[394039FF]每层仅可安排一名巧手先生。[-]
 [394039FF]Some Quests require Secret Clues to unlock. Loot every container you can![-]=[394039F]部分任务需线索解锁，记得搜刮容器。[-]
 [394039FF]Mr. Handy will stay on his assigned floor collecting resources until moved to a different floor.[-]=[394039F]巧手先生常驻楼层，持续收集资源。[-]
 [394039FF]Themes can only be applied to fully merged and upgraded Diners and Living Quarters.[-]=[394039F]主题仅适用于满级合并餐厅与居住区。[-]
@@ -41,35 +33,27 @@
 [394039FF]Successfully Rushing will give you the room's regular rewards plus a special bonus![-]=[394039FF]加速成功，可获得额外奖励。[-]
 [394039FF]Even if you stop a Radio Room from calling out, it continues to boost Dweller happiness.[-]=[394039FF]关闭招募，广播室仍提升快乐度。[-]
 [394039FF]Upgrading a room will make it more efficient and give you more storage.[-]=[394039F]升级房间，提升效率与存储空间。[-]
-[394039FF]When a Dweller is assigned to the Radio room it will increase all Vault Dwellers happiness.[-]=[394039FF]居民入驻广播室，全员快乐度提升。[-]
-[394039FF]Your Dweller does not suffer damage or radiation when coming back from the Wasteland.[-]=[394039F]居民从废土返回，不受伤害与辐射。[-]
-[394039FF]Pets equipped to dead Dwellers that are not revived during Quests will return to the Vault.[-]=[394039F]阵亡居民的宠物，会自动返回避难所。[-]
-[394039FF]Mole rats start in rooms that are touching dirt and can spread throughout your Vault.[-]=[394039FF]鼹鼠从近土房间滋生，会蔓延全避难所。[-]
 [394039FF]Raiders can strike any time, be sure to have Dwellers ready and on guard![-]=[394039F]掠夺者随时来袭，请做好防御准备。[-]
-[394039FF]The longer a Dweller survives in the Wasteland, the better gear they will find.[-]=[394039FF]探索时间越久，获取装备品质越高。[-]
 [394039FF]Crafting Rare and Legendary items always requires Rare and Legendary Junk, respectively.[-]=[394039FF]制作稀有/传奇物品，需对应品质材料。[-]
-[394039FF]Vault-Tec takes some of the Outfits worn by new arrivals and puts them in Lunchboxes.[-]=[394039FF]新人服饰，部分会存入避难所科技午餐盒。[-]
-[394039FF]To quickly check on your Dwellers exploring, just click directly on the Wasteland.[-]=[394039FF]点击废土地图，查看探索居民状态。[-]
 [394039FF]Failed Quests can always be retried... for a few CAPS.[-]=[394039FF]任务失败，可花费瓶盖重新挑战。[-]
 [394039FF]Dweller health does not replenish over time in a Quest... Be sure to pack tons of Stimpaks before leaving.[-]=[394039FF]任务中血量不恢复，出发请备足治疗针。[-]
 [394039FF]Rooms must be the same level in order to be merged.[-]=[394039FF]仅同级别的房间可以合并。[-]
 [394039FF]Feeling lucky? When you scrap an item, you might get all the Junk from its Recipe.[-]=[394039F]拆解物品，有几率获得全套配方材料。[-]
 [394039FF]You can skip 1 Objective each day by clicking the X on the Objective screen.[-]=[394039FF]每日可点击叉号，跳过一项目标。[-]
 [394039FF]Pet bonuses work on Quests too, don't forget to bring some furry friends![-]=[394039FF]宠物加成任务生效，记得携带同行。[-]
-[394039FF]Build Storage Rooms to increase your Vault's Weapon and Outfit holding capacity.[-]=[394039FF]建造储藏室，提升装备存储上限。[-]
-[394039FF]Vault-Tec. We'll be there![-]=[394039F]避难所科技，始终相伴。[-]
 [394039FF]Don't forget to pack RadAway on Quests, some of the enemies do radiation damage.[-]=[394039FF]任务请带抗辐宁，敌人会造成辐射伤害。[-]
 [394039FF]Upgrade the Overseer's Office to send more teams on Quests.[-]=[394039FF]升级监督官办公室，可多队同时执行任务。[-]
 [394039FF]During an invasion, flashing resource bars means they are stealing your resources![-]=[394039FF]遭遇入侵，闪烁资源栏代表物资被掠夺。[-]
 [394039FF]Rooms run on Power. Dwellers run on Food and Water.[-]=[394039F]房间耗电，居民依靠食物与水源生存。[-]
-
-# ==============================================
-# 来源: _AutoGeneratedTranslations.txt
-# ==============================================
-﻿[394039FF]Higher level Dwellers with high SPECIAL have a better chance of surviving in the Wasteland.[-]=[394039FF]具有高SPECIAL属性的高级居民在荒原中生存的机会更大。[-]
-
-
-# ==============================================
-# 从fallout_shelter_zh.txt主文件补充
-# ==============================================
 ﻿[394039FF]Rooms run on Power. Dwellers run on Food and Water.[-]=[394039F]房间耗电，居民依靠食物与水源生存。[-]
+
+# 来源: _AutoGeneratedTranslations.txt
+
+
+# 从fallout_shelter_zh.txt主文件补充
+
+# fallout_shelter_zh_ColorCodes.txt
+#
+#
+#
+

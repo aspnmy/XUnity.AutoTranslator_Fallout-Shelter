@@ -1,0 +1,34 @@
+# ==============================================
+# Steam版本: 2.4.0
+# Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
+# 精翻作者: aspnmy
+# 技术支持: support@e2bank.cn
+# 最后更新: 2026-05-29 06:09:13
+# ==============================================
+# 游戏系统
+# 本文件用于保存游戏系统译文
+# 格式：英文=中文
+# ==============================================
+Limit Reached.=达到限制
+Why? Because you're a Tunnel Snake. And you RULE!=为什么？因为你是洞中蛇，你说了算！
+Settlements need rulers, and you're elected.=定居点需要统帅，而那个统帅就是你。
+Claim your reward.=获得你的奖励。
+You put him down, there's a reward in it for you.=你干掉他，就可以拿到奖励。
+Still no sign of Coach, or Rackie Jobinson's Jersey. Time to venture farther out. No risk, no reward!=还是没有教练的踪迹，拉基·乔宾逊的运动衫也是毫无头绪，是时候去探索一下更深的地方了，不入虎穴焉得虎子！
+You could have fooled me. Well, at least let me reward you for your trouble.=你可以糊弄我，好了，最起码让我补偿一下你。
+Any idea why this place is off limits?=知道这里为什么禁止入内吗？
+We rule, everyone else drools. You dig?=我们管事，其他人只能发傻，你们是来挖东西的？
+Fixed Endemic Virulent.=修复区域剧毒。
+Giving is its own reward. We don't need anything!=我们已经得到了对应的报酬了，不需要别的了！
+No Jersey, but limitless adventure. Am I right?=没有运动衫，只有无穷无尽的冒险，对吗？
+Monstrously horrific! Here. A reward.=太可怕了！这个给你，就当是奖励吧。
+The Code of Chivalry rules here.=这里信奉骑士精神。
+(He points to a stash of items. Gifts?)=（他指向了一堆东西，是礼物吗？）
+All systems nominal.=所有系统正常。
+Huh. Thought I heard a humming in the ventilation system.=我刚才好像听到通风机发出嗡嗡的声音。
+The lack of sun is getting to me. Time to up my vitamin D dosage.=我都没怎么晒过太阳，是时候补充一下我的维生素D了。
+The latest lethal tech from the Advanced Systems division.=最先进的部门研究出的新的杀伤性武器成果。
+Got ahold of the reins and stopped the Brahmin! The Merchant then gave me a reward.=抓住了缰绳并把双头牛停了下来！于是商人给了我一些奖赏。
+Harder Objectives give better rewards.=总是会有三个目标供你完成。
+Claim your reward!==索要奖励！
+Computer.=电脑。

@@ -1,0 +1,96 @@
+# ==============================================
+# Steam版本: 2.4.0
+# Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
+# 精翻作者: aspnmy
+# 技术支持: support@e2bank.cn
+# 最后更新: 2026-05-29 06:05:02
+# ==============================================
+# 宠物系统
+# 本文件用于保存宠物系统译文
+# 格式：英文=中文
+# ==============================================
+Assign a Pet like you would equip a Weapon or an Outfit.=你可以在避难所科技午餐盒或者从宠物笼获得宠物。
+Catch a baseball, rock or grenade and throw it right back.=抓起一个棒球，一块石头或是一颗手榴弹，然后马上把它扔出去。
+Assign Pets like you equip Weapons and Outfits.=宠物可以增加你的居民的属性。
+There isn't a ball he can't catch.=他一个球也抓不住。
+Splashing on a beach or curled up at your feet... the quintessential pet pooch.=在海滩边玩水或是蜷缩在你的脚边……典型的宠物狗。
+Fast and rugged, he ain't nothin' but a bird dog.=迅猛强悍，他可是鹰犬。
+His hunting days are over, but this dog never ducks his duties.=打猎的日子结束了，但这条狗从来不会忘记自己的职责。
+Rumor has it there's a cat somewhere under all that fur.=有谣言说，这对毛皮下面藏着一只猫。
+Because who wouldn't want a hairless cat?! Right?!=这样一只无毛猫，谁不想要呢？你说是不是？
+Thinks every day is Caturday.=认为每天都是猫节。
+Struggling with a catnip addiction, but still adorable.=沉溺于和猫尾巴草玩耍，但是还是非常的可爱。
+Vacate the premises immediately - or else!=立刻离开(注:搬离)这里，否则！
+Recover the Pet Carrier.=修复宠物笼。
+Find any lost animals.=寻找迷失的动物。
+Our pet?=我们的宠物？
+Rescue the Pet from the hungry Ghouls.=从饥肠辘辘的尸鬼手中救出宠物。
+Save a lost Pet from some hungry Ghouls.=从饥肠辘辘的尸鬼手中救出迷路的宠物。
+You must be the dog's owner!=你肯定是那条狗的主人了吧！
+You're gravely mistaken. That isn't even our dog.=你真是要笑死人了，那根本不是我们的狗。
+Teach the Raiders a lesson and rescue the missing dog.=教教那些掠夺者做人，然后夺回小狗。
+Can a Ghoul even take care of a pet?=尸鬼可以照顾宠物？
+Hey there, hip cats! Welcome to the coolest settlement around.=嘿，伙计！欢迎来到这附近最酷的定居点。
+Glad you could make it. This settlement is dedicated to preserving books.=很高兴你做到了，这个据点专门是用来保存书籍的。
+Aircraft Carrier.=航空母舰。
+Dogman.=狗人。
+Big Dog.=大狗。
+Three Dog.=三狗。
+Dogmeat.=狗肉。
+On an aircraft carrier.=坐航空母舰。
+Several species of small furry animals gathered together in a cave.=一些住群居在洞穴中的小型长毛动物。
+Scaredy Cats.=胆小猫。
+Eradicate the Radscorpions.=消灭辐射蝎。
+Heh, we don't mind some friendly competition.=我们不介意来点友好的“交流”。
+So we sent the cat ahead to find them and bring them back.=所以我们派了一只猫去找他们回来。
+No, but I'm looking for a dog that was with them named Bigsby.=不是，我们在寻找一条叫大斯派的狗。
+Rescue Sierra Petrovita.=拯救西雅拉。
+Rescue Sierra Petrovita from Ghouls.=从尸鬼手中救出西雅拉。
+Locate the hostage.=确定人质的位置。
+Some of those Raiders left for a warehouse and took my dog, Bigsby, with them.=一些掠夺者在仓库带走了我的狗，大斯派。
+Dognapping is a crime. I'll get him back!=诱拐犬类可是犯罪行为，我会把他找回来的！
+If anything's toast, it's your dog.=如果有什么东西呗烤了的话，那肯定就是你的狗了。
+Your muscles can't be allowed to make it to the competition.=肌肉可不是赢得比赛的关键。
+Meet the other Spelun-King competitors.=见见其它参加探险大王比赛的竞争对手。
+Recover the catcher's mitt.=找回棒球手套。
+Unfortunately, some Raiders jumped me and took my Pet Carrier.=但是很不巧，一些掠夺者突然冒出来，抢走了我的宠物笼。
+By the way, did you see a girl and a dog?=话说回来，你见到一个小女孩和一条狗了吗？
+Any idea where the Bugle's offices are located?=你知道那个号放在哪里了吗？
+Has a dog named Bigsby stopped by here?=这里有一条叫大斯派的狗路过过吗？
+The notorious Raider, Sally Switchblade, is getting married to the infamous Marcus Hammer. But they're both having second thoughts, because neither wants to live the Raider lifestyle anymore. If only they'd communicate! Bust in and solve their problems for them.=臭名昭著的掠夺者，弹簧刀萨利，与另外一个声名狼藉的家伙铁锤马库斯结婚了。不过他们都怀有各自的小心思，他们都不想过掠夺者的生活了。如果他们可以交流一下的话就好了！请去解决他们的问题。
+What do you think would make the scariest mutated animal?=你对这些变异的怪物有没有什么想法？
+Duuuuhh... Cat?=呃……猫？
+Really wish I had a pet.=真希望我能有只宠物。
+Oh, good idea. Maybe cats. Or ships. Or cats on ships.=好主意。也许是猫，也许是船，也可能是船上的猫。
+If I seem drunk, it's only because you're so intoxicating.=如果我看起来像是喝醉了，那是因为你实在太醉人了。
+You want a friend who sniffs, get a dog.=你想要一个会闻的伙伴吗，那就来条狗吧。
+Worked till they dropped. Such dedication!=一直在工作，太敬业了！
+Someone get this incompetent imbecile out of here.=有谁来把这无能的白痴赶出去。
+Scatter the atoms of your foes... or an entire planet.=可以把敌人分解成原子……或者把整个星球。
+Some nuclear physicist's pet project. More atoms, bigger boom.=一些核物理学家的宠物计划，原子越多，爆炸越强。
+Great for taking down game - human or animal alike.=猎杀游戏的神器 - 猎杀动物，或是人。
+Would you like Fallout Shelter to send you notifications?=你想让《辐射避难所》给你发送通知吗？
+The Savage Dog is moving in, ready to attack.=野狗来了，准备战斗。
+The Guard Dog won't let me pass. I'll have to kill it to get by!=护卫犬不让我过去。我必须杀了它才能通过！
+The Guard Dog is moving in, ready to attack.=护卫犬来了，准备战斗。
+The Vicious Dog is moving in, ready to attack.=恶犬来了，准备战斗。
+The Savage Dog bit me in the leg! Time to hobble away!=野狗咬伤了我的腿！只能跛着脚走了！
+The Guard Dog really doesn't want me to pass! Time to back off!=护卫犬完全不想让我通过！撤退吧！
+The Vicious Dog bit me before I could react! I'm hurt and running!=恶犬在我来得及作出反应之前就咬了我！我负伤逃跑了！
+a Savage Dog, snarling angrily.=一条野狗，愤怒地低吠着。
+a Guard Dog, watching the area.=一条护卫犬，看守着这片区域。
+a Vicious Dog, ripping apart a corpse.=一条恶犬，正撕扯着一具尸体。
+That snarling... Dogs? Wolves? Worse?=那只在低吠的是……狗？狼？还是更糟？
+Fresh tracks. Animal, or... worse?=新鲜的踪迹。动物的？还是更糟？
+It was close, but I killed the Vicious Dog.=很险，但我还是把恶犬干掉了。
+Beware of Over-dog!==小心监督狗！
+Loves keeping humans as pets.=喜欢像养动物一样养人。
+My Ghouls are lonely, so I got them a pet.=我的尸鬼们太寂寞了，所以我给它们带来了一只宠物。
+Rescue the dog from the Feral Ghouls.=从狂尸鬼手中救出那条狗。
+Keep cats entertained and make fabulous outfits.=供猫咪玩耍，也能织出极好的服装。
+The perfect mix of style, sophistication and... soda?=潮流元素的集合。
+a Robot Factory, with broken Protectrons scattered outside.=一家机器人工厂，外面散落着保安机器人的碎片。
+Three Dog's Outfit==三狗的服装
+St. Bernard=圣伯纳犬
+Red Rover.=红路虎。
+Spot.=警犬。

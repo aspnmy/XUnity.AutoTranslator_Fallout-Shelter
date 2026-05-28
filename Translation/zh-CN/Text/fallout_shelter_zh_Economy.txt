@@ -1,0 +1,30 @@
+# ==============================================
+# Steam版本: 2.4.0
+# Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
+# 精翻作者: aspnmy
+# 技术支持: support@e2bank.cn
+# 最后更新: 2026-05-29 06:09:13
+# ==============================================
+# 商店/经济
+# 本文件用于保存商店/经济译文
+# 格式：英文=中文
+# ==============================================
+Big Brands Shopping Mart.=大牌商场。
+Yes! He wanted to restore the head to the statue.=没错！他想要雕像的头。
+You here for the sale?=你来这里是做买卖的吗？
+Maybe you heard about Jack? He woulda fetched us a fine price!=你听说过杰克？他本来没准能卖个好价钱呢！
+Find more stores of Junk.=找到更多的垃圾藏匿点。
+The Khan is going to sell you to the meat factory and have you for lunch!=基力安想要把你卖到肉类的加工工厂，把你做成午餐！
+All sales are final! No exchanges, no refunds.=商品概不退换！
+Who knew shopping could be so dangerous?=谁会知道买东西也是很危险的呢？
+Huzzah! We are here to trade with you, good knights!=哦豁！我们来这里是和你们做生意的，晚上好！
+Find more stored Weapons.=找到更多储藏的武器。
+Right? But I wouldn't trade it for anything.=不对吗？我不想冒险。
+The Merchant is interested in bartering.=商人对以物换物的交易十分感兴趣。
+a wandering Merchant.=一位游荡的商人。
+a boarded up Convenience Store.=一间封住的便利店。
+a Caravan Merchant chasing after a panicked Brahmin.=一个大篷车商人在追赶一头受惊的双头牛。
+Another looted convenience store.=一家被洗劫一空的便利店。
+An old coffee shop. If it were a tea house, I might feel a tinge of sorrow.=一家破旧的咖啡厅。如果这是一家茶室的话，我也许会感到难过。
+Some old department store. No clothes left.=一些旧百货商店，没剩下衣服。
+WEAPON WORKSHOP=武器工坊
