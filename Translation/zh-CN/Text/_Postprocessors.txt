@@ -1,0 +1,1568 @@
+# ==============================================
+# _Postprocessors.txt 规则分类说明
+# ==============================================
+#
+# 本文件用于全局统一的专有名词/术语翻译，所有规则均使用 == 分隔
+#
+# 【分类说明】
+#
+# 1. 核心专有名词
+#    - 游戏核心术语：Vault, Dweller, Wasteland, Overseer, Pip-Boy, SPECIAL
+#    - 组织机构：Vault-Tec, Minutemen, Brotherhood of Steel, Institute, Raiders
+#    - 生物名称：Deathclaws, Radscorpions, Radroaches
+#
+# 2. 武器类型（1-2个单词）
+#    - 手枪类：Pistol, Laser Pistol, Plasma Pistol
+#    - 步枪类：Rifle, Laser Rifle, Assault Rifle
+#    - 霰弹枪类：Shotgun, Combat Shotgun
+#    - 其他：Minigun, Flamer, Missile Launcher
+#
+# 3. 装甲/服装类型
+#    - 装甲类：Armor, Power Armor, Battle Armor
+#    - 服装类：Outfit, Uniform, Jumpsuit, Suit
+#    - 特殊服装：Vault Suit, Santa Suit
+#
+# 4. 房间/设施类型
+#    - 居住设施：Living Quarters, Vault
+#    - 生产设施：Diner, Medbay, Water Treatment, Power Generator
+#    - 其他设施：Storage, Laboratory, Workshop, Garden
+#
+# 5. 游戏固定名称（任务/角色/地点）
+#    - 任务名称：Bounty: XXX, The Mystery of Vault XXX
+#    - 角色装备：Autumn's Laser Pistol, Amata's Jumpsuit
+#    - 固定地点：Vault 199, Vault 789, Nuka-Cola plant
+#
+# 6. UI界面词汇
+#    - 操作词汇：Menu, Save, Load, Settings, Cancel, OK
+#    - 方向词汇：Up, Down, Left, Right
+#    - 状态词汇：Ready, Level, Health, Stats
+#
+# 7. 时间单位
+#    - 英文单位：second, minute, hour, day
+#    - 缩写单位：s, m, h, d
+#
+# 8. 宠物类型
+#    - 犬类：Dog, Hound, Shepherd, Retriever, Terrier
+#    - 猫类：Cat, Persian, Siamese
+#
+# 9. 错译修正
+#    - 保险库 → 避难所
+#    - 金库 → 避难所
+#
+# 10. 特殊规则
+#     - 正则表达式：\[-\]\s*\[-\]
+#     - 格式修正：。。（句号重复）
+#
+# 【规则格式】
+#     英文内容 == 中文翻译
+#
+# 【注意事项】
+#     - 所有规则使用 == 分隔，不是 =
+#     - 规则按分类组织，便于维护
+#     - 相同key的规则不会被重复添加
+#
+# ==============================================
+
+# 全局专有名词统一（核心术语标准化，全文替换）
+Vault-Tec==避难所科技
+Vault==避难所
+Dweller==居民
+Dwellers==居民们
+Medbay==医疗室
+Stimpaks==治疗针
+Caps==瓶盖
+Wasteland==废土
+Nuka-Cola Quantum==量子核子可乐
+SPECIAL==七项属性
+Pip-Boy==哔哔小子
+Overseer==监管者
+Building Zone==建造区域
+Power Generator==发电机
+Diner==餐厅
+Water Treatment==净水厂
+Living Quarters==生活区
+Elevator==电梯
+Rush==紧急完工
+Quest==任务
+Season Pass==赛季通行证
+
+# 修正错译：保险库 → 避难所（高频错误）
+保险库==避难所
+金库==避难所
+跳马==赛季
+
+# 修复换行符错误 \naks → 正常换行
+\naks==\n
+
+# 优化引导句语序、删冗余词汇
+来看看他们的信息==查看居民详情
+做一个晚餐？==建造餐厅？
+晚餐==餐厅
+电源室==发电室
+晚餐[353F53]==餐厅[353F5C]
+
+# 修正等级/统计类翻译
+水平==等级
+居住水平==居民等级
+居住强度==居民力量
+居住耐力==居民耐力
+普通居民的魅力==居民魅力
+居住者敏捷性==居民敏捷
+
+# 修正按钮/功能文案
+索赔==领取
+索赔！==领取！
+最小==分钟
+秩1==第一名
+秩==排名
+入口保险库==进入避难所
+
+# 修复颜色标签配对残缺问题
+\[-]\s*\[-]==[-]
+
+# 清理翻译后多余标点
+。。==。
+？。==？
+
+# ==============================================
+# 从_Substitutions.txt迁移的单词级规则
+# ==============================================
+ACTIVE!==激活！
+ARRIVED!==已到达！
+Abyssinian==阿比尼西亚猫
+Akita==秋田犬
+Apotheosis==神圣
+BEGIN!==开始！
+Babies==婴儿
+Blackhawk==黑鹰
+Blackout==断电
+Bloodhound==血猎犬
+Bombay==孟买猫
+Boxer==拳师犬
+Brittany==布列塔尼犬
+Broadsides==放眼天下
+Build/Upgrade==建造/升级
+Burnmaster==炎魔
+Burnout==烧烧烧！
+CRAFTED!==生产完成！
+Camera==相机
+Case==箱子
+Christmas==圣诞节
+Clipboard==笔记板
+Collection==收藏品
+Collie==柯利牧羊狗
+Controls==控制
+Cooler==冷却器
+Crafting==制作
+Crate==板条箱
+DANGER!==危险！
+DUPLICATE!==副本！
+Dalmatian==达尔马提亚狗
+Deathclaws==死爪
+Decorator==装饰者
+Destabilizer==扰乱器
+Doberman==杜宾犬
+Down==下
+EFFECTS:==效果：
+ENTER!==进入！
+Fashionista==时装设计师
+Firestarter==凶火
+Fist==拳头
+Flamer==火焰喷射器
+Fridge==冰箱
+Globe==地球仪
+Greyhound==灰猎犬
+Halloween==万圣节
+Headshots==爆头
+Help==帮助
+Henrietta==汉丽埃塔
+Husky==哈士奇
+INCIDENT:==事件：
+Institute==学院
+Inventory==物品栏
+KA-KAW!==噶！
+KAAAAAAAAAW!==噶噶噶！
+KHAAANNNNN!!!!==救援！！！！
+Kneecapper==碎膝枪
+LaPerm==达拉斯猫
+Left==左
+Lunchbox==避难所科技午餐盒
+Lunchboxes==避难所科技午餐盒
+Manx==曼克斯猫
+Minigun==多管机枪
+Minutemen==义勇军
+Name==名字
+Nightwear==睡衣
+None==无
+Notifications==通知
+Ocicat==欧西猫
+Optional==可选
+Overrun==灾难
+Persian==波斯猫
+Pets==宠物
+Pickaxe==镐
+Piper==派普
+Poodle==贵宾犬
+READY!==准备！
+RETURNED!==已返回！
+Radroaches==辐射蟑螂
+Radscorpions==辐射蝎
+Raiders==掠夺者
+Railmaster==道钉大师
+Railroad==铁路
+Ready==准备
+Rename==重命名
+Rifle==步枪
+Right==右
+Rottweiler==洛特维勒牧犬
+SOS!==SOS！
+Scavenger==拾荒者
+Scavengers==拾荒者
+Scraptastic==废品店
+Shotgun==霰弹枪
+Shovel==铲子
+Social==社交
+Somali==索马里猫
+Sort==分类
+Sphynx==加拿大无毛猫
+Standard==标准
+Survivalist==幸存者
+Swimsuit==泳装
+Tankbusting==坦克爆裂
+Themes==布局
+Toyger==玩具虎猫
+Truck==卡车
+Up==上
+Vault-tec==避难所科技
+Vengeance==复仇者
+Weaponsmith==武器匠
+Whack-a-Mole==打地鼠
+Wonderglue==万能胶
+Yaaawwn==呀啊
+Yarn==线团
+d==天
+found==发现
+got==受到
+h==时
+m==分
+s==秒
+分钟==分
+小时==时
+
+
+# ==============================================
+# 从_unmatched_normal.txt迁移的单词级规则
+# ==============================================
+Awesome!==太棒了！
+Boo!==砰！
+Choo-Choo!==呜~~~呜！
+Cool!==酷！
+CoveWatch!==看守！
+Deal!==搞定！
+Dibs!==零钱！
+Done!==搞定！
+Gary!==盖瑞！
+Hello!==你好！
+Homerun!==全垒打！
+Jackpot!==一等奖！
+Ka-ching!==啧啧啧！
+Loser!==垃圾！
+Nice!==真棒！
+Noice!==啧啧！
+Nope!==不！
+Onward!==向前出发！
+Sweet!==啧啧啧！
+Yeeeaaahhhh!==哈哈！
+Yes!==是的！
+
+
+# ==============================================
+# 从_unmatched_normal.txt迁移的单词级规则
+# ==============================================
+
+
+# ==============================================
+# 从_unmatched_normal.txt迁移的UI短句规则
+# ==============================================
+Bounty: Bash==悬赏：巴什
+Bounty: Butcher==悬赏：屠夫
+Bounty: Shiner==悬赏：闪亮
+Bounty: Snips==悬赏：铁剪
+Bounty: Yak==悬赏：牦牛
+Have Gun, Will Travel==有枪，就好
+
+
+# ==============================================
+# 从_Substitutions.txt迁移的单词级规则
+# ==============================================
+12-Point Buck==凸缘猎刀
+3D Touch==3D 触控
+A Pale Imitation==失败的模仿
+A Refreshing Rescue==振奋式营救
+A Special Brand==特殊的印记
+A Winning Season==胜利的季节
+Accountant Outfit==会计师服装
+Advanced BoS Uniform==高级钢铁兄弟会制服
+Advanced Flight Suit==高级飞行服
+Advanced Jumpsuit==高级连体衣
+Advanced Lab Coat==高级实验室外套
+Against The Odds==知难而进
+Alarm Clock==闹钟
+Alien Blaster==外星冲击枪
+All Sales Final==所有销售的最终决定
+All Work and No Play==只工作，不娱乐
+Almost Human==伪人
+Amata's Jumpsuit==阿马塔的连体衣
+Amata's Pistol==阿玛塔的手枪
+American Shorthair==美国短毛猫
+Animal Rescue==动物援救
+Armored Vault Suit==装甲避难所服装
+Arms Race==军备惊魂
+Assault Rifle==突击步枪
+Australian Shepherd==澳大利亚牧羊犬
+Autumn's Uniform==秋上校的制服
+Back to the Outfield==回到外场
+Backup to free slot==保存到空存档
+Baseball Bat==棒球棍
+Baseball Glove==棒球手套
+Baseball Uniform==棒球衫
+Battle Armor==战斗装甲
+Bespoke Attire==定制的服装
+Big Pharma==大制药厂
+Big Trouble==大麻烦
+Bittercup's Outfit==苦杯的服装
+Black Lab==黑拉布拉多犬
+BoS Diner==钢铁兄弟会餐厅
+BoS Living Quarters==钢铁兄弟会生活区
+BoS Uniform==钢铁兄弟会制服
+Bottlecap Blues==瓶盖忧郁
+Bounty Hunter Gear==赏金猎人装
+Bowling Shirt==保龄球运动衫
+Brahmin Hide==双头牛皮
+British Shorthair==英国短毛猫
+Brotherhood of Steel==钢铁兄弟会
+Bug Hunt==蟑螂狩猎
+Business Suit==商务装
+Butch's Pistol==布茨的手枪
+Butcher Knife==屠夫菜刀
+By the proud parents==自豪的父母
+Canine Recovery==找回大狗
+Caps Run==瓶盖竞争
+Captured Critter==困境中的宠物
+Casual01==休闲款1
+Casual02==休闲款2
+Casual03==休闲款3
+Casual04==休闲款4
+Casual05==休闲款5
+Casual06==休闲款6
+Casual07==休闲款7
+Casual08==休闲款8
+Casual09==休闲款9
+Casual10==休闲款10
+Cattle Dog==牧牛犬
+Cheer for the Ghouls==替尸鬼过节
+Chemistry Flask==化学烧瓶
+Christmas Diner==圣诞节餐厅
+Clearing A Path==清理一条道路
+Clergy Outfit==牧师服装
+Climbing the Ranks==晋级上位
+Cloud Save==云存档
+Collateral Murder==旁系杀手
+Collect 1 Outfit==收集1件服装
+Collect 1 Weapon==获得1件武器
+Collect Common Items==收集普通物品
+Combat Armor==战斗装甲
+Combat Shotgun==战斗霰弹枪
+Come on in==进来吧
+Comedian Outfit==喜剧演员服装
+Commander Fatigues==指挥迷彩服
+Commander Uniform==指挥官制服
+Common Decorations==普通装饰品
+Complete 10 Quests==完成10个任务
+Complete 100 Quests==完成100个任务
+Complete 30 Quests==完成30个任务
+Complete 60 Quests==完成60个任务
+Completed 10 Quests==已完成10个任务
+Completed 100 Quests==已完成100个任务
+Completed 30 Quests==已完成30个任务
+Completed 60 Quests==已完成60个任务
+Country Girl==乡村女孩
+Craft 1 Outfit==制造1件服装
+Craft 1 Rare Outfit==制造1件稀有服装
+Craft 1 Rare Weapon==制造1件稀有武器
+Craft 1 Weapon==制造1件武器
+Craft every Theme==制作每一个布局
+Crafted 10 Outfits==制作了10件服装
+Crafted 10 Weapons==制作了10件武器
+Crafted every Theme==已制作所有布局
+Crafting Cost==制作成本
+Critical Hits==致命一击
+Cross' Laser Pistol==克罗丝的激光手枪
+Cross' Power Armor==克罗丝的动力装甲
+Crossing Paths==十字路口
+Customize 1 Dweller==给1个居民换脸
+Dad's Lab Uniform==爸爸的实验室制服
+Days Gone Bye==逝去的时日
+Decorations Crafted==生产的装饰品
+Decorations Sold==出售的装饰品
+Den of Thieves==盗贼巢穴
+Desk Fan==桌扇
+Detective Case Files==探案文件
+Detective Outfit==侦探服装
+Died in Wasteland==命丧废土
+Doctor Li's Outfit==李医生制服
+Dog Gone==失踪的小狗
+Dog Shelter==狗窝
+Doo-Wop Singer==杜沃普歌手
+Drag Here==拖到此处
+Drag Racer==赛车装
+Dragon's Maw==龙喉
+Duct Tape==胶带
+Dweller List==居民列表
+Echoes of Steel==钢铁共鸣
+Elder Lyon's Robe==里昂长老的长袍
+Elder Robe==长老长袍
+Elf Outfit==精灵服装
+Enemy of the Wastes==废土之敌
+Engineer Outfit==工程师服装
+English Mastiff==英国獒犬
+Enter Vault==进入避难所
+Eulogy Jones' Suit==尤罗基·琼斯的服装
+Exiting Vault==正在退出避难所
+Expert BoS Uniform==专家钢铁兄弟会制服
+Expert Flight Suit==专家飞行服
+Expert Jumpsuit==专家连体衣
+Expert Lab Coat==专家实验室外套
+Exploring Wasteland==正在探索废土
+Express Checkout==快速结账
+Fallout Shelter==辐射避难所
+Family Matters==家族事件
+Fancy Formal Wear==花式礼服
+Fashion Statement==时尚宣言
+Fat Man==胖子
+Feral Ghouls==狂尸鬼
+Find Valentine==找到瓦伦汀
+Fire Hydrant Bat==消防栓
+First Down==第一次进攻
+Flight Suit==飞行服
+Fons Vivus==生命之泉
+Formal Wear==礼服
+Game Show Gauntlet==游戏内容大挑战
+Game of Vaults==避难所游戏
+Gas 'N Go==燃料燃料
+Gatling Laser==激光加特林
+German Pointer==德国向导犬
+German Shepherd==德国牧羊犬
+Get in Line==排队
+Getting Started==准备开始
+Ghost Costume==幽灵装
+Ghostly Gag==窒息幽灵
+Giddyup Buttercup==奶油小马
+Gifts Received==收到的礼物
+Gifts Sent==送出的礼物
+Go West==向西
+Gold Watch==金表
+Golden Retriever==金毛犬
+Greaser Outfit==加油站工人服装
+Halloween Diner==万圣节餐厅
+Handyman Jumpsuit==杂工连体衣
+Havana Brown==哈瓦那棕猫
+Heat of the Knight==骑士的信仰
+Home-Field Advantage==主场优势
+Homerun Derby==本垒打大赛
+Honeymoon Horror==蜜月惊魂
+Horror Fan Outfit==惊悚迷服装
+Hostage Negotiations==人质谈判
+How To Play==游戏帮助
+Human Bean Juice==人肉罐头
+Hunting Rifle==猎枪
+In Another Vault==另一个避难所
+In Hot Pursuit==穷追不舍
+In Shining Armor==穿上闪亮的盔甲
+Initiate Robe==新人长袍
+Institute Diner==学院餐厅
+Institute Jumper==学院套衫
+Institute Pistol==学院手枪
+Institute Rifle==学院步枪
+Interior Designer==室内设计师
+Into the Infield==进入内场
+Into the Outfield==到达外场
+Jack Ain't Back==杰克一去不复返
+Junk Jet==垃圾发射器
+Junk Run==垃圾储备竞赛
+Kitchen Knife==菜刀
+Knight Armor==骑士装甲
+Lab Coat==实验室外套
+Laser Pistol==激光手枪
+Laser Rifle==激光步枪
+Last name==姓
+Lead Belcher==铅流
+Leather Armor==皮革装甲
+Leaving Vault==正在离开避难所
+Legend of the Wastes==废土的传说
+Legendary Rifle==传说步枪
+Lever-Action Rifle==杠杆枪
+Librarian Outfit==图书管理员装
+Lifeguard Outfit==救生员装
+Lincoln's Repeater==林肯的杠杆枪
+Lincoln's Rifle==林肯的步枪
+Little Brother==小弟弟
+Live Dead Drop==当面在秘密地点交易
+Local Save==本地存档
+Lone Wanderer==独行者
+Loot the Secret Room==掠夺密室
+Lucky Formal Wear==幸运礼服
+Lucky Nightwear==幸运睡衣
+Lunchboxes Opened==已打开的午餐盒
+Lunchbox Run==午餐盒竞赛
+Lyon's Laser Rifle==里昂的激光步枪
+Lyon's Pride Armor==里昂荣耀团动力装甲
+Magnetron 4000==磁控管4000
+Magnifying Glass==放大镜
+Maine Coon==缅因猫
+Mall Madness==商场惊魂
+Man on First==男士优先
+Man on Second==男人的第二次
+Man on Third==男人的第三次
+Mask Hysteria==面具惊魂
+Max Level Reached==达到最高等级
+Mayor Outfit==市长装
+Mechanic Jumpsuit==技工连体衣
+Merc Gear==佣兵服
+Metal Armor==金属装甲
+Military Duct Tape==军用胶带
+Military Fatigues==军人迷彩服
+Minuteman Uniform==义勇军制服
+Minutemen Diner==义勇军餐厅
+Miss Launcher==捣蛋发射器
+Missile Launcher==导弹发射器
+Mission of Mercy==行善任务
+Monday Night Brawl==争吵星期一
+More Than Handy==不仅仅是方便
+Motorcycle Jacket==摩托夹克
+Movie Fan Outfit==影迷服
+Mutant Hunter Gear==变种猎人装
+Naughty Nightwear==淘气睡衣
+New Baby==新生命
+Ninja Outfit==忍者装
+No Space For Room==房间没有多余空间了
+No Stone Unturned==想方设法
+No Time for Paws==争分夺秒
+Nobility Outfit==贵族服装
+Not-So-Safehouse==不安全的安全屋
+Nuka-Cola plant==核子可乐工厂
+Objective Completion==目标完成
+Off the Rails==铁路之外
+Officer Fatigues==军官迷彩服
+Officer Uniform==长官制服
+Ol' Painless==无痛杀手
+One Ghoul Customer==尸鬼顾客
+Open 1 Lunchbox==打开一个午餐盒
+Open the Quest Menu==打开任务菜单
+Original Santa Suit==原版圣诞老人服装
+Outfit Run==服装储备竞赛
+Overwhelming Force==压倒性力量
+Pallas's Cat==兔狲
+Party Crasher==派对上的不速之客
+Pest Control==灾害控制
+Pest-Case Scenario==害虫预案
+Pet Carrier==宠物笼
+Pet Peeve==宠物之争
+Pilgrim Outfit==朝圣装
+Pipe Pistol==铁管手枪
+Pipe Rifle==铁管步枪
+Piper's Outfit==派普的服装
+Pirate Parrot==海盗鹦鹉
+Pit Bull Terrier==比特斗牛犬
+Pit Stop==燃料站
+Plasma Pistol==电浆手枪
+Plasma Rifle==电浆步枪
+Plasma Thrower==电浆抛射器
+Playing Catch-Up==追赶游戏
+Playing Politics==政治游戏
+Polka Dot Sundress==圆点太阳裙
+Pool Cue==台球杆
+Post-War Casanova==战后风流
+Pre-War Money==战前货币
+Pre-War Suburbanite==战前服饰
+Professor Outfit==教授装
+Quest List==任务列表
+RadAway - Stimpaks==消辐宁 - 治疗针
+Radiation Suit==防辐射服
+Radroach Roundup==辐射蟑螂的围捕
+Raider Armor==掠夺者装甲
+Raiding Party==掠夺者晚会
+Railroad Diner==铁路餐厅
+Railway Rifle==射钉步枪
+Rain Delay==因雨延期
+Rare Decorations==稀有饰品
+Rare Outfit Recipe==稀有服装配方
+Rare Rifle==稀有步枪
+Rare Weapon Recipe==稀有武器配方
+Red Rocket==红火箭
+Republic Robes==共和长袍
+Request Gift==请求礼物
+Rescue Operation==救援行动
+Reset Camera Tilt==视角恢复
+Return to Vault 333==返回333号避难所
+Returned To Vault==已返回避难所
+Returning To Vault==正在返回避难所
+Revenge of the Geeks==数字游戏的复仇
+Robot Retrieval==找回机器人
+Room Action==房间操作
+Room Merge - Upgrade==房间融合 - 升级
+Rubarb's Reckoning==鲁巴布的审判
+Rural Schoolmarm==乡村女教师
+Santa Suit==圣诞老人服
+Santa's Helpers==圣诞老人的助手
+Sawed-Off Shotgun==锯断的霰弹枪
+Scare Tactics==恐吓战术
+Sci-Fi Fan Outfit==科幻迷制服
+Scientific Progress==科学进步
+Scottish Fold==苏格兰折耳猫
+Scrap 500 items==分解500件物品
+Scrapped 500 items==分解了500件物品
+Scribe Robe==学士长袍
+Second-Stringers==一石二鸟
+Sell 1 piece of Junk==出售1份垃圾
+Sell Common Items==出售普通物品
+Send Gift==发送礼物
+Settings/Cancel==设置/撤销
+Share via==分享至
+Sheriff's Duster==警长防尘衫
+Shotgun Wedding==婚姻风云
+Signal Failure==求救信号
+Six Pack==六包
+Skeleton Costume==骷髅服装
+Slash and Burn==烧杀抢掠
+Sliding into Home==回家
+Smooth Talker==净说好话的人
+Smuggler's End==私贩终结者
+Sniper Rifle==狙击步枪
+Soda Fountain Dress==饮料柜台员制服
+Soldier Uniform==士兵制服
+Spear Fishing==长矛狩猎
+Spelun-King Training==探险大王训练
+Sports Fan Outfit==运动迷服装
+Spring Casualwear==春季服装
+Standard Diner==标准餐厅
+Stimpak Healing==治疗针
+Stop 1 Incident==阻止1场灾难
+Sturdy Battle Armor==硬化战斗装甲
+Sturdy Combat Armor==坚固战斗装甲
+Sturdy Leather Armor==坚固皮革装甲
+Sturdy Merc Gear==坚固佣兵服
+Sturdy Metal Armor==坚固金属装甲
+Sturdy Raider Armor==坚固掠夺者装甲
+Sturdy Synth Armor==坚固合成人装甲
+Sturdy Vault Suit==坚固避难所服装
+Surgeon Outfit==外科医生服装
+Survival Mode==生存模式
+Survivor Armor==幸存者装甲
+Swing Dress==摇摆裙
+Synth Armor==合成人装甲
+Synth in a Pinch==合成人大危机
+Synths for Sale==合成人出售
+T-45a Power Armor==T-45a 动力装甲
+T-45d Power Armor==T-45d 动力装甲
+T-45f Power Armor==T-45f 动力装甲
+T-51a Power Armor==T-51a 动力装甲
+T-51d Power Armor==T-51d 动力装甲
+T-51f Power Armor==T-51f 动力装甲
+T-60a Power Armor==T-60a 动力装甲
+T-60d Power Armor==T-60d 动力装甲
+T-60f Power Armor==T-60f 动力装甲
+Taking Out the Trash==清理垃圾
+Target Practice==打靶训练
+Tattered Longcoat==破烂长衫
+Team Equipment==队伍装备
+Technician's Revenge==技术员的报复
+Teddy Bear==泰迪熊
+Tenpenny's Suit==特佩尼的西装
+The 20th Inning==第20局
+The Brothers Grime==格里姆兄弟。
+The Door Buster==进门就白拿
+The Final Hunt==最终的狩猎
+The Final Push==最终攻势。
+The Gridiron Gang==烤架帮
+The Night Watch==守夜人
+The Scenic Route==风景线
+The Shadow Wolf==影狼
+The Spreading Blight==散播的荒芜
+The Tail Continues==追踪
+The proud parents==喜得贵子的夫妇
+Third and Goal==三球入门
+Three Dog's Outfit==三狗的服装
+Tilt Camera Left==视角左移
+Tilt Camera Right==视角右移
+Too Good to be True==好得难以置信
+Total Rooms Built==总共建造的房间
+Toy Car==玩具车
+Toy Soldiers==玩具士兵
+Trained Parrot==受训鹦鹉
+Treasure Hunter Gear==宝藏猎人装
+Tri-Fold Flag==三角国旗
+Turkish Van==土耳其梵猫
+Uninvited Guests==不速之客
+Upgrade 1 room==升级1个房间
+Urban Ranger==城市游侠
+Vault 199==199号避难所
+Vault 789==789号避难所
+Vault Full==避难所满了
+Vault Socialite==避难所社交服装
+Vault Suit==避难所服装
+Vault-Tec Parrot==避难所科技鹦鹉
+Victory Rifle==凯旋步枪
+Virgil's Rifle==维吉尔的步枪
+Walk of Shame==羞耻之旅
+Wasteland Doctor==废土医生
+Wasteland Doctoring==废土医疗
+Wasteland Gear==废土装
+Wasteland Getaway==废土逃亡
+Wasteland Medic==废土军医
+Wasteland Surgeon==废土外科医生
+Wasteland Wanderer==废土流浪者
+Weapons Run==军备竞赛
+Wedding Crashers==婚礼粉碎者
+Weekly Report==每周报告
+Welcome to Paradise==欢迎来到天堂
+When Preston Calls==普雷斯顿的召唤
+Wild Bill's Sidearm==野蛮比利的佩枪
+Wonders of Nature==大自然的奇迹
+Wonders of Science==科学的奇迹
+Working Overtime==加班工作
+Wrestler Outfit==摔跤手服装
+Yao Guai Hide==妖怪皮
+Young Black Brahmin==年轻的黑双头牛
+Young Brown Brahmin==年轻的棕双头牛
+Young White Brahmin==年轻的白双头牛
+Zoom Camera In==视角放大
+Zoom Camera Out==视角缩小
+for Radiation==辐射
+got a damage of==受到伤害
+has been destroyed==已被摧毁
+has died==已死亡
+“Getting Warmer”==“变热”
+
+
+# ==============================================
+# 从_unmatched_normal.txt迁移的单词/短语/UI规则
+# ==============================================
+Argh, Matey!==啊，伙计！
+Boo! Boooooooooo!==呜~~~！呜~~~~~~~~~~~！
+Boom shakalaka!==嘣！沙卡拉卡！
+Cigarette! Whoo!==哇！香烟！
+Confront Rubarb!==遭遇鲁巴布！
+Critical hit!==暴击！
+Die, smoothskins!==去死吧，光皮肤！
+Diplomatic Mission!==外交任务！
+El Diablo!==埃尔·迪亚波罗！
+Find Jack!==找到杰克！
+Finders keepers!==谁捡到归谁！
+Food Fight!==食物大战！
+Friendly Settlement!==友好的定居点！
+Gary! Gary!==盖瑞！盖瑞！
+Ghooooooooooooooooooul!==尸~~~~~~~~鬼！
+Gimme gimme!==给我给我！
+Gobble Gobbler!==格布勒，格布勒！
+Good guess!==猜得不错！
+Handypeople, vanish!==消失吧，狡猾的家伙！
+Happy Halloween!==万圣节快乐！
+Hi everyone!==大家好！
+Kill me!==杀了我！
+Labor Dispute!==劳动纠纷！
+Mine now! ==现在是我的了！
+More goodies!==好多宝贝！
+Needs you!==我们需要你！
+Nice find!==发现了不错的东西！
+Nuka-Cola Quantum!==量子型核子可乐！
+Play Ball!==棒球比赛！
+Please help!==请帮帮忙！
+Powered Up!==能量提升！
+Radiation Leak!==辐射泄漏！
+Rescue Santa!==拯救圣诞老人！
+Science Cooperative!==科学合作！
+Sure thing!==当然！
+To arms!==上武器！
+Vault Boy!==避难所男孩！
+Vaultopolis Awaits!==避难所之城等待着你！
+
+
+# ==============================================
+# 从_Substitutions.txt迁移的简单规则（无正则）
+# ==============================================
+Accelerated Gauss Rifle==加速高斯步枪
+Advanced Institute Jumper==高级学院服装
+Advanced Radiation Suit==高级防辐射服
+Christmas Living Quarters==圣诞节生活区
+Craft Rare Decorations==制造稀有装饰
+Customize facial features==自定义面部特征
+Decreases crafting time==加快生产时间
+Double-Barrel Shotgun==双管霰弹枪
+Excited Institute Rifle==激进的学院步枪
+Expert Institute Jumper==专家学院服装
+Expert Radiation Suit==专家防辐射服
+Halloween Living Quarters==万圣节生活区
+Institute Living Quarters==学院生活区
+Junior Officer Uniform==初级官员制服
+Legendary Decorations==传说装饰品
+Legendary Outfit Recipe==传说服装配方
+Legendary Weapon Recipe==传说武器配方
+Medieval Ruler Outfit==中世纪统治者服装
+Military Circuit Board==军用电路板
+Minutemen Living Quarters==义勇军生活区
+Misery Loathes Company==悲剧公司
+Nabbed from Nuka-World==核子世界的追捕
+Navigation and Combat==移动以及战斗
+Night-Vision Pipe Rifle==夜视铁管步枪
+Nuka-Cola Quantum Run==量子型核子可乐之旅
+Railroad Living Quarters==铁路生活区
+Relentless Raider Sword==残酷的掠夺者之剑
+Returned From Wasteland==从废土回来了
+Returning From Wasteland==正在从废土返回
+Seventh Inning Stretch==第七局
+Standard Living Quarters==标准生活区
+The Vault-Tec Vantage==避难所科技优势
+Theme Recipe Fragment==布局配方碎片
+Unhandled sign-in event==未处理的登录事件
+Vault-Tec Starter Pack==避难所科技新手包
+Wasteland Return Speed==废土返回速度
+Wonders of Technology==科技的奇迹
+﻿#===============================================
+
+
+# ==============================================
+# 从_Substitutions.txt迁移的单词级规则
+# ==============================================
+
+
+
+# ==============================================
+# 专有武器/装备名词统一翻译
+# ==============================================
+Autumn's Laser Pistol==秋上校的激光手枪
+BB Gun==BB枪
+Elder Lyons' Laser Pistol==里昂长老的激光手枪
+Harkness's Assault Rifle==哈克尼斯的突击步枪
+Night-Vision Institute Rifle==夜视学院步枪
+Jericho's Assault Rifle==耶利哥的突击步枪
+Hair Trigger Pipe Pistol==微力扳机铁管手枪
+10mm Pistol==10mm手枪
+MPXL Novasurge==MPXL新星炮
+Double-Barrel Sawed-Off Shotgun==双管锯断的霰弹枪
+Scribe Rothchild's Pistol==罗切尔德学士的手枪
+Sheriff's Assault Rifle==警长的突击步枪
+Tenpenny's Sniper Rifle==特佩尼的狙击步枪
+
+
+# ==============================================
+# 更多专有武器/装备名词统一翻译
+# ==============================================
+Tunnel Snakes' Outfit==洞中蛇装
+Harkness' Security Uniform==哈克尼斯的保安制服
+Jericho's Leather Armor==耶利哥的皮甲
+Wasteland Weapons & Outfits==废土寻获的武器和服装
+
+
+# ==============================================
+# 固定关卡/任务名词统一翻译
+# ==============================================
+Level up in the Wasteland==在废土升级
+Abraham's Relaxedwear==亚伯拉罕的休闲服
+Confessor Cromwell's Rags==忏悔者克伦威尔的破布
+Rackie Jobinson's Jersey==拉基·乔宾逊的运动衫
+Moira's RobCo Jumpsuit==莫伊拉的罗布科连体衣
+X-01 Mk I Power Armor==X-01 Mk I 动力装甲
+X-01 Mk IV Power Armor==X-01 Mk IV动力装甲
+X-01 Mk VI Power Armor==X-01 Mk VI 动力装甲
+Scribe Rothchild's Robe==罗切尔德学士的长袍
+Boogie Woogie Bugle Boy==迷人的跳舞吹号员
+Breaking all the Records==打破所有记录
+Cabin Without The Woods==旷野小屋
+Can't Stop The Signal==无法阻挡的信号
+Christmas at the Raider Camp==掠夺者营地的圣诞节
+Clean-Up On Aisle Five==清理五号通道
+Conference on the Mound==高岗会议
+Covering All the Bases==扫荡全部基地
+Factory Floor of Fear==恐惧工厂
+Following His First Steps==跟随第一步
+Halloween (Non)Fiction==万圣节的谎言
+Hot Tub Slime Machine==热水浴缸史莱姆机器
+Kidnapping at Vault 778==778号避难所绑架案
+Monster Under the Bed==床下的怪物
+No Rest for the Wicked==恶者不息
+Post-Apocalyptic World Problems==灾后世界的问题
+Raider Troubles at Corvega==汽车工厂的掠夺者
+Rock Them Like A Hurricane==狂风扫落叶
+Learn about the Super Cup==了解超级杯
+Somewhere in the Ballpark==摸索
+To Grandmother's House We Go==老奶奶的家
+Truth Among the Ashes==灰烬中的真相
+Vault-Tec Experiment Review==避难所科技实验调查
+With Friends Like These==得友如此
+Zines From the Commonwealth==联邦杂志
+
+
+# ==============================================
+# 从_unmatched_normal.txt迁移的游戏固定口号
+# ==============================================
+It's unstoppable!==那是无人可挡的！
+Blitz 'em!==打败他们！
+Spike 'em!==戳死他们！
+Get 'em!==抓住他们！
+
+
+
+# ==============================================
+# 从_AutoGeneratedTranslations.txt迁移
+# ==============================================
+Message=消息
+OK=好的
+EXPERIMENTAL VAULTS=实验拱顶
+Gamer Tag=玩家标签
+CLOSE=关闭
+EXPLORING WASTELAND=探索荒地
+John Smith=约翰·史密斯
+S=S
+LVL=水平
+ITEM NAME=物品名称
+C=C
+x500=x500
+CLAIM=索赔
+LVL 2=2级
+DWELLER NAME=居民姓名
+RANK=排名
+REQUIREMENT 1=要求1
+CHALLENGES=挑战
+SEASON PASS=季票
+AGILITY=敏捷
+A=A.
+STRENGTH=力量
+CHARISMA=魅力
+WEAPON WORKSHOP=武器车间
+OVERSEER'S OFFICE=监管者办公室
+SCIENCE LAB=科学实验室
+MEDBAY==制药间
+STORAGE ROOM=储藏室
+DINER==餐厅
+LIVING QUARTERS=生活区
+ELEVATOR==电梯
+BUILD=建造
+REQUIRES=需要
+REWARDS=奖励
+VAULT SCORE=跳马得分
+ARRIVAL 1/4=到达1/4
+FAILED=失败
+SUCCESS!=成功！
+WATER TREATMENT=水处理
+CANCEL=取消
+STARTER PACK=入门包
+OFF=关闭
+PREMIUM PASS=保险费通行证
+x25=x25
+CURRENT==当前
+Male Dwellers=男性居民
+Children=孩子们
+RUSH==加速
+32s=32秒
+Victoria Peters=维多利亚·彼得斯
+Cynthia Brooks=辛西娅·布鲁克斯
+Steven Harris=史蒂文·哈里斯
+Kenneth Wilson=肯尼斯·威尔逊
+22s=22秒
+Frank Curtis=弗兰克·柯蒂斯
+POWER GENERATOR=发电机
+RAYMOND THOMPSON=雷蒙德·汤普森
+Nathalie Robinson=娜塔莉·罗宾逊
+DWELLERS=居民
+JOB=工作
+31s=31秒
+UPGRADED=升级
+POWER STATION=发电站
+1m 18s=1米18秒
+Storage=存储
+Production=生产
+UPGRADE=升级
+Power Production/Minute=发电量/分钟
+1m 24s=1米24秒
+Food Production/Minute=食品产量/分钟
+--s=s
+Power Consumption/Minute=功耗/分钟
+Food Consumption/Minute=食物消耗量/分钟
+Water Consumption/Minute=耗水量/分钟
+Rare Weapons=稀有武器
+Legendary Weapons=传奇武器
+Weapon Recipes=武器食谱
+58s=58秒
+x0=x0
+Common Outfits=常见服装
+55s=55秒
+Rare Outfits=稀有服装
+Legendary Outfits=传奇服饰
+0m=0米
+Dwellers Revived=居民复兴
+Dwellers Customized=住客定制
+Dead Dwellers=已故居民
+Stimpaks Taken=服用Stimpaks
+RadAway Taken=RadAway被带走
+Caps Collected=已收集的瓶盖
+Power Collected=收集电力
+Food Collected=收集的食物
+Weapons Collected=收缴武器
+DESTROY=摧毁
+Weapons Crafted=已制作武器
+Weapons Sold=出售武器
+Weapons Scrapped=武器拆解
+Outfits Collected=收集的服装
+Outfits Crafted=已制作服装
+Emma=艾玛
+Frank=弗兰克
+Junk Collected=垃圾已收集
+Junk Sold=垃圾已售出
+14s=14秒
+Pets Sold=出售宠物
+Elevator Rides=电梯使用次数
+Successful Rushes=成功的冲刺
+Fires Extinguished=火灾已扑灭
+PETS==宠物
+Common Pets=常见宠物
+Rare Pets=珍稀宠物
+56s=56岁
+Akitas=秋田犬
+Australian Shepherds=澳大利亚牧羊犬
+Bloodhounds=猎犬
+Boxers=拳师狗
+Brittanys=布列塔尼
+ROOM  NAME=房间名称
+Kenneth Sutton=肯尼斯·萨顿
+Harold Henriquez=哈罗德·恩里克斯
+Emma Lane=爱玛巷
+2m=2分钟
+Lauren Hawkins=劳伦·霍金斯
+WAITING=等待
+3m=300万
+<1m=<1m
+3m 14s=3米14秒
+Carl Richards=卡尔·理查兹
+STATUS=状态
+Cattle Dogs=牧牛犬
+Collies=柯利犬
+Dalmatians=斑点狗
+Dobermans=杜宾犬
+
+
+# ==============================================
+# 从fallout_shelter_zh.txt主文件补充
+# ==============================================
+CAPS=瓶盖
+RUSH MODE==加速模式
+THE WASTELAND==废土
+LUNCHBOXES==避难所科技午餐盒
+INCIDENTS=灾害
+UI=用户界面
+RESOURCES=资源
+ASSIGNING DWELLERS=分配居民
+DWELLER INFO=居民信息
+DWELLER LIST=居民列表
+SURVIVAL MODE=生存模式
+PETS=宠物
+QUESTS=任务
+EVICTING DWELLERS=驱逐居民
+CRAFTING=制作
+BARBERSHOP=理发店
+NUKA-COLA QUANTUM=量子型核子可乐
+SCRAP ALL=全部分解
+SELL ALL=全部卖出
+CONSUMABLES=消耗品
+DECORATIONS=装饰
+DWELLERS=居民
+JUNK=垃圾
+OUTFITS=服装
+STORAGE SPACE:=储存空间：
+WEAPONS=武器
+Microscope=显微镜
+Daily Report=每日报告
+Objectives=目标
+Shop=商店
+Stats=统计
+Survival Guide=生存指南
+CANCEL=取消
+CONNECTION ERROR=连接错误
+FULL NAME=全名
+LOGIN=登录
+PASSWORD=密码
+CONFIRM PASSWORD=确认密码
+SIGN UP=注册
+USERNAME=用户名
+WELCOME TO=欢迎来到
+LOADING=加载中
+QUIT=退出
+FAILED=失败
+SHOP=商店
+Storage=储存
+COLLECT=收集
+NO RATING=无分数
+SCREENSHOTS=屏幕截图
+Agent Provocateur=大内密探
+CLAIM=声明
+Burmilla=波米拉猫
+Lykoi=狼猫
+Siamese=暹罗猫
+NOT NOW=现在不行
+PRIVACY=隐私
+DAILY QUEST=每日任务
+LIMITED TIME=时限
+PROGRESS=进程
+REQUIREMENTS=要求
+REWARDS=奖励
+TEAM=队伍
+WEEKLY QUEST=每周任务
+KA-KAW KA-KAW!=噶-噶！
+Level=等级
+QUEST COMPLETE=任务完成
+QUEST FAILED=任务失败
+QUEST=任务
+COMPLETE QUEST=完成任务
+CONTINUE=继续
+GIVE UP=放弃
+VAULT=避难所
+WASTELAND=废土
+Radroach=辐射蟑螂
+Radscorpion=辐射蝎
+Raider=掠夺者
+ALL=全部
+C=普通
+COMMON=普通
+LEGENDARY=传说
+R=稀有
+RARE=稀有
+U=精良
+UNCOMMON=精良
+V=罕见
+VERY RARE=罕见
+NO THANKS=不用，谢谢
+RATE US=评价我们
+CURRENT RATING=当前排名
+NEXT EVALUATION=下阶段排名
+REPAIR=修理
+ADVANCED=高级
+MEGA=超级
+FULL=满级
+UPGRADING=升级
+CONSUMABLE=消耗品
+FACILITY=设施
+PRODUCTION=产品
+TRAINING=训练
+UTILITY=功能
+ROOM UNLOCKED=房间已解锁
+CURRENT=货币
+Production=产品
+UPGRADED=升级完毕
+ADMIN OFFICE=管理室
+ARMORY=武器室
+WEAPONS STATION=武器站
+WEAPONS CENTER=武器中心
+LOUNGE=休息室
+SALON=沙龙
+BAR=酒吧
+CLUB=俱乐部
+DINER=快餐馆
+RESTAURANT=饭店
+CAFETERIA=自助餐厅
+GAME ROOM=游戏室
+ARCADE=游乐场
+GAMING CENTER=游戏中心
+CLASSROOM=教室
+SCHOOL=学校
+ACADEMY=学院
+DECORATION WORKSHOP=装饰工坊
+DECORATION FACTORY=装饰工厂
+DECORATION PLANT=装饰车间
+THEME WORKSHOP=布局工坊
+THEME FACTORY=布局工厂
+THEME PLANT=布局车间
+ATHLETICS ROOM=田径室
+ATHLETICS STUDIO=田径工作室
+ATHLETICS CENTER=田径中心
+ELEVATOR=电梯
+NUCLEAR REACTOR=核反应堆
+ADVANCED REACTOR=高级反应堆
+SUPER REACTOR=超级反应堆
+ENTRANCE=入口
+POWER GENERATOR=发电机
+POWER STATION=发电站
+POWER PLANT=发电厂
+WEIGHT ROOM=举重室
+GYM=体育馆
+STRENGTH CENTER=力量中心
+GARDEN=花园
+GREENHOUSE=温室
+HYDROPONICS=水培室
+LIVING QUARTERS=宿舍
+RESIDENCE=住宅
+BARRACKS=营房
+MAUSOLEUM=墓地
+MEDBAY=制药间
+CLINIC=诊所
+HOSPITAL=医院
+NUKA-COLA BOTTLER=核子可乐装瓶器
+NUKA-COLA STATION=核子可乐生产站
+NUKA-COLA PLANT=核子可乐工厂
+OUTFIT WORKSHOP=服装工坊
+OUTFIT FACTORY=服装工厂
+OUTFIT PLANT=服装车间
+OVERSEER'S OFFICE=监管者办公室
+RADIO STUDIO=广播室
+RADIO STATION=广播站
+BROADCAST CENTER=广播中心
+SCIENCE LAB=科学实验室
+SCIENCE STATION=科学站
+SCIENCE CENTER=科学中心
+STORAGE ROOM=储藏室
+DEPOT=储藏站
+WAREHOUSE=仓库
+FITNESS ROOM=健身房
+FITNESS STUDIO=健身工作室
+FITNESS CENTER=健身中心
+VAULT DOOR=避难所大门
+WATER PURIFICATION=净水器
+PURIFICATION STATION=净水站
+PURIFICATION PLANT=净水厂
+WATER TREATMENT=水处理器
+WEAPON WORKSHOP=武器工坊
+WEAPON FACTORY=武器工厂
+WEAPON PLANT=武器车间
+PROCEED=继续
+CLAIM REWARDS=获取奖励
+JUNK RECOVERED=垃圾回收
+HELP=帮助
+CLEAR=清除
+CONNECT=连接
+LOGOUT=注销
+SELECT ALL=全选
+SEND=发送
+SEND GIFT=发送礼物
+SEND REQUESTS=发送请求
+UNSELECT ALL=全部取消选择
+ALL FRIENDS=全部好友
+GIFTS ONLY=仅礼物
+REQUESTS=请求
+AGILITY=敏捷
+CHARISMA=魅力
+ENDURANCE=耐力
+INTELLIGENCE=智力
+LUCK=幸运
+PERCEPTION=感知
+STRENGTH=力量
+STARTER PACK=新手包
+Babies Born=子代出生
+Caps Collected=已获得瓶盖
+Children=孩子
+Common Outfits=普通服装
+Common Pets=普通宠物
+Common Weapons=普通武器
+Dead Dwellers=死亡居民
+Decorations Collected=获得的装饰品
+Dwellers Customized=自定义的居民
+Dwellers Revived=复活的居民
+Elevator Rides=乘坐电梯
+Dwellers Evicted=驱逐的居民
+Failed Rushes=突击失败
+Female Dwellers=女性居民
+Fires Extinguished=扑灭火焰
+Food Collected=收集的食物
+Food Consumption/Minute=每分钟消耗的食物
+Food Production/Minute=每分钟生产的食物
+Junk Collected=收集的垃圾
+Junk Sold=出售的垃圾
+Legendary Outfits=传说服装
+Legendary Pets=传说宠物
+Legendary Weapons=传说武器
+Levels Gained=获得等级
+Lunchboxes Opened=打开的午餐盒
+Male Dwellers=男性居民
+Outfits Collected=收集的服装
+Outfits Crafted=生产的服装
+Outfits Scrapped=分解的服装
+Outfits Sold=出售的服装
+Outfit Recipes=服装配方
+Abyssinians=阿比西尼亚猫
+Akitas=秋田犬
+American Shorthairs=美式短毛猫
+Australian Shepherds=澳大利亚牧羊犬
+Black Labs=黑拉布拉多犬
+Bloodhounds=猎犬
+Vault-Tec Parrots=避难所科技鹦鹉
+Bombays=孟买猫
+Boxers=拳师狗
+British Shorthairs=英式短毛猫
+Brittanys=布列塔尼犬
+Burmillas=伯米拉猫
+Cattle Dogs=牧牛犬
+Collies=柯利牧羊犬
+Dalmatians=斑点狗
+Dobermans=杜宾犬
+English Mastiffs=英獒犬
+German Pointers=德国向导猎犬
+German Shepherds=德国牧羊犬
+Golden Retrievers=黄金猎犬
+Greyhounds=灰狗
+Havana Browns=哈瓦那褐猫
+Huskies=哈士奇
+LaPerms=拉邦猫
+Maine Coons=缅因猫
+Manxes=马恩岛猫
+Trained Parrots=受训鹦鹉
+Ocicats=欧西猫
+Pallas's Cats=帕拉斯的猫
+Persians=波斯猫
+Poodles=贵宾犬
+Rottweilers=罗特韦尔犬
+Pirate Parrots=海盗鹦鹉
+Scottish Folds=苏格兰折耳猫
+Somalis=索马里猫
+Sphynxes=斯芬克斯猫
+Toygers=玩具虎猫
+Turkish Vans=土耳其梵猫
+Pets Collected=获得的宠物
+Pets Sold=出售的宠物
+Power Collected=获得的电力
+Power Consumption/Minute=每分钟消耗的电力
+Power Production/Minute=每分钟产生的电力
+Pregnant Dwellers=怀孕的居民
+RadAway Taken=消辐宁被使用
+Rare Outfits=稀有服装
+Rare Pets=稀有宠物
+Rare Weapons=稀有武器
+Stimpaks Taken=治疗针被使用
+Successful Rushes=加速成功
+CUMULATIVE=累计
+Water Collected=收集的水
+Water Consumption/Minute=每分钟消耗的水
+Water Production/Minute=每分钟生产的水
+Weapons Collected=收集的武器
+Weapons Crafted=生产的武器
+Weapons Scrapped=分解的武器
+Weapons Sold=出售的武器
+Weapon Recipes=武器配方
+DONE!=完成！
+NO POWER=无电力
+DEAD=死亡
+WAITING=等待中
+DAYS=天
+HOURS=时
+HRS=时
+MIN=分
+SEC=秒
+TIPS=小贴士
+ACTIVATE=激活
+ALIGNMENT=排列
+ASSIGN=分配
+ASSIGN DWELLER=分配居民
+ASSIGNMENT=分配
+AVAILABLES=可用的
+BACK=返回
+BUILD=建造
+BUILDING=建造中
+CLOSE=关闭
+COLLECTION=收集品
+CONTROLS=控制
+CREATE VAULT=建造避难所
+CREDITS=感谢名单
+DAILY REPORT=日常报告
+DATE=日期
+DELETE VAULT=移除避难所
+DESTROY=摧毁
+DESTROY ROCK=摧毁岩石
+DEVICE=装置
+DONE=完成
+DRAG HERE=拖动这里
+DWELLER=居民
+DWELLER APPLICATION=居民申请
+EFFECT=效果
+EXPEDITION=远征队
+EXPLORE=探索
+COMPLETE=完成
+FLEE=逃跑
+ESCAPE=逃脱
+SUCCESS=成功
+HAPPINESS=愉悦度
+HAPPINESS BONUS=愉悦度奖励
+HERE=这里
+HOLD=按住
+CLOUD=云
+CLOUD SAVE=云存档
+LAST SAVE=最近存档
+LEADERBOARDS=排行榜
+LEVEL=等级
+L=等级
+LVL=等级
+Loading...=加载中……
+LOAD VAULT=加载避难所
+LOCATIONS=地点
+MAIN MENU=主菜单
+MAX=最大等级
+MONITORING=检查
+MUSIC=音乐
+NEW!=新的！
+NEW VAULT=新避难所
+NEXT RATING=下一级
+NOTIFICATIONS=通知
+OBJECTIVES=目标
+OFF=关
+ON=开
+OPEN=打开
+OUTFIT=服装
+QTY=数量
+QUEST TEAM=任务小队
+FOUND=发现
+RANK=排名
+READY=准备
+REDEEM CODE=兑换码
+RELOCATE=搬迁
+REPORT=报告
+REQUIRES=需求
+RESULTS=结算
+ROOMS=房间
+RUSH=加速
+RUSH BONUS=加速奖励
+RUSH READY!=加速准备完毕！
+RUSH RESULTS=加速结算
+SAVE FILE=存档文件
+SETTINGS=设置
+SOUND=音效
+STATS=统计
+STARTING QUEST!=开始任务！
+STATUS=状态
+SUCCESS!=成功！
+TIME=时间
+UNLOCK=解锁
+UNLOCK ROOM=解锁房间
+UPGRADE=升级
+UPGRADE TO=升级至
+VAULT LIST=避难所列表
+VAULT RATING=避难所等级
+HELPFUL HINT=帮助提示
+Vault CAPS=避难所瓶盖
+VIBRATION=振动
+RECALL=召回
+RESUME QUEST=继续任务
+Collect=收集
+REMOVE ALL=全部移除
+RETRY QUEST=重试任务
+REMOVE=移除
+REVIVE=复活
+Infiltrator=渗透者
+Charon's Shotgun=卡隆的霰弹枪
+Enhanced Flamer=改良火焰喷射器
+Hardened Flamer=硬化火焰喷射器
+Pressurized Flamer=增压火焰喷射器
+Rusty Flamer=生锈的火焰喷射器
+Gauss Rifle=高斯步枪
+Laser Musket=激光滑膛枪
+Wazer Wifle=激瓜步圈
+Enhanced Minigun=改良多管机枪
+Hardened Minigun=硬化多管机枪
+Rusty Minigun=生锈的多管机枪
+Big Sister=大姐姐
+Enhanced Shotgun=改良霰弹枪
+Farmer's Daughter=乡村女孩
+Hardened Shotgun=硬化霰弹枪
+Rusty Shotgun=生锈的霰弹枪
+ACTIVATE REWARDS=激活奖励
+No=否
+Yes=是
+ATTENTION=注意
+TRIPLETS=三胞胎
+TWINS=双胞胎
+FACIAL FEATURE=面部特征
+HAIR COLOR=发色
+HAIRSTYLE=发型
+CUSTOMIZE=自定义
+COST=费用
+Health=健康
+Twins Chance=双胞胎几率
+Child SPECIALs=儿童SPECIAL属性
+Damage=伤害
+Crafting Time=制作耗时
+Pregnancy Time=怀孕耗时
+Happiness=愉悦度
+Healing Speed=回复速度
+Stranger Chance=陌生人出现几率
+Damage Resistance=减伤
+Training Time=训练时间
+Wasteland Caps=废土寻获的瓶盖
+Wasteland Junk=废土寻获的垃圾
+XP=经验值
+ACCEPT=接受
+BEGIN QUEST=开始任务
+BUY=购买
+BUY MORE=购买更多
+BUY PACK=购买礼包
+CONFIRM=确认
+CRAFT=制作
+EVICT=驱逐
+IGNORE=忽略
+INSTANT=立即完成
+JOB=工作
+NO=否
+OK=好的
+FINISH=结束
+REACH NOW=立即到达
+QUEST LIST=任务列表
+RANDOM=随机
+RELOAD LATER=稍后刷新
+RELOAD NOW=马上刷新
+RESET=重置
+SELL=出售
+SKIP=跳过
+START NOW=立即开始
+START QUEST=开始任务
+YES=是
+CAM SENS=镜头灵敏度
+Claim!=获取！
+IMPORT=输入
+KEEP=保留
+NEWER=较新的
+COMPLETED=完成
+RECIPE REQUIRED=需要配方
+Deathclaw=死爪
+BONUS=奖励
+CHILD=儿童
+COFFEE BREAK=休息时间
+Tap Here=点击此处
+Click Here=点击此处
+ESCAPING=逃跑中
+EXPLORING=探索
+RETURNING=返回中
+HIDDEN=隐藏
+DEATHCLAW ATTACK=死爪
+RADROACH INFESTATION=辐射蟑螂肆虐
+RADSCORPION ATTACK=辐射蝎侵袭
+RAIDER ATTACK=掠夺者袭击
+EQUIPPED=已装备
+INVENTORY=物品栏
+EULA=最终用户许可协议
+COMMAND=指令
+CURSOR SPEED=指针速度
+HOTKEY=快捷键
+NONE=无
+SAVE=保存
+GAME SAVED=游戏已保存
+HOTKEYS=快捷键
+WINDOWED=窗口化
+POWER=电力
+FOOD=食物
+PET=宠物
+RADAWAY=消辐宁
+RESOURCE=资源
+STIMPAK=治疗针
+THEME=布局
+WATER=水
+WEAPON=武器
+Feral Ghoul=狂尸鬼
+GAME OBJECTIVES=游戏目标
+DWELLERS SPECIAL=居民SPECIAL
+DEAD DWELLERS=死亡的居民
+DWELLER HAPPINESS=居民幸福感
+TRAINING ROOMS=训练室

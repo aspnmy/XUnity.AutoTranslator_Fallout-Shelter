@@ -1,0 +1,2410 @@
+# ==============================================
+# 辐射避难所 翻译正则规则
+# 合并全量词条 + 去重 + 语法统一 + 富文本兼容
+# 适配 XUnity.AutoTranslator 正则引擎
+# ==============================================
+
+# ==============================================
+# 一、全局通用预处理（最高优先级）
+# ==============================================
+# 分数去除多余空格
+
+# 全大写英文统一转为标准大小写（抹平大小写差异）
+^([A-Z ]+)$=\L$1
+
+# ==============================================
+# 二、数值、符号、货币、百分比（原样输出）
+# ==============================================
+# 纯数字（含千分位）
+^\d+(,\d+)*$=$0
+# 小数
+^\d+\.\d+$=$0
+# 百分比
+^\d+%$=$0
+# 倍数 x开头
+^x\d+$=$0
+# 美元价格
+^\$\d+(\.\d+)?$=$0
+# 特殊符号组
+^[+_%!:_]+$=$0
+# 2~4位纯数字
+# 分钟简写格式 xm → x分钟
+^(\d+)m$=$1分钟
+
+# ==============================================
+# 三、中文语句精简/润色规则
+# ==============================================
+# 句式重构：建造XX来生产XX
+^(.*)建造(.*)来生产(.*)。$=$1建$2，产出$3。
+# 句式重构：可以使用XX来XX
+^(.*)可以使用(.*)来(.*)。$=$1$2可$3。
+# 句式重构：将/会让你XX
+^(.*)将让你(.*)。$=$1可$2。
+^(.*)会让你(.*)。$=$1可$2。
+
+# 冗余助词替换
+(以及|并且)=$、
+
+# 地点状语精简
+^(.*)在(.*)中(.*)。$=$1$2内$3。
+^(.*)在(.*)里(.*)。$=$1$2内$3。
+
+# 时间单位简写
+
+# 疑问句式精简
+^(.*)对(.*)有疑问(.*)。$=$1$2有疑问$3。
+
+# ==============================================
+# 四、时间、时长格式转换
+# ==============================================
+# 天数+小时
+^(\d+) DAYS (\d+) HOURS$=$1天$2小时
+# (xh xm) 时长格式
+^\((\d+)h (\d+)m\)$=（$1小时$2分）
+# 时间单位
+^SEC$=秒
+^MIN$=分钟
+^HOURS$=小时
+^12 DAYS 3 HOURS$=12天3小时
+^45 DAYS 2 HOURS$=45天2小时
+
+# ==============================================
+# 五、赛季倒计时相关
+# ==============================================
+^SEASON ENDS IN (\d+) DAYS$=赛季剩余$1天
+^SEASON AND EXPERIMENTAL VAULT END IN(\[\-\] \[FD0C0B\](\d+) DAYS\[\-\])$=[282828]赛季与实验避难所剩余$1
+^\[282828\]SEASON AND EXPERIMENTAL VAULT END IN\[\-\] \[FD0C0B\](\d+) DAYS\[\-\]$=[282828]赛季和实验避难所在[-][FD0C0B]$1天后结束[-]
+
+# ==============================================
+# 六、界面通用短句 & 基础按钮
+# ==============================================
+^PLEASE STAND BY$=请稍候
+^Message$=消息
+^ENTER VAULT$=进入避难所
+^OK$=确定
+^VAULT LIST$=避难所列表
+^SKIP$=跳过
+^CLOSE$=关闭
+^CANCEL$=取消
+^CONFIRM$=确认
+^BUILD$=建造
+^RUSH$=加速生产
+^LOAD VAULT$=加载避难所
+^NEW VAULT$=新建避难所
+^CREATE VAULT$=创建避难所
+^DELETE VAULT$=删除避难所
+^TAP TO START$=点击开始
+^CLICK TO CONTINUE$=点击继续
+^WELCOME TO$=欢迎来到
+^CREDITS$=制作人员
+^Loading\.\.\.$=加载中...
+^SCREENSHOTS$=截图
+^SOUND$=音效
+^MUSIC$=音乐
+^WINDOWED$=窗口模式
+^ENABLE CONTROLLER$=启用控制器
+^TURN TIPS OFF$=关闭提示
+^SETTINGS$=设置
+^STORAGE SPACE: (\d+)/(\d+)$=存储空间：$1/$2
+^NO JUNK RECOVERED$=未拾取到废品
+^No Items to Redeem$=暂无可兑换物品
+^BUY MORE$=购买更多
+^Shop$=商店
+^SEND GIFT$=赠送礼物
+^MISSING$=缺失
+^NEW!$=新物品
+^UNLOCK$=解锁
+^SALE$=促销
+^STARTER PACK$=入门包
+^PREMIUM PASS$=高级季票
+^UPGRADE SEASON PASS$=升级赛季通行证
+^GET NOW$=立即获取
+^CLAIM$=领取
+^Claim!$=领取！
+^RANK$=排名
+^RANK UP$=提升段位
+^RANK 1$=第一名
+^CURRENT$=当前
+^COMPLETED$=已完成
+^FAILED$=失败
+^SUCCESS!$=成功！
+^DONE!$=完成！
+^HELP$=帮助
+^Stats$=统计数据
+^Objectives$=任务目标
+^Daily Report$=每日报告
+^CHALLENGES$=挑战
+^LEADERBOARD$=排行榜
+^SEASON INFO$=赛季信息
+^ROOMS$=房间
+^PETS$=宠物
+^JUNK$=垃圾
+^OUTFIT$=服装
+^OUTFITS$=服装
+^WEAPONS$=武器
+^INVENTORY$=背包
+^GAMMA CORRECTION$=伽马值
+^NOTIFICATIONS$=通知
+^CAM SENS$=镜头灵敏度
+^CAM SCROLL SPEED$=镜头滚动速度
+^CAM ZOOM SPEED$=镜头缩放速度
+^HD ZOOM OUT$=高清缩小
+^Cloud$=云
+^TIPS$=提示
+^STATUS$=状态
+^JOB$=工作
+^Production$=生产
+^UPGRADE$=升级
+^UPGRADED$=已升级
+^DESTROY$=拆除
+^Storage$=储藏室
+^REQUIRES$=所需条件
+^REWARDS$=奖励
+^REQUIREMENT 1$=条件一
+^REQUIREMENT 2$=条件二
+^UNLOCKS QUESTLINE:$=解锁任务线：
+^VAULT SCORE$=避难所积分
+^NEXT EVALUATION$=下次评估
+^LeftShift$=左Shift
+^NO RATING$=无评价
+^TBD - RECALL$=待定 - 召回
+^Gamer Tag$=玩家标签
+^MAIN MENU$=主菜单
+^Play$=开始游戏
+^Quit$=退出游戏
+^Vault Name$=避难所名称
+^Vault Number$=避难所编号
+^Save$=保存
+^SAVE & EXIT$=保存并退出
+^Load$=读取
+^LAST SAVE$=上次保存
+^Delete$=删除
+^Back$=返回
+^Next$=下一步
+^Apply$=应用
+^NO$=否
+^ON$=开启
+^OFF$=关闭
+^HOTKEYS$=热键
+^ARRIVAL (\d+)/(\d+)$=抵达 $1/$2
+^Space$=空间
+^Full$=已满
+^Empty$=空置
+^Low$=不足
+^High$=充足
+^Warning$=警告
+^Error$=错误
+^Success$=成功
+^Loading$=加载中
+^Saving$=保存中
+
+# ==============================================
+# 七、避难所/房间名称
+# ==============================================
+^Living Quarters$=居住区
+^Power Plant$=发电站
+^Power Generator$=发电机
+^Water Treatment$=水处理室
+^Diner$=餐厅
+^Medbay$=医疗室
+^Science Lab$=科学实验室
+^Armory$=军械库
+^Storage Room$=储藏室
+^Overseer's Office$=监督官办公室
+^Radio Studio$=广播室
+^Barbershop$=理发店
+^Weight Room$=健身房
+^Classroom$=教室
+^Game Room$=游戏室
+^Vault Door$=避难所大门
+^Elevator$=电梯
+^Weapon Workshop$=武器工坊
+^Wasteland Siege$=废土围攻
+^GARDEN$=花园
+^NUCLEAR REACTOR$=核反应堆
+^NUKA-COLA BOTTLER$=核子可乐装瓶厂
+^LOUNGE$=休息室
+^FITNESS ROOM$=体能训练室
+^ATHLETICS ROOM$=敏捷训练室
+^OUTFIT WORKSHOP$=服装工坊
+^THEME WORKSHOP$=主题工坊
+^EXTERIOR THEME$=外观主题
+
+# ==============================================
+# 八、资源、物资相关
+# ==============================================
+^Power$=电力
+^Food$=食物
+^Water$=水源
+^Caps$=瓶盖
+^LOW (\w+) SUPPLY$=$1不足
+^Nuka Cola( .+)?$=核子可乐$1
+^Stimpak$=治疗针
+^Radaway$=抗辐宁
+^Junk$=垃圾
+^Materials$=材料
+^Wasteland Junk$=废土垃圾
+^You don't have enough CAPS$=瓶盖数量不足
+
+# ==============================================
+# 九、产出/消耗统计
+# ==============================================
+^(.*) Production/Minute$=每分钟$1产出
+^(.*) Consumption/Minute$=每分钟$1消耗
+^Power Production/Minute$=每分钟电力产出
+^Food Production/Minute$=每分钟食物产出
+^Water Production/Minute$=每分钟水源产出
+^Power Consumption/Minute$=每分钟电力消耗
+^Food Consumption/Minute$=每分钟食物消耗
+^Water Consumption/Minute$=每分钟水源消耗
+
+# ==============================================
+# 十、袭击/战斗统计
+# ==============================================
+^(\w+(?: \w+)*) Attacks Stopped$=已击退$1袭击
+^Raider Attacks Stopped$=击退掠夺者袭击
+^Deathclaw Attacks Stopped$=击退死爪袭击
+^Feral Ghoul Attacks Stopped$=击退狂尸鬼袭击
+^Radroach Infestations Stopped$=已制止蟑螂侵扰
+^Radscorpion Infestations Stopped$=已制止辐射蝎侵扰
+^Mole Rat Infestations Stopped$=已制止鼹鼠侵扰
+^Alien Attacks Stopped$=击退外星人袭击
+^Fires Extinguished$=已扑灭火灾
+^Failed Rushes$=加速生产失败
+^Successful Rushes$=加速生产成功
+
+# ==============================================
+# 十一、居民相关（属性、操作、统计）
+# ==============================================
+# 避难所编号
+^ENTER VAULT (\d+)$=进入$1号避难所
+# 居民数量面板
+^Dwellers (\d+)/(\d+)$=居民 $1/$2
+^Have (\d+) Dwellers in your Vault$=避难所现有$1名居民
+^Send (\d+) Dweller to the Wasteland$=派遣$1名居民前往废土
+
+# 分配/升级居民
+^Assign (\d+) Dwellers in the right room$=将$1名居民分配至对应房间
+^Level up (\d+) Dweller$=提升$1名居民等级
+^Successfully Rush 1 room$=成功加速一间房间生产
+
+# 指派生产/制作
+^ASSIGN DWELLERS HERE TO PRODUCE (.*)$=指派居民在此生产$1
+^ASSIGN DWELLERS HERE TO CRAFT (.*)$=指派居民在此制作$1
+^ASSIGN DWELLERS HERE TO PRODUCE POWER$=指派居民在此发电
+^ASSIGN DWELLERS HERE TO PRODUCE FOOD$=指派居民在此生产食物
+^ASSIGN DWELLERS HERE TO PRODUCE WATER$=指派居民在此生产水源
+^ASSIGN DWELLERS HERE TO PRODUCE STIMPAKS$=指派居民在此生产治疗针
+^ASSIGN DWELLERS HERE TO PRODUCE RADAWAY$=指派居民在此生产消辐宁
+^ASSIGN DWELLERS HERE TO CRAFT WEAPONS$=指派居民在此锻造武器
+^ASSIGN DWELLERS HERE TO CRAFT OUTFITS$=指派居民在此制作服装
+^ASSIGN DWELLERS HERE TO TRAIN THEIR STRENGTH$=指派居民在此训练力量
+^ASSIGN DWELLERS HERE TO TRAIN THEIR AGILITY$=指派居民在此训练敏捷
+
+# 平均属性
+^Average Dweller (.*)$=居民平均$1
+^Average Dweller Level$=居民平均等级
+^Average Dweller Strength$=居民平均力量
+^Average Dweller Perception$=居民平均感知
+^Average Dweller Endurance$=居民平均耐力
+^Average Dweller Charisma$=居民平均魅力
+^Average Dweller Agility$=居民平均敏捷
+^Average Dweller Luck$=居民平均运气
+^Average Dweller Intelligence$=居民平均智力
+
+# 居民基础词汇
+^Dweller[s]?$=居民
+^Dweller Name$=居民姓名
+^Male Dwellers$=男性居民
+^Female Dwellers$=女性居民
+^Pregnant Dwellers$=怀孕居民
+^Children$=孩童
+^Child SPECIALs$=孩童属性
+^Dwellers SPECIAL$=居民属性
+
+# 七维属性全称
+^SPECIAL$=基础属性
+^Strength$=力量
+^Perception$=感知
+^Endurance$=耐力
+^Charisma$=魅力
+^Intelligence$=智力
+^Agility$=敏捷
+^Luck$=幸运
+^STRENGTH$=力量
+^PERCEPTION$=感知
+^ENDURANCE$=耐力
+^CHARISMA$=魅力
+^AGILITY$=敏捷
+^INTELLIGENCE$=智力
+^LUCK$=运气
+
+# 七维属性单字母缩写
+^S$=力量
+^P$=感知
+^E$=耐力
+^C$=魅力
+^I$=智力
+^A$=敏捷
+^L$=幸运
+
+# 居民状态/功能
+^Health$=生命值
+^Radiation$=辐射值
+^Happiness$=快乐度
+^Pregnant$=怀孕
+^Baby$=婴儿
+^Level$=等级
+^LVL$=等级
+^Upgrade$=升级
+^Equip$=装备
+^Unequip$=卸下
+^Revive$=复活
+^Training Time$=训练时长
+
+# 居民统计
+^Dwellers Sent to the Wasteland$=派往废土的居民
+^Dwellers Evicted$=被驱逐居民
+^Dwellers Customized$=形象定制居民
+^Dead Dwellers$=死亡居民
+^Dwellers Revived$=复活居民
+
+# ==============================================
+# 十二、全局统计数据
+# ==============================================
+^Time Played \(All-Time\)$=累计游戏时长
+^CUMULATIVE SINCE (\d+/\d+/\d+)$=$1起累计数据
+^Since (\d+/\d+/\d+)$=自$1起
+^Survival Guide$=生存指南
+^DESTROY ROCK$=击碎岩石
+
+# 通用统计句式
+^(\w+(?: \w+)*) Gained$=提升$1总数
+^(\w+(?: \w+)*) Trained$=完成$1次数
+^(\w+(?: \w+)*) Taken$=使用$1数量
+^(\w+(?: \w+)*) Collected$=收集$1总数
+^(\w+(?: \w+)*) Born$=新生$1数量
+^(\w+(?: \w+)*) Rides$=$1次数
+^(\w+(?: \w+)*) Time$=$1总时长
+^(\w+(?: \w+)*) Killed$=击杀$1总数
+
+# 细分统计项
+^Levels Gained$=累计升级次数
+^SPECIAL Stats Trained$=七项属性训练次数
+^Stimpaks Taken$=已使用治疗针
+^RadAway Taken$=已使用消辐宁
+^Caps Collected$=累计收集瓶盖
+^Power Collected$=累计收集电力
+^Food Collected$=累计收集食物
+^Water Collected$=累计收集水源
+^Elevator Rides$=电梯乘坐次数
+^Wasteland Exploration Time$=废土探索时长
+^Wasteland Creatures Killed$=击杀废土生物
+^Lunchboxes Opened$=已开启避难所科技午餐盒
+^Pet Carriers Opened$=已开启宠物箱
+^Babies Born$=新生婴儿
+^Junk Sold$=已出售垃圾
+
+# ==============================================
+# 十三、人名翻译
+# ==============================================
+^John Smith$=约翰·史密斯
+^Raymond Thompson$=雷蒙德·汤普森
+^Teresa Hall$=德蕾莎·霍尔
+^Randy Lord$=兰迪·洛德
+^Linda Mason$=琳达·梅森
+^Gloria Campbell$=格洛丽亚·坎贝尔
+^Donald Jackson$=唐纳德·杰克逊
+^Carl Richards$=卡尔·理查兹
+^Beverly Wright$=贝弗利·赖特
+^Brian Crawford$=布莱恩·克劳福德
+^Nathalie Robinson$=娜塔莉·罗宾逊
+^Lauren Hawkins$=劳伦·霍金斯
+^Kenneth Wilson$=肯尼斯·威尔逊
+^Frank Curtis$=弗兰克·柯蒂斯
+^Cynthia Brooks$=辛西娅·布鲁克斯
+^Emma Lane$=爱玛巷
+^Frank$=弗兰克
+^Emma$=艾玛
+
+# ==============================================
+# 十四、杂项特殊文本 & 无效字符
+# ==============================================
+^HOLAS COMO ESTAN KSDKJ AKJSDÑKLJDÑLKAJS DÑLKJASDÑLKJASDÑLKJA$=共同生活
+^EXPLORING WASTELAND$=探索废土
+^EXPORE$=探索
+^sfdsfgsdfgdfsg\s+sfdsfgsdfgdfsg$=
+^ASDASD+=$0
+
+# ==============================================
+# 十五、装备 & 制作
+# ==============================================
+# 服装分类与字段
+^Outfit Name$=服装名称
+^Common Outfits$=普通服装
+^Rare Outfits$=稀有服装
+^Legendary Outfits$=传奇服装
+^Outfit Recipes$=服装配方
+^Outfits Collected$=已收集服装
+^Outfits Sold$=已出售服装
+^Outfits Scrapped$=已拆解服装
+^Outfits Crafted$=已制作服装
+
+# 武器分类、名称与统计
+^Common Weapons$=普通武器
+^Rare Weapons$=稀有武器
+^Legendary Weapons$=传奇武器
+^Weapon Recipes$=武器配方
+^Rusty BB Gun$=老式气枪
+^Gauss Rifle$=高斯步枪
+^Weapons Collected$=已收集武器
+^Weapons Sold$=已出售武器
+^Weapons Scrapped$=已拆解武器
+^Weapons Crafted$=已制作武器
+
+# 武器单品
+^Enhanced Combat Shotgun$=增强型战斗霰弹枪
+^Mountain Momma$=山妈妈
+^Enhanced Power Fist$=增强力量拳
+^Rusty Alien Disintegrator$=生锈的外星分解器
+^Accelerated Railway Rifle$=加速铁路步枪
+^Power Fist$=动力拳套
+^Hardened Railway Rifle$=强化铁路步枪
+^Charon's Shotgun$=卡戎霰弹枪
+^Double-Barrel Combat Shotgun$=双管战斗霰弹枪
+^Wazer Wifle$=Wazer Wifle
+^Rusty Power Fist$=生锈的力量拳
+^Amplified Laser Rifle$=放大激光步枪
+^Big Sister$=大姐
+^Amplified Plasma Pistol$=放大等离子手枪
+^Laser Musket$=激光枪
+^Farmer's Daughter$=农夫的女儿
+^Mare's Leg$=马雷的腿
+^Infiltrator$=渗透者
+^Ghoul Revolver$=食尸鬼左轮手枪
+
+# 制作、属性类文本
+^Crafting Time & Cost$=制作时长与消耗
+^Damage$=伤害值
+^Damage Resistance$=伤害抗性
+^Healing Speed$=治疗速度
+^Rad Healing Speed$=放射治疗速度
+^Stranger Chance$=偶遇概率
+^Twins Chance$=双胞胎机会
+^XP$=经验值
+^Microscope$=显微镜
+^Agent Provocateur$=代理人挑衅者
+
+# ==============================================
+# 十六、宠物相关
+# ==============================================
+# 宠物品级
+^Common Pets$=普通宠物
+^Rare Pets$=稀有宠物
+^Legendary Pets$=传奇宠物
+
+# 犬类
+^English Mastiffs$=英国獒
+^Akitas$=秋田犬
+^Australian Shepherds$=澳大利亚牧羊犬
+^Black Labs$=黑色拉布拉多
+^Bloodhounds$=寻血猎犬
+^Boxers$=拳师犬
+^Brittanys$=布列塔尼猎犬
+^Cattle Dogs$=牧牛犬
+^Collies$=柯利牧羊犬
+^Dalmatians$=斑点狗
+^Dobermans$=杜宾犬
+^German Pointers$=德国短毛指示犬
+^German Shepherds$=德国牧羊犬
+^Golden Retrievers$=金毛寻回犬
+^Greyhounds$=灵缇犬
+^Huskies$=哈士奇
+^Pit Bull Terriers$=比特犬
+^Poodles$=贵宾犬
+^Rottweilers$=罗威纳犬
+^St. Bernards$=圣伯纳犬
+
+# 猫类
+^Toygers$=虎猫
+^Rollerbrain$=滚脑怪
+^Abyssinians$=阿比西尼亚猫
+^American Shorthairs$=美国短毛猫
+^Bombays$=孟买猫
+^British Shorthairs$=英国短毛猫
+^Burmillas$=缅甸猫
+^LaPerms$=拉波猫
+^Lykoi$=狼猫
+^Maine Coons$=缅因猫
+^Manxes$=曼岛猫
+^Ocicats$=奥西猫
+^Persians$=波斯猫
+^Scottish Folds$=苏格兰折耳猫
+^Siamese$=暹罗猫
+^Somalis$=索马里猫
+^Sphynxes$=斯芬克斯猫
+^Turkish Vans$=土耳其梵猫
+^Havana Browns$=哈瓦那棕猫
+^Pallas's Cats$=帕拉斯猫
+^Burmilla$=波米拉猫
+
+# 鹦鹉类
+^Pirate Parrots$=海盗鹦鹉
+^Trained Parrots$=驯养鹦鹉
+^Vault-Tec Parrots$=避难所科技鹦鹉
+
+# 宠物统计
+^Pets Collected$=已收集宠物
+^Pets Sold$=已出售宠物
+
+# ==============================================
+# 十七、赛季 & 商城 & 物品文本
+# ==============================================
+^SHELTER SEASON: SYNTHETIC IDENTITY$=避难所赛季：合成身份
+^EXPERIMENTAL VAULTS$=实验避难所
+^SEASON 1 LEADERBOARD$=第一季排行榜
+^SeasonModal_Leaderboard_VaultScoreFull$=赛季界面_排行榜_避难所积分
+^SEASON PASS$=季票
+^ITEM NAME$=物品名称
+^ITEM NAME description$=物品名称描述
+^QUEST NAME GOES HERE$=任务名称位置
+^HELPFUL HINT$=实用提示
+^PLACE HOLDER \[SET AT RUNTIME\]$=占位符[运行时加载]
+^NUKA-COLA QUANTUM$=量子核子可乐
+^Redeem$=兑换
+^Always a Pleasure to Serve You!$=总是很高兴为您服务！
+^Cannot connect to the store, check your connection and try again!$=商店连接失败，请检查网络后重试！
+^If you run out, you can always purchase more Nuka-Cola Quantum in the store\.$=量子核子可乐耗尽时，可前往商店补充。
+^Rank up for 3 Nuka-Cola Quantum\?$=消耗3瓶量子核子可乐提升段位？
+
+# 赛季奖励长文本
+^Unlock all the Season rewards:\n- NEW Vault Exterior \[-\]\[F7C531\]THEME\[-\]\n- NEW Nuka-Cola Bottler \[-\]\[F7C531\]THEME\[-\]\n- \[-\]\[F7C531\]NEW DWELLERS\[-\] and \[-\]\[F7C531\]MORE!\[-\]$=解锁全部赛季奖励：全新外观、可乐灌装器主题、新居民及更多内容。
+^All the benefits of the Season Pass plus:\n- Exclusive \[-\]\[F7C531\]LEGENDARY DWELLER\[-\] and \[-\]\[F7C531\]OUTFIT\[-\]\n- \[-\]\[F7C531\]BONUS\[-\] Pets, Outfits and Weapon\n- \[-\]\[F7C531\]25 BADGES\[-\] to gain season ranks instantly$=季票全部权益，额外赠送传奇居民、服装、道具与段位徽章。
+
+# ==============================================
+# 十八、房间功能说明
+# ==============================================
+^ATTRACT NEW DWELLERS FROM THE WASTELAND$=吸引废土中的新居民
+^INCREASES THE NUMBER OF ITEMS AND PETS YOU CAN HOLD$=提升物品与宠物存储上限
+^INCREASES THE NUMBER OF DWELLERS YOU CAN HAVE IT ALSO ALLOWS YOU TO BREED NEW DWELLERS$=提升居民上限，可繁育新人
+^USED TO ACCESS LOWER FLOORS OF YOUR VAULT$=前往避难所下层
+^SEND DWELLERS ON QUESTS FROM HERE$=从此处派遣居民执行任务
+^Build a Medbay to produce Stimpaks\.$=建造一间医疗室，生产治疗针。
+^Build a POWER GENERATOR\?$=是否建造发电机？
+^Build a DINER\?$=是否建造餐厅？
+^Build a WATER TREATMENT\?$=是否建造净水厂？
+
+# ==============================================
+# 十九、任务 & 目标
+# ==============================================
+^Quest$=探索任务
+^Raid$=突袭
+^Collect$=收集
+^Sell$=出售
+^Train$=训练
+^Extinguish Fires$=扑灭火灾
+^Defend$=防御
+^Kill$=击杀
+^Rescue$=救援
+
+# ==============================================
+# 二十、怪物 & 威胁 & 灾害
+# ==============================================
+^Radroach$=蟑螂
+^Rat$=巨鼠
+^Feral Ghoul$=狂尸鬼
+^Raider$=掠夺者
+^Deathclaw$=死爪
+^Molerat$=鼹鼠
+^Fire$=火灾
+^Radiation Leak$=辐射泄漏
+^Radscorpion$=辐射蝎
+^Alien Drones$=外星无人机
+
+# ==============================================
+# 二十一、游戏引导 & 教程长文本
+# ==============================================
+^Your Vault needs a steady supply of\nPower, Food and Water to run properly.$=避难所需稳定电力、食物、水源维持运转。
+^Hint: The positive and negative effects of your resources are amplified by their distance from the required resource lines.$=提示：资源偏离标准线，效果会被放大。
+
+^When you drag a Dweller into a room, a SPECIAL letter will appear above their head with a number.\n\nThe letter above their head corresponds to the SPECIAL stat associated with that room.\n\nIf the number is listed with a plus or minus sign, it means that dragging a Dweller into that room will replace a Dweller that is currently working in that room.\n\nThe Dweller's effect on that room will go up or down whatever the number is.\n\nWhen a Dweller is replaced this way, they switch jobs with the Dweller being moved.\n\nIf there is no plus or minus sign it means there's room for the Dweller to work in the room without replacing any Dwellers.$=拖动居民至房间，头顶显示对应属性与数值；带正负号会替换在岗人员，无符号可直接入驻。
+
+^When you click on a Dweller, it brings up their information.\n\nFrom this page, you can equip your Dweller with Weapons, Outfits and a Pet, or heal them with Stimpaks and RadAway.\n\nClicking on their SPECIAL brings up more detailed information about their individual SPECIAL levels.$=点击居民查看信息，可装备道具、使用药品，点击属性查看详情。
+
+
+^The Vault keeps people safe from the dangers of the Wasteland\.$=避难所保护居民免受废土的危险。
+^Each room has a SPECIAL attribute it uses. Assign Dwellers with the best SPECIAL to make them happy and produce extra Resources\.$=每个房间对应一项七项属性，指派属性匹配的居民工作，可提升效率并产出更多资源。
+^Vault-Tec will give you a daily rating based on your performance. Remember to keep your Dwellers happy, and do a great job!\.$=避难所科技会根据你的表现进行每日评级。记得关照居民，好好经营避难所！
+^Now you have to determine the ID of your Vault. Choose carefully, because once you select an ID, it can't be changed!\.$=请设置避难所编号，编号一旦确定将无法修改，请谨慎选择！
+
+# ==============================================
+# 二十二、富文本颜色标签剧情语句
+# ==============================================
+^\[394039FF\]Build a Medbay to produce Stimpaks\.\[-\]$=[394039FF]建造一个医疗室来生产治疗针。[-]
+^\[394039FF\]Upgrading your Vault entrance will make it harder for invaders to break in\.\[-\]$=[394039FF]升级你的避难所入口将使入侵者更难闯入。[-]
+^\[394039FF\]Bring Pets on Quests to give Dwellers a damage boost!\[-\]$=[394039FF]在任务中携带宠物，为居民增加伤害！[-]
+^\[394039FF\]If you are out of building space on a floor, build an elevator to access lower parts of your Vault\.\[-\]$=[394039FF]如果楼层没有空余建造位置，建造电梯前往避难所下层。[-]
+
+^\[353F5C\]First let's \[BE6432\]BUILD\[353F5C\] a \[BE6432\]ROOM\[353F5C\]\. Click on the \[BE6432\]HAMMER ICON\[353F5C\] to open the \[BE6432\]BUILD MENU\[353F5C\]\.$=[353F5C]首先，让我们[BE6432]建造[353F5C]一个[BE6432]房间[353F5C]。点击[BE6432]锤子图标[353F5C]打开[BE6432]建造菜单[353F5C]。
+^\[353F5C\]Rooms require \[BE6432\]POWER\[353F5C\] to function. Click again to \[BE6432\]CONFIRM\[353F5C\]\.$=[353F5C]房间需要[BE6432]电力[353F5C]才能正常工作。再次点击[BE6432]确认[353F5C]。
+^\[353F5C\]We'll build a \[BE6432\]POWER GENERATOR\[353F5C\] that will produce \[BE6432\]POWER\[353F5C\]\. \[BE6432\]CLICK\[353F5C\] on the \[BE6432\]POWER ROOM\[353F5C\]\.$=[353F5C]我们将建造一台[BE6432]发电机[353F5C]用于生产[BE6432]电力[353F5C]。[BE6432]点击[353F5C]这个[BE6432]电力房间[353F5C]。
+^\[353F5C\]Now we need \[BE6432\]DWELLERS\[353F5C\] to make the \[BE6432\]POWER GENERATOR\[353F5C\] produce power\.$=[353F5C]现在我们需要[BE6432]居民[353F5C]来让[BE6432]发电机[353F5C]运转发电。
+^\[353F5C\]Look! \[BE6432\]NEW DWELLERS\[353F5C\] have shown up at the \[BE6432\]VAULT DOOR\[353F5C\]\.$=[353F5C]看！[BE6432]新居民[353F5C]出现在[BE6432]避难所大门[353F5C]处。
+^\[353F5C\]Let's look at the \[BE6432\]STATS\[353F5C\] of a \[BE6432\]DWELLER\[353F5C\]. \[BE6432\]CLICK\[353F5C\] on a \[BE6432\]DWELLER\[353F5C\] to \[BE6432\]SEE THEIR INFO\[353F5C\]\.$=[353F5C]让我们查看[BE6432]居民[353F5C]的[BE6432]属性[353F5C]。[BE6432]点击[353F5C]居民[353F5C]查看详情。
+^\[353F5C\]You can see the \[BE6432\]DWELLER'S SPECIAL\[353F5C\] stats. This info tells you where a \[BE6432\]DWELLER\[353F5C\] can be used most effectively\.$=[353F5C]你可以查看居民的七项属性，以此安排居民发挥最大作用。
+^\[353F5C\]Great! You've successfully completed your first Rush and collected \[BE6432]CAPS\[353F5C\]\.$=[353F5C]太棒了！你完成了第一次加速生产，并获得了[BE6432]瓶盖[353F5C]。
+^\[353F5C\]Let's build a second \[BE6432\]ROOM\[353F5C\]\.$=[353F5C]我们再来建造一个[BE6432]房间[353F5C]。
+^\[353F5C\]Confirm the location by \[BE6432\]CLICKING\[353F5C\] the \[BE6432\]BUILD ZONE\[353F5C\]\.$=[353F5C]点击[BE6432]建造区域[353F5C]确认位置。
+^\[353F5C\]Dwellers require \[BE6432\]FOOD\[353F5C\] to keep their \[BE6432\]HEALTH\[353F5C\] up. Click again to \[BE6432\]CONFIRM\[353F5C\]\.$=[353F5C]居民需要[BE6432]食物[353F5C]维持[BE6432]生命值[353F5C]，再次点击[BE6432]确认[353F5C]。
+^\[353F5C\]Now let's build one more room\.$=[353F5C]现在我们再建造一个房间。
+^\[353F5C\]You need a \[BE6432\]DINER\[353F5C\], which will produce \[BE6432\]FOOD\[353F5C\]. \[BE6432\]CLICK\[353F5C\] on the \[BE6432\]DINER\[353F5C\]\.$=[353F5C]你需要建造[BE6432]餐厅[353F5C]来生产[BE6432]食物[353F5C]，点击[BE6432]餐厅[353F5C]。
+
+^Made (\d+) dialogue choices on Quests$|||在任务中进行了$1次对话选择
+^Killed (\d+) Quest Bosses$|||杀了$1个任务 BOSS
+^Completed (\d+) Quests$|||已完成$1个任务
+^Collected all Fragments of a Theme Recipe$|||已收集布局配方的所有碎片
+^Collected all Fragments of (\d+) Theme Recipes$|||已收集 $1 个布局配方的所有碎片
+^Crafted every Theme$|||已制作所有布局
+^Killed (\d+) enemies on Quests$|||在任务中杀死了$1个敌人
+^Collected (\d+) Stimpaks and (\d+) RadAway on Quests$|||在任务中收集了$1个治疗针和$2个消辐宁
+^Scrapped (\d+) items$|||分解了$1件物品
+^Crafted (\d+) Weapons$|||制作了$1件武器
+^Crafted (\d+) Outfits$|||制作了$1件服装
+^Crafted an Outfit, a Weapon and a Theme$|||制作了一件服装、一件武器和一个布局
+^Changed the appearance of (\d+) Dwellers in the Barbershop$|||改变了理发店里$1位居民的模样
+^Make (\d+) dialogue choices on Quests$|||在任务中做出$1个对话选择
+^Kill (\d+) Quest Bosses$|||杀死$1个任务 BOSS
+^Complete (\d+) Quests$|||完成$1个任务
+^Collect all Fragments of a Theme Recipe$|||收集所有布局配方的碎片
+^Collect all Fragments of (\d+) Theme Recipes$|||收集$1个布局配方的所有碎片
+^Craft every Theme$|||制作每一个布局
+^Kill (\d+) enemies on Quests$|||在任务中杀死$1个敌人
+^Collect (\d+) Stimpaks and (\d+) RadAway on Quests$|||在任务中收集$1个治疗针和$2个消辐宁
+^Scrap (\d+) items$|||分解$1件物品
+^Craft (\d+) Weapons$|||制作$1件武器
+^Craft (\d+) Outfits$|||制作$1件服装
+^Craft an Outfit, a Weapon and a Theme$|||制作1件服装，一件武器和一个布局
+^Change the appearance of (\d+) Dwellers in the Barbershop$|||改变理发店里$1位居民的模样
+^Smooth Talker$|||净说好话的人
+^You're Fired!$|||你被开除了!
+^Wasteland Wanderer$|||废土流浪者
+^Urban Ranger$|||城市游侠
+^Survivalist$|||幸存者
+^Legend of the Wastes$|||废土的传说
+^Paint 'n Elbow Grease$|||涂抹肘部润滑脂
+^Decorator$|||装饰者
+^Interior Designer$|||室内设计师
+^Enemy of the Wastes$|||废土之敌
+^Big Pharma$|||大制药厂
+
+^Scraptastic$|||废品店
+^Weaponsmith$|||武器匠
+^Fashionista$|||时装设计师
+^More Than Handy$|||不仅仅是方便
+^A Little Off the Top$|||有点过头了
+^ACTIVATE REWARDS$|||激活奖励
+^Vault name already exists\.$|||避难所名已存在
+^Share via$|||分享至
+^Would you like Fallout Shelter to send you notifications\?$|||你想让《辐射避难所》给你发送通知吗？
+^No$|||否
+^Notifications$|||通知
+^Yes$|||是
+^Something happened in your Vault!$|||你的避难所出事了！
+^Increases Perception training speed$|||加快【感知】训练速度
+^ATTENTION$|||注意
+^Name the new baby!$|||为新生儿命名！
+^The proud parents$|||喜得贵子的夫妇
+^TRIPLETS$|||三胞胎
+^TWINS$|||双胞胎
+^The CAPS you spent will not be refunded\. Are you sure\?$|||你消耗的瓶盖将不会返还。是否确定？
+^FACIAL FEATURE$|||面部特征
+^HAIR COLOR$|||发色
+^HAIRSTYLE$|||发型
+^CUSTOMIZE$|||自定义
+^COST$|||费用
+^TIME$|||时间
+^Customize facial features$|||自定义面部特征
+^Increases Charisma training speed$|||加快【魅力】训练速度
+^\+\{0\}% Health$|||+{0}% 健康度
+^\-\{0\}% Crafting Cost$|||-{0}% 制作成本
+^\{0\}% Twins Chance$|||{0}% 双胞胎几率
+^\+\{0\} Child SPECIALs$|||+{0}儿童SPECIAL属性值
+^\+\{0\} Damage$|||+{0}伤害
+^\-\{0\}% Crafting Time & Cost$|||-{0}% 制作耗时和成本
+^\-\{0\}% Crafting Time$|||-{0}% 制作耗时
+^\-\{0\}% Pregnancy Time$|||-{0}% 怀孕耗时
+^x\{0\} Wasteland Return Speed$|||x{0}废土返回速度
+^\+\{0\}% Happiness$|||+{0}% 愉悦度
+^x\{0\} Healing Speed$|||x{0}回复速度
+^x\{0\} Stranger Chance$|||x{0}陌生人出现几率
+^x\{0\} Objective Completion$|||x{0}目标完成
+^x\{0\} Rad Healing Speed$|||x{0}辐射损伤回复速度
+^\{0\}% Damage Resistance$|||{0}% 减伤
+^Stimpak Healing$|||治疗针
+^Health$|||健康
+^Crafting Cost$|||制作成本
+^Twins Chance$|||双胞胎几率
+^Child SPECIALs$|||儿童SPECIAL属性
+^Damage$|||伤害
+^Crafting Time & Cost$|||制作耗时和成本
+^Crafting Time$|||制作耗时
+^Pregnancy Time$|||怀孕耗时
+^Wasteland Return Speed$|||废土返回速度
+^Happiness$|||愉悦度
+^Healing Speed$|||回复速度
+^Stranger Chance$|||陌生人出现几率
+^Objective Completion$|||目标完成
+^Rad Healing Speed$|||辐射损伤回复速度
+^Damage Resistance$|||减伤
+^Training Time$|||训练时间
+^Training Time \(Continuous\)$|||训练时间（持续）
+^Wasteland Caps$|||废土寻获的瓶盖
+^Wasteland Weapons & Outfits$|||废土寻获的武器和服装
+^Wasteland Junk$|||废土寻获的垃圾
+^XP$|||经验值
+^\-\{0\}% Training Time$|||-{0}% 训练时间
+^\-\{0\}% Training Time \(Continuous\)$|||-{0}% 训练时间 (持续)
+^\+\{0\}% Wasteland Caps$|||废土寻获的瓶盖+{0}%
+^\+\{0\}% Wasteland Weapons & Outfits$|||废土寻获的武器和服装+{0}%
+^\+\{0\}% Wasteland Junk$|||废土寻获的垃圾+{0}%
+^\+\{0\}% XP$|||+{0}% 经验
+^BOTTLE & CAPPY!$|||瓶瓶和盖盖！
+^Building\.\.\.$|||建造中…
+^NOT ENOUGH CAPS$|||瓶盖不足
+^BUILD$|||建造
+^ACCEPT$|||接受
+^BEGIN QUEST$|||开始任务
+^BUY$|||购买
+^BUY MORE$|||购买更多
+^BUY PACK$|||购买礼包
+^CANCEL$|||取消
+^CONFIRM$|||确认
+^CRAFT$|||制作
+^ENTER!$|||进入！
+^EVICT$|||驱逐
+^IGNORE$|||忽略
+^INSTANT$|||立即完成
+^JOB$|||工作
+^OK$|||好的
+^COMPLETE$|||完成
+^FINISH$|||结束
+^REACH NOW$|||立即到达
+^QUEST LIST$|||任务列表
+^RANDOM$|||随机
+^RELOAD LATER$|||稍后刷新
+^RELOAD NOW$|||马上刷新
+^RESET$|||重置
+^SELL$|||出售
+^SKIP$|||跳过
+^Sort$|||分类
+^START NOW$|||立即开始
+^START QUEST$|||开始任务
+^STATUS$|||状态
+^CAM SENS$|||镜头灵敏度
+^Increases Luck training speed$|||加快【幸运】的提升速度
+^CLAIM$|||获取
+^Claim!$|||获取！
+^Increases Intelligence training speed$|||加快【智力】训练速度
+^IMPORT$|||输入
+^KEEP$|||保留
+^NEW VAULT$|||新避难所
+^An error occured during cloud activation\. Please check your cloud settings or try again later$|||激活云端时发生了一个错误。请检查你的云端设定或稍后再试
+^Which save do you want to keep\?$|||你想要保留哪个存档？
+^Your cloud save is from a newer version of Fallout Shelter\. Please update the game and try again\.$|||你的云存档来自一个较新版本的《辐射避难所》，请更新游戏后重试。
+^Are you sure you want to keep the Cloud save\?$|||你确定你想保留云端存档吗？
+^NEWER$|||较新的
+^COMPLETED$|||完成
+^The Junk you used will be fully refunded, but only part of the CAPS you spent\. Are you sure\?$|||你使用的垃圾将会全部退还，但是花费的瓶盖只能退还一部分。确定吗？
+^CRAFTED!$|||生产完成！
+^\{0\}/\{1\} RECIPE FRAGMENTS FOUND$|||{0}/{1}发现配方碎片
+^HERE ARE SOME RECIPES AND JUNK TO MAKE A WEAPON AND AN OUTFIT YOU CAN ONLY GET THROUGH CRAFTING\.$|||这是一些配方和垃圾用来制造武器了和服装，这些武器和服装只能通过制造获得。
+^MANY OTHER ITEMS CANNOT BE FOUND, ONLY CRAFTED\. WHEN CHOOSING WHAT TO CRAFT, THESE ARE MARKED BY THE CRAFTING ICON\.$|||有许多物品无法寻获，只能通过制造获取。这些物品会在制造物品选择界面以“制造图标”标示出来。
+^IT'S TIME TO START CRAFTING!$|||制作时间到！
+^CRAFTING IN PROGRESS$|||正在生产
+^RECIPE REQUIRED$|||需要配方
+^Craft \{0\}\?$|||是否制作{0}？
+^Deathclaw$|||死爪
+^Deathclaws$|||死爪
+^Increases Agility training speed$|||加快【敏捷】训练速度
+^BONUS$|||奖励
+^STATS$|||状态
+^WAITING$|||等待中
+^CHILD$|||儿童
+^COFFEE BREAK$|||休息时间
+^DEAD$|||死亡
+^has died$|||已死亡
+^Died in Wasteland$|||命丧废土
+^Drag Here$|||拖到此处
+^Tap Here$|||点击此处
+^Click Here$|||点击此处
+^Press \[A\]$|||按[A]
+^ESCAPING$|||逃跑中
+^EXPLORING$|||探索
+^Last name$|||姓
+^Leaving Vault$|||正在离开避难所
+^Name$|||名
+^Returned From Wasteland$|||从废土回来了
+^Returning From Wasteland$|||正在从废土返回
+^RETURNING$|||返回中
+^Exiting Vault$|||正在退出避难所
+^HIDDEN$|||隐藏
+^DEATHCLAW ATTACK$|||死爪
+^ROOM ON FIRE$|||房间着火了
+^FERAL GHOUL ATTACK$|||狂尸鬼侵袭
+^MOLE RAT ATTACK$|||鼹鼠侵袭
+^RADROACH INFESTATION$|||辐射蟑螂肆虐
+^RADSCORPION ATTACK$|||辐射蝎侵袭
+^RAIDER ATTACK$|||掠夺者袭击
+
+
+^I've got to kill this Savage Dog before it kills me!$|||得赶在这条野狗撕碎我之前把它给解决了！
+^The Yao Guai is moving in, ready to attack\.$|||妖怪来了，准备战斗。
+^This Feral Ghoul is out of its mind! It's lunging at me!$|||这头狂尸鬼发狂了！它正向我冲过来！
+^The Feral Ghoul is moving in, ready to attack\.$|||狂尸鬼来了，准备战斗。
+^The Giant Ant's antennae are quivering. It moves in for the kill!$|||巨蚁的触须在不停地摆动。它要来大开杀戒了！
+^The Giant Ant is moving in, ready to attack\.$|||巨蚁来了，准备战斗。
+^I don't see the Scavenger, but his Dog is circling, ready to bite!$|||我没看见拾荒者，但他的狗在到处转悠，随时准备咬人！
+^The Scavenger's Dog is moving in, ready to attack\.$|||拾荒者的狗来了，准备战斗。
+^The Giant Worker Ant is coming my way, pincers ready!$|||巨型工蚁亮出巨钳向我袭来！
+^The Giant Worker Ant is moving in, ready to attack\.$|||巨型工蚁来了，准备战斗。
+^I don't know how I'm going to kill this Radscorpion, but I have to try!$|||我不知道如何杀死这只辐射蝎，但我得试试！
+^The Savage Dog is moving in, ready to attack\.$|||野狗来了，准备战斗。
+^The Radscorpion is moving in, ready to attack\.$|||辐射蝎来了，准备战斗。
+^The Giant Soldier Ant sees me as a threat! It's attacking!$|||巨型兵蚁认为我是威胁！它开始攻击了！
+^The Giant Soldier Ant is moving in, ready to attack\.$|||巨型兵蚁来了，准备战斗。
+^A Fire Ant Soldier\? Not like it can actually shoot fire. Time to attack!$|||一只火蚁士兵？看上去它不像是真的能喷火。是时候战斗了！
+^The Fire Ant Soldier is moving in, ready to attack\.$|||火蚁士兵来了，准备战斗。
+^The Guard Dog won't let me pass. I'll have to kill it to get by!$|||护卫犬不让我过去。我必须杀了它才能通过！
+^The Guard Dog is moving in, ready to attack\.$|||护卫犬来了，准备战斗。
+^Never thought I'd be afraid of an insect, but this Fire Ant Warrior means business!$|||从没想过我会怕昆虫，但这只火蚁勇士可不是闹着玩的！
+^The Fire Ant Warrior is moving in, ready to attack\.$|||火蚁勇士来了，准备战斗。
+^This Mirelurk is nothing but a crab cake on legs! Time for a snack!$|||这只泥沼蟹不过就是块长了脚的螃蟹蛋糕！是时候吃点心了！
+^One Mole rat\? It's as good as dead!$|||才一只鼹鼠？它已经跟死了没差了！
+^The Mirelurk is moving in, ready to attack\.$|||泥沼蟹来了，准备战斗。
+^Uh oh! That Feral Ghoul Roamer is shambling toward me!$|||啊啊！那头狂尸鬼漫游者向我爬了过来！
+^The Feral Ghoul Roamer is moving in, ready to attack\.$|||狂尸鬼漫游者来了，准备战斗。
+^A Giant Radscorpion\? As if the normal ones aren't bad enough! This might be the end!$|||一只巨型辐射蝎？难道普通大小的蝎子还不够糟吗！到此为止了！
+^The Giant Radscorpion is moving in, ready to attack\.$|||巨型辐射蝎来了，准备战斗。
+^I hope I can handle this Mirelurk Hunter! It's coming at me fast!$|||我希望我能应付这只泥沼蟹猎杀者！它朝我飞快地冲来！
+^The Mirelurk Hunter is moving in, ready to attack\.$|||泥沼蟹猎杀者来了，准备战斗。
+^The Vicious Dog has my scent now! He won't stop till one of us is dead!$|||那条恶犬闻到了我的味道！在拼出个你死我活之前它是不会罢休的！
+^The Vicious Dog is moving in, ready to attack\.$|||恶犬来了，准备战斗。
+^The Centaur is crawling towards me! I don't think it wants a hug!$|||朝我爬了过来！我不认为它是想要个抱抱！
+^The Mole rat is moving in, ready to attack\.$|||鼹鼠来了，准备战斗。
+^The Centaur is moving in, ready to attack\.$|||多脚怪来了，准备战斗。
+^This Feral Ghoul Reaver will rip me apart if I'm not careful!$|||如果我粗心大意，狂尸鬼掠夺者会把我撕碎！
+^The Feral Ghoul Reaver is moving in, ready to attack\.$|||狂尸鬼掠夺者来了，准备战斗。
+^How can I possibly survive against this Deathclaw\?!$|||我怎样才能从死爪的攻击下存活下来？！
+^The Deathclaw is moving in, ready to attack\.$|||死爪来了，准备战斗。
+^Enclave Deathclaws are trained to kill - this will be a fight to the death!$|||英克雷死爪被训练成杀戮机器，这将会是场拼死的搏斗！
+^The Enclave Deathclaw is moving in, ready to attack\.$|||英克雷死爪来了，准备战斗。
+^This Super Mutant sees all humans as weak - he'll try to kill me for sure!$|||在这个超级变种人看来，所有人类都不过是弱小的臭虫，所以他想杀了我！
+^The Super Mutant is moving in, ready to attack\.$|||超级变种人来了，准备战斗。
+^A Super Mutant Master! This guy's no joke\.\.\. but I'm ready!$|||一个超级变种人大师！这家伙可不是开玩笑的……但是我准备好了！
+^Time to swat this Bloatfly like the insect it is!$|||像拍死小昆虫那样拍死这只肿头蛾！
+^The Super Mutant Master is moving in, ready to attack\.$|||超级变种人大师来了，准备战斗。
+^The Super Mutant Overlord is one of the strongest of its kind! I'll be lucky to survive!$|||超级变种人霸主是他们这一类中最强壮的！幸运的话，我能活下来！
+^The Super Mutant Overlord is moving in, ready to attack\.$|||超级变种人霸主来了，准备战斗。
+^A Super Mutant Behemoth\? Seriously\? This is like fighting a building!$|||一头超级变种巨兽？没开玩笑吧？这就像是在跟一座大楼战斗！
+^The Super Mutant Behemoth is moving in, ready to attack\.$|||超级变种巨兽来了，准备战斗。
+^The Bloatfly is moving in, ready to attack\.$|||肿头蛾来了，准备战斗。
+^I'll squash this Radroach, no problem!$|||我会把这只辐射蟑螂踩扁的，完全不用担心！
+^The Radroach is moving in, ready to attack\.$|||辐射蟑螂来了，准备战斗。
+^The Yao Guai is charging! It thinks I'm lunch!$|||这只妖怪蓄势待发！它把我当成了午餐！
+^Attempting to find a way into the Broadcasting Tower\.$|||试图找到一条通往广播塔的路。
+^Nobody's had a meal here in a long, long time\.$|||很久很久没有人在这里吃过东西了。
+^The location looks secure, but I might be able to find a way in\.$|||这个地方看上去被封锁了，但我应该能找条路进去。
+^The people here look far from friendly. I better play my cards right\.$|||这地方的人看上去一点也不友善，我得小心处事。
+^A Synth and Super Mutant battle has trapped me in a room with a Chemistry Station\.$|||一场合成人和超级变种人的战斗把我困在了一个有化学工作站的房间。
+^A Deathclaw seems to have made the Museum its home!$|||似乎有一只死爪把这座博物馆当成了自己的家！
+^Most of the Plant is flooded. I'll need to swim underwater to explore it all\.$|||工厂的大部分地方都被淹没了。我要潜到水下去才能探索所有地方。
+^I've found a jammed door inside. There's an axe here I can use to break it down\.$|||我在里面发现了一扇堵住的门。这儿有把斧子，我可以用它把门劈开。
+^There's nothing on the main floors. Heading to the basement\.$|||主楼层什么也没有。向地下室前进。
+^Trying to hide from the Raiders\.$|||尝试躲开那些掠夺者。
+^Searching the Abandoned Shack\.$|||搜索废弃小屋。
+^Trying to pry open the Refrigerator door\.$|||尝试撬开冰箱门。
+^Attempting to open the Safe\.$|||尝试打开保险箱。
+^Trying to unlock the door to the Super Duper Mart\.$|||尝试打开通往大无敌超市的门。
+^The Slaves are on the run, after killing their owner\.$|||这些奴隶杀了他们的主人之后，现在正在逃亡。
+^Attempting to liberate the Slaves\.$|||尝试解放这些奴隶。
+^Exploring the Gas Station\.$|||探索加油站。
+^The Fugitive Slave was shot in the leg. He can't get much farther\.$|||逃亡的奴隶被击中了腿，他走不了多远了。
+^He's in need of repair, but I may be able to do it\.$|||他需要护理，我也许能帮他。
+^Trying to treat the Wounded Sheriff. He's in a lot of pain\.$|||尝试给受伤的警长做些包扎，他现在非常痛苦。
+^The Ghoul is ugly, but not feral. In fact, she seems pretty friendly\.$|||这个尸鬼丑陋无比，但是一点儿也不凶猛。实际上，她看上去十分友好。
+^The Merchant is interested in bartering\.$|||商人对以物换物的交易十分感兴趣。
+^The Talon Company Mercs are wary, but not hostile\.$|||鹰爪公司的佣兵十分谨慎，但并没有敌意。
+^The Hunter needs help tracking a Yao Guai\.$|||猎人在追踪一头妖怪，并且他需要帮忙。
+^The Drunken Drifter wants to share a drink\.$|||醉汉愿意分我一杯酒。
+^Trying to convince the Brotherhood Patrol that I'm harmless\.$|||尝试让兄弟会侦察队相信我没有恶意。
+^I'm guiding the Lost Farmer back to the nearest settlement\.$|||我正带一个迷路的农民去最近的住所。
+^The Savage Dog bit me in the leg! Time to hobble away!$|||野狗咬伤了我的腿！只能跛着脚走了！
+^The Radscorpion nearly impaled me with its stinger! Enough of this!$|||辐射蝎差点就用刺刺穿了我！真是够了！
+^The Giant Soldier Ant wounded me! I'm bleeding\.\.\. and running!$|||巨型兵蚁伤到了我！我正在流血……以及逃跑！
+^The Fire Ant Soldier set my clothes on fire! I can't beat this thing!$|||火蚁士兵把我的衣服点着了！我打不过它！
+^The Guard Dog really doesn't want me to pass! Time to back off!$|||护卫犬完全不想让我通过！撤退吧！
+^The Fire Ant Warrior burned me pretty badly! Time to run and recover!$|||火蚁勇士把我烧得很惨！该跑路去处理伤口了！
+^The Mirelurk nearly took my head off with its claws! I'm running!$|||我的头差点被泥沼蟹用螯剪了下来！逃跑中！
+^The Feral Ghoul Roamer attacked in a frenzy! I had to run!$|||狂尸鬼漫游者疯狂地攻击我！我还是跑吧！
+^I can't possibly fight this Giant Radscorpion and live! Time to go!$|||我不肯能打得过这只巨型辐射蝎并存活下来！是时候跑路了！
+^The Mirelurk Hunter was too fast for me! It was run or die!$|||泥沼蟹追猎者的行动速度太快了！要么就跑路，要么就等死！
+^The Vicious Dog bit me before I could react! I'm hurt and running!$|||恶犬在我来得及作出反应之前就咬了我！我负伤逃跑了！
+^The Mole rat chewed through my boot! Time to go before I lose a foot!$|||鼹鼠咬破了我的靴子！在我丢了自己的脚之前赶紧逃吧！
+^The Centaur is as dangerous as it is ugly! I'd better run!$|||多脚怪又丑又危险！我最好还是逃吧！
+^The Feral Ghoul Reaver was just way too strong to beat! I barely escaped alive!$|||狂尸鬼掠夺者太强大了，完全无法战胜！我差点就没能活着逃走！
+^Fighting a Deathclaw\? I must have been out of my mind! I've got to run!$|||与死爪作战？我一定是疯了！我得赶紧跑！
+^The Enclave Deathclaw is trained to kill anything in its path! I have to run!$|||英克雷死爪被训练来清除一切挡道的东西！我得赶紧跑！
+^No way I can defeat this Super Mutant! Time to make my escape!$|||我不可能打败这个超级变种人！是时候跑路了！
+^Turns out fighting a Super Mutant Master is a pretty stupid idea! Got to run!$|||看来与超级变种人大师作战是一个非常愚蠢的主意！赶紧跑吧！
+^The Super Mutant Overlord is way too tough! I've got to try and escape!$|||超级变种人霸主太强大了！我得试试能不能跑掉！
+^Defeating this Super Mutant Behemoth is impossible! Escape is my only option!$|||不可能打败这头超级变种巨兽！只能逃跑了！
+^I wasn't prepared for the Bloatfly's sting! Time to run!$|||我还没准备好应付肿头蛾的刺！是时候跑了！
+^The Radroach is too fast. I've had enough!$|||辐射蟑螂速度太快了！我受够了！
+^I was crazy to take on this Yao Guai! Hopefully I can get away!$|||我真是疯了才会去惹这头妖怪！希望能逃走！
+^The Feral Ghoul is stronger than he looks! I'm out of here!$|||狂尸鬼比看上去要强壮多了！我得离开这！
+^The Giant Ant gave me a vicious arm wound! I'm running!$|||巨蚁在我的手臂上狠狠咬了一口！我逃了！
+^The Scavenger's Dog is too tough! I can't beat it!$|||拾荒者的狗太顽强了！我打不过它！
+^The Giant Worker Ant is relentless! It's no use trying to fight!$|||巨型工蚁十分无情！没必要与它战斗！
+^The entrance to the Broadcasting Tower is totally barricaded. There's no way in\.$|||无线电发射塔的入口被完全堵住了，没有办法进去。
+^I found evidence of Raiders in the Abandoned Diner. Better leave while I can\.$|||我在废弃的餐厅找到了掠夺者的迹象，最好赶紧离开。
+^A second floor window looked promising, but I couldn't reach it\.$|||二楼的一扇窗户可能进得去，但我够不到。
+^I accidentally insulted one of the traders and had to run out while dodging gunfire\.$|||我不小心侮辱了其中一个商人，我得冒着枪林弹雨逃跑了。
+^I mixed the wrong chemicals and created a smoke cloud, but at least it hid my escape\.$|||我混合了错误的化学品，弄出了一片烟雾，但至少这掩护了我的逃离。
+^I fled up the back stairs, then climbed down to safety from a window\.$|||我逃上了后楼梯，从一扇窗户爬了下去，安全了。
+^I couldn't hold my breath long enough. I panicked and turned back\.$|||我没法长时间屏气，所以慌慌忙忙地返回了。
+^The axe is just too heavy. I can't lift it enough to get a good swing\.$|||斧头太重了，我没法把它举到足够的高度来挥出有力的一击。
+^A bunch of Mirelurks got the jump on me down there! I barely made it out\.$|||一群泥沼蟹抢在我之前行动了。我差点就没逃出来。
+^The Raiders spotted me! I had to run\.$|||掠夺者发现了我！我得跑了。
+^There's nothing in the Abandoned Shack. Time to move on\.$|||废弃小屋里什么也没有，是时候前进了。
+^The Refrigerator door is jammed shut. I couldn't get it open\.$|||冰箱门卡住了，我没办法把它撬开。
+^I just don't have the skill to open the Safe. I'll never know what's inside\.\.\.$|||我不会开锁，所以我永远都无法知道里面有什么了……
+^I just can't pick the lock. I'll have to leave the Super Duper Mart behind\.$|||我撬不开锁，还是放弃探索大无敌超市吧。
+^The Slaves don't trust me. They ran away\.$|||奴隶们不信任我，他们全跑了。
+^The Slave Camp is too well guarded. Those poor people. I just can't help them on my own\.$|||奴隶营守卫森严，我无法凭一己之力帮助那些穷人。
+^The Gas Station has been picked clean. Even the fusion tanks are empty\.$|||加油站被搜刮干净了，连油桶都空了。
+^The Slave's leg is gangrenous. There's nothing I can do\.$|||奴隶的腿溃烂了，我什么忙也帮不上。
+^Nope. I was wrong. Repairing the Mister Handy is way too technical for me\.$|||不，我错了，修复巧手先生对我来说太需要技巧了。
+^So much blood. I can't stop it. I'm afraid the Sheriff doesn't have much longer\.$|||血太多了，我完全止不住。恐怕警长支撑不了多久了。
+^I guess I'm not as charming as I thought. The Ghoul refuses to talk to me\.$|||大概我没有自己想的那么有魅力，尸鬼拒绝再跟我交谈。
+^I pushed my luck. The Merchant didn't like the deal I proposed\.$|||看来我得寸进尺了，商人不太喜欢我提出的交易。
+^The Talon Company Mercs drew their guns and told me to leave. I did\.$|||鹰爪公司佣兵举起了枪并警告我离开，我照做了。
+^I couldn't locate the Yao Guai. The Hunter thinks I'm completely incompetent\.$|||我无法定位妖怪的位置，猎人觉得我一点用都没有。
+^The Drunken Drifter thought I took too big a gulp. He left angry, and took his bottle\.$|||醉汉认为我喝得太多了，他拿着酒瓶愤怒地离开了。
+^The Brotherhood Patrol doesn't trust me. They ordered me to leave, or they'd open fire\.$|||兄弟会侦察队不信任我。他们命令我离开，否则就开枪。
+^I couldn't find the settlement. Now the Lost Farmer is even worse off than before\.$|||我找不到住所。迷路的农民的情况更加糟糕了。
+^I can't do it. I'm just not strong enough\.$|||我做不到，我不够强大。
+^That just made them angrier. I got scratched up running past them to the exit\.$|||这令他们更加愤怒了，我在避开它们跑向出口的时候被抓伤了。
+^It's still going, but I'm exhausted. There's no way I'll catch it now\.$|||它还在跑，但我精疲力尽了，现在不可能追得上它。
+^I made it to the nearest tree line without incident\.$|||我平安无事地逃到了距离最近的森林。
+^Shouldn't have done that! I had to run out with the building collapsing behind me\.$|||真是手贱！我跑出去的同时，身后的建筑都慢慢倒塌了。
+^I can't get close enough. The Lake's radiation is making me sick\.$|||我没办法靠得太近，湖中的辐射污染让我直犯恶心。
+^The Room's security is too advanced. I can't get the door open\.$|||这间房的安保措施太先进了，我没法打开它。
+
+^A blade trap I failed to spot nearly took my head off\. I better turn back\.$|||我没注意到那个刀片陷阱，它差点把我的头削下来。我最好往回跑吧。
+^It's no good, they won't open the door\. I guess I better move on\.$|||没用，他们不肯开门。我猜我最好继续前进。
+^Walked right into a string of tin cans\. Time to run!$|||踩到了一串锡罐，赶紧跑！
+^There's absolutely nothing left\. I'm not surprised, but it's still disappointing\.$|||这儿什么也没了。我不感到惊讶，但它仍然令我十分沮丧。
+^It's a lost cause\. I can't make heads or tails of all these wires and capacitors\.$|||这是一次注定失败的行动，我完全理不清这些线和电容。
+^Suffered \{0\} damage\.$|||受到了{0}伤害。
+^Earned \{0\} XP\.$|||得到了{0}经验。
+^Found a \{0\}\.$|||找到了一个{0}。
+^Also found \{0\}\.$|||还找到了{0}。
+^Suffered \{0\} points of radiation damage$|||受到了{0}点辐射伤害
+^Observed \{0\}$|||观察到{0}
+^Detected \{0\}$|||检测到{0}
+^Identified \{0\}$|||鉴定出{0}
+^Spotted \{0\}$|||发现{0}
+^Found \{0\}$|||找到{0}
+^Saw \{0\}$|||看到{0}
+^Located \{0\}$|||定位了{0}
+^Came upon \{0\}$|||来到{0}
+^Reached \{0\}$|||到达{0}
+^Discovered \{0\}$|||发现{0}
+^Stumbled across \{0\}$|||蹒跚穿过{0}
+^Met \{0\}$|||遇到{0}
+^Encountered \{0\}$|||遇到{0}
+^Explorer's journal\. New entry\. Fancy Lads snack cakes provide excellent sustenance\.$|||探索者日志。最新记录：俏男孩夹心蛋糕很好地维持了生计。
+^Explorer's journal\. New entry\. Whoever chose the name “Deathclaw” wasn't kidding\.$|||探索者日志。最新记录：无论是谁，取名叫“死爪”，都不是闹着玩儿的。
+^Explorer's journal\. New entry\. Societal infrastructure is completely dismantled\.$|||探索者日志。最新记录：基础公共设施全部被拆。
+^Explorer's journal\. New entry\. In the Wasteland, trust can get you killed\. $|||探索者日志。最新记录：在废土，随便信任别人只会让你身陷死亡威胁。
+^Explorer's journal\. New entry\. Some pre-war robots remain, but programming often faulty\.$|||探索者日志。最新记录：一些战前机器人保存了下来，但是程序经常出错。
+^Explorer's journal\. New entry\. Old religions mostly gone, replaced by cults\.$|||探索者日志。最新记录：旧的正派宗教大多都消失了，取而代之的都是些邪教。
+^Explorer's journal\. New entry\. Everyone is armed\. Guns are commonplace\.$|||探索者日志。最新记录：每个人都全副武装，枪支早就司空见惯了。
+^Explorer's journal\. New entry\. Fashion is dead\. You wear what keeps you alive\.$|||探索者日志。最新记录：时尚已经灭绝了，什么能让你活命你就穿什么。
+^Explorer's journal\. New entry\. TVs don't work, but radio broadcasts are common\.$|||探索者日志。最新记录：电视已经没用了，无线电广播倒是变得常见了。
+^Explorer's journal\. New entry\. Old buildings have supplies, but they're often guarded\.$|||探索者日志。最新记录：旧建筑里面有补给，但是通常被保护起来了。
+^Explorer's journal\. New entry\. Everywhere I look, death\. Suffering\. And\.\.\. hope\.$|||探索者日志。最新记录：放眼望去，看到的都是死亡、痛苦，以及……希望。
+^Explorer's journal\. New entry\. I've seen children, families\. Life goes on\.$|||探索者日志。最新记录：我见到了许多孩子，家庭。生活还在继续。
+^Explorer's journal\. New entry\. Marriage is not uncommon\. You can't kill love\.$|||探索者日志。最新记录：婚姻仍然很常见，你无法扼杀爱情。
+^Explorer's journal\. New entry\. Radscorpion\. Stinger plus claws equals death\.$|||探索者日志。最新记录：辐射蝎。毒刺加巨螯能让你一命呜呼。
+^Explorer's journal\. New entry\. Lock picking is an essential skill for gaining access\.$|||探索者日志。最新记录：撬锁是通行的必备技能。
+^Explorer's journal\. New entry\. Many functional computer terminals\. Hacking a necessity\. $|||探索者日志。最新记录：对于许多仍在运作的终端机，入侵系统成了必然。
+^Explorer's journal\. New entry\. Medical training is essential for survival\.$|||探索者日志。最新记录：想要生存下来，医疗训练是必需的。
+^Explorer's journal\. New entry\. The Brotherhood of Steel favors technology\. Worships it\.$|||探索者日志。最新记录：钢铁兄弟会热爱科技，甚至是崇拜。
+^Explorer's journal\. New entry\. Training with a variety of guns is a must\. $|||探索者日志。最新记录：练习使用各类枪支也成了必需。
+^Explorer's journal\. New entry\. Music, painting, dance\. Art and culture survive\.$|||探索者日志。最新记录：音乐，绘画，舞蹈。艺术和文化存活了下来。
+^a Savage Dog, snarling angrily\.$|||一条野狗，愤怒地低吠着。
+^a Radscorpion\.$|||一只辐射蝎。
+^a Giant Soldier Ant\.$|||一只巨型兵蚁。
+^a Fire Ant Soldier\.$|||一只火蚁士兵。
+^a Guard Dog, watching the area\.$|||一条护卫犬，看守着这片区域。
+^a Fire Ant Warrior\.$|||一只火蚁勇士。
+^a barnacle-encrusted Mirelurk\.$|||一只藤壶外壳的泥沼蟹。
+^a psychotic Feral Ghoul Roamer\.$|||一个疯狂的狂尸鬼漫游者。
+^a Giant Radscorpion\.$|||一只巨型辐射蝎
+^a Mirelurk Hunter\.$|||一只泥沼蟹猎杀者
+^a Vicious Dog, ripping apart a corpse\.$|||一条恶犬，正撕扯着一具尸体。
+^a hideous little Mole rat\.$|||一只可怕的小鼹鼠。
+^a repulsive Centaur\.$|||一头恶心的多脚怪。
+^a dangerous Feral Ghoul Reaver\.$|||一个危险的狂尸鬼掠夺者。
+^a deadly Deathclaw\.$|||一只致命的死爪。
+^an Enclave Deathclaw\.$|||一只英克雷死爪。
+^a Super Mutant\.$|||一个超级变种人。
+^a Super Mutant Master\.$|||一个超级变种人大师。
+^a Super Mutant Overlord\.$|||一个超级变种人霸主。
+^a gigantic Super Mutant Behemoth\.$|||一只庞大的超级变种巨兽。
+^a Bloatfly, buzzing dangerously close\.$|||一只肿头蛾在很近的地方嗡嗡作响。
+^a disgusting Radroach\.$|||一只恶心的辐射蟑螂。
+^a terrifying Yao Guai!$|||一只吓人的妖怪！
+^a wandering Feral Ghoul\.$|||一只游荡的狂尸鬼。
+^a Giant Ant\.$|||一只巨蚁。
+^a Scavenger's Dog, sniffing for salvage\.$|||一只拾荒者的狗，嗅着残骸。
+^a Giant Worker Ant\.$|||一只巨型工蚁。
+^an old, abandoned Broadcasting Tower\.$|||一座老旧的，废弃的广播塔。
+^what appears to be an Abandoned Diner\.$|||仿佛是一间废弃餐厅。
+^what seems to be an old National Guard Depot\.$|||看上去像一间国家警卫队仓库。
+^Goodneighbor\.$|||芳邻镇。
+^the C\.I\.T\. Ruins\.$|||C.I.T.废墟。
+^the Museum of Witchcraft\.$|||巫术博物馆。
+^the Weston Water Treatment Plant\.$|||韦斯顿净水厂。
+^the Hubris Comics headquarters\.$|||虎不理漫画总部。
+^Gwinnett Brewery\.$|||谷内啤酒厂。
+^a group of Raiders, looking for someone to terrorize\.$|||一队掠夺者，正在搜寻恐吓目标。
+^an Abandoned Shack\.$|||一间废弃的小屋。
+^an old Refrigerator\. Could be something inside\.$|||一台旧冰箱。里面可能有东西。
+^a locked Safe\.$|||一个上了锁的保险箱。
+^a Super Duper Mart\.$|||一家大无敌超市。
+^a small group of escaped Slaves\.$|||一小群在逃的奴隶。
+^a well-guarded Slave Camp\.$|||一处戒备森严的奴隶营。
+^a deserted Gas Station\.$|||一家废弃的加油站。
+^a Fugitive Slave\.$|||一位逃亡的奴隶。
+^a malfunctioning Mister Handy\.$|||一个出故障的巧手先生。
+^a Wounded Sheriff\.$|||一位受伤的警长。
+^a traveling Ghoul\.$|||一个行走的尸鬼。
+^a wandering Merchant\.$|||一位游荡的商人。
+^a group of Talon Company Mercs\.$|||一群鹰爪公司佣兵。
+^a Hunter\.$|||一个猎人。
+^a Drunken Drifter\.$|||一个醉汉。
+^a Brotherhood Patrol\.$|||一支兄弟会侦察队。
+^a Lost Farmer\. He's tired and scared\.$|||一位迷路的农民。他又累又害怕。
+^a boarded up Convenience Store\.$|||一间封住的便利店。
+^a Dark Cave in the middle of the woods\.$|||一个林间黑暗洞穴。
+^a Caravan Merchant chasing after a panicked Brahmin\.$|||一个大篷车商人在追赶一头受惊的双头牛。
+^a Wide Open Field, impossible to cross without being spotted\.$|||一片广阔的空地，不可能从这穿过却不被发现。
+^an empty, nearly collapsed Raider Hideout\.$|||一处空空的，几乎要倒塌的掠夺者藏身地。
+^an Irradiated Lake\.$|||一个被辐射污染的湖。
+^a Sealed Room in a house basement\.$|||地下室一间被封起来的房间
+^a large Apartment Building\.$|||一幢很大的公寓楼。
+^a well-defended Outpost of Survivors\.$|||一个戒备森严的幸存者哨站。
+^a bustling Children of Atom Camp blocking the road\.$|||一群吵闹的原子教会的孩子封住了路。
+^an Old Mansion, long since sacked\.$|||一栋老旧的大厦，很久之前就被洗劫一空。
+^a Robot Factory, with broken Protectrons scattered outside\.$|||一家机器人工厂，外面散落着保安机器人的碎片。
+^Here we go\.$|||开始吧。
+^All right, Wasteland\. Here I come!$|||好的，废土，我来了！
+^Ah\. So that's why they call it the Wasteland\.$|||啊，难怪人们都叫它废土。
+^Yep\. Everything's destroyed\.$|||是的，一切都被破坏了。
+^Okay, this is kind of\.\.\. depressing\.$|||好吧，这有点……令人沮丧。
+^I'll make the Vault proud\. They'll see\.$|||我会让整个避难所都为我骄傲的，等着瞧吧。
+^And I'm off!$|||我出发了！
+^Thought I'd never get out of there\.$|||还以为我永远都不会离开那儿。
+^This is so exciting!$|||这太令人兴奋了！
+^I'm ready for anything\.$|||我准备好迎接一切了。
+^Come on Wasteland show me what you've got!$|||来吧，废土，让我看看你有什么本事！
+^Finally, some fresh air\.$|||终于，呼吸到新鲜空气了。
+^Okay\. I can do this\.$|||好的，我能做到的。
+^I won't stray too far\. Just in case\.$|||我不会走得太远，以防万一。
+^This doesn't seem so bad\.$|||这看起来没那么糟。
+^Once more unto the breach!$|||再次出发去大峡谷！
+^It's brighter than I expected\.$|||比我预期要亮的多。
+^Wow, is it always this hot out here\?$|||哇，外面一直是这么热吗？
+^Away we go!$|||我们走吧！
+^I wonder what's left\?$|||我很好奇还剩下什么？
+^I wonder how far I can get on foot\?$|||我不知道我徒步能走多久。
+^My feet hurt already\.$|||我的脚已经开始酸痛了。
+^Starting to regret coming out here\.$|||开始后悔跑到外面来了。
+^Maybe I'm not cut out for exploring after all\.$|||也许我一点也不适合到外面来探索。
+^I will not return a failure\. I will not return a failure\.\.\.$|||我不会空手回去……我不会空手回去……
+^The Vault's counting on me\. I've got to push on\.$|||整个避难所都指望着我呢，我得加把劲。
+^That way looks promising\.$|||这条路看起来行得通。
+
+^I'm bound to run into somebody sooner or later\.$|||我迟早会碰见其他人的。
+^I really don't want to get eaten out here\.\.\.$|||我真的不想在这儿被吃掉……
+^If I die out here, they'll never know\.\.\.$|||如果我死在这儿，他们也完全不会知道……
+^This way looks as good as any\.$|||这条路跟其他的无差。
+^Super Mutants are just a myth\.\.\. right\?$|||超级变种人不过是虚构的……对吗？
+^There's got to be something out here\.$|||外面一定有什么东西。
+^This isn't so bad\. Maybe we should all leave the Vault\.\.\.$|||这还没那么糟，也许我们都应该离开避难所……
+^Hope I can find my way back\.$|||希望我能找到回去的路。
+^I'll grab just as much as I can carry, then head back\.$|||我会带上尽可能多的东西然后返回。
+^If I find just one box of Sugar Bombs, it'll be worth it\.$|||如果我能找到一盒糖衣炸弹麦片那就死而无憾了。
+^I guess I'll head\.\.\. that way\.$|||我猜我得走……那条路。
+^Maybe I should have dropped some bread crumbs\.$|||也许我应该扔点面包屑标记路线的。
+^This way looks promising\.$|||这条路看起来走得通。
+^Trying to pull off the boards blocking the front door\.$|||尝试把封住前门的木板给拆掉。
+^I've been cornered in the Cave by a family of Yao Guai\. I'll try to pacify them\.$|||我被一家子妖怪困在了洞穴里，得试着让他们平静下来。
+^Running after the Brahmin to help out the Merchant\. That thing is fast!$|||帮商人追上那头双头牛。那东西太快了！
+^Staying low to the ground as I cross the Field as quickly as possible\.$|||快速穿过空地的时候尽量弯腰靠近地面。
+^Exploring the Hideout, but one wrong step will make it fall on my head\.$|||探索藏身处中，走错一步就会让我的人头落地。
+^Something's floating near the shore\. I'll try to get it\.$|||有东西在岸边漂着，我得把它弄过来看看。
+^Hacking a terminal to get the door open\.$|||入侵系统终端机把门打开。
+^Looking around for supplies, but this place is full of booby traps\.$|||在周围寻找一下补给，但这个地方到处是陷阱。
+^Trying to convince them to let me in so I can rest\.$|||说服他们让我进去，我好休息一下。
+^Going around will take too much time\. I'll have to try sneaking through the Camp\.$|||绕路走太费时间了，我要试着潜过营地。
+^Searching the Mansion for anything of value that might have been left behind\.$|||找找大厦里面剩没剩下还能用的东西。
+^The door is sealed\. If I can fix a Protectron's laser arm, I could blast it open\.$|||门被封住了，如果能修好保安机器人的激光臂就能把门炸开。
+^Guess I'll go this way\.$|||也许我该走这条路。
+^I'm going to need such a bath when I get home\.$|||我回去以后一定得洗个澡。
+^The wind is whistling\. Sounds like voices\.$|||风呜呜地刮着，像是有人在低吟。
+^Hello\? Can anybody hear me\?$|||你好？有人听得见吗？
+^Your eyes start to play tricks on you out here\.$|||你开始出现幻觉了。
+^That hill looks like a good vantage point\.$|||这座山看上去是一个非常好的据点。
+^Whoa! I tripped over some rubble\.$|||哇！我被石堆绊倒了。
+^My Pip-Boy sure is coming in handy out here\.$|||我的哔哔小子这时候就派上用场了。
+^Pew! I stink\.$|||恶！我好臭。
+^My soles are wearing out\.$|||我的鞋底都磨破了。
+^So much dust and grime everywhere\.$|||到处都是灰尘。
+^Oh good, this road slopes downwards\. Easier on the legs\.$|||哦，太好了，下坡路。走起来轻松多了。
+^Is someone following me\?$|||是不是有人跟着我？
+^Let me just climb over this rubble\.\.\.$|||让我爬过这乱石堆。
+^I'll cut through this destroyed building\.$|||我得从这座被毁掉的建筑中抄近路。
+^Those buildings have completely fallen into the street\.$|||那些建筑全都倒塌在了街上。
+^Now I know how Hansel and Gretel felt\.$|||现在我能体会到韩塞尔和格蕾特的感受了。
+^A shower is going to feel so great when I get home\.$|||我到家的时候能冲个澡一定舒服极了。
+^Is that\.\.\. music\? A radio somewhere, maybe\?$|||那是……音乐吗？可能附近有台收音机？
+^Smoke on the horizon\. Could be a campfire\. Or something else\.\.\.$|||看到了烟雾。可能是营火，或是其他什么……
+^An old fire station\. Even they couldn't stop the world from burning\.$|||一个旧消防站，连消防员也无法拯救世界于业火之中。
+^Maybe I'll head this way for awhile\.$|||也许我得沿着这条路前进一会儿。
+^Should I go east\?$|||我该向东走吗？
+^These tracks - human, or something else\?$|||这些痕迹——是人类还是其他什么东西留下的？
+^Should I go north\?$|||我该向北走吗？
+^Should I go west\?$|||我该向西走吗？
+^Should I go south\?$|||我该向南走吗？
+^Guess I'll head east for a bit\.$|||也许我该向东走一段路。
+^Guess I'll head north for a bit\.$|||也许我该向北走一段路。
+^Guess I'll head west for a bit\.$|||也许我该向西走一段路。
+^Guess I'll head south for a bit\.$|||也许我该向南走一段路。
+^Explorer's journal\. New Entry\. The Wasteland is a cruel, inhospitable place\.$|||探索者日志。最新记录：废土是个残酷的，冷漠的地方。
+^Explorer's journal\. New Entry\. Getting hungry\. Craving Salisbury Steak\.$|||探索者日志。最新记录：好想吃汉堡扒！
+^Explorer's journal\. New Entry\. Always thirsty\. Need to stay hydrated\.$|||探索者日志。最新记录：总是觉得渴。需要保持水分。
+^Hello\? Anybody out here\?$|||你好？有人在吗？
+^Explorer's journal\. New Entry\. It's gone\. It's all gone\.$|||探索者日志。最新记录：没了。什么都没了。
+^Explorer's journal\. New Entry\. Cars litter the roads\. None drivable\.$|||探索者日志。最新记录：车堆满在路上。但是没有一辆还能开。
+^Explorer's journal\. New Entry\. So many skeletons\. The world is a grave\.$|||探索者日志。最新记录：好多骷髅。这个世界就是一座大型坟场。
+^Explorer's journal\. New Entry\. Some pre-war food is still edible\. Preservatives\.$|||探索者日志。最新记录：有些战前食物还能吃。用防腐剂保存下来了。
+^Explorer's journal\. New Entry\. Law and order are things of the past\.$|||探索者日志。最新记录：法律和秩序已经不复存在了。
+^Explorer's journal\. New Entry\. The world is still largely irradiated\.$|||探索者日志。最新记录：整个世界大部分仍处于辐射状态。
+^Explorer's journal\. New Entry\. The flora and fauna all seem pretty\.\.\. weird\.$|||探索者日志。最新记录：动植物都看起来十分……诡异。
+^Explorer's journal\. New Entry\. Life thrives where it can out here\.$|||探索者日志。最新记录：生命总是握紧机会出现，茁壮生长。
+^Explorer's journal\. New Entry\. Many buildings remain\. Damage extensive\.$|||探索者日志。最新记录：许多建筑仍保留了下来。虽然大面积受损。
+^Explorer's journal\. New Entry\. Most water undrinkable\. Too much radiation\.$|||探索者日志。最新记录：大部分水都不能喝了，辐射太严重。
+^What was that\?$|||那是什么？
+^Explorer's journal\. New Entry\. Bottle Caps accepted as currency everywhere\.$|||探索者日志。最新记录：现在到处都把瓶盖当做货币流通。
+^Explorer's journal\. New Entry\. Slavers prey on the weak\. My heart breaks\.$|||探索者日志。最新记录：奴隶贩子欺凌弱小，让我很心痛。
+^Explorer's journal\. New Entry\. Food is scarce\. Some resort to cannibalism\.$|||探索者日志。最新记录：食物短缺，所以有些人不得不开始吃人肉。
+^Explorer's journal\. New Entry\. A Yao Guai is a fierce, mutated bear\.$|||探索者日志。最新记录：妖怪是一种凶猛的，变异的熊。
+^Explorer's journal\. New Entry\. A Ghoul is an irradiated human\. Disfigured\.$|||探索者日志。最新记录：尸鬼是受辐射变异的人类。已经完全没有原来的外形了。
+^Explorer's journal\. New Entry\. Raiders are everywhere\. Stealing\. Murdering\.$|||探索者日志。最新记录：到处都有掠夺者。偷窃。谋杀。
+^Explorer's journal\. New Entry\. Feral Ghouls are basically zombies\. Must avoid\.$|||探索者日志。最新记录：狂尸鬼基本上就是丧尸了，必须避开。
+^Explorer's journal\. New Entry\. Mole rats are NOT cute\.\.\.$|||探索者日志。最新记录：鼹鼠一点都不可爱……
+^Explorer's journal\. New Entry\. Super Mutants hate humans\. They'll kill on sight\.$|||探索者日志。最新记录：超级变种人憎恨人类，他们见人就杀。
+^Explorer's journal\. New Entry\. Giant ants are, indeed, giant ants\.$|||探索者日志。最新记录：巨蚁就是，巨大的蚂蚁。
+^The Vault is counting on me\. I won't let them down\.$|||整个避难所都指望着我了。我不能让他们失望。
+^Explorer's journal\. New Entry\. Radroaches\. They really can survive anything\.$|||探索者日志。最新记录：辐射蟑螂，它们真的能从任何灾难中存活下来。
+^Explorer's journal\. New Entry\. The military is gone\. Replaced by mercenaries\.$|||探索者日志。最新记录：军队已经不复存在，取而代之的是雇佣兵集团。
+^Explorer's journal\. New entry\. Most dogs no longer man's best friend\.$|||探索者日志。最新记录：大部分狗都不再是人类最好的朋友了。
+^Explorer's journal\. New entry\. Squirrel tastes much better than you'd think\.$|||探索者日志。最新记录：松鼠比你想象中好吃多了。
+^Explorer's journal\. New entry\. Thought I saw a UFO, but that would be impossible\.\.\.$|||探索者日志。最新记录：我认为我看到了一架UFO，但应该不太可能……
+^Explorer's journal\. New entry\. Sea creatures now extremely dangerous\. Still delicious\.$|||探索者日志。最新记录：海洋生物现在极度危险，虽然还是很好吃。
+
+^Explorer's journal\. New entry\. Sunsets, once romantic, are now terrifying\. Fear the night\.$|||探索者日志。最新记录：以前日落是很浪漫的，而如今却让人恐惧。惧怕黑夜。
+^Explorer's journal\. New entry\. So very hungry\. Wondering if human tastes like chicken\.$|||探索者日志。最新记录：真的很饿，很好奇人肉尝起来像不像鸡肉呢。
+^Explorer's journal\. New entry\. Super Mutants are big\. Behemoths, more so\.$|||探索者日志。最新记录：超级变种人很大块头，超级变种巨兽就更别提了。
+^Explorer's journal\. New entry\. Money replaced by soda bottle Caps\. Hands always sticky\.$|||探索者日志。最新记录：钱已经被苏打水瓶盖取代了，手总是弄得黏黏的。
+^Clouds on the horizon\. Hope it doesn't rain\.$|||看到云了，希望不会下雨。
+^Explorer's journal\. New entry\. The comics were wrong\. Radiation does not grant super powers\.$|||探索者日志。最新记录：漫画都错了，辐射并不会赋予一个人超能力。
+^Explorer's journal\. New entry\. Love does not conquer all\. Nukes come close\.$|||探索者日志。最新记录：爱并不能征服一切，核武器倒是可以。
+^Explorer's journal\. New entry\. Bigger not always better\. Case in point – roaches and scorpions\.$|||探索者日志。最新记录：大的并不总是好的，比如——蟑螂和蝎子。
+^Explorer's journal\. New entry\. Super Mutants are asexual\. Before transformation, some were women\.$|||探索者日志。最新记录：超级变种人是没有性别的。在转变之前，有些超级变种人是女性。
+^Explorer's journal\. New entry\. Junk is everywhere, but has multiple uses\.$|||探索者日志。最新记录：到处都有垃圾，但是它们用途广泛。
+^Explorer's journal\. New entry\. Power Armor still exists, but is rare\. Affords maximum protection\.$|||探索者日志。最新记录：动力装甲仍然存在，但很稀有，它能提供最大的保护。
+^Explorer's journal\. New entry\. Found a fat man willing to share food\. May live another day\.$|||探索者日志。最新记录：找到一个愿意分享食物的胖子，能让你多活一天。
+^Explorer's journal\. New entry\. Many Mister Handy robots remain\. Use expressions like, “bloody barmy\.”$|||探索者日志。最新记录：有许多巧手先生保存了下来，但是行为古怪，用一个词来形容就是，“血腥狂人”？
+^Explorer's journal\. New entry\. Fruits and vegetables still grow, but are mutated, like so much else\.$|||探索者日志。最新记录：水果和蔬菜还能长，但是都发生了突变，就像许多其他事物。
+^Explorer's journal\. New entry\. Homemade weapons abound\. Humans still excel at killing each other\.$|||探索者日志。最新记录：现在到处都是自制武器，人类仍然精于自相残杀。
+^I'll follow this road, see where it goes\.$|||我要沿着这条路走看看它通向哪里。
+^Explorer's journal\. New entry\. Radio still widely used, remains an effective means of communication\.$|||探索者日志。最新记录：收音机被广泛使用，仍旧是一项十分有效的交流工具。
+^Explorer's journal\. New entry\. We were wrong – cats not, in fact, extinct\. But still lazy\.$|||探索者日志。最新记录：我们错了，猫事实上并没有灭绝，但还是那么懒。
+^Is that\.\.\. a human head on a post\? Okay, time to turn around\.\.\.$|||海报上的那个是……一颗人头吗？好吧，是时候调头往回走了……
+^I may be scared senseless, but at least I'm getting some cardio\.$|||除了有氧运动，没有什么东西能让我心跳加快了。
+^Getting peckish\. Snack time\?$|||有点饿了，吃些点心吧？
+^Huh\. What's that flashing thing\? How is OH MY GOD I'M IN A MINEFIELD\. Sloowwwlly now\.\.\.$|||哈，那个闪烁的东西是什么？“天呐我竟然在一片雷区”这样的感觉如何？现在开始慢慢前进……
+^Oh look, a destroyed pizzeria\. Maybe we can have a Vault pizza night when I get back\.\.\.$|||看啊，一家遭到破坏的披萨店。也许我们回去以后能来个避难所披萨之夜。
+^There's ancient money everywhere\. Guess you really can't take it with you\.$|||到处都有以前的货币，但我认为你无法把它们带走。
+^An old Army transport\. Looks like the soldiers tried to keep order\. For a little while\.$|||一架旧军用运输机。看起来军人们试图维持秩序，可能只维持了一小会儿。
+^That snarling\.\.\. Dogs\? Wolves\? Worse\?$|||那只在低吠的是……狗？狼？还是更糟？
+^A crossroads\. Left or right\? Let's try left\.$|||一个岔路口，向左还是向右？让我们去左边看看吧。
+^I'll head this way\.$|||我得走这条路。
+^Might as well head down here\.$|||最好把头低下一点。
+^My blisters have blisters\. Ouch\.$|||我的水疱上又长了水疱，好痛。
+^So tired of walking\. My kingdom for a bicycle\.$|||走路走得好累，我愿用一座城池换一辆自行车。
+^All things considered, this expedition's going pretty well\.$|||所有事情都考虑周全了，探险进行得很顺利。
+^Hello\? Heeeelllooo\? Nope\. Guess I'm alone\.$|||你好？有人吗？没有，我想只有我一个人。
+^You know, it's really not so bad out here\. Sometimes\.$|||你知道，在外面也没那么糟啦。至少有时不是那么糟。
+^Rad detector's going crazy\. Must be those green barrels\.\.\.$|||辐射探测器疯了似的，一定是因为那些绿色的桶……
+^Whoa! Tripped\. Gotta be more careful\.$|||呜哇！摔了一跤。还得更小心才是。
+^Think I'll just walk over here and OW! Twisted my ankle!$|||就这么走过去吧。嗷！扭到了脚踝！
+^A crossroads\. Left or right\? I guess I'll go right\.$|||一个岔路口，向左还是向右呢？我想还是去右边吧。
+^All these destroyed cars, but they never flew\. Guess science missed that boat\.$|||所有的这些报废的车，但是它们再也跑不起来了。也许“科学”没有搭上诺亚方舟。
+^It's\.\.\. a motorboat\. Stuck into the side of a church\. Don't see that every day\.$|||那是……一台摩托艇，撞进了教堂的一面墙。这可不是每天都见得到的。
+^I wonder if elephants still exist\.$|||我不知道还有没有活着的大象。
+^May as well follow this blood trail\. What could possibly go wrong\?$|||还是跟着血迹走吧。
+^Thirsty\. Wonder if I can find a bottle of Nuka-Cola\.$|||好渴啊，不知道能不能找到一瓶核子可乐。
+^A terminal\. Really wish I could hack it!$|||一台终端机，希望我能黑进去！
+^Hmm\. A chest\. Really wish I could pick the lock\. I bet there's some great stuff inside\.$|||嗯……一个箱子，真希望能把锁打开。我猜里面一定有些好东西。
+^A broken bottle, spent ammo casings, drops of blood\.\.\. Definitely signs of a fight\.$|||一个破瓶子，用过的弹夹，血滴……显然是战斗过的迹象。
+^I feel exposed\. Time to get into cover\.$|||我觉得我暴露了，该躲起来了。
+^Got a weird feeling\. Like I'm being watched\.\.\.$|||感觉很怪，就好像有人在监视我……
+^I really should be drawing a map\.$|||我真的应该画一张地图的。
+^It sure gets lonely out here\.$|||在外面难免会觉得孤独。
+^Should I be walking out in the open like this\? Or sneaking\? I can never tell\.$|||我是不是不该就这么大胆地走到这么空旷的地方？要不要弯腰走呢？我也说不准。
+^Gunshots to the east\. Guess I'll go west\.$|||从东边传来了枪声，我想我得向西走。
+^Gunshots to the west\. Guess I'll go east\.$|||从西边传来了枪声，我想我得向东走。
+^Gunshots to the north\. Guess I'll go south\.$|||从北边传来了枪声，我想我得向南走。
+^Gunshots to the south\. Guess I'll go north\.$|||从南边传来了枪声，我想我得向北走。
+^Is that\.\.\. a child\? Nope\.\.\. just the severed head of a doll\. Wonderful\.$|||那是个……孩子吗？不……只是一颗从玩偶身上割下来的头。棒极了。
+^I really hope I can find my way back to the Vault\.\.\.$|||我真心希望我能找到回避难所的路……
+^Wow, that's a really big pile of rubble\. I think I can make it over\.\.\.$|||哇，好大一个石堆。我想我能越过去……
+^So many big buildings\. I wonder if they'll remain standing\.\.\. forever\.$|||这么多大楼，我很好奇它们能不能永远这么……矗立着。
+^I hear a child crying\. Impossible to tell where it's coming from\.$|||我听到了孩子的哭声，不知道是从哪里传来的。
+^Should I head back to the Vault\? Maybe in a bit\.$|||我是不是应该返回避难所？再过一会儿吧。
+^I wonder if Brahmin milk is any good\. Not that I want to find out\.$|||我不知道双头牛的牛奶好不好喝，我也不想知道。
+^Still wandering\.\.\.$|||仍在游荡……
+^Think I'll Wait, what's that\? Over there\?$|||我想我该等一会儿，那是什么？在那儿的东西？
+^This way looks good\.$|||这条路看起来不错。
+^Too much rubble\. Don't think I can get up there\.$|||太多石块了，我想我上不去。
+^Hmm\. Subway station\. I don't think I want to go down there\.$|||嗯……地铁站，我不认为我想下去。
+^A car tunnel\. Sure is dark in there\. I think I'll go around\.$|||一条汽车隧道。里面一定很黑，我想我还是绕路走吧。
+^Another looted convenience store\.$|||一家被洗劫一空的便利店。
+^A broken rifle on the ground\. Useless\.$|||地上有一把坏了的步枪，一点用都没有了。
+^Maybe I'll head back soon\.$|||很快回来。
+^It's quiet\. Too quiet\.$|||很安静，太安静了。
+^Must go on\. For now\.$|||至少根据目前情况来说我必须前进。
+^I can do this\. I can do this\. I can do this\.$|||我能行，我能行，我能行。
+^Wonder what's over there\.$|||我很好奇那儿有什么。
+^I'll climb that ridge and get the lay of the land\.$|||我得爬到山顶山观测下地形。
+^I sense danger everywhere\.\.\.$|||我感觉到处都是危机……
+^Just got to keep moving forward\.$|||是时候前进了。
+^I'd be totally lost without my Pip-Boy\.$|||没了哔哔小子我会完全找不到路的。
+^Broken branches\. Something passed through here\.$|||折断的树枝掉了一地，之前有东西从这儿穿了过去。
+^Nowhere to go but straight ahead\.$|||除了前进就没有别的路了。
+^Ow\. Rock in my shoe\.$|||嗷！鞋子里进石头了。
+^Fresh tracks\. Can't tell what made them\.$|||新的踪迹，不知道是什么东西留下的。
+^I bet this neighborhood was nice once\.$|||我打赌曾经住在这儿的人都非常友善。
+^Hard to imagine people actually living out here\.$|||很难想象人们曾住在这里。
+^The more supplies I bring back to the Vault, the better\.$|||我要尽量带补给回避难所，越多越好。
+^I'm going to have such blisters tomorrow\.\.\.$|||我明天一定会长水疱的……
+^I'll head that way\. Might be something interesting\.$|||我走那条路，或许会碰上什么有趣的事呢。
+^Hmm\? Something over there\?$|||嗯？那儿有东西？
+^Fresh tracks\. Animal, or\.\.\. worse\?$|||新鲜的踪迹。动物的？还是更糟？
+^Should I go that way\? Hmmm\. No, I'll go this way\.$|||我应该走那条路吗？
+^Wonder if someone will give me a massage when I get back\.$|||不知道我回去的时候会不会收到留言。
+^Legs are cramping\. But I must go on\.$|||脚抽筋了，但我得继续走。
+^Ow, my aching feet\.\.\.$|||嗷，我的脚好痛……
+^If the others could only see how bad it is for themselves\.\.\.$|||如果其他人能亲自看看这儿有多么糟糕就好了……
+^Sky looks funny over there\. Storm might be coming\.$|||那儿的天空看起来很滑稽，可能马上就要来风暴了。
+^A fork in the road\. Guess I'll go left\.$|||一个三岔路口，我想我得左向走。
+^A fork in the road\. Guess I'll go right\.$|||一个三岔路口，我想我得向右走。
+^Think I'll go down this path\.$|||我想我得继续向前走。
+^This path looks good\.$|||这条路看上去还不赖。
+^Hmm\.\.\. Broken plants\. Someone pass by here\?$|||嗯……破碎的植物。有人从这儿经过？
+^Never knew I could sweat so much!$|||没想到我会出这么多汗！
+^This sure is good exercise, if nothing else\.$|||如果没有别的事发生，这的确会是一次很好的锻炼。
+^Hmm\. Something over there\?$|||嗯……有东西在那儿？
+^Thought I saw something\.\.\.$|||我以为看到了什么东西……
+^What was that sound\?$|||什么声音？
+^Traveling alone sure is, well\.\.\. lonely\.$|||独自一人旅行的确很……寂寞。
+^Need to bring supplies back to the Vault\. Focus on that\.\.\.$|||得带点补给回避难所。专心完成任务吧……
+^All this walking is murder on my feet\.$|||继续走简直就是在折磨我的脚。
+^Good thing I'm wearing sensible footwear!$|||还好我穿着耐磨的鞋子！
+^Calves, thighs, knees - they're all hurting\.$|||小腿，大腿，膝盖--全都很痛。
+^Sweat in my eyes\. Ouch\.$|||眼睛里进汗了，好痛。
+^I'll head back to the Vault\. But not yet\. Not yet\.\.\.$|||我会回避难所的，但现在还不是时候，还不是时候……
+^When I get back to the Vault, they'll hail me as a hero!$|||我回到避难所后，人们会像欢迎英雄一样迎接我！
+^Could be something over there\.$|||那儿可能有什么东西。
+^Looks like a lake\. Definitely don't want to go swimming in THAT\.$|||看上去是个湖，但一点也不想跳进去游泳。
+^On the ground\. Is that dried\.\.\. blood\?$|||地上那是……干了的血迹吗？
+^Looks like a trail of paint\. Oh, wait\. Nope\. That's blood\.$|||看上去像是油漆的痕迹。哦等等，是血迹。
+^I'm a bundle of nerves\.\.\.$|||我很容易神经紧张……
+^Okay, I'll admit it\. I'm terrified\.$|||好吧，我承认，我很害怕。
+^I won't give in to my fear\. I won't give in to my fear\.$|||我不会向恐惧投降，不会。
+^I'd whistle a tune, but my mouth is too dry\.$|||我想哼个小调，但是嘴巴太干了。
+^If I get lost out here, I'm in serious trouble\.$|||如果我迷路了就麻烦大了。
+^People actually live out here\? Ugh\.$|||人们真的住在这里吗？咦……
+^Oh, that's a nice little house\. Or at least it was\.$|||哦，那是个不错的小房子，至少曾经是。
+^This way looks as good as any other\.$|||这条路看起来和其他路一样安全。
+^Looks like an old store\. Wonder what they sold\?$|||看上去是间旧商店，不知道卖的是什么。
+^Oh look, an old bus stop\. Sure wish I could catch a ride\.$|||看，一个旧公交车站，真希望能载我一程。
+^Am I talking to myself\? I think I am\. Uh oh\.$|||我在自说自话吗？我想是的。
+^An old elementary school\. Wow, that's not depressing at all\.\.\.$|||一间旧小学，学校总让人感到沮丧……
+^I'll keep going this way\.$|||我会继续沿着这条路走的。
+^Think I'll head that way for awhile\.$|||我想我得走一下那条路。
+^Time to turn back\? Nah\.$|||该回避难所了吗？我想还不是时候。
+^An old coffee shop\. Sure could go for a cup of joe right about now\.$|||一家旧咖啡店，是时候来杯咖啡了。
+^Is that\.\.an old Nuka-Cola factory\? Too bad it's destroyed\.$|||那是……核子可乐工厂？毁了真可惜。
+^I hear chanting\. Probably some crazy cult\. Better keep my distance\.$|||我听到了谈话声，可能是一些狂热的异教徒。最好离远一点。
+^Sure wish I had a traveling buddy\.$|||真的希望这趟旅程有个伴。
+^An old hospital\. Looks like it's been picked clean\.$|||一家旧医院，看上去已经被洗劫一空。
+^Some old department store\. No clothes left\.$|||一些旧百货商店，没剩下衣服。
+^Oh look, an old baseball diamond\. Nobody's run those bases in a long time\.$|||看啊，一块旧的棒球场，很久没有人在那儿跑垒了。
+^Hasn't been a touchdown in that old football field in two hundred years\.$|||很久没有在那片旧橄榄球场见到达阵得分的情景了。
+^Looks like debris from an old plane crash\.$|||看上去像是飞机坠毁的残骸。
+^An old, crashed vertibird\. From the Army, before the war\.$|||一架旧的，坠毁的战前军用飞鸟直升机。
+^Now that is one big house\. Still couldn't stop an atomic bomb\.$|||那是一间大房子，但是也挡不住原子弹。
+^A drained swimming pool filled with skeletons\. Lovely\.$|||一个干涸的泳池，里面有一堆白骨。有意思。
+^I think that building was\.\.\. a hotel\? An apartment complex\?$|||我觉得那幢建筑是……一间酒店？或是一幢公寓大楼？
+^A rusty old playground\. So sad\.$|||一片锈迹斑斑的运动场，太可惜了。
+^Have I started talking to myself\? I can't tell\.$|||我是不是开始跟自己对话了？说不清楚。
+^Wind's picking up\.\.\.$|||起风了……
+^Need to control my breathing\. Stay calm\.$|||需要控制呼吸，保持冷静。
+^Another rusty old car\.$|||又一辆生锈的旧车。
+^Ouch! Leg cramp!$|||嗷！腿抽筋了！
+^Time for a break\? Maybe later\.$|||休息一下？等会再说吧。
+^I've got to keep moving\.$|||我得继续前进。
+^The Overseer made the right choice, choosing me for this\.$|||监管者选中我来完成这个任务是明智之选。
+^The longer I'm out here, the more danger I'm in\.$|||我在外面呆的时间越长就越危险。
+^I can feel my heart racing\.$|||我感觉不到自己的心率了。
+^Just being out here gives me an adrenaline rush!$|||光是让我呆在废土就像是给我打了一针肾上腺素！
+^I found an Abandoned Cabin and went inside\.$|||我发现了一间废弃的小屋，然后就进去了。
+^I searched through a Super Duper Mart I came across\.$|||我无意中发现了一间超市，并且搜索了一番。
+^I discovered and explored a Red Rocket Truck Stop\.$|||我发现并且探索了一个红火箭卡车停靠站。
+^I did it\. The Savage Dog is dead\.$|||我做到了，野狗死了。
+^I killed the Radscorpion\. I can hardly believe it\.$|||我干掉了那只辐射蝎，简直不敢相信。
+^It was a tough fight but I managed to kill the Giant Soldier Ant\.$|||艰难的战斗，但我还是成功把巨型兵蚁干掉了。
+^One Fire Ant Soldier\.\.\. extinguished!$|||一只火蚁士兵……哑火了！
+^I killed the Guard Dog before it could alert anyone to my presence\.$|||在这只护卫犬暴露我的位置之前我就把它杀了。
+^I barely managed to kill the Fire Ant Warrior\.$|||我尽全力才把火蚁勇士干掉。
+^The Mirelurk is armored everywhere but the face, so I used that to my advantage\. It's dead\.$|||泥沼蟹出了脸之外都包着甲壳，我利用了它这个弱点把它干掉了。
+^That's one Feral Ghoul Roamer whose roaming days are done\.$|||那只狂尸鬼漫游者到处游荡的日子到头了。
+^I'm not quite sure how I managed it, but the Giant Radscorpion is dead\.$|||我不知道我是如何做到的，但是巨型辐射蝎确实死了。
+^The Mirelurk Hunter became the hunted\. It's dead\.$|||泥沼蟹猎杀者反而成了被猎杀的对象，死了。
+^It was close, but I killed the Vicious Dog\.$|||很险，但我还是把恶犬干掉了。
+^The Mole rat has been killed\.$|||鼹鼠被干掉了。
+^I put the Centaur out of its misery\.$|||我让多脚怪从痛苦中解脱了。
+^It was a nasty fight, but the Feral Ghoul Reaver is dead\.$|||这是场糟糕的战斗，那个狂尸鬼掠夺者死了。
+^I killed the Deathclaw! That was way too close\.\.\.$|||我杀了死爪！是在太惊险了……
+^I killed the Enclave Deathclaw\. At least now it's free\.$|||我杀了英克雷死爪，至少它现在成了自由之身。
+^I killed the Super Mutant\.$|||我干掉了那个超级变种人。
+^I'm beaten and bloodied, but the Super Mutant Master is dead\.$|||我被揍得很惨，还流血了，但是超级变种人大师挂了。
+^We went toe-to-toe, but the Super Mutant Overlord is finally dead\.$|||我们不相上下，但最后超级变种人霸主还是死了。
+^I did it\. I killed the Behemoth\. I think I'm in shock\.\.\.$|||我做到了，我杀了那只超级变种巨兽，但我仍惊魂未定……
+^I killed the Bloatfly and it exploded into a thousand pieces\. Disgusting\.$|||我杀掉了肿头蛾，它炸成了渣渣，太恶心了。
+^I squashed the Radroach, no problem\.$|||我踩扁了辐射蟑螂，小菜一碟。
+^It was a tough fight, but I killed the Yao Guai\.$|||一场恶斗之后我干掉了那只妖怪。
+^I killed the Feral Ghoul\. It was him or me\.$|||我干掉了狂尸鬼，不是它死就是我亡。
+^I've got some cuts and bruises, but the Giant Ant is dead\.$|||我受到了一些擦伤和割伤，但是干掉了巨蚁。
+^I killed the Scavenger's Dog\. Sad, but I had no choice\.$|||我杀掉了拾荒者的狗，我很难过但是没有选择。
+^The Giant Worker Ant is dead\. That was a close one\.$|||巨型兵蚁死了，太险了。
+^I found an unlocked door into the Broadcasting Tower\. There was a supply cache inside\.$|||我发现一扇进入广播塔的门没锁，里面有补给。
+^I found a working coffee machine! Maybe just one cup\.\.\.$|||我找到一台完好的咖啡机！就喝一杯吧……
+^I managed to enter and explore the National Guard Depot\.$|||我成功进入国家警卫队仓库进行探索。
+^I managed to make some friends\. It's amazing what the right words can do\.$|||我交到了一些朋友，说话是一门深奥的技术。
+^I made enough explosives to clear the area! Now I can keep exploring\.$|||我做了些炸药来清理这片区域！现在我可以继续探索了。
+^I fled through the back door and tripped on a hollowed-out rock filled with supplies\.$|||我从后门逃离时被一块镂空的石头绊倒了，那里面有许多补给品。
+^Held my breath long enough to find a supply room with a few things above water\.$|||屏住呼吸很久后在水面上找到了一件补给室，里面有些补给。
+^I chopped the door to pieces and found a large supply closet\.$|||我把门砍成了碎片，找到了一间巨大的储物柜，里面全是补给品。
+^I spotted Mirelurks hiding down there, so I turned back and searched the Brewery again\.$|||我发现下面藏着许多泥沼蟹，所以我只能回头继续调查啤酒厂了。
+^I successfully hid from the Raiders\. That was close\.$|||我成功躲过了掠夺者，太险了。
+^I found a hidden box of supplies!$|||我找到了一盒藏起来的补给品！
+^I got the Refrigerator open\. There were some supplies inside\.$|||我打开了冰箱，里面有些补给品。
+^I cracked the Safe! Looks like there's some good stuff inside\.\.\.$|||我破坏了保险箱！看起来里面有些好东西……
+^Got the door open and explored the Super Duper Mart\. I stocked up on supplies\.$|||把门弄开进大无敌超市探索了一圈，我囤了不少补给品。
+^The Slaves recognized me as friendly\. We chatted for a bit, then they moved on\.$|||奴隶们认为我很友好，我们聊了一会儿，然后他们就继续走了。
+^I helped a dozen slaves escape\. To freedom!$|||我帮助一批奴隶逃跑了，他们自由了！
+^I found some unopened crates in a storage closet\.$|||我在一间储藏室里发现了一些没打开过的纸板箱。
+^I patched up the Slave's Leg\. He's back on the run\. I wish him the best\.$|||我帮奴隶包扎了一下腿部，他继续踏上了逃亡的旅程，希望他一切顺利。
+^I managed to repair the Mister Handy\. He told me a pretty funny joke in exchange\.$|||我修好了巧手先生，作为回报，它给我讲了一个超级有趣的笑话。
+^I stopped the bleeding and calmed him down\. Looks like he's going to make it\.$|||我帮他止血，并且让他冷静下来。看样子他能挺过去。
+^The Ghoul gave me supplies\.\.\. and some much needed friendship\.$|||尸鬼给了我一些补给，以及我最需要的……友谊。
+^We struck a deal, and parted on good terms\.$|||我们完成了一笔交易，然后各自和平地离开了。
+^I put the Talon Company Mercs at ease\. We traded stories, and parted as friends\.$|||我让鹰爪公司佣兵放松，互相交换故事之后友好地分别了。
+^I helped the Hunter locate and kill the Yao Guai\.$|||我帮猎人定位并宰掉了那头妖怪。
+^The Drunken Drifter passed out\. More for me!$|||醉汉晕了过去，我还能喝更多！
+^The Brotherhood Patrol took pity on me and gave me some supplies\.$|||兄弟会侦察队可怜我，施舍了一些补给。
+^I successfully brought the Lost Farmer to the settlement\. He's safe now\.$|||我成功把迷路的农民带到了一处定居点，他现在安全了。
+^I got them off and went inside to stock up\.$|||我甩掉了他们然后进去收集补给。
+^They're now as docile as lambs, so I can continue exploring the Cave\.$|||他们现在像小羊羔般温顺，我能继续探索洞穴了。
+^Got ahold of the reins and stopped the Brahmin! The Merchant then gave me a reward\.$|||抓住了缰绳并把双头牛停了下来！于是商人给了我一些奖赏。
+^I bumped my foot against something and unearthed it to find a pre-war time capsule!$|||我的脚踢到了什么东西，于是我把它挖了出来，竟然是一个战前的时间囊！
+^What luck! I found and raided a supply room without making the building collapse\.$|||多幸运啊！我找到并搜刮了一间补给室，还没把大楼弄塌。
+^I grit my teeth and got it before the Lake's radiation made me sick\.$|||我咬紧牙关，在湖中的辐射让我犯恶心之前把它捞了上来。
+^I found the password! Looks like there's a Workshop inside\.\.\.$|||我找到了密码！看样子里面是一个工坊……
+^I managed to avoid all the traps and found a well-stocked storage room\.$|||我成功躲过了所有陷阱，找到了一间塞满补给的储藏室。
+^They let me in, gave me some food, and let me help myself to their junk pile\.$|||他们让我进去，给了我食物，还让我带上些垃圾，想拿多少拿多少。
+^They never knew I was there! I even helped myself to some loot\.$|||他们永远不会知道我曾经去过那儿！还带走了些战利品。
+^I noticed a subtle breeze and followed it to a secret room!$|||我感觉到有一阵微风，并跟着它来到了一间密室！
+^Boom! I turned a laser arm into a one-shot door opener\. Now to look inside\.\.\.$|||砰！我把激光臂做成了只有一发弹夹的开门器。现在让我们看看里面有什么……
+^Scavengers$|||拾荒者
+^Increases the health of the Vault door$|||提高避难所大门的耐久度
+^ALL$|||全部
+^EQUIPPED$|||已装备
+^INVENTORY$|||物品栏
+^Are you sure you want to erase this Vault\?$|||你确定你想要清除这个避难所？
+^Any items acquired from Lunchboxes in this Vault will be permanently lost\. Are you sure you want to delete this Vault\?$|||避难所科技午餐盒中得到的物品将会永久消失。你确定你想要删除该避难所？
+^EULA$|||最终用户许可协议
+^XP$|||经验
+^I need some Junk!$|||我需要一些垃圾！
+^Request Gift$|||请求礼物
+^Here's the Junk you asked for!$|||这是你需要的垃圾！
+^Send Gift$|||发送礼物
+^Here's some Junk for you\. I hope it helps!$|||这里有一些送给你的垃圾，希望能够帮上忙！
+^\*Fur not guaranteed\.$|||\*无法保证毛皮。
+^COMMAND$|||指令
+^CURSOR SPEED$|||指针速度
+^SAVE & EXIT$|||保存并退出
+^HOTKEY$|||快捷键
+^CAM SCROLL SPEED$|||画面滚动速度
+^NONE$|||无
+^SAVE$|||保存
+^GAME SAVED$|||游戏已保存
+^SELECT NEW HOTKEY$|||选择新快捷键
+^HOTKEYS$|||快捷键
+^WINDOWED$|||窗口化
+^CAM ZOOM SPEED$|||画面缩放速度
+^CONTROLS$|||控制
+^DWELLER$|||居民
+^POWER$|||电力
+^FOOD$|||食物
+^JUNK$|||垃圾
+^NUKA-COLA QUANTUM$|||量子型核子可乐
+^OUTFIT$|||服装
+^PET$|||宠物
+^RADAWAY$|||消辐宁
+^RESOURCE$|||资源
+^STIMPAK$|||治疗针
+^THEME$|||布局
+^WATER$|||水
+^WEAPON$|||武器
+^Feral Ghoul$|||狂尸鬼
+^Feral Ghouls$|||狂尸鬼
+^Increases Strength training speed$|||加快【力量】训练速度
+^Hint: Some Objectives reward you with Lunchboxes, Pet Carriers or Mr\. Handy Boxes!$|||提示：一些目标会奖励避难所科技午餐盒、宠物笼或是巧手先生箱子！
+^There are always three Objectives you can work on\.\n\nYou can abandon one Objective each day for free and receive a new Objective in its place\.\n\nAdditional Objectives can be skipped per day with Nuka-Cola Quantum\.\n\nHarder Objectives give better rewards\.$|||总是会有三个目标供你完成。
+
+你每天可以放弃一个目标并接受一个新目标。
+
+可以消耗量子型核子可乐额外跳过目标。
+
+难度较大的目标同样地会有更好的奖励。
+^GAME OBJECTIVES$|||游戏目标
+^Hint: Luck stat affects the probability of earning CAPS when collecting Resources\.$|||提示：幸运会影响采集资源时捡到瓶盖的概率。
+^Every Dweller has stats called SPECIAL\n\nS \(trength\)\nP \(erception\)\nE \(ndurance\)\nC \(harisma\)\nI \(ntelligence\)\nA \(gility\)\nL \(uck\) \n\nEvery room in the Vault is linked to one of the SPECIAL stats\. The better the Dweller's stat is for that room, the more they influence the room's effects\.$|||每个居民都有属性值，称为SPECIAL
+
+S（力量）
+P（感知）
+E（耐力）
+C（魅力）
+I（智力）
+A（敏捷）
+L（幸运）
+
+避难所中的每个房间都与属性值中的其中一种相关联。居民与房间相对应的属性值越高，他们在该房间的工作效率越高。
+^DWELLERS SPECIAL$|||居民SPECIAL
+^Hint: Find RARE and LEGENDARY Dwellers in Lunchboxes\.$|||提示：避难所科技午餐盒中含有稀有和传说级别的居民。
+^LEVEL\n\nDwellers level up over time while working in Production Rooms, exploring the Wasteland, and killing enemies on Quests\.\n\nLeveling up increases the health of a Dweller\. The higher their level is, the higher their health, but Dwellers with high Endurance gain more health when they level up\. \nRooms unlock based on how many Dwellers you have in your Vault\.\n\nRARITY\n\nThere are three types of rarity of Dwellers, COMMON, RARE, and LEGENDARY\.\n\n- COMMON: Low level and SPECIAL stats\n\n- RARE: Average level and SPECIAL stats\n\n- LEGENDARY: High level and SPECIAL stats$|||等级 
+居民在生产间工作、去废土探索或是在任务中杀死敌人都会升级。
+
+升级会增加居民体力上限。等级越高，生命值越高，耐力越高的居民在升级时会获得更多的生命值。
+新的房间种类会根据你的避难所中的居民数量解锁。
+
+居民稀有度
+
+居民稀有度分为三级，普通，稀有和传说。
+
+- 普通：等级低，SPECIAL属性低
+
+- 稀有：等级中等，SPECIAL属性中等
+
+- 传说：等级高，SPECIAL属性高
+^DWELLERS LEVEL & RARITY$|||居民等级和稀有度
+^Hint: The higher the Dweller's level, the more CAPS their revival will cost\.$|||提示：居民等级越高，复活他们所花费的瓶盖越多。
+^A Dweller dies when their health is depleted\.\n\nTo avoid Dwellers dying you can:\n- Give them a Stimpak to Heal them\.\n- Give them a RadAway to remove Radiation\.\n- A dead Dweller can be revived with CAPS, or removed from your Vault\.\n\nDwellers that die on a Quest can only be revived once the Quest is over\.$|||居民健康值耗尽的时候会死亡。
+
+为避免居民死亡你可以：
+- 给他们注射一剂治疗针回复健康值。
+- 给他们注射一包消辐宁去除辐射。
+- 死亡的居民可以花费瓶盖复活，或者将他从你的避难所移除。
+
+在任务中死亡的居民只有在任务结束后才能够复活。
+^DEAD DWELLERS$|||死亡的居民
+^Hint: Pay close attention to what a Dweller is telling you to know more about what makes them happy\.$|||提示：特别留意居民跟你说的话，了解如何使他们高兴。
+^Depending on what you ask your Dwellers to do, they can become happy or sad\.\n\nKeeping Dwellers happy is very important! A happy Vault runs more efficiently and produces resources faster\.\nYou can see a specific Dweller's happiness by checking their profile\.\n\nHappiness Icon status:\n\nGREEN: Your Dweller is happy, way to go!\n\nYELLOW: Your Dweller is doing okay, but could be happier\.\n\nRED: Your Dweller is sad, cheer them up!$|||居民会根据你安排给他们的任务产生情绪变化。
+
+保持居民心情愉悦是十分重要的！一间气氛欢快的避难所运作地更有效率，生产资源也会更快。
+你可以通过查看居民的资料来了解他/她的心情。
+
+心情图标状态：
+
+绿色：你的居民很快乐，继续保持！
+
+黄色：你的居民心情不赖，但是你可以让他/她更开心。
+
+红色：你的居民很难过，快想办法让他们高兴起来！
+^DWELLER HAPPINESS$|||居民幸福感
+^Hint: Playing for 7 days gives you a Lunchbox as a reward\.$|||提示：游戏7天会奖励一个避难所科技午餐盒。
+^Every day you receive a reward based on how happy your Vault is\.\n\n- Your Vault rating is the combined total of all your Dwellers happiness\. \n\n- Your reward is based on your Vault Rating\.\n\n- A high Vault Rating earns you bonus CAPS\.$|||根据你的避难所愉悦度，每天会发送一个奖励。
+
+- 你的避难所愉悦度是你所有居民心情值的总合。
+
+- 奖励会根据你的避难所分数发放。
+
+- 较高的避难所愉悦度会为你赚取额外瓶盖。
+^DAILY REPORT & VAULT RATING$|||每日报告和避难所分数
+^Hint: Babies will wait to be born if there is no space in your Vault\.$|||提示：如果你的避难所空间不足，小宝宝不会出生。
+^When you need new Dwellers you can always encourage your Dwellers to procreate\.\n\n- Put a man and a woman in the Living Quarters and see if they like each other\.\n\n- If all goes well, the woman will become pregnant\.\n\n- After some time, the pregnant Dweller will be ready to give birth\.\n\n- Tap the icon above her head to welcome a new child in your Vault\.\n\n- Once the child has grown up, you will have a new Dweller\.$|||需要新的居民时，你可以鼓励自己的居民生育。
+
+- 将一名男性和一名女性拖至宿舍，看看他们是否互相喜欢。
+
+- 如果一切顺利，女性就会怀孕。
+
+- 一段时间后，怀孕的居民就会生育。
+
+- 轻按她头上的图标来迎接避难所里的新生命。
+
+- 当小孩长大后，你就有了一名新的居民。
+^When you need new Dwellers you can always encourage your Dwellers to procreate\.\n\n- Put a man and a woman in the Living Quarters and see if they like each other\.\n\n- If all goes well, the woman will become pregnant\.\n\n- After some time, the pregnant Dweller will be ready to give birth\.\n\n- Click on the icon above her head to welcome a new child in your Vault\.\n\n- Once the child has grown up, you will have a new Dweller\.$|||需要新的居民时，你可以鼓励自己的居民生育。
+
+- 将一名男性和一名女性拖至宿舍，看看他们是否互相喜欢。
+
+- 如果一切顺利，女性就会怀孕。
+
+- 一段时间后，怀孕的居民就会生育。
+
+- 轻按她头上的图标来迎接避难所里的新生命。
+
+- 当小孩长大后，你就有了一名新的居民。
+^MAKING BABIES & LIVING QUARTERS$|||生宝宝及起居室
+^Hint: Be careful not to build rooms before you need them, or expand too fast\.$|||提示：避免建造多余的房间或者是扩展得太快。
+^Build Living Quarters to welcome new Dwellers to your Vault\.\n\n- Expand your Vault by building rooms so you can produce more resources\.\n\n- Pay attention to the Vault Resource Gauges, they are a good indicator to follow when choosing the next room to build\.\n\n- Build an Elevator when you want to expand downwards\.\n\n- You can not delete a room if it is connected on both sides\.\n\n- Building multiple types of the same room will increase its price\.$|||建造新的起居室以收容新的居民。
+
+- 建造更多的房间来扩展你的避难所，同时你也能够生产更多的资源。
+
+- 请注意避难所的资源度量表，它们会提示你下一步应该建造哪一类房间。
+
+- 想要向深处扩展时，建造一部电梯。
+
+- 如果一间房左右都连接着房间，你便无法将它拆除。
+
+- 同一类型的房间多次建造会提升它的建造成本。
+^BUILD YOUR VAULT & ELEVATOR$|||建造你的避难所以及电梯
+^Hint: A room merge only happens if all rooms are of the same level\.$|||提示：同等级同类型的房间才能够互相融合。
+^Upgrade your Rooms to increase their performance\.\n\n- Most Rooms can be upgraded twice\. Upgraded resource rooms produce more resources\.\n\n- Up to 3 Rooms of the same type can be merged, by building them next to each other\n\n- Merged Rooms let you assign more Dwellers to the room, while also becoming more efficient\.\n\n- Some rooms, like Workshops, begin as larger rooms and cannot be merged\.\n\n- Themes can only be applied to fully merged and upgraded Diners and Living Quarters\.$|||升级房间以增加产量。
+
+- 大多数房间能升级两次。升级资源室以获得更多资源。
+
+- 相同类型的房间左右紧挨着建造便可以融合，最多3间。
+
+- 融合后的房间可以分配工作给更多的居民，同时也更高产。
+
+- 大型房间，比如工作间，无法融合。
+
+- 布局只能够应用于合并升级过后的用餐区或是生活区。
+^ROOM LEVEL & MERGING$|||房间等级以及房间融合
+^Hint: If you run out of storage space, upgrade your storage, build more storage, equip your Dwellers or sell items\.$|||提示：如果你的储存空间不足，请升级或建造更多仓库，或者把物品服装至居民或卖掉。
+^Storage Rooms increase your Weapons, Outfit, Junk and Pets inventory space\.\n\n- Upgrade your Storage Rooms to increase inventory capacity\.\n\n- Sell unwanted items by visiting the inventory from the Pip-Boy menu\.\n\n- Scrap Weapons and Outfits to turn them into Junk from their Recipes\.\n\n- Use the Storage Room as a temporary holding bay for Dwellers in case all other Rooms are full\.\n\n- Building MedBays and Science Labs will increase the number of Stimpaks and RadAway you can store\.$|||仓库可以增加你的武器，服装，垃圾和宠物的储存空间。
+
+- 升级仓库以增加储物容量。
+
+- 在哔哔小子菜单的物品栏里可以卖掉不想要的物品。
+
+- 分解武器和服装可以将它们变为配方中需要的垃圾。
+
+- 当其他房间都满了，可以将仓库用作暂时安置居民的房间。
+
+- 建造制药间和科学实验室能够增加治疗针和消辐宁的储存量。
+^Storage Rooms increase your Weapons, Outfit, Junk and Pets inventory space\.\n\n- Upgrade your Storage Rooms to increase inventory capacity\.\n\n- Sell unwanted items by visiting the inventory from the Pip-Boy menu\. You can also open the inventory with 3D Touch by pressing on a Storage Room\.\n\n- Scrap Weapons and Outfits to turn them into Junk from their Recipes\.\n\n- Use the Storage Room as a temporary holding bay for Dwellers in case all other Rooms are full\.\n\n- Building MedBays and Science Labs will increase the number of Stimpaks and RadAway you can store\.$|||仓库可以提升武器、服装、垃圾和宠物的物品栏空间。
+
+- 升级你的仓库可以提升物品栏容量。
+
+- 请查看哔哔小子菜单中的物品栏，筛选出不需要的物品进行出售。你还能通过3D触控点击仓库来打开物品栏。
+
+- 分解武器和服装可以将它们变为配方中需要的垃圾。
+
+- 请将仓库作为临时的暂住点让居民居住，这样可以暂时解决房间满员的问题。
+
+- 建造制药间和科学实验室可以提升治疗针和消辐宁的存储量。
+^STORAGE ROOM$|||储藏室
+^Hint: Multiple Dwellers training together in the same room decrease the training time for all Dwellers in the room\.$|||提示：不同类型的居民同时在一间房间内训练能够缩短该房内全部居民的训练时间。
+^Putting Dwellers in a Training Room will increase their SPECIAL stats\.\n\nThere is a Training Room for each one of the SPECIAL stats\.\n\nStrength: Weight Room\nPerception: Armory\nEndurance: Fitness Room\nCharisma: Lounge\nIntelligence: Classroom\nAgility: Athletics Room \nLuck: Game Room\n\nYou can raise each stat up to 10\.\n\nThe higher the SPECIAL stat of a Dweller is, the longer it takes them to train to the next level, but you can use Nuka-Cola Quantum to speed up the training time\.$|||把居民拖到训练室能增加他们的SPECIAL属性。
+
+每个SPECIAL属性都有对应的训练室。
+
+力量：负重室
+感知：军械室
+耐力：健身房
+魅力：休闲室
+智力：教室
+敏捷：田径室
+幸运：赌场
+
+每条属性最高10点。
+
+居民的SPECIAL属性越高，升至下一级所需的时间越多，不过你可以使用量子型核子可乐来加快训练时间。
+^TRAINING ROOMS$|||训练室
+
+# ==============================================
+# 新增：批量抽象规则（自动追加）
+# ==============================================
+# 格式: ^正则模式$=替换规则
+
+# ==============================================
+# 新增：带颜色前缀的提示文本规则
+# ==============================================
+# ==============================================
+# 新增：Hint提示、全大写短句、Yes/No等规则
+# ==============================================
+^Hint:\ (.*)$=提示：^Yes\$=是
+^No\$=否
+^SOS\$=SOS
+^ACTIVE\$=激活
+^ARRIVED\$=已到达
+^BEGIN\$=开始
+^RETURNED\$=已返回
+# ==============================================
+# 新增：武器前缀修饰词规则
+# ==============================================
+^Armor\ Piercing\ (.+)$=穿甲
+^Enhanced\ (.+)$=改良的
+^Hardened\ (.+)$=硬化
+^Rusty\ (.+)$=生锈的
+^Amplified\ (.+)$=增幅
+^Focused\ (.+)$=聚焦
+^Tuned\ (.+)$=微调
+^Scoped\ (.+)$=带镜
+^Improved\ (.+)$=优化
+^Incendiary\ (.+)$=燃烧
+^Scattered\ (.+)$=散射
+^Targeting\ (.+)$=瞄准型
+^Long\ (.+)$=长型
+^Auto\ (.+)$=自动
+^Heavy\ (.+)$=重型
+^Bayoneted\ (.+)$=刺刀
+^Calibrated\ (.+)$=校准
+^Electrified\ (.+)$=充能
+^Flaming\ (.+)$=火焰
+^Recoil\ Compensated\ (.+)$=后座补正
+^Tactical\ (.+)$=战术
+^Guided\ (.+)$=自动制导
+^Pressurized\ (.+)$=增压
+^Burnmaster\ (.+)$=炎魔
+^Mean\ Green\ (.+)$=凶暴的绿怪
+^Agitated\ (.+)$=不稳定
+^Boosted\ (.+)$=增压
+^Overcharged\ (.+)$=充能
+\n\n# ==============================================\n# 新增：全大写短句规则\n# ==============================================\nNEW DWELLERS & RADIO ROOM=新居民和广播室\nMR. HANDY=巧手先生\nSTORAGE SPACE:=储存空间：\nPASSWORD DOESN'T MATCH=密码不匹配\nPLEASE WAIT...=请稍等……\nEACH LUNCHBOX CONTAINS:=每个避难所科技午餐盒包含：\nWHAT'S NEW?=有什么消息吗？\nEACH PET CARRIER CONTAINS:=每个宠物笼里包含：\n*FUR NOT GUARANTEED.=*不保证皮毛状况。\nKA-KAW KA-KAW!=噶-噶！\nNUKA-COLA STATION=核子可乐生产站\nNUKA-COLA PLANT=核子可乐工厂\nOVERSEER'S OFFICE=监管者办公室\nOVERSEER'S CONTROL STATION=监管者的控制台\nOVERSEER'S COMMAND CENTER=监管者的指挥中心\nLEGENDARY JUNK RECOVERED!=传奇垃圾回收！\nRARE JUNK RECOVERED!=稀有垃圾回收！\nSHARE YOUR PHOTO!=分享图片！\nPRESS [A] TO CONTINUE=按[A]继续\nPRODUCTION BONUS :=生产奖励：\nRUSH READY!=加速准备完毕！\nSTARTING QUEST!=开始任务！\nTHE BABY GREW UP!=孩子长大了！\nCONGRATULATIONS! OBJECTIVE COMPLETED=恭喜！任务完成\nBOTTLE & CAPPY!=瓶瓶和盖盖！\nIT'S TIME TO START CRAFTING!=制作时间到！\nDWELLERS LEVEL & RARITY=居民等级和稀有度\nDAILY REPORT & VAULT RATING=每日报告和避难所分数\nMAKING BABIES & LIVING QUARTERS=生宝宝及起居室\nBUILD YOUR VAULT & ELEVATOR=建造你的避难所以及电梯\nROOM LEVEL & MERGING=房间等级以及房间融合\n
+
+# ==============================================
+# 新增：全大写短句规则
+# ==============================================
+SAVING...=正在保存……
+UPLOADING...=升级中……
+
+
+# ==============================================
+# 新增：You can/You can't 句式规则
+# ==============================================
+^You can only send a limited amount of Mr. Handys to the Wasteland.$=巧手先生会帮你收集所在楼层的资源。未进行游戏时，它们也会帮你收集一段时间。避难所每层最多只能指派一名巧手先生。
+^You can send Dwellers to explore the Wasteland. Drag a Dweller outside of the Vault and give them supplies to start their adventure.$=你可以派居民探索废土。把居民拖出避难所，给他们装备上补给，他们就能开始冒险了。
+^You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by tapping on a Dweller.$=你可以点击一位居民查看他的身份信息栏，在这里你可以为他/她装备物品和武器以及使用治疗针和消辐宁。
+^You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by clicking on a Dweller.$=你可以点击居民信息面板，为居民装备物品或是武器，也可以为他们使用消福宁和治疗针。
+^You can be my wingman any time!$=你永远是我的好伙伴！
+^You\ can\ try!$=你可以试试！
+^You can across a small cabin out in the Wasteland. Time to investigate!$=你在废土发现了一件小屋，是时候去调查一下了！
+^You can say that again.$=你可以再说一遍。
+^You can rename a Dweller by tapping their name on the Dweller information pop-up.$=你可以通过点击居民信息中的名字来进行更改。
+^You can rename a Dweller by clicking their name on the Dweller information pop-up.$=你可以通过点击居民的名字或是弹出的居民信息来更改他们的名字。
+^You can skip 1 Objective each day by tapping the X on the Objective screen.$=你每天都可以跳过一个任务，点击任务界面的X。
+^You can skip 1 Objective each day by clicking the X on the Objective screen.$=你每天都可以跳过一个任务，点击任务界面的X。
+^You can get free Lunchboxes for completing some Objectives.$=你可以通过完成某些特定目标来获得免费的避难所科技午餐盒。
+^You can assign Dwellers to the Vault entrance to act as guards.$=你可以派居民到避难所入口进行守卫。
+^You can sort the Dweller list by tapping on the column names.$=你可以通过点击列名分类来对居民的类别排序。
+^You can sort the Dweller list by clicking on the column names.$=你可以通过点击列名分类来对居民的类别排序。
+^You can only have one Mr. Handy assigned to a floor at a time. (Vault-Tec rules)$=你一次只能在同一层分配一个巧手先生。(避难所规定)
+^You can use Nuka-Cola Quantum to instantly finish crafting an item.$=你可以使用量子型核子可乐加快生产的速度。
+^You can use Nuka-Cola Quantum to speed up the Barbershop.$=你可以使用量子型核子可乐加快理发的速度。
+^You can use Nuka-Cola Quantum to reach a Quest NOW!$=你可以使用量子型核子可乐立即完成任务！
+^You can craft Minutemen and Brotherhood of Steel Themes in the Theme Workshop.$=你可以在布局工坊制作钢铁兄弟会主题布局。
+^You can craft Railroad and Institute Themes in the Theme Workshop.$=你可以在布局工坊制作铁路协会主题布局。
+^You can use Nuka-Cola Quantum to skip certain Quests.$=你可以使用量子型核子可乐跳过一部分特定的任务。
+^You can use Nuka-Cola Quantum to speed up a Dweller’s SPECIAL training.$=你可以使用量子型核子可乐加速SPECIAL训练。
+^You can use Nuka-Cola Quantum to get missing Theme Recipe Fragments.$=你可以使用量子型核子可乐获得缺失的布局配方碎片。
+
+
+# ==============================================
+# 新增：Are you sure 句式规则
+# ==============================================
+^Are\ you\ sure\ you\ want\ to\ keep\ the\ Local\ save\?$=你确定你想要保留本地存档吗？
+^Are\ you\ sure\ you\ want\ to\ logout\?$=确定注销吗？
+^Are\ you\ sure\ you\ want\ to\ quit\ Fallout\ Shelter\?$=确定退出游戏吗？
+^Are\ you\ sure\ you\ want\ your\ Dwellers\ to\ return\ to\ the\ Vault\?$=确定要居民返回避难所吗？
+^Are\ you\ sure\ you\ want\ to\ create\ a\ new\ save\?$=你确定要创建一个新存档吗？
+^Are\ you\ sure\ we\ can't\ just\ talk\ this\ over\?$=你确定我们用语言来沟通吗？
+^Are\ you\ sure\ about\ this\?\ Shouldn't\ love\ just\ run\ its\ course\?$=你确定吗？还是说婚姻是爱情的坟墓？
+^Are\ you\ sure\ you\ want\ to\ keep\ the\ Cloud\ save\?$=你确定你想保留云端存档吗？
+^Are\ you\ sure\ you\ want\ to\ erase\ this\ Vault\?$=你确定你想要清除这个避难所？
+
+
+# ==============================================
+# 新增：Do you really 句式规则
+# ==============================================
+^Do\ you\ really\ want\ to\ destroy\ this\ rock\?$=你真的要摧毁这块岩石吗？
+^Do\ you\ really\ want\ to\ evict\ the\ Dweller\?$=你真的要驱逐这个居民吗？
+^Do\ you\ really\ want\ to\ remove\ the\ dead\ Dweller\?$=你真的要移除已死亡的居民吗？
+^Do\ you\ really\ want\ to\ remove\ any\ dead\ Dweller\(s\)\?$=确定要移除全部死亡的居民吗？
+^Do\ you\ really\ like\ me\?$=你真的喜欢我吗？
+
+# ==============================================
+# 新增：短句物品名规则
+# ==============================================
+- Customize Dwellers=你可以通过以下方式获得瓶盖。
+You don't have enough resources=资源不足
+Wasteland slots are full=废土居民已满
+[Content line 2]=[第二行的内容]
+Collect 1 piece of Junk=收集1件垃圾
+Collect 1 Daily Reward=获得1次每日奖励
+Deliver 1 baby Dweller=生下1个居民宝宝
+Merge 2 rooms together=合并2个房间
+Find the Mysterious Stranger=找到神秘陌生人
+Have 1 Female Dweller pregnant=让一名女居民怀孕
+Perform 1 successful Rush=完成1次加速
+Scrap 1 Weapon or Outfit=分解1件武器或服装
+Sell 1 Weapon or Outfit=出售1件武器或者服装
+Stop 1 Vault invasion=阻止1场避难所侵略
+Weekly Quest PLACEHOLDER=每周任务 PLACEHOLDER
+Fire Support [PL]=火力支援[PL]
+In Sheep Clothing [PL]=穿绵羊服[PL]
+Memory Interrupted [PL]=记忆中断[PL]
+Mercer Safehouse [PL]=布商的安全屋[PL]
+Spoils of War [PL]=战争恩赐[PL]
+Craft Legendary Decorations=制造传奇装饰
+Friend List PHR=好友列表 PHR
+1 gift remaining PHR=剩余1份礼物 PHR
+Total Dwellers in Vault=避难所的全部居民
+Increases Endurance training speed=提升【耐力】训练速度
+Killed 10 Quest Bosses=杀了10个任务 BOSS
+Killed 500 enemies on Quests=在任务中杀死了500个敌人
+Kill 10 Quest Bosses=杀死10个任务 BOSS
+Kill 500 enemies on Quests=在任务中杀死500个敌人
+Paint 'n Elbow Grease=涂抹肘部润滑脂
+Increases Charisma training speed=加快【魅力】训练速度
+Training Time (Continuous)=训练时间（持续）
+Press [A]=按[A]
+Increases Strength training speed=加快【力量】训练速度
+
+
+# ==============================================
+# 自动提取规则
+# ==============================================
+# simple_sentences
+(Optional)=（可选）
+# ui_labels
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ==============================================
+# 从_AutoGeneratedTranslations.txt迁移
+# ==============================================
+PLEASE STAND BY=请稍候
+ENTER VAULT 444=进入保险库444
+SEASON ENDS IN 45 DAYS=赛季将在45天后结束
+ITEM NAME description=项目名称描述
+TBD - RECALL=TBD-召回
+(3h 55m)=（3小时55分钟）
+(2h 55m)=（2小时55米）
+[353F5C]Building 2 or 3 of the same type of room next to each other will merge them into a bigger version of the room.=[353F5C]相邻的同类型房间的2号或3号楼将它们合并成一个更大的房间。
+TURN TIPS OFF=关闭提示
+OUTFIT NAME NAME=服装名称
+SEASON 1 LEADERBOARD=第一季排行榜
+[282828]SEASON AND EXPERIMENTAL VAULT END IN[-] [FD0C0B]45 DAYS[-]=[282828]赛季和实验跳马在[-][FD0C0B]45天后结束[-]
+ASSIGN DWELLERS HERE TO CRAFT WEAPONS=指派这里的居民制造武器
+ATTRACTS NEW DWELLERS FROM THE WASTELAND=吸引荒地上的新居民
+SEND DWELLERS ON QUESTS FROM HERE=从这里派遣居民进行任务
+ASSIGN DWELLERS HERE TO PRODUCE RADAWAY=指派居民在这里建造雷达道
+INCREASES THE NUMBER OF ITEMS AND PETS YOU CAN HOLD=增加您可以携带的物品和宠物数量
+ASSIGN DWELLERS HERE TO PRODUCE WATER=指派居民在这里生产水
+ASSIGN DWELLERS HERE TO PRODUCE FOOD=指派居民在这里生产食物
+ASSIGN DWELLERS HERE TO PRODUCE POWER=指派居民在这里发电
+INCREASES THE NUMBER OF DWELLERS YOU CAN HAVE IT ALSO ALLOWS YOU TO BREED NEW DWELLERS=增加你可以拥有的居民数量，也可以让你繁殖新的居民
+[353F5C]You just used the last available space for Dwellers in the Vault. Build more [BE6432]LIVING QUARTERS[353F5C] to accommodate more Dwellers.=[353F5C]您刚刚使用了保险库中最后一个可供居住者使用的空间。建造更多[BE6432]居住区[353F5C]，以容纳更多居民。
+USED TO ACCESS LOWER FLOORS OF YOUR VAULT=用于进入保险库的较低楼层
+QUEST NAME GOES HERE=任务名称在这里
+CLICK TO CONTINUE=单击继续
+Unlock all the Season rewards:\n- NEW Vault Exterior [-][F7C531]THEME[-]\n- NEW Nuka-Cola Bottler [-][F7C531]THEME[-]\n- [-][F7C531]NEW DWELLERS[-] and [-][F7C531]MORE![-]=解锁所有赛季奖励：-新金库外观[-][F7C531]主题[-]新努卡可乐瓶[-][F7C531]-主题[-]-[-][P7C531]新DWELLER[-]和[-][7C531]更多！[-]
+[353F5C][BE6432]MALE[353F5C] and [BE6432]FEMALE[353F5C] Dwellers within the [BE6432]LIVING QUARTERS[353F5C] have a chance of making [BE6432]BABIES[353F5C].=[353F5C][BE6432]男[335F5C]女[353F53]住在[BE6432]LIVING QUARTERS[353F5C]的居民有机会制作[BE6432-]婴儿袋[353F58]。
+Average Dweller Level=平均居住水平
+Average Dweller Strength=平均居住强度
+Average Dweller Perception=平均居民感知
+Average Dweller Endurance=平均居住耐力
+Average Dweller Intelligence=平均居民智力
+Average Dweller Agility=平均居住者敏捷性
+Average Dweller Luck=平均居民运气
+CUMULATIVE SINCE 2026/5/28=自2026/5/28以来累计
+Pet Carriers Opened=宠物背带打开
+SPECIAL Stats Trained=接受过特殊统计培训
+You can't destroy this room because it is connected with two rooms.=你不能破坏这个房间，因为它与两个房间相连。
+You can't destroy this room because it has Dwellers assigned to it.=你不能摧毁这个房间，因为它有指定的居民。
+Raider Attacks Stopped=袭击者袭击停止
+Deathclaw Attacks Stopped=死爪袭击停止
+Feral Ghoul Attacks Stopped=凶猛的食尸鬼袭击停止
+Radroach Infestations Stopped=蟑螂感染已停止
+Radscorpion Infestations Stopped=Radscorpion感染已停止
+Mole Rat Infestations Stopped=鼹鼠感染停止
+Alien Attacks Stopped=外星人袭击停止
+Dwellers Sent to the Wasteland=被送往荒地的居民
+Wasteland Exploration Time=荒地勘探时间
+Wasteland Creatures Killed=荒地生物被杀死
+
+
+# ==============================================
+# 从fallout_shelter_zh.txt主文件补充
+# ==============================================
+NEW DWELLERS & RADIO ROOM=新居民和广播室
+Hint: Rushing a room is the fastest way to earn CAPS.=提示：加速房间是赚瓶盖最快的方式。
+Hint: The percentage chance of a disaster cools down over time.=提示：灾难发生的概率会随时间流逝而降低。
+Production Rooms can be Rushed to earn CAPS and to instantly earn resources.\n\n- Rush completes the current production cycle and award a bonus amount of CAPS.\n\n- The CAPS bonus is based on the Risk value. The higher the risk is, the greater the amount of CAPS you earn.\n\n- Failing a Rush causes a disaster in the room.=生产间可以加速以获得瓶盖，立即收集资源。\n\n- 加速可立即完成当前生产周期并奖励额外的瓶盖。\n\n- 奖励瓶盖的数量会根据风险值浮动。加速风险越高，你获得的瓶盖越多。\n\n- 加速失败会在房间内引发一场灾难。
+Hint: A Dweller in the Wasteland can be Revived for CAPS.=提示：废土中的居民可用瓶盖复活。
+Hint: Rare and Legendary Dwellers can be found in Lunchboxes and have great stats.=提示：避难所科技午餐盒中能发现稀有甚至传说级别的居民，而且他们有很高的属性值。
+Hint: Equipping your Dwellers with Weapons will help fight off enemies.=提示：为你的居民装备武器能帮助他们击退敌人。
+Hint: The Dweller Menu icon shows the number of Dwellers in your Vault, as well as how many Dwellers you have waiting outside.=提示：居民图标会显示当前避难所内的居民数量，还有在避难所外等待的居民数量。
+1. Wasteland - Tap outside your Vault to pull up your Wasteland Logs.\n2. Dweller Menu - Use this for easy sorting and selection of your Dwellers.\n3. Happiness - Your overall Vault Happiness. Tap on it to see what bonuses it provides to your Vault.\n4. Resource Bars - Your current resource amounts. Don't let them fall below the required resources lines, or your Vault will start to deteriorate. Tap to see how many resources you have.\n5. CAPS - Tap on the CAPS to go to the Lunchbox Store.\n6. Build Hammer - Tap on the Build Hammer to build rooms.\n7. Pip-Boy - Tap the Pip-Boy to open the Pip-Boy menu. A number on the Pip-Boy means you have Lunchboxes to open. An exclamation point means you have Objective rewards to collect.\n8. Lunchboxes - Tap the Lunchboxes to go to the Lunchbox menu. A number means you have Lunchboxes to open.\n9. Objectives - Tap the ribbon to go to your Objectives page. An exclamation point means you have Objective rewards to collect.\n10. Inventory - Tap the boxes to go to the Inventory menu.\n11. VDSG - Tap the book to open the Vault Dweller Surivival Guide.\n12. Settings - Tap the gears to go to the settings menu.=1. 废土 - 点击避难所外部查看废土日志。\n2. 居民菜单 - 使用菜单更轻松地分类和选择居民。\n3. 幸福感 - 避难所总体愉悦度。点击查看它为你的避难所提供的奖励。\n4. 资源条 - 你当前的资源量。别让它们低于最低需求标准线，否则你的避难所会恶化。点击查看你拥有多少资源。\n5. 瓶盖 - 点击瓶盖转到避难所科技午餐盒商店。\n6. 建造锤 - 点击建造锤建造各类房间。\n7. 哔哔小子 - 点击哔哔小子打开菜单。数字表示你拥有的避难所科技午餐盒数量。感叹号表示你有未收集的任务奖励。\n8. 避难所科技午餐盒 - 点击避难所科技午餐盒转到避难所科技午餐盒菜单。数字表示你可以开启的避难所科技午餐盒数量。\n9. 目标 - 点击缎带图标跳转到目标页面。感叹号代表你有未收集的目标奖励。\n10. 物品栏 - 点击盒子转到物品栏菜单。\n11. 避难所居民生存指南 - 点击书本打开避难所居民生存指南。\n12. 设置 - 点击齿轮转到设置菜单。
+1. Wasteland - Click outside your Vault to pull up your Wasteland Logs.\n2. Dweller Menu - Use this for easy sorting and selection of your Dwellers.\n3. Happiness - Your overall Vault Happiness. Click on it to see what bonuses it provides to your Vault.\n4. Resource Bars - Your current resource amounts. Don't let them fall below the required resources lines, or your Vault will start to deteriorate. Click to see how many resources you have.\n5. CAPS - Click on the CAPS to go to the Lunchbox Store.\n6. Build Hammer - Click on the Build Hammer to build rooms.\n7. Pip-Boy - Click the Pip-Boy to open the Pip-Boy menu. A number on the Pip-Boy means you have Lunchboxes to open. An exclamation point means you have Objective rewards to collect.\n8. Lunchboxes - Click the Lunchboxes to go to the Lunchbox menu. A number means you have Lunchboxes to open.\n9. Objectives - Click the ribbon to go to your Objectives page. An exclamation point means you have Objective rewards to collect.\n10. Inventory - Click the boxes to go to the Inventory menu.\n11. VDSG - Click the book to open the Vault Dweller Surivival Guide.\n12. Settings - Click the gears to go to the settings menu.=1. 废土 - 点击避难所外部查看废土日志。\n2. 居民菜单 - 使用菜单更轻松地分类和选择居民。\n3. 幸福感 - 避难所总体愉悦度。点击查看它为你的避难所提供的奖励。\n4. 资源条 - 你当前的资源量。别让它们低于最低需求标准线，否则你的避难所会恶化。点击查看你拥有多少资源。\n5. 瓶盖 - 点击瓶盖转到避难所科技午餐盒商店。\n6. 建造锤 - 点击建造锤建造各类房间。\n7. 哔哔小子 - 点击哔哔小子打开菜单。数字表示你拥有的避难所科技午餐盒数量。感叹号表示你有未收集的任务奖励。\n8. 避难所科技午餐盒 - 点击避难所科技午餐盒转到避难所科技午餐盒菜单。数字表示你可以开启的避难所科技午餐盒数量。\n9. 目标 - 点击缎带图标跳转到目标页面。感叹号代表你有未收集的目标奖励。\n10. 物品栏 - 点击盒子转到物品栏菜单。\n11. 避难所居民生存指南 - 点击书本打开避难所居民生存指南。\n12. 设置 - 点击齿轮转到设置菜单。
+Hint: The positive and negative effects of your resources are amplified by their distance from the required resource lines.=提示：资源产量受其与需求生产线距离的影响。
+Your FOOD, WATER and POWER resources are what keeps your Vault going.\n\n- FOOD: Dwellers need to eat to stay healthy. Run low on FOOD and your Dwellers will begin to lose Health.\n\n- WATER: Clean water is hard to come by in the Wasteland. Run low on WATER and your Dwellers will take Radiation damage.\n\n- POWER: Your Vault can't run without POWER. Run low on POWER and your rooms will begin shutting down.\n\nKeep your resources above the required resource lines to keep your Vault happy.\nResources continue to be consumed for a short time after closing the game.=你的食物，水和电力保证了你的避难所顺利运作。\n\n- 食物：居民需要进食来保持健康。食品生产速度过低会导致居民失去生命值。\n\n- 水：废土中很难得到干净的水。纯净水生产速度过低会导致居民受到辐射伤害。\n\n- 电力：你的避难所必须有充足的电力才能运作。低电力会导致房间无法工作。\n\n保持资源量高于最低标准刻度，这样才能使避难所整体愉悦度保持较高水平。\n退出游戏后一段时间内资源仍会继续消耗。
+Hint: You can turn Windowed mode on/off from the Settings menu.=提示：你可以在设置菜单中开启/关闭窗口模式。
+Hint: Drag a Dweller around to a few rooms to see where they'd work best.=提示：把居民在房间之间来回拖动，找到最适合他/她的工作间。
+Hint: Move a Dweller around to a few rooms to see where they'd work best.=提示：把居民在房间之间来回移动，找到最适合他/她的工作间。
+When you drag a Dweller into a room, a SPECIAL letter will appear above their head with a number.\n\nThe letter above their head corresponds to the SPECIAL stat associated with that room.\n\nIf the number is listed with a plus or minus sign, it means that dragging a Dweller into that room will replace a Dweller that is currently working in that room.\n\nThe Dweller's effect on that room will go up or down whatever the number is.\n\nWhen a Dweller is replaced this way, they switch jobs with the Dweller being moved.\n\nIf there is no plus or minus sign it means there's room for the Dweller to work in the room without replacing any Dwellers.=你把一位居民拖到一间房间后，会出现SPECIAL七个属性值之中的一个字母和一个数字。\n\n字母相当于与该房间相关的属性值。\n\n如果出现的数字有一个加号或者减号，那就意味着新加入的居民会替换掉一位原来已经在工作的居民。\n\n居民对房间产量的影响会上升或下降，与数字无关。\n\n当一位居民被替换，他们会接手替换居民原来的工作。\n\n如果没有出现加减号，说明该房间内有多余的岗位，不需要替换其他居民。
+You can assign a Dweller to a room by dragging them there, or by using 3D Touch to first press on the Dweller and then on the room.\n\nWhen assigning a Dweller to a room, a SPECIAL letter will appear above their head with a number.\n\nThe letter above their head corresponds to the SPECIAL stat associated with that room.\n\nIf the number is listed with a plus or minus sign, it means that assigning the Dweller to that room will replace a Dweller that is currently working there.\n\nThe Dweller's effect on that room will go up or down whatever the number is.\n\nWhen a Dweller is replaced this way, they switch jobs with the Dweller being moved.\n\nIf there is no plus or minus sign it means there's room for the Dweller to work in the room without replacing any Dwellers.=你可以拖动居民，将居民分配到一个房间内，也可以使用3D触控进行分配。\n\n在将居民分配至一个房间后，SPECIAL的字母会出现在上方，并且显示具体的数值。\n\n显示在上方的文字表示其在房间内的SPECIAL的状态。\n\n如果数字上显示了加号或者减号，那么就意味着将居民分配到那个房间会\n\n在此房间内居民的效果会因为数字的浮动而改变。\n\n当居民被替换后，他们会交换彼此手头的工作。\n\n如果没有显示正负号，那么就意味着房间内居民手头的工作无需替换任何居民。
+Hint: Outfits boost a Dweller's SPECIAL stats. Blue bars on a Dweller's SPECIAL shows how the Outfit benefits the Dweller.=提示：服装可以提升居民的属性值。蓝条表示服装增加的属性。
+When you tap on a Dweller, it brings up their information.\n\nFrom this page, you can equip your Dweller with Weapons,Outfits and a Pet, or heal them with Stimpaks and RadAway.\n\nTapping on their SPECIAL brings up more detailed information about their individual SPECIAL levels.=点击一位居民，可以查看他们的信息。\n\n在该页面，你可以为他们装备武器、服装和宠物，或者使用治疗针和消辐宁恢复体力。\n\n点击他们的SPECIAL属性值可以查看更多详细信息，比如他们较为突出的属性值。
+When you click on a Dweller, it brings up their information.\n\nFrom this page, you can equip your Dweller with Weapons, Outfits and a Pet, or heal them with Stimpaks and RadAway.\n\nClicking on their SPECIAL brings up more detailed information about their individual SPECIAL levels.=点击一位居民，可以查看他们的信息。\n\n在该页面，你可以为他们装备武器、服装和宠物，或者使用治疗针和消辐宁恢复体力。\n\n点击他们的SPECIAL属性值可以查看更多详细信息，比如他们较为突出的属性值。
+Hint: Use this menu to quickly see how many Dwellers you have, and how much more room you have in your Vault.=提示：使用该菜单查看你拥有多少居民以及你的避难所中剩余多少空间。
+Tapping on the gear in the top left corner of the screen brings up the Dweller List.\n\nFrom here you can sort your Dwellers and find the best Dweller for a job.\n\nTapping on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。\n\n在这儿你可以分类居民，为他们选择最合适的工作。\n\n点击居民能放大镜头并移至居民所在位置。
+Clicking on the gear in the top left corner of the screen brings up the Dweller List.\n\nFrom here you can sort your Dwellers and find the best Dweller for a job.\n\nClicking on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。\n\n在这儿你可以分类居民，为他们选择最合适的工作。\n\n点击居民能放大镜头并移至居民所在位置。
+Hint: Build a bunch of production rooms on one floor to maximize Mr. Handy's ability.=提示：在同一层建造多个资源生产室能够最大化巧手先生的能力。
+MR. HANDY=巧手先生
+Hint: Move Pets around to the Dwellers that most need their bonuses.=提示：让宠物跟着最需要加成的居民。
+Pets are found in Lunchboxes and Pet Carriers.\n\nPets provide a bonus effect to the Dweller they're assigned to and increase that Dweller’s damage in combat. They can even tag along and help in the Wasteland.\n\nOnly one to three Pets are allowed in a room at a time, depending on the room's size.\n\nPets come in COMMON, RARE and LEGENDARY versions. The rarer the Pet, the greater its bonus effect, but even identical Pets might grant bonuses with different strengths.\n\nAssign a Pet like you would equip a Weapon or an Outfit.=你可以在避难所科技午餐盒或者从宠物笼获得宠物。\n\n宠物会为跟随的主人提供加成，在战斗中提升主人的伤害。它们甚至会跟主人去废土探索并提供帮助。\n\n一间房内最多能容纳一到三只宠物，取决于房间的大小。\n\n宠物也分为普通，稀有和传说三个稀有度。宠物越稀有，提供的加成也越多，但是同一稀有度的宠物根据不同能力获得的加成也不同。\n\n像服装武器和服装那样，为居民配上宠物吧。
+Hint: Dweller attack rates are based on their Agility.=提示：居民的攻击速度与他们的敏捷值有关。
+Hint: Some items cannot be found, only crafted.=提示：某些物品不能被找到，只能通过制作获得。
+Hint: Dwellers in Barbershops must fight Incidents alone, so equip them well.=提示：理发店中的居民只能独自面对突发灾难，所以将他们武装起来。
+Dwellers can get a whole new look in the Barbershop, but it can only work on one Dweller at a time.  \n\nUpgrade your Barbershop to unlock more customization options.  \n\nThe Barbershop works faster on Dwellers with high Charisma.=你可以在理发店中给居民换脸，一次一人。\n\n升级理发店解锁更多的换脸项目。 \n\n魅力值高的居民换脸速度更快。
+Hint: If you’re lucky, you can get Nuka-Cola Quantum in containers on Quests.=提示：如果运气好的话，你可以在任务中获得量子型核子可乐。
+HD ZOOM OUT=高清画面缩小
+REVERT TO DEFAULTS=恢复默认
+INVALID USERNAME OR PASSWORD=无效的用户名或密码
+PASSWORD DOESN'T MATCH=密码不匹配
+PLEASE WAIT...=请稍等……
+USERNAME ALREADY IN USE=用户名已被使用
+EACH LUNCHBOX CONTAINS:=每个避难所科技午餐盒包含：
+You don't have enough CAPS=你没有足够的瓶盖
+ENTER VAULT {0}=进入{0}避难所
+You can't destroy this room because it is being used=你无法摧毁这间房，因为它正在使用中。
+You can't destroy this room because it has a Mr. Handy assigned to it.=你无法摧毁这间房，因为巧手先生正在里面工作。
+You can't destroy this room because its storage space is being used.=你无法摧毁这间房，因为它的储存空间被占用。
+{0}X DAMAGE={0}X伤害
+Do you really want to destroy this room?\nRefund: {0} CAPS=你真的要摧毁该房间吗？\n退还：{0}瓶盖
+Each room has a SPECIAL attribute it uses. Assign Dwellers with the best SPECIAL to make them happy and produce extra Resources.=每个房间都对应SPECIAL的其中一项属性。安排居民去属性值最匹配的房间，这样会使他们感到快乐，生产更多的资源。
+You can't Craft during an Incident.=你无法在发生灾难时制作物品。
+You can't Customize a Dweller during an Incident.=你无法在发生灾难时给居民换脸。
+You can't rush this room right now.=此时你无法对该房间使用加速。
+{0} cannot be assigned to a Quest right now.={0}当前无法分配任务。
+You can't Rush a room during an Incident.=你无法在发生灾难时给房间加速。
+You can't collect an item you've crafted while your Inventory is full.=物品栏满时你无法收集制作完成的物品。
+You can't Scrap an item while your Inventory is full.=物品栏已满，您无法进行分解操作。
+If you run low on any of these resources, the bars at the top of the screen will turn red.\n\nWhen low on Power, rooms will start shutting down.\nWhen low on Food, Dwellers start to lose health.\nWhen low on Water, Dwellers become irradiated.\n\nThe required resource line on the resource bar shows your Vault's current resource needs.=以下资源产量过低时，屏幕顶部的标尺会变红。\n\n电力低时，房间会逐个停电。\n食物紧缺时，居民会开始损失体力。\n水紧缺时，居民会开始受到辐射影响。\n\n最低标准资源刻度会显示你的避难所当前所需的资源量。
+Hint: The further above or below the required resource line your resources are, the greater the effect.=提示：距离最低标准资源刻度越远，受到的影响越大。
+Your Vault needs a steady supply of\nPower, Food and Water to run properly.=你的避难所需要稳定的\n电力，食物和水来保持正常运作。
+Dwellers in the room automatically fight the Disaster.\nDwellers lose health while fighting a Disaster.\nIf Dwellers fail, the Disaster spreads to nearby rooms.=房间内的居民会自动处理灾害。\n战斗时居民会损失体力。\n当居民失败时，灾害会向邻近的房间扩散。
+Hint: Drag Dwellers into and out of Rooms affected by a Disaster to keep them alive.=提示：将居民拖入或拖出发生灾害的房间以保证他们能存活下来。
+Hint: Rebalance your Power by assigning better Dwellers or rushing the Power rooms.=提示：重新分配居民或者开启加速模式来保持电力平衡。
+You can send Dwellers to explore the Wasteland. Drag a Dweller outside of the Vault and give them supplies to start their adventure.=你可以派居民探索废土。把居民拖出避难所，给他们装备上补给，他们就能开始冒险了。
+Hint: A Dweller will die if left in the Wasteland too long=提示：把居民留在废土中太久会导致死亡
+Hint: Make sure you have enough Living Space in your Vault or else women can deliver their baby=提示：确保你的避难所有足够的居住空间，这样女性才可以生小孩
+Hint: A room merge only happens if all rooms are of the same level=提示：房间等级相同的情况下才会互相融合。
+Your Vault Storage holds all the items your Dwellers get from the Wasteland or Lunchboxes.\nTap on the boxes icon in the Pip-Boy to see your stored items.=你的避难所储藏室会收集居民从废土或避难所科技午餐盒得到的物品。\n点击哔哔小子菜单中的盒子图标查看你收藏的物品。
+Your Vault Storage holds all the items your Dwellers get from the Wasteland or Lunchboxes.\nClick on the boxes icon in the Pip-Boy to see your stored items.=避难所的仓库会存放所有居民从废土或是避难所科技午餐盒获得的物品。\n点击哔哔小子菜单中的箱子按钮来查看你的库存。
+Hint: Storage rooms are excellent holding bay for Dwellers in case all other Rooms are full=提示：其他房间全满时，储藏室是绝佳的居民收容间。
+Hint: Equipping a Dweller with RadAway and Stimpak before sending him to the Wasteland will increase his chance of survival=提示：派居民去废土之前为他们装备上治疗针和消辐宁可以增加他们的存活几率
+You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by tapping on a Dweller.=你可以点击一位居民查看他的身份信息栏，在这里你可以为他/她装备物品和武器以及使用治疗针和消辐宁。
+You can equip items and weapons and use RadAway and Stimpaks from the Dweller information panel by clicking on a Dweller.=你可以点击居民信息面板，为居民装备物品或是武器，也可以为他们使用消福宁和治疗针。
+Pets can give your Dwellers a boost. \nRarer Pets provide better bonus effects. \nAssign Pets like you equip Weapons and Outfits.=宠物可以增加你的居民的属性。\n稀有度更高的宠物提供的奖励更多。\n配备宠物的方式与装备武器和服装的方式一致。
+Hint: Certain Pets make great companions for Dwellers exploring the Wasteland.=提示：某类特定的宠物专为探索废土的居民设计。
+Find Junk in Lunchboxes and in the Wasteland.\nFind Recipes on Raiders and in the Wasteland.\nTurn Junk into Weapons and Outfits in the Workshop rooms.\nUpgrade your Workshops to craft Rare and Legendary items.=在避难所科技午餐盒和废土都能找到垃圾。\n在掠夺者和废土中都能找到配方。\n在工作间，你可以把垃圾制作成武器和服装。\n升级工作间以制作稀有及传说级物品。
+Hint: Rumor has it that Legendary Junk can be found far into the Wasteland.=提示：传言说在废土深处可以找到传说等级的垃圾。
+- Press first on a Dweller and then on a room or the Wasteland to send the Dweller there.\n\n- Press on a Storage Room to open your Inventory.\n\n- On your device's home screen, press on the Fallout Shelter icon to enter a Vault directly.=- 选择一个居民，可以将其分配到一个房间或是废土中。\n\n- 选择仓库可以打开你的物品栏。\n\n- 在设备的主界面，选择避难所图标可以直接进入避难所。
+If you run out, you can always purchase more Nuka-Cola Quantum in the store.=如果你的量子型核子可乐用完了，你也可以在商店里购买进行补充。
+Introducing Themes!\n\n- Find Theme Recipe Fragments on Quests.\n\n- Build the new Theme Workshop to craft Themes.\n\n- Apply Themes to fully merged and upgraded Diners and Living Quarters.=布局说明！\n\n- 在任务中可以发现布局配方碎片。\n\n- 建造新的布局工坊就可以生产布局。\n\n- 布局可以应用于餐厅和生活区。
+Hint: You can use Nuka-Cola Quantum to get missing Theme Recipe Fragments.=提示：你可以使用量子型核子可乐获得一些缺失的布局配方碎片。
+Click on the {NUKA CAPS} to open your {LUNCHBOX MENU}.=点击{核子可乐瓶盖}来打开{避难所科技午餐盒菜单}。
+You have already given Pets to {0} Dwellers, the maximum number of Pets allowed by Vault-Tec.=你已经把宠物分配给了{0}居民，已达到避难所科技的最大限度。
+{0} Floor={0}层
+Only 1 Mr. Handy per floor=每一层只允许有一个巧手先生
+Have {0} Bald Dwellers in the Vault=在避难所中拥有{0}名光头居民
+Customize {0} Dwellers=给{0}个居民换脸
+Collect 200 CAPS in the Vault=在避难所收集200个瓶盖
+Collect {0} CAP on Quests=在任务中收集{0}个瓶盖
+Collect {0} CAPS on Quests=在任务中收集{0}个瓶盖
+Collect {0} CAPS in the Vault=在避难所收集{0}个瓶盖
+Collect {0} Food in under 1 minute=在1分钟内收集{0}食物
+Collect from {0} container on Quests=在任务中收集{0}个箱子
+Collect from {0} containers on Quests=在任务中收集{0}个箱子
+Collect {0} pieces of Junk=收集{0}件垃圾
+Collect {0} Outfits=收集{0}件服装
+Collect {0} Pets=获得{0}头宠物
+Collect {0} Power in under 1 minute=在1分钟内收集{0}电力
+Collect {0} Rare Outfit=获得{0}件稀有服装
+Collect {0} Rare Outfits=获得{0}件稀有服装
+Collect {0} Rare Weapon=获得{0}件稀有武器
+Collect {0} Rare Weapons=获得{0}件稀有武器
+Collect {0} Power/Food/Water in under 1 minute=在1分钟内获得{0}电力/食物/水
+Collect {0} Water in under 1 minute=在1分钟内获得{0}水
+Collect {0} Weapons=获得{0}件武器
+Complete {0} Quest discovered in the Wasteland=完成{0}次废土探索任务
+Complete {0} Quests discovered in the Wasteland=完成{0}次废土探索任务
+Have {0} Male and Female couples dance in the Living Quarters=让{0}对男女在起居室跳双人舞
+Craft {0} Outfits=制造{0}件服装
+Craft {0} Rare Outfits=制造{0}件稀有服装
+Craft {0} Rare Weapons=制造{0}件稀有武器
+Craft {0} Weapons=制造{0}件武器
+Collect {0} Daily Rewards=获得{0}次每日奖励
+Raise the happiness of {0} Dwellers to 100%=将{0}个居民的幸福感提升到100%
+Equip 1 Dweller with a {1}=给1个居民装备{1}
+Equip {0} Dwellers with a {1}=给{0}个居民装备{1}
+Successfully extinguish {0} Vault fires=成功扑灭{0}次避难所火灾
+Collect {0} Food=获得{0}份食物
+Deliver {0} baby Dwellers=生下{0}个居民宝宝
+Kill {0} creatures in the Wasteland=杀死{0}个废土生物
+Kill 1 {1} at the Vault door=在避难所门口杀死一个{1}
+Kill {0} {1} at the Vault door=在避难所门口杀死{0}个{1}
+Level up 1 Dweller=升级1个居民
+Level up {0} Dwellers=升级{0}个居民
+Merge {0} pairs of rooms together=合并{0}个房间
+Find the Mysterious Stranger {0} times=找到神秘陌生人{0}次
+Open {0} Lunchboxes=打开{0}个避难所科技午餐盒
+Equip {0} Dwellers with an Outfit=给{0}个居民穿戴服装
+Perform {0} critical hit=完成{0}次致命一击
+Perform {0} critical hits=完成{0}次致命一击
+Perform {0} perfect critical hit=完成{0}次完美一击
+Perform {0} perfect critical hits=完成{0}次完美一击
+Collect {0} Power=收集{0}电力
+Have {0} Female Dwellers pregnant=让{0}名女居民怀孕
+Raise any SPECIAL stat of {0} Dwellers.=提升{0}个居民的任意属性。
+Raise the {1} of 1 Dweller.=提升1个居民的{1}。
+Raise the {1} of {0} Dwellers.=提升{0}个居民的{1}。
+Kill 1 {1} without a weapon=不使用武器杀死1个{1}
+Kill {0} {1} without a weapon=不使用武器杀死{0}个{1}
+Assign {0} Dwellers in the right room=将{0}个居民分配到正确房间
+Successfully Rush 1 room=成功加速1个房间
+Successfully Rush {0} rooms=成功加速{0}个房间
+Perform {0} successful Rushes=完成{0}次加速
+Scrap {0} Weapons or Outfits=分解{0}件武器或服装
+Sell {0} Weapons or Outfits=出售{0}件武器或者服装
+Sell {0} pieces of Junk=出售{0}份垃圾
+Collect 1 Stimpak=收集1个治疗针
+Collect {0} Stimpaks=收集{0}个治疗针
+Use {0} RadAway=使用{0}个消辐宁
+Stop 1 {1} infestation before they spread=在扩散之前，阻止1场{1}肆虐
+Stop {0} {1} infestations before they spread=在扩散之前，阻止{0}场{1}肆虐
+Stop {0} incidents=阻止{0}场灾难
+Stop {0} Vault invasions=阻止{0}场避难所侵略
+Survive {0} hour in the Vault with no casualties=在避难所中存活{0}小时并且不受损伤
+Survive {0} hours in the Vault with no casualties=在避难所中存活{0}小时并且不受损伤
+Survive {0} Radscorpion attack with no casualties=在{0}场辐射蝎的攻击中不受损伤
+Survive {0} Radscorpion attacks with no casualties=在{0}场辐射蝎的攻击中不受损伤
+Upgrade {0} rooms=升级{0}个房间
+Use 1 RadAway=使用1次消辐宁
+Use 1 Stimpak=使用1支治疗针
+Use {0} Stimpaks=使用{0}支治疗针
+Have a {1} happy Vault for 1 hour.=保持{1}避难所中居民心情愉悦1小时。
+Have a {1} happy Vault for {0} hours.=保持{1}避难所中居民心情愉悦{0}小时。
+Send 1 Dweller to the Wasteland=送1个居民去废土
+Collect {0} Caps in the Wasteland=在废土里收集{0}个瓶盖
+Explore {0} location in the Wasteland=探索{0}片废土场景
+Explore {0} locations in the Wasteland=探索{0}片废土场景
+Level up {0} times in the Wasteland=在废土升级{0}次
+Make {0} friends in the Wasteland=在废土交{0}个朋友
+Send {0} Dwellers to the Wasteland=送{0}个居民去废土
+Collect {0} Water=收集{0}水
+Equip 1 Dweller with a Weapon=为1个居民装备武器
+Equip {0} Dwellers with a Weapon=为{0}个居民装备武器
+Win {0} battle on Quests=在任务中获得{0}场战斗的胜利
+Win {0} battles on Quests=在任务中获得{0}场战斗的胜利
+Heavy Battle Armor=重型战斗装甲
+Heavy Combat Armor=重型战斗装甲
+Heavy Metal Armor=重型金属装甲
+Heavy Raider Armor=重型掠夺者装甲
+Heavy Merc Gear=重型佣兵服
+Heavy Synth Armor=重型合成人装甲
+Heavy Vault Suit=重型避难所服装
+Heavy Leather Armor=重型皮革装甲
+NOT IN THIS VAULT=不在该避难所
+PETS HAVE COME TO FALLOUT SHELTER\nHere's a free Pet Carrier to get you started!\nOpen it to welcome a furry* friend to your Vault.=宠物来到了辐射避难所\n这里有一个免费的宠物笼！\n打开它然后迎接一个毛茸茸的*朋友吧。
+SELL, SELL, SELL!\nSell whole Storage stacks, or all of an Explorer's Common items, at once.=大甩卖啦！\n一次出售整个库存，还有探险家们的常用物品。
+WHAT'S NEW?=有什么消息吗？
+EACH PET CARRIER CONTAINS:=每个宠物笼里包含：
+*FUR NOT GUARANTEED.=*不保证皮毛状况。
+FREE PET CARRIER=免费宠物笼子
+Long hair, round face, maximum cuddle factor.=它的长毛圆脸是人们想抱它的最大原因。
+ASSEMBLE YOUR TEAM=集合你的队伍
+You can't call dibs on someone.=你不能随便追求一个人.
+You can't kill us! What would Santa think? That's permanent naughty list stuff.=你们不能杀了我们！圣诞老人会怎么想？也许你们这辈子都下不了淘气鬼名单了。
+Found this in the rubble. You want it, it's yours.=在废石堆里找到的，你要的话，就拿走吧。
+Long enough. Spikes and leather are totally in by the way.=够长了，尖刺都已经完完全全扎进皮里了。
+You can't have our secrets, Dwellers.=你绝对不能知道我们的秘密。
+{0} has discovered an Abandoned Cabin.={0}发现了遗弃的房子。
+{0} has discovered a Super Duper Mart.={0}发现了大无敌超市。
+{0} has discovered a Red Rocket Truck Stop.={0}发现了红火箭卡车停靠站。
+RETURN TO VAULT=返回避难所
+Got {0} points of radiation damage.=受到{0}点辐射伤害。
+REMIND ME LATER=稍后提醒我
+{0} Power={0}电力
+{0} Food={0}食物
+{0} CAPS={0}瓶盖
+{0} RadAway={0}消辐宁
+{0} Stimpak={0}治疗针
+{0} Water={0}水
+ASSIGN DWELLERS HERE TO TRAIN THEIR PERCEPTION=调派居民来此并训练他们的感知能力
+ASSIGN DWELLERS HERE TO CUSTOMIZE THEM=调派居民来此对他们进行自定义
+ASSIGN DWELLERS HERE TO TRAIN THEIR CHARISMA=调派居民来此并训练他们的魅力
+ASSIGN DWELLERS HERE TO TRAIN THEIR LUCK=调派居民来此提升他们的幸运
+ASSIGN DWELLERS HERE TO TRAIN THEIR INTELLIGENCE=调派居民来此训练他们的智力
+ASSIGN DWELLERS HERE TO CRAFT DECORATIONS=调派居民来此生产装饰品
+ASSIGN DWELLERS HERE TO CRAFT THEMES=在此处分配居民来生产布局
+ASSIGN DWELLERS HERE TO TRAIN THEIR AGILITY=调派居民来此训练他们的敏捷
+ASSIGN DWELLERS HERE TO TRAIN THEIR STRENGTH=调派居民来此训练力量
+ASSIGN DWELLERS HERE TO TAKE CARE OF THE DECEASED AND EARN CAPS=调派居民照看死者，并且赚取瓶盖
+ASSIGN DWELLERS HERE TO PRODUCE STIMPAKS=调派居民来此生产治疗针
+ASSIGN DWELLERS HERE TO CRAFT OUTFITS=调派居民制作服装
+Craft Rare Outfits=制作稀有服装
+Craft Legendary Outfits=制作传奇服装
+OVERSEER'S CONTROL STATION=监管者的控制台
+OVERSEER'S COMMAND CENTER=监管者的指挥中心
+ASSIGN DWELLERS HERE TO TRAIN THEIR ENDURANCE=调派居民来此训练耐力
+{0} DWELLERS REQUIRED=需要{0}居民
+ADVANCED VAULT DOOR=高级避难所大门
+FORTIFIED VAULT DOOR=强化避难所大门
+WATER TREATMENT STATION=水处理站
+WATER TREATMENT PLANT=水处理厂
+Craft Rare Weapons=制造稀有武器
+Craft Legendary Weapons=制造传奇武器
+SAVE FILE CONFLICT=保存文件冲突
+USE CLOUD SAVE=使用云存档
+USE LOCAL SAVE=使用本地存档
+NO JUNK RECOVERED=无垃圾回收
+SAVE YOUR PHOTO=保存图片
+Improved crafting speed and cost.=提升生产速度和消耗。
+and {0} more=剩余{0}份礼物
+You have: {0}=你拥有：{0}
+You can say that again.=你可以再说一遍。
+Since it's just lying here...=因为它就躺在这儿……
+Average Dweller Charisma=居民平均魅力
+SINCE {0}=自从{0}
+Pit Bull Terriers=比特犬
+St. Bernards=圣伯纳犬
+Time Played (All-Time)=游戏时间（总计）
+Total Caps Collected=总共收集的瓶盖
+RETURN TO WASTELAND=返回废土
+TAP TO CONTINUE=点击继续
+PRESS [A] TO CONTINUE=按[A]继续
+TERMS OF SERVICE=服务条款
+DWELLERS {0}/{1}=居民{0}/{1}
+ROOM FULLY UPGRADED=房间满级
+PRODUCTION BONUS :=生产奖励：
+UPGRADE TO LEVEL {0}=升级至{0}级
+Build a Medbay to produce Stimpaks.=建造一个药房来生产治疗针。
+Tap a Dweller's SPECIAL chart for more details.=点击居民的特性图标来显示更多详细信息。
+Click a Dweller's SPECIAL chart for more details.=点击一个居民的SPECIAL图标查看更多信息。
+You can rename a Dweller by tapping their name on the Dweller information pop-up.=你可以通过点击居民信息中的名字来进行更改。
+You can rename a Dweller by clicking their name on the Dweller information pop-up.=你可以通过点击居民的名字或是弹出的居民信息来更改他们的名字。
+You can skip 1 Objective each day by tapping the X on the Objective screen.=你每天都可以跳过一个任务，点击任务界面的X。
+You can skip 1 Objective each day by clicking the X on the Objective screen.=你每天都可以跳过一个任务，点击任务界面的X。
+You can get free Lunchboxes for completing some Objectives.=你可以通过完成某些特定目标来获得免费的避难所科技午餐盒。
+You can assign Dwellers to the Vault entrance to act as guards.=你可以派居民到避难所入口进行守卫。
+You can sort the Dweller list by tapping on the column names.=你可以通过点击列名分类来对居民的类别排序。
+You can sort the Dweller list by clicking on the column names.=你可以通过点击列名分类来对居民的类别排序。
+Tap on the resource bars at the top of the screen for more details on your resource storage.=点击界面顶端资源条可以获得更多的资源储存的详细信息。
+Click on the resource bars at the top of the screen for more details on your resource storage.=点击界面顶端资源条可以获得更多的资源储存的详细信息。
+You can only have one Mr. Handy assigned to a floor at a time. (Vault-Tec rules)=你一次只能在同一层分配一个巧手先生。(避难所规定)
+You can use Nuka-Cola Quantum to instantly finish crafting an item.=你可以使用量子型核子可乐加快生产的速度。
+You can use Nuka-Cola Quantum to speed up the Barbershop.=你可以使用量子型核子可乐加快理发的速度。
+Tap the screen to skip dialogue during Quests.=点击画面跳过任务对话。
+Click anywhere to skip dialogue during Quests.=点击任意处跳过任务对话。
+You can craft Minutemen and Brotherhood of Steel Themes in the Theme Workshop.=你可以在布局工坊制作钢铁兄弟会主题布局。
+You can craft Railroad and Institute Themes in the Theme Workshop.=你可以在布局工坊制作铁路协会主题布局。
+You can use Nuka-Cola Quantum to skip certain Quests.=你可以使用量子型核子可乐跳过一部分特定的任务。
+You can use Nuka-Cola Quantum to speed up a Dweller’s SPECIAL training.=你可以使用量子型核子可乐加速SPECIAL训练。
+You can use Nuka-Cola Quantum to get missing Theme Recipe Fragments.=你可以使用量子型核子可乐获得缺失的布局配方碎片。
+Have {0} Dwellers in your Vault=拥有{0}居民在避难所
+LOW POWER SUPPLY=能源供应过低
+LOW FOOD SUPPLY=食物供应过低
+LOW OVERALL VAULT HAPPINESS=避难所愉悦度过低
+CONGRATULATIONS! OBJECTIVE COMPLETED=恭喜！任务完成
+LOW STORAGE SPACE=储存空间过低
+LOW WATER SUPPLY=用水供应过低
+Found {0}.=发现{0}。
+Got {0} XP=获得{0}经验
+I rescued a {0} from a Raider trap and now it's following me.=我从掠夺者手中救下了{0}，现在就在我身边。
+I've found a locker containing a {0}.=我发现了一个藏着{0}的柜子。
+REVIVE ALL AND RETRY=复活全部并重试
+Armor Piercing .32 Pistol=穿甲.32手枪
+Enhanced .32 Pistol=改良.32手枪
+Hardened .32 Pistol=硬化.32手枪
+Rusty .32 Pistol=生锈的.32手枪
+Amplified Alien Blaster=增幅外星冲击枪
+Focused Alien Blaster=聚焦外星冲击枪
+Rusty Alien Blaster=生锈的外星冲击枪
+Tuned Alien Blaster=微调外星冲击枪
+Armor Piercing Assault Rifle=穿甲突击步枪
+Enhanced Assault Rifle=改良突击步枪
+Hardened Assault Rifle=硬化突击步枪
+Rusty Assault Rifle=生锈的突击步枪
+Armor Piercing BB Gun=穿甲BB枪
+Enhanced BB Gun=改良BB枪
+Hardened BB Gun=硬化BB枪
+Rusty BB Gun=生锈的BB枪
+Double-Barrel Combat Shotgun=双管战斗霰弹枪
+Enhanced Combat Shotgun=改良战斗霰弹枪
+Hardened Combat Shotgun=硬化战斗霰弹枪
+Rusty Combat Shotgun=生锈的战斗霰弹枪
+Enhanced Fat Man=改良胖子
+Guided Fat Man=自动制导胖子
+Hardened Fat Man=硬化胖子
+Rusty Fat Man=生锈的胖子
+Amplified Gatling Laser=增幅激光加特林
+Focused Gatling Laser=聚焦激光加特林
+Rusty Gatling Laser=生锈的激光加特林
+Tuned Gatling Laser=微调激光加特林
+Enhanced Gauss Rifle=改良高斯步枪
+Hardened Gauss Rifle=硬化高斯步枪
+Rusty Gauss Rifle=生锈的高斯步枪
+Armor Piercing Hunting Rifle=穿甲猎枪
+Enhanced Hunting Rifle=改良猎枪
+Hardened Hunting Rifle=硬化猎枪
+Rusty Hunting Rifle=生锈的猎枪
+Improved Institute Pistol=优化学院手枪
+Incendiary Institute Pistol=燃烧学院手枪
+Scattered Institute Pistol=散射学院手枪
+Scoped Institute Pistol=带镜学院手枪
+Long Institute Rifle=长型学院步枪
+Targeting Institute Rifle=瞄准型学院步枪
+Electrified Junk Jet=充能垃圾发射器
+Flaming Junk Jet=火焰垃圾发射器
+Recoil Compensated Junk Jet=后座补正垃圾发射器
+Tactical Junk Jet=战术垃圾发射器
+Amplified Laser Pistol=增幅激光手枪
+Focused Laser Pistol=聚焦激光手枪
+Rusty Laser Pistol=生锈的激光手枪
+Tuned Laser Pistol=微调激光手枪
+Amplified Laser Rifle=增幅激光步枪
+Focused Laser Rifle=聚焦激光步枪
+Rusty Laser Rifle=生锈的激光步枪
+Tuned Laser Rifle=微调激光步枪
+Armor Piercing Lever-Action Rifle=穿甲杠杆枪
+Enhanced Lever-Action Rifle=改良杠杆枪
+Hardened Lever-Action Rifle=硬化杠杆枪
+Rusty Lever-Action Rifle=生锈的杠杆枪
+Scoped .44=带镜.44格南
+Armor Piercing Scoped .44=穿甲带镜.44格南
+Enhanced Scoped .44=改良带镜.44格南
+Hardened Scoped .44=硬化带镜.44格南
+Rusty Scoped .44=生锈的带镜.44格南
+Armor Piercing Minigun=穿甲多管机枪
+Enhanced Missile Launcher=改良导弹发射器
+Guided Missile Launcher=自动制导导弹发射器
+Hardened Missile Launcher=硬化导弹发射器
+Rusty Missile Launcher=生锈的导弹发射器
+Auto Pipe Pistol=自动铁管手枪
+Heavy Pipe Pistol=重型铁管手枪
+Scoped Pipe Pistol=带镜改良铁管手枪
+Bayoneted Pipe Rifle=刺刀铁管步枪
+Calibrated Pipe Rifle=校准铁管步枪
+Long Pipe Rifle=长铁管步枪
+Armor Piercing 10mm Pistol=穿甲10mm手枪
+Enhanced 10mm Pistol=改良10mm手枪
+Hardened 10mm Pistol=硬化10mm手枪
+Rusty 10mm Pistol=生锈的10mm手枪
+Amplified Plasma Pistol=增幅电浆手枪
+Focused Plasma Pistol=聚焦电浆手枪
+Rusty Plasma Pistol=生锈的电浆手枪
+Tuned Plasma Pistol=微调电浆手枪
+Amplified Plasma Rifle=增幅电浆步枪
+Focused Plasma Rifle=聚焦电浆步枪
+Mean Green Monster=凶暴的绿怪
+Rusty Plasma Rifle=生锈的电浆步枪
+Tuned Plasma Rifle=微调电浆步枪
+Agitated Plasma Thrower=不稳定电浆抛射器
+Boosted Plasma Thrower=增压电浆抛射器
+Overcharged Plasma Thrower=充能电浆抛射器
+Tactical Plasma Thrower=战术电浆抛射器
+Accelerated Railway Rifle=加速射钉步枪
+Enhanced Railway Rifle=改良射钉步枪
+Hardened Railway Rifle=硬化射钉步枪
+Rusty Railway Rifle=生锈射钉步枪
+Enhanced Sawed-Off Shotgun=改良锯断的霰弹枪
+Hardened Sawed-Off Shotgun=硬化锯断的霰弹枪
+Rusty Sawed-Off Shotgun=生锈的锯断的霰弹枪
+Armor Piercing Sniper Rifle=穿甲狙击步枪
+Enhanced Sniper Rifle=改良狙击步枪
+Hardened Sniper Rifle=硬化狙击步枪
+Rusty Sniper Rifle=生锈的狙击步枪
+Craft 10 Weapons=制作10件武器
+Craft 10 Outfits=制作10件服装
+Crafting Time & Cost=制作耗时和成本
+Rad Healing Speed=辐射损伤回复速度
+-{0}% Training Time=-{0}% 训练时间
++{0}% XP=+{0}% 经验
+NOT ENOUGH CAPS=瓶盖不足
+Increases Luck training speed=加快【幸运】的提升速度
+Increases Intelligence training speed=加快【智力】训练速度
+{0}/{1} RECIPE FRAGMENTS FOUND={0}/{1}发现配方碎片
+CRAFTING IN PROGRESS=正在生产
+Craft {0}?=是否制作{0}？
+Increases Agility training speed=加快【敏捷】训练速度
+ROOM ON FIRE=房间着火了
+FERAL GHOUL ATTACK=狂尸鬼侵袭
+MOLE RAT ATTACK=鼹鼠侵袭
+Found a {0}.=找到了一个{0}。
+Detected {0}=检测到{0}
+Found {0}=找到{0}
+Located {0}=定位了{0}
+Discovered {0}=发现{0}
+Explorer's journal. New entry. Fancy Lads snack cakes provide excellent sustenance.=探索者日志。最新记录：俏男孩夹心蛋糕很好地维持了生计。
+Explorer's journal. New entry. Whoever chose the name “Deathclaw” wasn't kidding.=探索者日志。最新记录：无论是谁，取名叫“死爪”，都不是闹着玩儿的。
+Explorer's journal. New entry. Societal infrastructure is completely dismantled.=探索者日志。最新记录：基础公共设施全部被拆。
+Explorer's journal. New entry. In the Wasteland, trust can get you killed.=探索者日志。最新记录：在废土，随便信任别人只会让你身陷死亡威胁。
+Explorer's journal. New entry. Old religions mostly gone, replaced by cults.=探索者日志。最新记录：旧的正派宗教大多都消失了，取而代之的都是些邪教。
+Explorer's journal. New entry. Everyone is armed. Guns are commonplace.=探索者日志。最新记录：每个人都全副武装，枪支早就司空见惯了。
+Explorer's journal. New entry. Fashion is dead. You wear what keeps you alive.=探索者日志。最新记录：时尚已经灭绝了，什么能让你活命你就穿什么。
+Explorer's journal. New entry. TVs don't work, but radio broadcasts are common.=探索者日志。最新记录：电视已经没用了，无线电广播倒是变得常见了。
+Explorer's journal. New entry. Old buildings have supplies, but they're often guarded.=探索者日志。最新记录：旧建筑里面有补给，但是通常被保护起来了。
+Explorer's journal. New entry. Everywhere I look, death. Suffering. And... hope.=探索者日志。最新记录：放眼望去，看到的都是死亡、痛苦，以及……希望。
+Explorer's journal. New entry. I've seen children, families. Life goes on.=探索者日志。最新记录：我见到了许多孩子，家庭。生活还在继续。
+Explorer's journal. New entry. Marriage is not uncommon. You can't kill love.=探索者日志。最新记录：婚姻仍然很常见，你无法扼杀爱情。
+Explorer's journal. New entry. Radscorpion. Stinger plus claws equals death.=探索者日志。最新记录：辐射蝎。毒刺加巨螯能让你一命呜呼。
+Explorer's journal. New entry. Lock picking is an essential skill for gaining access.=探索者日志。最新记录：撬锁是通行的必备技能。
+Explorer's journal. New entry. Many functional computer terminals. Hacking a necessity.=探索者日志。最新记录：对于许多仍在运作的终端机，入侵系统成了必然。
+Explorer's journal. New entry. Medical training is essential for survival.=探索者日志。最新记录：想要生存下来，医疗训练是必需的。
+Explorer's journal. New entry. The Brotherhood of Steel favors technology. Worships it.=探索者日志。最新记录：钢铁兄弟会热爱科技，甚至是崇拜。
+Explorer's journal. New entry. Training with a variety of guns is a must.=探索者日志。最新记录：练习使用各类枪支也成了必需。
+Explorer's journal. New entry. Music, painting, dance. Art and culture survive.=探索者日志。最新记录：音乐，绘画，舞蹈。艺术和文化存活了下来。
+Guess I'll head east for a bit.=也许我该向东走一段路。
+Guess I'll head north for a bit.=也许我该向北走一段路。
+Guess I'll head west for a bit.=也许我该向西走一段路。
+Guess I'll head south for a bit.=也许我该向南走一段路。
+Explorer's journal. New entry. Most dogs no longer man's best friend.=探索者日志。最新记录：大部分狗都不再是人类最好的朋友了。
+Explorer's journal. New entry. Squirrel tastes much better than you'd think.=探索者日志。最新记录：松鼠比你想象中好吃多了。
+Explorer's journal. New entry. Thought I saw a UFO, but that would be impossible...=探索者日志。最新记录：我认为我看到了一架UFO，但应该不太可能……
+Explorer's journal. New entry. Sea creatures now extremely dangerous. Still delicious.=探索者日志。最新记录：海洋生物现在极度危险，虽然还是很好吃。
+Explorer's journal. New entry. Sunsets, once romantic, are now terrifying. Fear the night.=探索者日志。最新记录：以前日落是很浪漫的，而如今却让人恐惧。惧怕黑夜。
+Explorer's journal. New entry. So very hungry. Wondering if human tastes like chicken.=探索者日志。最新记录：真的很饿，很好奇人肉尝起来像不像鸡肉呢。
+Explorer's journal. New entry. Money replaced by soda bottle Caps. Hands always sticky.=探索者日志。最新记录：钱已经被苏打水瓶盖取代了，手总是弄得黏黏的。
+Explorer's journal. New entry. The comics were wrong. Radiation does not grant super powers.=探索者日志。最新记录：漫画都错了，辐射并不会赋予一个人超能力。
+Explorer's journal. New entry. Love does not conquer all. Nukes come close.=探索者日志。最新记录：爱并不能征服一切，核武器倒是可以。
+Explorer's journal. New entry. Bigger not always better. Case in point – roaches and scorpions.=探索者日志。最新记录：大的并不总是好的，比如——蟑螂和蝎子。
+Explorer's journal. New entry. Junk is everywhere, but has multiple uses.=探索者日志。最新记录：到处都有垃圾，但是它们用途广泛。
+Explorer's journal. New entry. Power Armor still exists, but is rare. Affords maximum protection.=探索者日志。最新记录：动力装甲仍然存在，但很稀有，它能提供最大的保护。
+Explorer's journal. New entry. Found a fat man willing to share food. May live another day.=探索者日志。最新记录：找到一个愿意分享食物的胖子，能让你多活一天。
+Explorer's journal. New entry. Fruits and vegetables still grow, but are mutated, like so much else.=探索者日志。最新记录：水果和蔬菜还能长，但是都发生了突变，就像许多其他事物。
+Explorer's journal. New entry. Homemade weapons abound. Humans still excel at killing each other.=探索者日志。最新记录：现在到处都是自制武器，人类仍然精于自相残杀。
+Explorer's journal. New entry. Radio still widely used, remains an effective means of communication.=探索者日志。最新记录：收音机被广泛使用，仍旧是一项十分有效的交流工具。
+Explorer's journal. New entry. We were wrong – cats not, in fact, extinct. But still lazy.=探索者日志。最新记录：我们错了，猫事实上并没有灭绝，但还是那么懒。
+SAVE & EXIT=保存并退出
+CAM SCROLL SPEED=画面滚动速度
+SELECT NEW HOTKEY=选择新快捷键
+CAM ZOOM SPEED=画面缩放速度
+There are always three Objectives you can work on.\n\nYou can abandon one Objective each day for free and receive a new Objective in its place.\n\nAdditional Objectives can be skipped per day with Nuka-Cola Quantum.\n\nHarder Objectives give better rewards.=总是会有三个目标供你完成。\n\n你每天可以放弃一个目标并接受一个新目标。\n\n可以消耗量子型核子可乐额外跳过目标。\n\n难度较大的目标同样地会有更好的奖励。
+Hint: Luck stat affects the probability of earning CAPS when collecting Resources.=提示：幸运会影响采集资源时捡到瓶盖的概率。
+Every Dweller has stats called SPECIAL\n\nS (trength)\nP (erception)\nE (ndurance)\nC (harisma)\nI (ntelligence)\nA (gility)\nL (uck) \n\nEvery room in the Vault is linked to one of the SPECIAL stats. The better the Dweller's stat is for that room, the more they influence the room's effects.=每个居民都有属性值，称为SPECIAL\n\nS（力量）\nP（感知）\nE（耐力）\nC（魅力）\nI（智力）\nA（敏捷）\nL（幸运）\n\n避难所中的每个房间都与属性值中的其中一种相关联。居民与房间相对应的属性值越高，他们在该房间的工作效率越高。
+Hint: Find RARE and LEGENDARY Dwellers in Lunchboxes.=提示：避难所科技午餐盒中含有稀有和传说级别的居民。
+LEVEL\n\nDwellers level up over time while working in Production Rooms, exploring the Wasteland, and killing enemies on Quests.\n\nLeveling up increases the health of a Dweller. The higher their level is, the higher their health, but Dwellers with high Endurance gain more health when they level up. \nRooms unlock based on how many Dwellers you have in your Vault.\n\nRARITY\n\nThere are three types of rarity of Dwellers, COMMON, RARE, and LEGENDARY.\n\n- COMMON: Low level and SPECIAL stats\n\n- RARE: Average level and SPECIAL stats\n\n- LEGENDARY: High level and SPECIAL stats=等级 \n居民在生产间工作、去废土探索或是在任务中杀死敌人都会升级。\n\n升级会增加居民体力上限。等级越高，生命值越高，耐力越高的居民在升级时会获得更多的生命值。\n新的房间种类会根据你的避难所中的居民数量解锁。\n\n居民稀有度\n\n居民稀有度分为三级，普通，稀有和传说。\n\n- 普通：等级低，SPECIAL属性低\n\n- 稀有：等级中等，SPECIAL属性中等\n\n- 传说：等级高，SPECIAL属性高
+DWELLERS LEVEL & RARITY=居民等级和稀有度
+Hint: The higher the Dweller's level, the more CAPS their revival will cost.=提示：居民等级越高，复活他们所花费的瓶盖越多。
+Hint: Pay close attention to what a Dweller is telling you to know more about what makes them happy.=提示：特别留意居民跟你说的话，了解如何使他们高兴。
+Hint: Playing for 7 days gives you a Lunchbox as a reward.=提示：游戏7天会奖励一个避难所科技午餐盒。
+DAILY REPORT & VAULT RATING=每日报告和避难所分数
+Hint: Babies will wait to be born if there is no space in your Vault.=提示：如果你的避难所空间不足，小宝宝不会出生。
+When you need new Dwellers you can always encourage your Dwellers to procreate.\n\n- Put a man and a woman in the Living Quarters and see if they like each other.\n\n- If all goes well, the woman will become pregnant.\n\n- After some time, the pregnant Dweller will be ready to give birth.\n\n- Tap the icon above her head to welcome a new child in your Vault.\n\n- Once the child has grown up, you will have a new Dweller.=需要新的居民时，你可以鼓励自己的居民生育。\n\n- 将一名男性和一名女性拖至宿舍，看看他们是否互相喜欢。\n\n- 如果一切顺利，女性就会怀孕。\n\n- 一段时间后，怀孕的居民就会生育。\n\n- 轻按她头上的图标来迎接避难所里的新生命。\n\n- 当小孩长大后，你就有了一名新的居民。
+When you need new Dwellers you can always encourage your Dwellers to procreate.\n\n- Put a man and a woman in the Living Quarters and see if they like each other.\n\n- If all goes well, the woman will become pregnant.\n\n- After some time, the pregnant Dweller will be ready to give birth.\n\n- Click on the icon above her head to welcome a new child in your Vault.\n\n- Once the child has grown up, you will have a new Dweller.=需要新的居民时，你可以鼓励自己的居民生育。\n\n- 将一名男性和一名女性拖至宿舍，看看他们是否互相喜欢。\n\n- 如果一切顺利，女性就会怀孕。\n\n- 一段时间后，怀孕的居民就会生育。\n\n- 轻按她头上的图标来迎接避难所里的新生命。\n\n- 当小孩长大后，你就有了一名新的居民。
+MAKING BABIES & LIVING QUARTERS=生宝宝及起居室
+Hint: Be careful not to build rooms before you need them, or expand too fast.=提示：避免建造多余的房间或者是扩展得太快。
+Build Living Quarters to welcome new Dwellers to your Vault.\n\n- Expand your Vault by building rooms so you can produce more resources.\n\n- Pay attention to the Vault Resource Gauges, they are a good indicator to follow when choosing the next room to build.\n\n- Build an Elevator when you want to expand downwards.\n\n- You can not delete a room if it is connected on both sides.\n\n- Building multiple types of the same room will increase its price.=建造新的起居室以收容新的居民。\n\n- 建造更多的房间来扩展你的避难所，同时你也能够生产更多的资源。\n\n- 请注意避难所的资源度量表，它们会提示你下一步应该建造哪一类房间。\n\n- 想要向深处扩展时，建造一部电梯。\n\n- 如果一间房左右都连接着房间，你便无法将它拆除。\n\n- 同一类型的房间多次建造会提升它的建造成本。
+BUILD YOUR VAULT & ELEVATOR=建造你的避难所以及电梯
+Hint: A room merge only happens if all rooms are of the same level.=提示：同等级同类型的房间才能够互相融合。
+Upgrade your Rooms to increase their performance.\n\n- Most Rooms can be upgraded twice. Upgraded resource rooms produce more resources.\n\n- Up to 3 Rooms of the same type can be merged, by building them next to each other\n\n- Merged Rooms let you assign more Dwellers to the room, while also becoming more efficient.\n\n- Some rooms, like Workshops, begin as larger rooms and cannot be merged.\n\n- Themes can only be applied to fully merged and upgraded Diners and Living Quarters.=升级房间以增加产量。\n\n- 大多数房间能升级两次。升级资源室以获得更多资源。\n\n- 相同类型的房间左右紧挨着建造便可以融合，最多3间。\n\n- 融合后的房间可以分配工作给更多的居民，同时也更高产。\n\n- 大型房间，比如工作间，无法融合。\n\n- 布局只能够应用于合并升级过后的用餐区或是生活区。
+ROOM LEVEL & MERGING=房间等级以及房间融合
+Hint: If you run out of storage space, upgrade your storage, build more storage, equip your Dwellers or sell items.=提示：如果你的储存空间不足，请升级或建造更多仓库，或者把物品服装至居民或卖掉。
+Storage Rooms increase your Weapons, Outfit, Junk and Pets inventory space.\n\n- Upgrade your Storage Rooms to increase inventory capacity.\n\n- Sell unwanted items by visiting the inventory from the Pip-Boy menu.\n\n- Scrap Weapons and Outfits to turn them into Junk from their Recipes.\n\n- Use the Storage Room as a temporary holding bay for Dwellers in case all other Rooms are full.\n\n- Building MedBays and Science Labs will increase the number of Stimpaks and RadAway you can store.=仓库可以增加你的武器，服装，垃圾和宠物的储存空间。\n\n- 升级仓库以增加储物容量。\n\n- 在哔哔小子菜单的物品栏里可以卖掉不想要的物品。\n\n- 当其他房间都满了，可以将仓库用作暂时安置居民的房间。\n\n- 建造制药间和科学实验室能够增加治疗针和消辐宁的储存量。
+Storage Rooms increase your Weapons, Outfit, Junk and Pets inventory space.\n\n- Upgrade your Storage Rooms to increase inventory capacity.\n\n- Sell unwanted items by visiting the inventory from the Pip-Boy menu. You can also open the inventory with 3D Touch by pressing on a Storage Room.\n\n- Scrap Weapons and Outfits to turn them into Junk from their Recipes.\n\n- Use the Storage Room as a temporary holding bay for Dwellers in case all other Rooms are full.\n\n- Building MedBays and Science Labs will increase the number of Stimpaks and RadAway you can store.=仓库可以提升武器、服装、垃圾和宠物的物品栏空间。\n\n- 升级你的仓库可以提升物品栏容量。\n\n- 请查看哔哔小子菜单中的物品栏，筛选出不需要的物品进行出售。你还能通过3D触控点击仓库来打开物品栏。\n\n- 分解武器和服装可以将它们变为配方中需要的垃圾。\n\n- 请将仓库作为临时的暂住点让居民居住，这样可以暂时解决房间满员的问题。\n\n- 建造制药间和科学实验室可以提升治疗针和消辐宁的存储量。
+Hint: Multiple Dwellers training together in the same room decrease the training time for all Dwellers in the room.=提示：不同类型的居民同时在一间房间内训练能够缩短该房内全部居民的训练时间。
+Putting Dwellers in a Training Room will increase their SPECIAL stats.\n\nThere is a Training Room for each one of the SPECIAL stats.\n\nStrength: Weight Room\nPerception: Armory\nEndurance: Fitness Room\nCharisma: Lounge\nIntelligence: Classroom\nAgility: Athletics Room \nLuck: Game Room\n\nYou can raise each stat up to 10.\n\nThe higher the SPECIAL stat of a Dweller is, the longer it takes them to train to the next level, but you can use Nuka-Cola Quantum to speed up the training time.=把居民拖到训练室能增加他们的SPECIAL属性。\n\n每个SPECIAL属性都有对应的训练室。\n\n力量：负重室\n感知：军械室\n耐力：健身房\n魅力：休闲室\n智力：教室\n敏捷：田径室\n幸运：赌场\n\n每条属性最高10点。\n\n居民的SPECIAL属性越高，升至下一级所需的时间越多，不过你可以使用量子型核子可乐来加快训练时间。
++{{#}}% Wasteland Caps=废土寻获的瓶盖+{$1}%
++{{#}}% Wasteland Junk=废土寻获的垃圾+{$1}%
++{{#}}% Wasteland Weapons & Outfits=废土寻获的武器和服装+{$1}%
+Complete {{#}} Quest from the Overseer’s Office=完成{$1}次监管者办公室的任务
+Complete {{#}} Quests from the Overseer’s Office=完成{$1}次监管者办公室的任务
+Find the Overseer of Vault {#}.=寻找$1号避难所的监管者。
+Go to Vault {#} and find the Overseer.=前往$1号避难所找到监管者。
+Have a Dweller exploring the Wasteland for {#} day=让一个居民探索废土$1天
+Have a Dweller exploring the Wasteland for {#} hour=让一个居民探索废土$1小时
+Have a Dweller exploring the Wasteland for {{#}} days=让一个居民探索废土{$1}天
+Have a Dweller exploring the Wasteland for {{#}} hours=让一个居民探索废土{$1}小时
+It's New Year's day... and the Vault threw one heck of a party last night. But the Overseer's son, Jack, is missing and we need to find him! We know he was with us before the clock struck {#}, but everything afterwards is a blur. And we're all wearing Radiation Suits. We must have been at the Corvega Auto Plant at some point...=今天是元旦节……昨晚避难所开了一个难得的晚会。但是监管者的儿子，杰克，却失踪了！我们必须找到他！在$1点之前，他一直都与我们待在一起，但是之后就没有印象了。我们都穿上了防辐射服，我们必须去汽车工场里调查一下……
+Paula Plumbkin escaped from the Feral Ghouls and headed to Vault {#}. Hopefully we can catch up with her there.=保拉·普朗布金从狂尸鬼手中逃脱了，并且向着$1号避难所行进。希望我们能在那里追上她。
+Send {#} Dweller to the Wasteland with a Pet=送一个带宠物的居民去废土
+Send {{#}} Dwellers to the Wasteland with a Pet=送{$1}个带宠物的居民去废土
+So! You have discovered my lair! Vault {#}! I am...=哦！你发现了我的巢穴！$1号避难所！我……
+Survive {{#}} Deathclaw attack with no casualties=保证{$1}在死爪的攻击中不受损伤
+Survive {{#}} Deathclaw attack without using stimpacks=在{$1}场死爪的攻击中不使用治疗针存活下来
+Survive {{#}} Deathclaw attacks with no casualties=在{$1}场死爪的攻击中不受损伤
+Survive {{#}} Deathclaw attacks without using stimpacks=在{$1}场死爪的攻击中不使用治疗针存活下来
+Survive {{#}} Feral Ghoul attack with no casualties=在{$1}场狂尸鬼的进攻中不受损伤
+Survive {{#}} Feral Ghoul attacks with no casualties=在{$1}场狂尸鬼的进攻中不受损伤
+Survive {{#}} Mole rat attack with no casualties=在{$1}场鼹鼠的攻击中不受损伤
+Survive {{#}} Mole rat attack without using stimpacks=不使用治疗针从{$1}场鼹鼠攻击中幸存下来
+Survive {{#}} Mole rat attacks with no casualties=在{$1}场鼹鼠的攻击中不受损伤
+Survive {{#}} Mole rat attacks without using stimpacks=不使用治疗针从{$1}场鼹鼠攻击中幸存下来
+Survive {{#}} hour in the Wasteland without using radaway=不使用消辐宁的情况下，在废土存活{$1}小时
+Survive {{#}} hours in the Wasteland without using radaway=不使用消辐宁的情况下，在废土存活{$1}小时
+Talk to the Overseer at Vault {#} about the New Bugle.=与$1号避难所的监管者谈谈关于新号角的事情。
+Talk to the Overseer of Vault {#} about the New Bugle.=与$1号避难所的监管者谈谈关于“新号角”的事情。
+Talk to the Overseer of Vault {#}.=与$1号避难所的监管者交谈。
+Talk to the Overseer of Vault {#}.=与$1号避难所监管者交谈。
+Time for round {#} of... Lose Your Head!=第三轮……“掉脑袋”！
+Vault {#}'s Overseer Alvarez told us the same thing he told Paula Plumbkin - to search the Vault-Tec offices for info on Vaultopolis!=$1号避难所的监管者阿尔瓦雷斯把他告诉保拉·普朗布金的事情都告诉了我们 - 去避难所科技办公室搜查一下避难所之城的信息！
+You found the holotape records of Maxson's Roughnecks, a Brotherhood of Steel team searching the Wasteland for technology. Track them down to discover their fate - starting at Vault {#}!=你发现了马克森蛮子的全息录影带，一个钢铁兄弟会小队正在废土寻找避难所科技。追踪下去，然后看看最后发生了什么 - 一切都是从$1号避难所开始的！
+You've found the journal of Paula Plumbkin, an Overseer who went searching for the mythical utopia, Vaultopolis. Follow in her footsteps! First stop - Vault {#}.=你找到了保拉·普朗布金的日记，一个前去调查神秘的乌托邦（避难所）的监管者，请跟着她的阻击！第一站 - $1号避难所。
+^Congratulations! Vault-Tec has selected you to be the Overseer of Vault {#}\.$=祝贺避难所科技选中你，成为$1号避难所的监管者。
+^\[{#}F{#}C\]Now that you know the basic rules of the Overseer role, keep expanding your Vault. Just remember to keep your Dwellers alive and happy. Good luck!\.$=[$1F$1C]熟悉监督官职责后，继续扩建避难所，保障居民生存与心情，祝你好运。
+x{{#}} Wasteland Return Speed=x{$1}废土返回速度
+{{#}}: Your Quest team has reached its destination.={$1}：你的任务小队已经到达目的地。
