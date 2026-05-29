@@ -1,13 +1,13 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 06:05:02
-# ==============================================
+#==============================================
 # 居民管理
 # 本文件用于保存居民管理译文
-# ==============================================
+#==============================================
 Children and Pregnant Women will hide whenever an incident occurs.=儿童和孕妇在灾害发生时都会躲藏起来。
 Tapping on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。
 Clicking on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。

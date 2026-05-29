@@ -1,13 +1,13 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 05:45:03
-# ==============================================
+#==============================================
 
 # 这些规则包含颜色代码前缀，如 [394039FF]
-# 格式：原文 = 译文
+# 格式：原文=译文
 # 来源: _Substitutions.txt
 [394039FF]Build Medbays and Science Labs to increase your limit of Stimpaks and RadAway.[-]=[394039FF]建医疗室与实验室，提升药品存储上限。[-]
 [394039FF]Deathclaws are tough, don't be a hero, bring your friends.[-]=[394039FF]死爪战力强悍，切勿单打独斗。[-]
@@ -25,11 +25,11 @@
 [394039FF]Critical Hits can turn the tide of battle... Use them wisely.[-]=[394039F]暴击可扭转战局，请合理使用。[-]
 [394039FF]You can craft Railroad and Institute Themes in the Theme Workshop.[-]=[394039FF]主题工坊可制作铁路、学院风格装饰。[-]
 [394039FF]Some Quests require Secret Clues to unlock. Loot every container you can![-]=[394039F]部分任务需线索解锁，记得搜刮容器。[-]
-[394039FF]Mr. Handy will stay on his assigned floor collecting resources until moved to a different floor.[-]=[394039F]巧手先生常驻楼层，持续收集资源。[-]
+[394039FF]Mr. Handy will stay on his assigned floor collecting resources until moved to a different floor.[-]=[394039F]巧手先生常驻楼层，持续搜刮资源。[-]
 [394039FF]Themes can only be applied to fully merged and upgraded Diners and Living Quarters.[-]=[394039F]主题仅适用于满级合并餐厅与居住区。[-]
 [394039FF]Click a Dweller's SPECIAL chart for more details.[-]=[394039FF]点击属性面板，查看详细数据。[-]
 [394039FF]You can get free Lunchboxes for completing some Objectives.[-]=[394039FF]完成指定目标，免费领取避难所科技午餐盒。[-]
-[394039FF]Get Theme Recipes by finding all of their Fragments on Quests.[-]=[394039FF]收集全部碎片，解锁主题配方。[-]
+[394039FF]Get Theme Recipes by finding all of their Fragments on Quests.[-]=[394039FF]搜刮全部碎片，解锁主题配方。[-]
 [394039FF]Successfully Rushing will give you the room's regular rewards plus a special bonus![-]=[394039FF]加速成功，可获得额外奖励。[-]
 [394039FF]Even if you stop a Radio Room from calling out, it continues to boost Dweller happiness.[-]=[394039FF]关闭招募，广播室仍提升快乐度。[-]
 [394039FF]Upgrading a room will make it more efficient and give you more storage.[-]=[394039F]升级房间，提升效率与存储空间。[-]
@@ -53,7 +53,4 @@
 # 从fallout_shelter_zh.txt主文件补充
 
 # fallout_shelter_zh_ColorCodes.txt
-#
-#
-#
 

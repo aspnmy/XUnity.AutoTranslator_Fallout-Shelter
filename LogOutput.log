@@ -3,6 +3,7 @@
 [Info   :   BepInEx] CLR runtime version: 4.0.30319.42000
 [Info   :   BepInEx] Supports SRE: True
 [Info   :   BepInEx] System platform: Bits64, Windows
+[Warning:   BepInEx] Failed to apply runtime patches for Mono. See more info in the output log. Error message: IL Compile Error (unknown location)
 [Message:   BepInEx] Preloader started
 [Info   :   BepInEx] Loaded 1 patcher method from [BepInEx.Preloader 5.4.23.5]
 [Info   :   BepInEx] 1 patcher plugin loaded
@@ -13,22 +14,244 @@
 [Info   :   BepInEx] 2 plugins to load
 [Info   :   BepInEx] Loading [XUnity Auto Translator 5.6.1]
 [Info   :XUnity.AutoTranslator] Version of TextMesh Pro: 1.4.0.
-[Warning:  HarmonyX] AccessTools.Method: Could not find method for type TMPro.TMP_Text and name SetCharArray and parameters (int[], int, int)
-[Warning:XUnity.AutoTranslator] Could not hook 'TMP_Text_SetCharArray_Hook3'. Likely due differences between different versions of the engine or text framework.
+[Warning:XUnity.AutoTranslator] 'EnableDumping' and 'CacheMetadataForAllFiles' cannot be enabled at the same time. Disabling 'CacheMetadataForAllFiles'...
+[Warning:XUnity.AutoTranslator] An error occurred while patching property/method 'UnityEngine.TextMesh.set_text'. Failing hook: 'TextMesh_text_Hook'.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.MissingMethodException: Method not found: !0& System.ReadOnlySpan`1.GetPinnableReference()
+  at (wrapper managed-to-native) System.RuntimeMethodHandle.GetFunctionPointer(intptr)
+  at System.RuntimeMethodHandle.GetFunctionPointer () [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetFunctionPointer (System.Reflection.MethodBase method, System.RuntimeMethodHandle handle) [0x00000] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetNativeStart (System.Reflection.MethodBase method) [0x0004d] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.DetourHelper.GetNativeStart (System.Reflection.MethodBase method) [0x00005] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour._RefreshChain (System.Reflection.MethodBase method) [0x000fb] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour.Apply () [0x00053] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Hook.Apply () [0x00054] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Hook..ctor (System.Reflection.MethodBase from, System.Reflection.MethodInfo to, System.Object target, MonoMod.RuntimeDetour.HookConfig& config) [0x0049d] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Hook..ctor (System.Reflection.MethodBase from, System.Reflection.MethodInfo to, System.Object target, MonoMod.RuntimeDetour.HookConfig config) [0x00000] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Hook..ctor (System.Reflection.MethodBase from, System.Reflection.MethodInfo to, System.Object target) [0x0001d] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Hook..ctor (System.Reflection.MethodBase from, System.Reflection.MethodInfo to) [0x00000] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeConstructorInfo.InternalInvoke(System.Reflection.RuntimeConstructorInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeConstructorInfo.InternalInvoke (System.Object obj, System.Object[] parameters, System.Boolean wrapExceptions) [0x00005] in <152439c387994a8da523328132967f8d>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeConstructorInfo.InternalInvoke (System.Object obj, System.Object[] parameters, System.Boolean wrapExceptions) [0x0001a] in <152439c387994a8da523328132967f8d>:0 
+  at System.Reflection.RuntimeConstructorInfo.DoInvoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00086] in <152439c387994a8da523328132967f8d>:0 
+  at System.Reflection.RuntimeConstructorInfo.Invoke (System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at System.Reflection.ConstructorInfo.Invoke (System.Object[] parameters) [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at XUnity.Common.Utilities.HookingHelper.PatchWithExternHooks (System.Type type, System.Reflection.MethodBase original, System.IntPtr originalPtr, System.Boolean forced) [0x0020c] in <88d0d366bdca44a8ae1c96e3311773d7>:0 
+  at XUnity.Common.Utilities.HookingHelper.PatchType (System.Type type, System.Boolean forceExternHooks) [0x00194] in <88d0d366bdca44a8ae1c96e3311773d7>:0 
+[Warning:XUnity.AutoTranslator] An error occurred while patching property/method 'UnityEngine.AssetBundle.LoadFromFileAsync_Internal'. Failing hook: 'AssetBundle_LoadFromFileAsync_Hook'.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> System.MissingMethodException: Method not found: !0& System.ReadOnlySpan`1.GetPinnableReference()
+  at (wrapper managed-to-native) System.RuntimeMethodHandle.GetFunctionPointer(intptr)
+  at System.RuntimeMethodHandle.GetFunctionPointer () [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetFunctionPointer (System.Reflection.MethodBase method, System.RuntimeMethodHandle handle) [0x00000] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetNativeStart (System.Reflection.MethodBase method) [0x0004d] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.DetourHelper.GetNativeStart (System.Reflection.MethodBase method) [0x00005] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour._RefreshChain (System.Reflection.MethodBase method) [0x000fb] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour.Apply () [0x00053] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour..ctor (System.Reflection.MethodBase from, System.Reflection.MethodBase to, MonoMod.RuntimeDetour.DetourConfig& config) [0x002e1] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at (wrapper dynamic-method) MonoMod.RuntimeDetour.ILHook+Context.DMD<MonoMod.RuntimeDetour.ILHook+Context::Refresh>(MonoMod.RuntimeDetour.ILHook/Context)
+  at (wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition.Trampoline<MonoMod.RuntimeDetour.ILHook+Context::Refresh>?-715758368(object)
+  at HarmonyLib.Internal.RuntimeFixes.StackTraceFixes.OnILChainRefresh (System.Object self) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at MonoMod.RuntimeDetour.ILHook.Apply () [0x00059] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x00047] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x0005f] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x00033] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x0005d] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchProcessor.Patch () [0x000fb] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer, HarmonyLib.HarmonyMethod ilmanipulator) [0x00031] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <152439c387994a8da523328132967f8d>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <152439c387994a8da523328132967f8d>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at XUnity.Common.Utilities.HookingHelper.PatchType (System.Type type, System.Boolean forceExternHooks) [0x00244] in <88d0d366bdca44a8ae1c96e3311773d7>:0 
+[Warning:XUnity.AutoTranslator] An error occurred while patching property/method 'UnityEngine.AssetBundle.LoadFromFile_Internal'. Failing hook: 'AssetBundle_LoadFromFile_Hook'.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> System.MissingMethodException: Method not found: !0& System.ReadOnlySpan`1.GetPinnableReference()
+  at (wrapper managed-to-native) System.RuntimeMethodHandle.GetFunctionPointer(intptr)
+  at System.RuntimeMethodHandle.GetFunctionPointer () [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetFunctionPointer (System.Reflection.MethodBase method, System.RuntimeMethodHandle handle) [0x00000] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetNativeStart (System.Reflection.MethodBase method) [0x0004d] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.DetourHelper.GetNativeStart (System.Reflection.MethodBase method) [0x00005] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour._RefreshChain (System.Reflection.MethodBase method) [0x000fb] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour.Apply () [0x00053] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour..ctor (System.Reflection.MethodBase from, System.Reflection.MethodBase to, MonoMod.RuntimeDetour.DetourConfig& config) [0x002e1] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at (wrapper dynamic-method) MonoMod.RuntimeDetour.ILHook+Context.DMD<MonoMod.RuntimeDetour.ILHook+Context::Refresh>(MonoMod.RuntimeDetour.ILHook/Context)
+  at (wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition.Trampoline<MonoMod.RuntimeDetour.ILHook+Context::Refresh>?-715758368(object)
+  at HarmonyLib.Internal.RuntimeFixes.StackTraceFixes.OnILChainRefresh (System.Object self) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at MonoMod.RuntimeDetour.ILHook.Apply () [0x00059] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x00047] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x0005f] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x00033] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x0005d] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchProcessor.Patch () [0x000fb] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer, HarmonyLib.HarmonyMethod ilmanipulator) [0x00031] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <152439c387994a8da523328132967f8d>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <152439c387994a8da523328132967f8d>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at XUnity.Common.Utilities.HookingHelper.PatchType (System.Type type, System.Boolean forceExternHooks) [0x00244] in <88d0d366bdca44a8ae1c96e3311773d7>:0 
+[Warning:XUnity.AutoTranslator] An error occurred while patching property/method 'UnityEngine.AssetBundle.LoadAsset_Internal'. Failing hook: 'AssetBundle_LoadAsset_Internal_Hook'.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> System.MissingMethodException: Method not found: !0& System.ReadOnlySpan`1.GetPinnableReference()
+  at (wrapper managed-to-native) System.RuntimeMethodHandle.GetFunctionPointer(intptr)
+  at System.RuntimeMethodHandle.GetFunctionPointer () [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetFunctionPointer (System.Reflection.MethodBase method, System.RuntimeMethodHandle handle) [0x00000] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetNativeStart (System.Reflection.MethodBase method) [0x0004d] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.DetourHelper.GetNativeStart (System.Reflection.MethodBase method) [0x00005] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour._RefreshChain (System.Reflection.MethodBase method) [0x000fb] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour.Apply () [0x00053] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour..ctor (System.Reflection.MethodBase from, System.Reflection.MethodBase to, MonoMod.RuntimeDetour.DetourConfig& config) [0x002e1] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at (wrapper dynamic-method) MonoMod.RuntimeDetour.ILHook+Context.DMD<MonoMod.RuntimeDetour.ILHook+Context::Refresh>(MonoMod.RuntimeDetour.ILHook/Context)
+  at (wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition.Trampoline<MonoMod.RuntimeDetour.ILHook+Context::Refresh>?-715758368(object)
+  at HarmonyLib.Internal.RuntimeFixes.StackTraceFixes.OnILChainRefresh (System.Object self) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at MonoMod.RuntimeDetour.ILHook.Apply () [0x00059] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x00047] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x0005f] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x00033] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x0005d] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchProcessor.Patch () [0x000fb] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer, HarmonyLib.HarmonyMethod ilmanipulator) [0x00031] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <152439c387994a8da523328132967f8d>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <152439c387994a8da523328132967f8d>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at XUnity.Common.Utilities.HookingHelper.PatchType (System.Type type, System.Boolean forceExternHooks) [0x00244] in <88d0d366bdca44a8ae1c96e3311773d7>:0 
+[Warning:XUnity.AutoTranslator] An error occurred while patching property/method 'UnityEngine.AssetBundle.LoadAssetAsync_Internal'. Failing hook: 'AssetBundle_LoadAssetAsync_Internal_Hook'.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> System.MissingMethodException: Method not found: !0& System.ReadOnlySpan`1.GetPinnableReference()
+  at (wrapper managed-to-native) System.RuntimeMethodHandle.GetFunctionPointer(intptr)
+  at System.RuntimeMethodHandle.GetFunctionPointer () [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetFunctionPointer (System.Reflection.MethodBase method, System.RuntimeMethodHandle handle) [0x00000] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetNativeStart (System.Reflection.MethodBase method) [0x0004d] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.DetourHelper.GetNativeStart (System.Reflection.MethodBase method) [0x00005] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour._RefreshChain (System.Reflection.MethodBase method) [0x000fb] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour.Apply () [0x00053] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour..ctor (System.Reflection.MethodBase from, System.Reflection.MethodBase to, MonoMod.RuntimeDetour.DetourConfig& config) [0x002e1] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at (wrapper dynamic-method) MonoMod.RuntimeDetour.ILHook+Context.DMD<MonoMod.RuntimeDetour.ILHook+Context::Refresh>(MonoMod.RuntimeDetour.ILHook/Context)
+  at (wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition.Trampoline<MonoMod.RuntimeDetour.ILHook+Context::Refresh>?-715758368(object)
+  at HarmonyLib.Internal.RuntimeFixes.StackTraceFixes.OnILChainRefresh (System.Object self) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at MonoMod.RuntimeDetour.ILHook.Apply () [0x00059] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x00047] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x0005f] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x00033] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x0005d] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchProcessor.Patch () [0x000fb] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer, HarmonyLib.HarmonyMethod ilmanipulator) [0x00031] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <152439c387994a8da523328132967f8d>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <152439c387994a8da523328132967f8d>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at XUnity.Common.Utilities.HookingHelper.PatchType (System.Type type, System.Boolean forceExternHooks) [0x00244] in <88d0d366bdca44a8ae1c96e3311773d7>:0 
+[Warning:XUnity.AutoTranslator] An error occurred while patching property/method 'UnityEngine.AssetBundle.LoadAssetWithSubAssets_Internal'. Failing hook: 'AssetBundle_LoadAssetWithSubAssets_Internal_Hook'.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> System.MissingMethodException: Method not found: !0& System.ReadOnlySpan`1.GetPinnableReference()
+  at (wrapper managed-to-native) System.RuntimeMethodHandle.GetFunctionPointer(intptr)
+  at System.RuntimeMethodHandle.GetFunctionPointer () [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetFunctionPointer (System.Reflection.MethodBase method, System.RuntimeMethodHandle handle) [0x00000] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetNativeStart (System.Reflection.MethodBase method) [0x0004d] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.DetourHelper.GetNativeStart (System.Reflection.MethodBase method) [0x00005] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour._RefreshChain (System.Reflection.MethodBase method) [0x000fb] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour.Apply () [0x00053] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour..ctor (System.Reflection.MethodBase from, System.Reflection.MethodBase to, MonoMod.RuntimeDetour.DetourConfig& config) [0x002e1] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at (wrapper dynamic-method) MonoMod.RuntimeDetour.ILHook+Context.DMD<MonoMod.RuntimeDetour.ILHook+Context::Refresh>(MonoMod.RuntimeDetour.ILHook/Context)
+  at (wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition.Trampoline<MonoMod.RuntimeDetour.ILHook+Context::Refresh>?-715758368(object)
+  at HarmonyLib.Internal.RuntimeFixes.StackTraceFixes.OnILChainRefresh (System.Object self) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at MonoMod.RuntimeDetour.ILHook.Apply () [0x00059] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x00047] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x0005f] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x00033] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x0005d] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchProcessor.Patch () [0x000fb] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer, HarmonyLib.HarmonyMethod ilmanipulator) [0x00031] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <152439c387994a8da523328132967f8d>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <152439c387994a8da523328132967f8d>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at XUnity.Common.Utilities.HookingHelper.PatchType (System.Type type, System.Boolean forceExternHooks) [0x00244] in <88d0d366bdca44a8ae1c96e3311773d7>:0 
+[Warning:XUnity.AutoTranslator] An error occurred while patching property/method 'UnityEngine.AssetBundle.LoadAssetWithSubAssetsAsync_Internal'. Failing hook: 'AssetBundle_LoadAssetWithSubAssetsAsync_Internal_Hook'.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> System.MissingMethodException: Method not found: !0& System.ReadOnlySpan`1.GetPinnableReference()
+  at (wrapper managed-to-native) System.RuntimeMethodHandle.GetFunctionPointer(intptr)
+  at System.RuntimeMethodHandle.GetFunctionPointer () [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetFunctionPointer (System.Reflection.MethodBase method, System.RuntimeMethodHandle handle) [0x00000] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetNativeStart (System.Reflection.MethodBase method) [0x0004d] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.DetourHelper.GetNativeStart (System.Reflection.MethodBase method) [0x00005] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour._RefreshChain (System.Reflection.MethodBase method) [0x000fb] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour.Apply () [0x00053] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour..ctor (System.Reflection.MethodBase from, System.Reflection.MethodBase to, MonoMod.RuntimeDetour.DetourConfig& config) [0x002e1] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at (wrapper dynamic-method) MonoMod.RuntimeDetour.ILHook+Context.DMD<MonoMod.RuntimeDetour.ILHook+Context::Refresh>(MonoMod.RuntimeDetour.ILHook/Context)
+  at (wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition.Trampoline<MonoMod.RuntimeDetour.ILHook+Context::Refresh>?-715758368(object)
+  at HarmonyLib.Internal.RuntimeFixes.StackTraceFixes.OnILChainRefresh (System.Object self) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at MonoMod.RuntimeDetour.ILHook.Apply () [0x00059] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x00047] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x0005f] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x00033] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x0005d] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchProcessor.Patch () [0x000fb] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer, HarmonyLib.HarmonyMethod ilmanipulator) [0x00031] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <152439c387994a8da523328132967f8d>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <152439c387994a8da523328132967f8d>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at XUnity.Common.Utilities.HookingHelper.PatchType (System.Type type, System.Boolean forceExternHooks) [0x00244] in <88d0d366bdca44a8ae1c96e3311773d7>:0 
+[Warning:  HarmonyX] AccessTools.Method: Could not find method for type UnityEngine.Resources and name GetBuiltinResource and parameters (string, Type)
+[Warning:XUnity.AutoTranslator] An error occurred while patching property/method 'UnityEngine.Resources.GetBuiltinResource'. Failing hook: 'Resources_GetBuiltinResource_New_Hook'.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> HarmonyLib.HarmonyException: IL Compile Error (unknown location) ---> System.MissingMethodException: Method not found: !0& System.ReadOnlySpan`1.GetPinnableReference()
+  at (wrapper managed-to-native) System.RuntimeMethodHandle.GetFunctionPointer(intptr)
+  at System.RuntimeMethodHandle.GetFunctionPointer () [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetFunctionPointer (System.Reflection.MethodBase method, System.RuntimeMethodHandle handle) [0x00000] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Platforms.DetourRuntimeILPlatform.GetNativeStart (System.Reflection.MethodBase method) [0x0004d] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.DetourHelper.GetNativeStart (System.Reflection.MethodBase method) [0x00005] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour._RefreshChain (System.Reflection.MethodBase method) [0x000fb] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour.Apply () [0x00053] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at MonoMod.RuntimeDetour.Detour..ctor (System.Reflection.MethodBase from, System.Reflection.MethodBase to, MonoMod.RuntimeDetour.DetourConfig& config) [0x002e1] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at (wrapper dynamic-method) MonoMod.RuntimeDetour.ILHook+Context.DMD<MonoMod.RuntimeDetour.ILHook+Context::Refresh>(MonoMod.RuntimeDetour.ILHook/Context)
+  at (wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition.Trampoline<MonoMod.RuntimeDetour.ILHook+Context::Refresh>?-715758368(object)
+  at HarmonyLib.Internal.RuntimeFixes.StackTraceFixes.OnILChainRefresh (System.Object self) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at MonoMod.RuntimeDetour.ILHook.Apply () [0x00059] in <4e2760c7517c4ea79c633d67e84b319f>:0 
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x00047] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.Public.Patching.ManagedMethodPatcher.DetourTo (System.Reflection.MethodBase replacement) [0x0005f] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x00033] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+   --- End of inner exception stack trace ---
+  at HarmonyLib.PatchFunctions.UpdateWrapper (System.Reflection.MethodBase original, HarmonyLib.PatchInfo patchInfo) [0x0005d] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.PatchProcessor.Patch () [0x000fb] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer, HarmonyLib.HarmonyMethod ilmanipulator) [0x00031] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at HarmonyLib.Harmony.Patch (System.Reflection.MethodBase original, HarmonyLib.HarmonyMethod prefix, HarmonyLib.HarmonyMethod postfix, HarmonyLib.HarmonyMethod transpiler, HarmonyLib.HarmonyMethod finalizer) [0x00000] in <474744d65d8e460fa08cd5fd82b5d65f>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <152439c387994a8da523328132967f8d>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <152439c387994a8da523328132967f8d>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <152439c387994a8da523328132967f8d>:0 
+  at XUnity.Common.Utilities.HookingHelper.PatchType (System.Type type, System.Boolean forceExternHooks) [0x00244] in <88d0d366bdca44a8ae1c96e3311773d7>:0 
 [Info   :XUnity.AutoTranslator] Attempting to load TextMesh Pro font from asset bundle.
 [Info   :XUnity.AutoTranslator] Loaded TextMesh Pro font uses version: 1.1.0
 [Warning:XUnity.AutoTranslator] TextMesh Pro version mismatch. Font asset version: 1.1.0, TextMesh Pro version: 1.4.0
 [Error  :XUnity.AutoTranslator] An error occurred while trying to load fallback font for TextMesh Pro.
 System.NullReferenceException: Object reference not set to an instance of an object
   at TMPro.TMP_Settings.get_fallbackFontAssets () [0x00005] in <aa7cbcdfa58f45d3afd508a3d38af350>:0 
-  at (wrapper dynamic-method) MonoMod.Utils.DynamicMethodDefinition.FastReflection<TMPro.TMP_Settings.get_fallbackFontAssets>(object,object[])
+  at DMD<>?1782768124.FastReflection<TMPro.TMP_Settings.get_fallbackFontAssets> (System.Object , System.Object[] ) [0x00000] in <cecfd1124cdc4d45a6a918ea85c20ac9>:0 
   at XUnity.Common.Utilities.CachedProperty.Get (System.Object instance) [0x0000a] in <88d0d366bdca44a8ae1c96e3311773d7>:0 
   at XUnity.AutoTranslator.Plugin.Core.AutoTranslationPlugin.LoadFallbackFont () [0x0004e] in <a817674367164b35a3ed6bcad64cb5db>:0 
 [Info   :XUnity.AutoTranslator] Loaded XUnity.AutoTranslator into Unity [6000.0.58f2] game.
 [Info   :   BepInEx] Loading [XUnity Resource Redirector 2.1.0]
 [Message:   BepInEx] Chainloader startup complete
 [Info   :XUnity.AutoTranslator] Skipping plugin scan because no plugin-specific translations has been registered.
-[Info   :   Console] Mrhandy.l_mrhandy
-[Info   :   Console] Mrhandy.L_SnipSnip
-[Info   :   Console] Mrhandy.Victor
-[Info   :   Console] Mrhandy.Curie

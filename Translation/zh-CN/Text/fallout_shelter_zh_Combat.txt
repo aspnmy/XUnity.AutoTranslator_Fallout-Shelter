@@ -1,20 +1,20 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 06:09:13
-# ==============================================
+#==============================================
 # 战斗/灾难
 # 本文件用于保存战斗/灾难译文
 # 格式：英文=中文
-# ==============================================
+#==============================================
 This ant immolator might not work as well on Radroaches.=这件蚂蚁杀手可能对辐射蟑螂起不了作用。
 Oh, how interesting. A crudely-written sign. “Enter and die!” No ambiguity there.=哦，多么有趣啊，一个草草写下的信息：“进去送死！”意义不明。
 One of your Weapon Workshops has made a Weapon!=你的其中一个武器工坊制造了一件武器！
-You fools. The Gobbler can't be stopped! It killed all my men.=白痴，格布勒是无法阻止的！它杀死了我们这里所有的人。
-It jumped in a vat of Blamco Cranberry Sauce after killing a bunch of Raiders!=在杀死了一大堆侵略者之后，我跳进了一堆红莓酱汁里！
-Kill the Glowing One.=杀死发光者。
+You fools. The Gobbler can't be stopped! It killed all my men.=白痴，格布勒是无法阻止的！它干掉了我们这里所有的人。
+It jumped in a vat of Blamco Cranberry Sauce after killing a bunch of Raiders!=在干掉了一大堆侵略者之后，我跳进了一堆红莓酱汁里！
+Kill the Glowing One.=干掉发光者。
 Bring it! I'm ready for a fight!=带上那个！我准备好战斗了！
 Eliminate the Raider Leader.=消灭掠夺者头领。
 Gosh, are we glad you showed up! Those Raiders were pretty scary.=噢，我们就希望你能出现呢！那些掠夺者真是太可怕了。
@@ -23,21 +23,21 @@ We Raiders don't do wedding rings... The couple brands each other.=我们掠夺�
 Playing fetch with Radscorpions is a fun way to pass the time!=和辐射蝎过家家可是消磨时间的好办法！
 We were partying with Raiders? We don't... remember... any of this. Where was this party?=我们和掠夺者搅一块儿了？我们都不……记得……这些事情了。到底是在哪里？
 I... Ah... Umm... ATTACK!!!!=我……那个……攻击！！！
-That Raider's not too bright, but he's plenty dangerous.=那个掠夺者不是很聪明，但是还是相当的危险。
-Kill Bash.=杀死巴什。
+That Raider's not too bright, but he's plenty dangerous.=那个掠夺者不是很聪明，但是是相当的危险。
+Kill Bash.=干掉巴什。
 Take down the Raider Boss Bash and claim your reward!=打败掠夺者头目巴什然后去拿你的奖励！
-Kill “Butcher.”=杀死“屠夫”。
+Kill “Butcher.”=干掉“屠夫”。
 Well, 'Ol One-Eye's the meanest Radroach you ever met.=那么，独眼就是你见过最让人头疼的蛮子了。
-Kill 'Ol One-Eye.=杀死独眼。
-Kill Shiner.=杀死闪亮。
-Kill the Glowing Radroach.=杀死发光的辐射蟑螂。
-Kill the Glowing Radroach in the factory.=在工厂里杀死发光的辐射蟑螂。
-Kill the Raider Boss.=杀死掠夺者Boss。
+Kill 'Ol One-Eye.=干掉独眼。
+Kill Shiner.=干掉闪亮。
+Kill the Glowing Radroach.=干掉发光的辐射蟑螂。
+Kill the Glowing Radroach in the factory.=在工厂里干掉发光的辐射蟑螂。
+Kill the Raider Boss.=干掉掠夺者头目。
 Santa sends the gift... Of death! Eat lead!=圣诞老人送来的礼物是……死亡！你们去死吧！
 Yes, even Raiders need a little Holiday spirit!=哪怕是掠夺者也是想要过节的！
 Talk to the Raiders.=与掠夺者们交谈。
 A group of Raiders that have been preying on the locals is using a Super Duper Mart as their headquarters. Time to take down their leader!=一队掠夺者盘踞在大无敌超市，并且以掠夺当地居民为生，是时候把他们的头头干掉了！
-Kill the Raider Boss at the Super Duper Mart.=在大无敌超市杀死掠夺者Boss。
+Kill the Raider Boss at the Super Duper Mart.=在大无敌超市干掉掠夺者头目。
 “Have it your way!” the Bugle “Boy” said. Then came the biggest Raider attack I've ever experienced. It was a bloodbath.=“随便你！”那个“吹号员”说道。然后有史以来最凶残的掠夺者攻击就发生了，那可真是一场大屠杀。
 Then it's time to turn the tables on those Raiders.=那么，是时候扭转局势了。
 Alright, alright! Don't shoot!=好吧好吧！别开枪！
@@ -64,32 +64,32 @@ Oh. Well... no. I'm here to kill you, actually.=哦，这……不是，我来�
 Eliminate the Raiders.=消灭掠夺者。
 Eliminate the Raiders in the Super-Duper Mart.=消灭大无敌超市里的掠夺者。
 You're lucky we aren't here to kill you.=你应该值得庆幸我们来这里不是为了杀你。
-Slay the Dragon (Deathclaw).=杀死巨龙（死爪）。
+Slay the Dragon (Deathclaw).=干掉巨龙（死爪）。
 Legendary Radroach?=传说级辐射蟑螂？
 All about Radroaches.=《辐射蟑螂全解》。
 Eliminate the Raider.=消灭掠夺者。
 Eliminate the Raider in the Red Rocket.=消灭红火箭的掠夺者。
 Battle the Raiders in the Super-Duper Mart.=与大无敌超市的掠夺者们战斗。
-Kill the Glowing Radroach and complete your training.=杀死发光的辐射蟑螂，完成你的训练。
+Kill the Glowing Radroach and complete your training.=干掉发光的辐射蟑螂，完成你的训练。
 Time to scare some Raiders.=是时候去吓唬一下掠夺者了。
 Ah! It's a ghost! Kill it!=啊！是幽灵！快杀了它！
 Clear out the nest of Radroaches.=清理辐射蟑螂的巢穴。
-Kill the Glowing Radscorpion.=杀死发光的辐射蝎。
+Kill the Glowing Radscorpion.=干掉发光的辐射蝎。
 Some Raiders kidnapped our squad leader and I'm too wounded to continue.=一些掠夺者抓走了我们的小队长，我受了很严重的伤，没办法追查下去了。
-We're the rescue party, but we're not going any deeper with all the Radscorpions around!=我们是救援小队，不过这周围都是辐射蝎，我们没办法再深入了！
+We're the rescue party, but we're not going any deeper with all the Radscorpions around!=我们是拯救小队，不过这周围都是辐射蝎，我们没办法再深入了！
 Rescue the newlyweds from the Radscorpions.=从辐射蝎手上拯救新婚夫妇。
 Stop the Raiders.=阻止掠夺者。
 But he disappeared when Khan Killian's Raider gang attacked!=但是在基力安的掠夺者们发动攻击后，他就失踪了！
 We've had a lot of trouble with Raiders lately. Trust has to be earned!=我们最近因为掠夺者的关系遇上了一大堆麻烦，你们必须取得我们的信任！
 Okay, so the Raiders didn't lead us to Coach. It was worth a shot. Maybe he's taking a nap in the old mattress factory!=好吧，掠夺者们并没有带我们找打教练，这值得一试，也许他正在床垫工厂睡大觉呢！
-Kill Mastiff Muldoon.=杀死马斯蒂夫·穆尔顿。
-They're here for the Settlers! Kill them!=他们来这里是为了那些居民！杀死他们！
-Here. Use this to kill Coach. And tell him Henrietta said hello!=拿着，用这个杀死他，记得告诉他汉丽埃塔向他问好！
-Eliminate the Raider Boss.=杀死掠夺者Boss。
+Kill Mastiff Muldoon.=干掉马斯蒂夫·穆尔顿。
+They're here for the Settlers! Kill them!=他们来这里是为了那些居民！干掉他们！
+Here. Use this to kill Coach. And tell him Henrietta said hello!=拿着，用这个干掉他，记得告诉他汉丽埃塔向他问好！
+Eliminate the Raider Boss.=干掉掠夺者头目。
 Challenge a Raider Boss holed up in a Red Rocket Truck Stop.=向占领红火箭卡车停车站的掠夺者Boss发起挑战。
-Defeat the Raider Bosses.=打败掠夺者Boss。
-Find and kill the monster.=找到并且杀死怪物。
-Track down and kill a teddy bear-stealing monster!=追踪并且杀死偷走泰迪熊的怪物！
+Defeat the Raider Bosses.=打败掠夺者头目。
+Find and kill the monster.=找到并且干掉怪物。
+Track down and kill a teddy bear-stealing monster!=追踪并且干掉偷走泰迪熊的怪物！
 We're not giving up without a fight!=我们不会连手都不动就放弃！
 Eliminate the Glowing Radscorpion.=消灭发光的辐射蝎。
 Kill the Glowing Radscorpion in the name of science!=以科学之名消灭发光的辐射蝎！
@@ -105,21 +105,21 @@ Pfft! Please. Rescuing? This is nothing but Raiders raiding. And it ends here!=�
 She sends the others into a frenzy. If you kill her, we should be able to round up the rest.=她让其它的(蟑螂)陷入疯狂。如果你杀了她，我们应该能围捕剩下的。
 Then they released all our Radroaches, including the Glowing Radroach Queen.=然后他们释放了我们所有的辐射蟑螂，包括发光的辐射蟑螂女王。
 At any rate, have you killed the Radroach Queen yet?=不管怎样，你杀了辐射蟑螂女王了吗？
-Kill the Glowing Radroach Queen.=杀死发光的蟑螂女王。
+Kill the Glowing Radroach Queen.=干掉发光的蟑螂女王。
 Save scientists from the Radroaches they were studying.=将科学家从他们正在研究的蟑螂手中拯救出来。
 Hah, you're right! There's no way that could ever backfire! Great idea!=哈哈，你是对的！这想法很好！
 Spread lies among the partying Raiders.=在掠夺者晚会上散布谣言。
 Spread lies among the belligerent Raiders.=向好斗的掠夺者们散布谣言。
 Spread lies among the drinking Raiders.=向喝了酒的掠夺者们散布谣言。
 Infiltrate the Raiders' hideout and sow the seeds of distrust.=潜入掠夺者内部，散播怀疑的种子。
-Kill Radroach Rodney.=杀死辐射蟑螂罗德尼。
+Kill Radroach Rodney.=干掉辐射蟑螂罗德尼。
 Defeat Radroach Rodney and his Radroaches!=打败罗德尼和他的军队！
 Well, all right, but don't shoot your eye out! Ho ho ho!=哦，好吧，不过千万别把你的眼珠子都弹出来了！哈哈哈！
-Kill the Raider Lieutenant.=杀死鲁巴布的助理。
+Kill the Raider Lieutenant.=干掉鲁巴布的助理。
 You ain't never gonna stop Rubarb's Raiders!=你永远无法阻止鲁巴布的掠夺者的！
 Okay, I can respect that. But I'm still gonna kill you!=好吧好吧，我表示尊重，但是我还是要杀了你！
 Cutting-edge science requires materials and demands sacrifice. So sacrifice some Raiders in the name of Science and take all their stuff!=高科技科研需要牺牲大量的精力和物资，甚至是人。所以，以科学之名牺牲掉一些掠夺者吧，顺便夺取他们的物资！
-Defeat the Raider Boss.=打败掠夺者Boss。
+Defeat the Raider Boss.=打败掠夺者头目。
 Fight to the death? How predictable.=决一死战吗？真是好猜。
 You guess? What kind of Raider talks like that? Get 'em!=你猜的？到底是什么样的掠夺者才会像那种样子？抓住他们！
 What did you say? Kill them!=你说什么？杀了他们！
@@ -132,14 +132,14 @@ Shoot 'em up! Burn 'em up!=射死他们！烧死他们！
 Lying is lying and people are dying! We're here to stop you!=说谎话的下场就是死！我们是来这里阻止你的！
 Slugger the Raider is hosting a baseball game, but he forgot to invite you. Time to throw him out at home plate.=掠夺者斯拉格正在参加一场棒球比赛，但是他忘了邀请你，是时候把他从本垒板上丢出去了。
 Beat Slugger the Raider at his own game.=在游戏中打败掠夺者斯拉格。
-Kill Frank the Tank.=杀死坦克弗兰克。
-Find and kill Frank the Tank.=找到并且杀死坦克弗兰克。
+Kill Frank the Tank.=干掉坦克弗兰克。
+Find and kill Frank the Tank.=找到并且干掉坦克弗兰克。
 Go hunting for Radroaches.=猎杀辐射蟑螂。
 The soul I was sent to rescue is about to get served up on a Deathclaw dinner platter!=我要救的那些家伙马上就要变成死爪的晚餐了！
-Kill the Brothers Grime.=杀死格里姆兄弟。
+Kill the Brothers Grime.=干掉格里姆兄弟。
 Confront a dastardly pair of Raider siblings.=遭遇卑鄙的掠夺者兄弟。
 Speak to the Raider.=与掠夺者交谈。
-Kill Big Wes.=杀死大块头维斯。
+Kill Big Wes.=干掉大块头维斯。
 Scare off the Raider Boss.=吓唬掠夺者头目。
 Howdy folks, they call me the Radscorpion Earl!=你们好，人们都叫我辐射蝎伯爵！
 Folks are being stung all over, and the problem is coming from Earl's Radscorpion Emporium. Time to put him out of business.=到处都有人被蛰，而这个问题就来自伯爵的辐射蝎卖场，是时候让他失业了。
@@ -149,7 +149,7 @@ If you want this beastie, you'd better be ready for a fight!=如果你想要这�
 Confront the Raiders.=遭遇掠夺者。
 The Bugle Boy told us that it would never fall into Raider hands.=吹号员告诉我们这东西绝对不能落入掠夺者的手里。
 Help! These Raiders have lost their minds!=帮帮我！这些掠夺者已经丧失理智了！
-We came to kill Raiders and eat Cram. And we're all out of Cram!=我们得杀死掠夺者并且吃点奶油，我们已经没有奶油了！
+We came to kill Raiders and eat Cram. And we're all out of Cram!=我们得干掉掠夺者并且吃点奶油，我们已经没有奶油了！
 Or is your goal honorable combat?=还是说，想来一场男人间的战斗？
 Face our blades... er... guns! Attack!=亮兵器吧……额……我是说枪！攻击！
 No one calls us Gary! Attack!=没人能叫我们盖瑞！攻击！
@@ -159,7 +159,7 @@ Our counter-move is we kill all of you!=我们的反击就是把你们全部干�
 Find Kaela the Raider Boss.=找到掠夺者头目凯拉。
 Jack may still be alive at the Ironworks - but he's married to a Raider?=杰克也许还活着，不过他真的和掠夺者结婚了吗？
 Help an engaged Raider couple work through their problems.=帮助掠夺者新人解决他们的问题。
-Kill Willard Glover.=杀死威拉德·格洛弗。
+Kill Willard Glover.=干掉威拉德·格洛弗。
 Famed scientist Otto von Hurfburg is nearby, researching the mating habits of Radscorpions. Make sure he's not in over his head.=著名科学家奥拓·万·赫夫伯格就在附近，调查辐射蝎交配的秘密。请确保他的安全。
 Right? I thought I'd get shot to death. Not eaten alive. Who knew?=是吗？我觉得我会被一枪打死，而不是被活生生吃掉，不过谁知道呢？
 Extortion? Really? You sure you're not a Raider?=勒索？真的吗？你确定你不是掠夺者？
@@ -188,7 +188,7 @@ Shoots fire a few degrees lower than normal, but still a death dealer.=喷出来
 Shoots a magnetically accelerated projectile. Fast.=通过电磁加速发射弹药，速度极快。
 Death by junk was never so shocking.=垃圾引起的死亡一点都不令人惊奇。
 It can light a cigarette and maybe kill a Radroach.=它可以用来点雪茄，也可以用来杀蟑螂。
-Abe himself used this to kill Radscorpions. Honest.=亚伯曾经用这东西杀死过辐射蝎。
+Abe himself used this to kill Radscorpions. Honest.=亚伯曾经用这东西干掉过辐射蝎。
 Shooting that many rounds may not be necessary, but it sure is fun.=可能并不需要射这么多次，但是真的很有趣。
 When in doubt, always shoot from the shadows.=往往是从阴影中射出的子弹才能够迷惑敌人。
 Place that stream of fiery green death right where you want it.=你可以随意地使用这种绿色的死亡能量。
@@ -232,8 +232,8 @@ The Mole rat has been killed.=鼹鼠被干掉了。
 It was a tough fight, but I killed the Yao Guai.=一场恶斗之后我干掉了那只妖怪。
 Contact! Kill everyone!==接头了！把人都杀掉！
 Die Raider scum!==去死吧，该死的掠夺者！
-Kill Regina Rage!==杀死暴怒女王！
-Kill the Gobbler!==杀死格布勒！
+Kill Regina Rage!==干掉暴怒女王！
+Kill the Gobbler!==干掉格布勒！
 Let the Raider go!==让那个掠夺者走！
 Reign of Radroach Rodney!==辐射蟑螂罗德尼的统治！
 Shoot then burn!==射击和燃烧！
@@ -246,19 +246,19 @@ Can put your horse, or a Deathclaw, out of its misery in a second.=可以让你�
 Can transform a charging Super Mutant into a puddle of sludge.=可以把一个超级变种人瞬间变成一滩烂泥。
 Clever Alpha Deathclaw, hiding in that Red Rocket Fuel station to ambush unsuspecting travelers. There's only one way to deal with a threat like that.=真是聪明的阿尔法死爪，躲藏在红火箭燃料站埋伏那些毫无防备的旅行者。只有一个办法可以解决像这样的事情。
 Defeat an Alpha Deathclaw and the Raider controlling it.=打倒阿尔法死爪和它的控制者。
-Did an Alpha Deathclaw take Coach out?=阿尔法死爪杀死了教练？
+Did an Alpha Deathclaw take Coach out?=阿尔法死爪干掉了教练？
 Duo of Destruction: Alpha Deathclaws=双重毁灭：阿尔法死爪
 Eliminate the Alpha Deathclaw.=消灭阿尔法死爪。
 Eliminate the Feral Ghouls.=消灭狂尸鬼。
 Exterminate the Deathclaws.=消灭死爪。
 Indubitably. I am a Raider, after all. Refined palate notwithstanding.=不用怀疑，我是一个掠夺者，尽管我是比较文雅的。
-Kill the Alpha Deathclaw.=杀死阿尔法死爪。
-Kill the Mole rat Brood Mother at the Super Duper Mart.=杀死在大无敌超市里的鼹鼠妈妈。
-Kill the Mole rat Brood Mother.=杀死鼹鼠妈妈。
-Kill the Queen of the Deathclaws.=杀死死爪女皇。
-Kill the Queen's Alpha Deathclaw.=杀死女皇的阿尔法死爪。
-Kill the Raiders and their Deathclaw.=杀死掠夺者和他们的死爪。
-Kill the second Alpha Deathclaw.=杀死第二只阿尔法死爪。
+Kill the Alpha Deathclaw.=干掉阿尔法死爪。
+Kill the Mole rat Brood Mother at the Super Duper Mart.=干掉在大无敌超市里的鼹鼠妈妈。
+Kill the Mole rat Brood Mother.=干掉鼹鼠妈妈。
+Kill the Queen of the Deathclaws.=干掉死爪女皇。
+Kill the Queen's Alpha Deathclaw.=干掉女皇的阿尔法死爪。
+Kill the Raiders and their Deathclaw.=干掉掠夺者和他们的死爪。
+Kill the second Alpha Deathclaw.=干掉第二只阿尔法死爪。
 My death is on your conscience!=我的命就全看你有没有良心了！
 Probably a trap. This place is crawling with Raiders. Good luck.=也许是个陷阱，这地方到处都是掠夺者，祝你好运。
 Put down an angry pair of Alpha Deathclaws!=干掉两只愤怒的阿尔法死爪！
@@ -266,10 +266,10 @@ Queen of the Deathclaws!==死爪女皇！
 Rescue Paula Plumbkin from the Feral Ghouls!=从狂尸鬼手中救出保拉·普朗布金！
 Save the gunsmith from the Feral Ghouls.=从狂尸鬼手里救出枪械匠。
 Show the Feral Ghouls no mercy.=不要怜悯这些狂尸鬼。
-Slay the Deathclaw.=杀死死爪。
+Slay the Deathclaw.=干掉死爪。
 Star-Paladin Cross was collecting technology from a Super-Duper Mart when he was accosted by a Deathclaw. Lend him a hand.=星骑士克罗斯在大无敌超市搜集技术，但是却遇上了死爪，请去帮他一下。
 Three words: Never. Ending. Deathclaws.=六个字：无！数！的！死！亡！爪！
-Turns out fighting a Super Mutant Master is a pretty stupid idea! Got to run!=看来与超级变种人大师作战是一个非常愚蠢的主意！赶紧跑吧！
+Turns out fighting a Super Mutant Master is a pretty stupid idea! Got to run!=看来与超级变种人大师作战是非常愚蠢的主意！赶紧跑吧！
 You seem like nice kids. I hope this Raider life doesn't chew you up like it did for me.=你看上去是一个好人，我希望你不会像我一样别这种掠夺者的生活所折磨。
 a Super Mutant Master.=一个超级变种人大师。
 a Super Mutant Overlord.=一个超级变种人霸主。
@@ -280,7 +280,7 @@ a psychotic Feral Ghoul Roamer.=一个疯狂的狂尸鬼漫游者。
 a wandering Feral Ghoul.=一只游荡的狂尸鬼。
 an Enclave Deathclaw.=一只英克雷死爪。
 Worn by synths trained for heavy combat.=合成人在重装战斗训练时穿的装甲。
-Some newlyweds from a nearby settlement went to a secluded cave to “celebrate” in private. They haven't returned, and neither has the original rescue party! Maybe those rumors of Radscorpions are true after all. Better gear up!=一些附近定居点的新婚夫妇去了一个隐蔽的洞穴“庆祝”他们的婚礼。结果他们一去就再也没有回来过，救援小队也一样！也许那些关于辐射蝎的传言是真的，我们最好带上装备。
+Some newlyweds from a nearby settlement went to a secluded cave to “celebrate” in private. They haven't returned, and neither has the original rescue party! Maybe those rumors of Radscorpions are true after all. Better gear up!=一些附近定居点的新婚夫妇去了一个隐蔽的洞穴“庆祝”他们的婚礼。结果他们一去就再也没有回来过，拯救小队也一样！也许那些关于辐射蝎的传言是真的，我们最好带上装备。
 Only the best Raiders would have that many spikes!=只有最强大的掠夺者才配拥有最多的尖刺！
 The temptation to grab a weapon and shoot you is overwhelming.=想要抓起一把武器打死你的冲动真是不可抑制。
 It sat in the barn a little too long, but can still kill with the best of 'em.=这玩意儿在谷仓里待太久了，不过拿来杀人还是很好用的。

@@ -1,17 +1,17 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 06:05:02
-# ==============================================
+#==============================================
 # 建造/房间管理
 # 本文件用于保存建造/房间管理译文
-# ==============================================
+#==============================================
 Hint: Merging the Radio Room increases your chances of attracting a Dweller.=提示：融合广播室能增加吸引居民的概率。
-- Failing a Rush causes a disaster in the room.=- 加速失败会导致房间内发生灾难。
+- Failing a Rush causes a disaster in the room.=- 加速失败会导致房间内引发灾难。
 If there is no plus or minus sign it means there's room for the Dweller to work in the room without replacing any Dwellers.=如果没有加号或减号，说明房间内还有工作空间，居民可以在不替换其他居民的情况下工作。
-Any items equipped on an evicted Dweller are returned to Storage.=想要从避难所中驱逐居民，先把他/她拖到避难所外面，再点击红色的避难所大门按钮。
+Any items equipped on an evicted Dweller are returned to Storage.=想要从避难所中驱逐居民，先把他们拖到避难所外面，再点击红色的避难所大门按钮。
 The Barbershop works faster on Dwellers with high Charisma.=你可以在理发店中给居民换脸，一次一人。
 You don't have Dwellers assigned to this room.=你没有在该房间分配居民。
 No more Dwellers with Pets can be assigned to this room.=该房间无法容纳更多携带宠物的居民。
@@ -20,8 +20,8 @@ If Dwellers fail, the Disaster spreads to nearby rooms.=房间内的居民会自
 Disasters occur when a rush fails or randomly in any room.=灾害会在加速失败时发生，或是随机发生。
 Build additional storage rooms or upgrade your existing storage rooms to get more space.=建造更多的储藏室或升级你现有的储藏室来获得更多的空间。
 Upgrade your Workshops to craft Rare and Legendary items.=在避难所科技午餐盒和废土都能找到垃圾。
-Explore by dragging Dwellers to new rooms, or tapping the location you want them to travel to.=拖动居民至新的地区或是点击你想要前往的地区可以进行探索。
-Explore by dragging Dwellers to new rooms, or clicking the location you want them to travel to.=拖动居民至新的地区或是点击你想要前往的地区可以进行探索。
+Explore by dragging Dwellers to new rooms, or tapping the location you want them to travel to.=拖动居民至新的地区或是点击你想要前往的地区可以探索。
+Explore by dragging Dwellers to new rooms, or clicking the location you want them to travel to.=拖动居民至新的地区或是点击你想要前往的地区可以探索。
 Ah, my favorite room.=啊，这是我最喜欢的房间。
 One of your production rooms is ready for collecting.=你的某个生产房间已经可以开始生产了。
 For when you want all eyes in the room to be on you.=绝对吸引眼球的衣服。
@@ -34,7 +34,7 @@ A nice two-bedroom in Waltham.=在沃尔瑟姆的一间双人房里。
 Sent to his room without supper.=关到自己的房间里并且不给晚饭。
 Find the pool room.=找到泳池房间。
 Go kill that Raider jerk, Frank the Tank. He's in that building down the road. This might help.=晒晒掠夺者怪人 - 坦克弗兰克。他就在路另一头的房子里，这也许会有用。
-Could you kill Frank the Tank? He raids us all the time. He's in that building down the road. This might help.=你能杀死坦克弗兰克吗？他一直在对我们进行掠夺，路另一头的建筑就是他的所在地。
+Could you kill Frank the Tank? He raids us all the time. He's in that building down the road. This might help.=你能干掉坦克弗兰克吗？他一直在对我们进行掠夺，路另一头的建筑就是他的所在地。
 He didn't say. Not that it matters, you're never leaving this room alive!=他没说，不过不重要了，你没办法活着离开这里了！
 He decided to test his mettle at the old office building.=他决定去那栋旧办公大楼测试一下自己的胆量。
 Destroy Eli Calvert's Raiders with your Military Death Squad.=毁掉艾里·卡尔弗特的掠夺者军队。
@@ -42,11 +42,11 @@ No, she's still somewhere in the building.=不，她还在楼里的某个地方�
 The Boss is holding out on us. I saw a huge stash hidden in his room!=老大有事情瞒着我们，我看到在他的房间里有一大堆宝贝！
 Hunt Coach down in an office building.=在办公大楼寻找教练。
 A love-struck Raider boss has decided to get married, even though his bride-to-be wants no part of it. Save the kidnapped beauty from the clutches of her unwanted groom.=一个坠入还和的掠夺者头目决定结婚了，但是新娘根本就没有像和他结婚。请从野兽手中救出那位美人。
-You've picked up a distress call from an abandoned building. Assemble a rescue team and find the source!=你从一栋废弃的大楼里收到了求救信号，请派遣救援小队找到信号源。
+You've picked up a distress call from an abandoned building. Assemble a rescue team and find the source!=你从一栋废弃的大楼里收到了求救信号，请派遣拯救小队找到信号源。
 Another day, another empty room.=又是新的一天，又是一间空空的房间。
 Scare off a Raider Boss holed up in the Mass Chemical building.=吓唬盘踞在化学大楼里的掠夺者头目。
 Another room, another failure. But we won't give up hope!=又是一个房间，又是一场失败，但是我们不会放弃希望的！
-Kill all Enemies in the Secret Room=杀死密室中的敌人。
+Kill all Enemies in the Secret Room=干掉密室中的敌人。
 Build an ARMORY?=是否要建造一个武器室？
 Build a BARBERSHOP?=是否要建造一个理发店？
 Build a LOUNGE?=是否要建造一个休息室？
@@ -77,11 +77,11 @@ The Athletics Room will allow you to train a Dweller's Agility.=体育室可以�
 The Game Room will allow you to train a Dweller's Luck.=游戏室可以让你的居民提升幸运。
 There are higher tier versions of the production rooms that are more efficient, but more expensive.=有更高级的生产车间，它们拥有更高的效率但同时造价也更昂贵。
 Rooms must be the same level in order to be merged.=相同等级的房间才可以合并。
-Get Theme Recipes by finding all of their Fragments on Quests.=在任务中收集全部的布局碎片可以获得布局配方。
+Get Theme Recipes by finding all of their Fragments on Quests.=在任务中搜刮全部的布局碎片可以获得布局配方。
 Even if you stop a Radio Room from calling out, it continues to boost Dweller happiness.=即使你停止广播室的播音，它还是会提升居民的愉悦度。
-Collected all Fragments of a Theme Recipe=已收集布局配方的所有碎片
+Collected all Fragments of a Theme Recipe=已搜刮布局配方的所有碎片
 Crafted an Outfit, a Weapon and a Theme=制作了一件服装、一件武器和一个布局
-Collect all Fragments of a Theme Recipe=收集所有布局配方的碎片
+Collect all Fragments of a Theme Recipe=搜刮所有布局配方的碎片
 Shouldn't have done that! I had to run out with the building collapsing behind me.=真是手贱！我跑出去的同时，身后的建筑都慢慢倒塌了。
 The Room's security is too advanced. I can't get the door open.=这间房的安保措施太先进了，我没法打开它。
 a Sealed Room in a house basement.=地下室一间被封起来的房间
@@ -96,7 +96,7 @@ Maybe someone can build me a robot.=或许有人能给我造个机器人。
 Oooh. I think I feel a bathroom break coming on.=哦哦，我觉得我得去浴室放松一下。
 So many big buildings. I wonder if they'll remain standing... forever.=这么多大楼，我很好奇它们能不能永远这么……矗立着。
 They were heading for a nearby building. I think they were searching for something.=他们都去边上的大楼了，我觉得他们正在找什么东西。
-Yet another destroyed school. Get smart, build a bomb, destroy yourselves. That's humans for you.=又一个被摧毁了的学校。学习知识，制造炸弹，然后杀死自己，这就是人类。
+Yet another destroyed school. Get smart, build a bomb, destroy yourselves. That's humans for you.=又一个被摧毁了的学校。学习知识，制造炸弹，然后干掉自己，这就是人类。
 Does Coach really have the Jersey? Evidence suggests he may be in an old office building, so it's worth a look.=教练真的有那件运动衫吗？有线索表明他可能在那栋旧办公大楼里，值得去调查一下。
 They headed towards an old Chryslus building. Can you make sure they're okay?=他们去了一间克莱斯拉大楼，你能保证他们没事吗？
 The Armory room will allow you to train a Dweller's Perception.=武器室可以让你的居民提升感知能力。

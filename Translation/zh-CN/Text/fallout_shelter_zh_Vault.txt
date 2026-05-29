@@ -1,13 +1,13 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 06:05:02
-# ==============================================
+#==============================================
 # 避难所机制
 # 本文件用于保存避难所机制译文
-# ==============================================
+#==============================================
 Every Lunchbox can give you COMMON, RARE, or LEGENDARY items. Each Lunchbox is guaranteed to either have a Dweller or a RARE item.=每个避难所科技午餐盒都可以提供普通、稀有或传奇物品。每个避难所科技午餐盒都保证包含一位居民或一件稀有物品。
 You don't have any LunchBoxes, would you like to buy one?=你没有避难所科技午餐盒，是否购买？
 The Overseer's son, Jack, is missing after a crazy New Year's party!=在一场新年晚会后，监管者的儿子，杰克失踪了！

@@ -1,13 +1,13 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 06:05:02
-# ==============================================
+#==============================================
 # 资源系统
 # 本文件用于保存资源系统译文
-# ==============================================
+#==============================================
 Resources continue to be consumed for a short time after closing the game.=关闭游戏后资源仍会继续消耗一小段时间。
 You don't have any RadAway left=你没有足够的消辐宁
 You don't have any Stimpaks left=你没有足够的治疗针
@@ -28,7 +28,7 @@ Or would you prefer Caps instead?=还是说，你宁可要瓶盖？
 The Caps will be fine.=瓶盖就好了。
 Better than being stuck with those Raiders from Nuka-World.=总比和那些核世界出来的掠夺者们待在一起的要好。
 Did the Raiders have Bottle & Cappy with them?=掠夺者们手上有瓶瓶和盖盖吗？
-Bottle & Cappy have been kidnapped from Nuka-World by Raiders! They were last spotted at an abandoned factory. Head out there and rescue them before it's too late!=瓶瓶和盖盖被来自核世界的掠夺者们绑架了！最近有人在一个废弃的工厂里见到过他们，请前往那里进行援救。
+Bottle & Cappy have been kidnapped from Nuka-World by Raiders! They were last spotted at an abandoned factory. Head out there and rescue them before it's too late!=瓶瓶和盖盖被来自核世界的掠夺者们绑架了！最近有人在一个废弃的工厂里见到过他们，请前往那里进行拯救。
 Find any trace of Bottle & Cappy at the abandoned factory.=在废弃的工厂里找到瓶瓶和盖盖的踪迹。
 Track down Bottle & Cappy's kidnappers.=追踪瓶瓶和盖盖的绑架犯。
 That Yak's been stealing our food and stinking the place to high heaven!=牦牛一直在偷我们的食物，而且还臭的要命！
@@ -67,7 +67,7 @@ Search for the lost Nuka-Cola Quantum.=寻找丢失的量子型核子可乐。
 You care more about the Nuka-Cola Quantum than your life?=你觉得这些量子型核子可乐比你的命还重要吗？
 Send a group of Dwellers in Power Armor to clear out a Raider camp.=派一队居民穿上动力装甲去扫荡掠夺者营地。
 One lady, Paula Plumbkin, managed to escape. She's my new hero!=有一个叫保拉·普朗布金的女士逃了出去，她可是我的新偶像！
-The Feral Ghouls from the old Nuka-Cola plant dragged Paula Plumbkin to an abandoned building. She needs rescuing!=在旧核子可乐工厂，那些狂尸鬼把保拉·普朗布金带到了一幢废弃的大楼，她需要援救！
+The Feral Ghouls from the old Nuka-Cola plant dragged Paula Plumbkin to an abandoned building. She needs rescuing!=在旧核子可乐工厂，那些狂尸鬼把保拉·普朗布金带到了一幢废弃的大楼，她需要拯救！
 Were Bottle & Cappy here?=瓶瓶和盖盖在这里吗？
 Have you seen Bottle & Cappy?=你有见过瓶瓶和盖盖吗？
 Search Poseidon Energy's offices for any sign of Bottle & Cappy.=在波塞冬能源公司寻找瓶瓶和盖盖的线索。
@@ -120,7 +120,7 @@ Don’t forget to pack RadAway on Quests, some of the enemies do radiation damag
 Dweller health does not replenish over time in a Quest... Be sure to pack tons of Stimpaks before leaving.=在任务过程中，居民的生命值无法自动回复……所以在出发前，请确保能带好大量的治疗针。
 Be sure to keep your Dwellers healthy during boss fights, some bosses have powerful attacks.=请在Boss战时保证居民拥有一定的生命值，一些Boss拥有非常强力的攻击。
 Failed Quests can always be retried... for a few CAPS.=失败的任务一样可以重新再来过……只需要一些瓶盖。
-Powerful enough to kill an attacker. Barely.=足够杀死一个攻击者了。
+Powerful enough to kill an attacker. Barely.=足够干掉一个攻击者了。
 Serious stopping power in a small package.=小小的子弹拥有可怕的威力。
 This much power is usually reserved for a Zetan cruiser.=这东西一般是给巡洋舰用的。
 Left on this planet a long time ago. Still ludicrously powerful.=被丢弃在这个星球上已经很长一段时间了，不过还是很强力。

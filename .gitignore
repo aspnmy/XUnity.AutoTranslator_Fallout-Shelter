@@ -12,3 +12,5 @@ system_messages.txt
 # IDE文件
 .vscode/
 .idea/
+
+cache/

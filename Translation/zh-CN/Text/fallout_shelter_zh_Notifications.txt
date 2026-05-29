@@ -1,13 +1,13 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 06:05:02
-# ==============================================
+#==============================================
 # 系统通知
 # 本文件用于保存系统通知译文
-# ==============================================
+#==============================================
 You are not connected. Play as a Guest?=你没有网络连接，想要以游客身份进行游戏吗？
 Life may be unforgiving, but you've become unstoppable.=生活也许是无情的，但是你已经无人可档了。
 From Modoc to Megaton, when you wear this, you are the law.=从莫多克到核弹镇，你穿上了这个之后，一切都由你说了算。
@@ -23,7 +23,7 @@ Heh. Right you are.=嘿，你是对的。
 You have to help us, that Minuteman left us before we could find a way out of here!=你一定得帮帮我们，那个义勇军在我们找到逃出去的路之前就弃我们而去了！
 Medicine if you've got it.=如果有的话，药最好了。
 Here you are, then.=那么，这个给你了。
-Ding, ding, ding! Right you are!=Bingo！你答对了！
+Ding, ding, ding! Right you are!=答对了！你答对了！
 You've done a remarkable job, soldier.=你干得非常漂亮，士兵。
 “Okay, fine. You've proven I can't avoid you forever.=“好吧，你们向我证明了一点 - 我没办法永远躲着你们。
 You've brought this upon yourself, Eli Calvert.=你要为此付出代价，艾里·卡尔弗特。

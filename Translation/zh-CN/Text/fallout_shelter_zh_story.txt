@@ -4,11 +4,7 @@
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 05:45:03
 
-#
-#
-#
 
-- 获取缺失的主题配方碎片
 
 
 
@@ -26,9 +22,6 @@
 # 从fallout_shelter_zh.txt主文件补充
 
 # fallout_shelter_zh_story.txt
-#
-#
-#
 
 Tapping on their SPECIAL brings up more detailed information about their individual SPECIAL levels.=点击一位居民，可以查看他们的信息。
 Clicking on their SPECIAL brings up more detailed information about their individual SPECIAL levels.=点击一位居民，可以查看他们的信息。
@@ -91,7 +84,7 @@ When it comes to speech, he's up for the challenge.=一说到演讲，他就斗�
 Who stole your sweet roll? One guess.=是谁偷了你的甜面包？只能猜一次。
 He scratches you because he loves you. Honest.=他挠你是因为他爱你。
 Trapped in a well? She'll get help!=掉井里了？她会想办法的！
-He may not be able to put out a fire, but he can offer moral support.=他可能无法帮你救火，但他会给予你精神上的支持。
+He may not be able to put out a fire, but he can offer moral support.=他可能无法帮你救火，但他会给你精神上的支持。
 Aggressive? Sure. Loyal and loving? You'd better believe it.=好斗的？当然。有爱心且忠诚？你最好相信它。
 Daring and dangerous, but oh so adorable.=有胆量且危险，但真是太可爱了。
 Don't let his size fool you - he's a softie at heart.=不要被他的大小迷惑了-他内心其实很温和。
@@ -133,7 +126,7 @@ Confront a Glowing One and its Ghoul minions.=遭遇发光生物和它的食尸�
 This cave is under the dominion of the Brotherhood of Steel.=这个洞穴是属于钢铁兄弟会的领地。
 We will soon transform it into a new bunker.=我们很快就会把它改造成一个新的掩体。
 We choose “else.”=我们选择“否则”。
-There is? We are so outta here... Come on gang, we're moving on up!=有吗？我们要离开这里... 来吧，伙计们，我们继续前进！
+There is? We are so outta here... Come on gang, we're moving on up!=有吗？我们要离开这里……. 来吧，伙计们，我们继续前进！
 Can we offer you anything? Biscuits? Radioactive smoothie?=我们能为你提供什么吗？饼干？放射性奶昔？
 It does wonders for the skin.=对皮肤有奇效。
 Eliminate the Mole Rat Brood Mother.=消灭鼹鼠的繁殖母体.
@@ -303,7 +296,7 @@ Who was the sheriff of Megaton?=谁是核弹镇的警长？
 Who is the DJ for Galaxy News Radio?=谁是银河新闻电台的DJ？
 A super-duper answer if I ever heard one!=我至今听到的，最无敌的回答！
 The zoo?=动物园？
-Bing, bing, bing! Right. She never sent the Lone Wanderer there.=Bingo！答对了，她从来都没有把独行者送到哪里去。
+Bing, bing, bing! Right. She never sent the Lone Wanderer there.=答对了！答对了，她从来都没有把独行者送到哪里去。
 Which of these did Moira not send the Lone Wanderer to?=莫伊拉没有把独行者送到哪里去过？
 Straight to bed without supper.=不吃饭就回去睡了。
 In an airship.=坐飞空艇。
@@ -330,7 +323,7 @@ Who is hanging around the Red Rocket near Sanctuary?=谁在庇护山庄边上的
 The President.=总统。
 Yes! Foggy, frosty and frightening Maine.=对！多雾、寒冷并且恐怖的缅因州。
 State of confusion.=布芝道州。
-Bing, bing, bing! Winner, winner, chicken dinner.=Bingo！你赢了。
+Bing, bing, bing! Winner, winner, chicken dinner.=答对了！你赢了。
 A deluxe hamburger.=一个豪华汉堡包。
 The Nucleus.=原子核会。
 Mount Desert Island Naval Facility.=山漠岛海军基地。
@@ -377,7 +370,7 @@ But it's mine! And I ain't never giving it up!=但是这是我的！而且永远
 This is it, the end of the game! It's a bench-clearing brawl with Coach in the Dugout. Time to retire this washout, and claim Rackie Jobinson's Jersey for our own!=就是这样，让我们结束这场游戏吧！是时候和教练算算最后的总账了，让失败者滚回老家，然后夺回拉基·乔宾逊的运动衫的运动衫！
 Happy Halloween! I'm Howard Phillips, the caretaker of this old library.=万圣节快乐！我是霍华德·菲利普斯，这个旧图书馆的看守者。
 How can I help you in return?=我应该拿什么回报你们呢？
-So close... but yet so far.=很接近了……但是还差一点。
+So close... but yet so far.=很接近了……但是差一点。
 Could Coach be hiding out in the old pencil factory? Probably not. But we're going to look there anyway.=教练会躲在这个旧铅笔厂里吗？也许不会，但是不管怎么样，我们都得去调查一下。
 Call it a gut feeling, but Coach may be taking a breather in the ruins of Holy Heart Hospital. If he's there, so is Rackie Jobinson's Jersey!=这是直觉，不过教练也许会在医院的废墟里暂时停留一段时间，那件运动衫也会在那里！
 Comb through Holy Heart Hospital.=扫荡医院废墟。
@@ -386,7 +379,7 @@ Fine by us! Here you go.=我们没事！太好了。
 Darling, I'll never forget you as I toil away in complete safety. Stay strong!=亲爱的，我永远不会忘记你，虽说我要去安全的地方了，坚强些！
 The wedding gifts we got were so cheap! We can't imagine going back.=我们收到的贺礼简直廉价的要死！回去之后简直不知道该怎么做。
 Rescue the newlyweds.=拯救新婚夫妇。
-Discover the fate of the original rescue party.=找到救援小队。
+Discover the fate of the original rescue party.=找到拯救小队。
 Think you're scary, pal? Get them!=伙计，觉得自己吓人吗？去吧！
 Here, this is all I can offer you.=拿着，这些是我能给你的全部了。
 Rescue the hostage.=拯救人质。
@@ -419,7 +412,7 @@ Maybe Rackie Jobinson got his amazing athletic prowess from drinking lots of cof
 Can Henrietta lead us to the Jersey?=汉丽埃塔能帮我们找到运动衫吗？
 “The raven flies at midnight.”=“乌鸦在午夜飞行”。
 Aren't you supposed to say something back?=你不是应该说点什么回话吗？
-The message for you is: “All is well, keep up the good work!” =给你的信息是: “一切顺利，继续好好工作!”
+The message for you is: “All is well, keep up the good work!”=给你的信息是: “一切顺利，继续好好工作!”
 Deliver a message to a double agent.=向一个双面间谍传递信息。
 Half off all housewares! There's no beating this crowd.=所有家具五折！概不还价。
 The mall has been overrun!=商场里已经泛滥成灾了！
@@ -452,15 +445,15 @@ Find the rest of Maxson's Roughnecks at the Poseidon Energy Offices.=在波塞�
 Did Brody send you? I thought we were goners!=布洛迪派你来的吗？我还以为我们死定了！
 Good thing Bigsby was here. He heard them and saved my life!=幸好大斯派在这里，他听到了声音，然后救了我的命！
 Find the Railroad agents.=找到铁路特工。
-Rescue the kidnapped Railroad agent.=援救被抓走的铁路特工。
-Rescue a kidnapped Railroad operative.=援救被抓走的铁路特工。
+Rescue the kidnapped Railroad agent.=拯救被抓走的铁路特工。
+Rescue a kidnapped Railroad operative.=拯救被抓走的铁路特工。
 Here, maybe you should have the Quantum for safe keeping.=给你，也许你应该弄一些核子储备。
 Ambushed by a bunch of weirdos in camo pajamas?!?=被一群穿着迷彩服的家伙埋伏了？！？
 At least she had the decency to leave my babies alone.=最起码她不会去打搅我的宝贝。
 Yes! Tell us where Paula Plumbkin went.=是的！请告诉我们保拉·普朗布金去哪儿了。
 Huh? I don't -- Shut up! I'll have your head!=恩？闭嘴！我会杀了你的！
 This party's invitation only! No squares allowed!=这个派对只有有邀请函才能来！不欢迎不速之客！
-Are you the rescue squad? I sure hope so!=你是救援队的吗？我真希望你能是！
+Are you the rescue squad? I sure hope so!=你是拯救队的吗？我真希望你能是！
 Did Paula say where she was going?=保拉有说过她去哪儿了吗？
 Time for a little pest control!=是时候稍微控制一下灾情了！
 Search the Red Rocket Truck Stop for supplies.=在红火箭卡车停车站寻找物资。
@@ -485,11 +478,11 @@ This here's a private conversation, and you're not invited.=这可是私人聊�
 Are you serious? Then why am I drinking this swill?=你是认真的吗？那么我怎么还在这里喝酒？
 We're almost out of drinks. This stinks!=我们都喝多了！真是臭！
 No sign of Coach at the cereral processing plant. Maybe he's scavenging for electronics at the old General Atomics factory? Worth a looksie...=在炼油厂没有教练的踪迹，也许他在通用原子工厂寻找电子能源？值得去调查一下……
-Rescue a settler.=救援一个居民。
+Rescue a settler.=拯救一个居民。
 Well, I have this Giddyup Buttercup. Merry Christmas!=噢，这是一朵金凤花，圣诞节快乐！
 Santa, we dig your style. How about some new threads?=我们很喜欢你的时尚，请送我们一些新的线怎么样？
-We want a pony.=我们想要一直小马。
-Find and save Santa Claus.=找到并且援救圣诞老人。
+We want a pony.=我们想要一匹小马。
+Find and save Santa Claus.=找到并且拯救圣诞老人。
 Where is the rest of the class?=剩下的人呢？
 Remember, your grade depends on this.=记住，你的等级完全取决于这个。
 Who needs math anyway?=谁会需要学数学？
@@ -673,18 +666,18 @@ Earl ain't paying me enough to put up with this!=伯爵不会给我足够的钱�
 The Search for Jobinson's Jersey!=搜查乔宾逊的运动服！
 Track down the tracker.=跟上追踪者。
 You're right. I'll find another gift. Here, take this.=你是对的，我得去找别的礼物了，这个，你拿着。
-Oh... c'est bon ! Prenez-la ! Partez avant que je ne change d'avis.=Oh... c'est bon ! Prenez ! Partez avant que je ne change d'avis.
+Oh... c'est bon ! Prenez-la ! Partez avant que je ne change d'avis.=Oh……. c'est bon ! Prenez ! Partez avant que je ne change d'avis.
 Разберитесь с бандой рейдеров, укравших подарок у поселенца.=Разобраться с бандой рейдеров, укравших подарок у поселенца.
 Well, well, look who wandered in!=哦，瞧瞧这是谁来了！
 We haven't had Mash Tatos or French Fries in nearly a month!=我们已经有一个月没办法做薯条了！
 And bite marks are so unbecoming!=这咬痕还这么不协调！
 We got split up during the ambush.=我们在遭到埋伏的时候被迫分开了。
-Find the salvage team.=寻找救援队。
+Find the salvage team.=寻找拯救队。
 Bugle Boy?=吹号员？
 You people, coming here, searching around! Stay off our turf!=你们，过来这里，调查一下附近！离我们的草皮远点！
 Your little Super Cup contest is over, Commish.=你的超级杯比赛已经结束了，科米什。
 Confront the Commish.=遭遇科米什。
-Rescue the hostage and confront the Commish.=救援人质并且遭遇科米什。
+Rescue the hostage and confront the Commish.=拯救人质并且遭遇科米什。
 Time for some big play offense!=是时候来次大型进攻了！
 You're goin' back to the practice squad!=你还是回练习小队练练吧！
 Oh. Okay then. Nice work.=噢，这个……干得不错。
@@ -740,7 +733,7 @@ Here. From my last match.=给你，上一场比赛拿的。
 As it so happens, I have this. It's yours!=你还真做到了，拿着，这是你的了！
 You guys don't have any junk for crafting, do you?=你们这些家伙有生产用的垃圾吗？
 Cause we sold him to Slavers! Brought in a pretty penny, too.=因为我们已经把他卖给奴隶贩子了！还赚了不少钱呢。
-Dites... Y'a-t-il un célibataire parmi vous ?=Dites... y'en a un qui est célibataire ?
+Dites... Y'a-t-il un célibataire parmi vous ?=Dites……. y'en a un qui est célibataire ?
 Talk to the settlement leader.=与定居点首领交谈。
 Bring medical aid to a nearby settlement.=向附近据点提供医疗援助。
 No. The bosses ain't thinking straight. Go deal with it.=不，老大又不是傻子，去解决掉这件事。
@@ -764,14 +757,14 @@ You forgot to make the stuffing.=你忘了做填料了。
 Find the cook.=找到厨子。
 Rescue the cook.=营救厨子。
 No Coach. No Jersey. No nothing.=没有教练，没有运动衫，什么都没有。
-Rescue the settler.=救援居民。
+Rescue the settler.=拯救居民。
 The pincers, and the eggs... Gah!=钳子，还有蛋……哦！
 For years, I have searched for something to prolong life, always without results.=已经几年了，我研究了许多延年益寿的办法，不过都没有成果。
 This project has been a disaster! The robots do nothing but explode!=这个计划简直就是一个灾难！那些机器人能做的就只有爆炸！
 It must be Coach! Mocking us!=肯定是教练！他在嘲笑我们！
 Do you want her to go in?=你确定让她进去吗？
 Do you want him to go in?=你确定让他进去吗？
-You must be looking for the Boss.=你肯定是在找Boss。
+You must be looking for the Boss.=你肯定是在找头目。
 We've got no love for him.=我们可没有爱戴他。
 Guaranteed one Rare Card or better.=至少含有一张稀有级以上的卡片。
 Chance of having twins or triplets.=有几率获得两个或是三个。
@@ -801,7 +794,7 @@ Nah. I can barely speak this one.=不，我几乎都说不出话来了。
 Isn't it obvious? Someone's been disintegrated!=这不是很明显吗？某个人被分解了！
 It can only mean one thing – nudie party!=这意味着一件事 - 裸体派对！
 Hand-knitted socks, of course. They're my specialty.=手工编织的袜子，这可是我的专长。
-Always great to see you. Really. =很高兴见到你，真的。
+Always great to see you. Really.=很高兴见到你，真的。
 Do I LOOK busy?=我看起来很忙吗？
 You? Write a novel? Have you maybe considered... a coloring book instead?=你？写小说？你想过……画彩色图画本吗？
 Yes. From you. Several times.=哦，如果是你的话，偶尔开开玩笑也不错。
@@ -918,7 +911,7 @@ Not getting distracted by over-talkative companions?=为了不被那些叽叽歪
 Speak for yourself. I'm having a blast!=你就自个儿消沉吧，我可是很开心的！
 You're such a buzzkill.=你真是个扫兴的家伙。
 Huh? Thinking? Am I SUPPOSED to be thinking?=呃？想？别逗了，我像是在想什么事情的样子嘛？
-Nothing half as cool as this!= 其实和这里也没什么两样的！
+Nothing half as cool as this!=其实和这里也没什么两样的！
 Did you bring the sandwiches?=你带三明治了吗？
 Kind of charming, right? In it's own horrible way.=挺迷人的，不是吗？它有着自己的规律，尽管有些可怕。
 And you're out here because...?=那么你出来是为了……？
@@ -1044,7 +1037,7 @@ Don't get into a bar fight without it.=如果没有这个，千万别去打架�
 Better muzzle velocity and a tighter spread than the standard model.=初速度更高，且更加不容易散射。
 Can make legs disappear... like magic!=可以直接让一条腿消失……跟变魔术一样！
 Two barrels. Double the damage, double the fun!=两个枪管，双倍伤害，双倍乐趣！
-Take down your target from a neighborhood away.=杀死靠近你的敌人。
+Take down your target from a neighborhood away.=干掉靠近你的敌人。
 The Yao Guai is moving in, ready to attack.=妖怪来了，准备战斗。
 The Giant Ant's antennae are quivering. It moves in for the kill!=巨蚁的触须在不停地摆动。它要来大开杀戒了！
 The Giant Ant is moving in, ready to attack.=巨蚁来了，准备战斗。
@@ -1212,7 +1205,7 @@ Have at thee!==请随意！
 Ho Ho Hole in your head!==你，你脑袋上要有个洞了！
 Hold it right there!==站在那里别动！
 Keep the search alive!==继续搜寻生还的人！
-Killing you IS my job!==杀死你，就是我的工作！
+Killing you IS my job!==干掉你，就是我的工作！
 Life is great!==生活是多么美好！
 No holds barred!==一点都没有留情！
 Not a care in the world!==我已经无忧无虑了！
@@ -1272,13 +1265,13 @@ And I am here to give back to all wrestling fans!=我来这里是为了回馈那
 Answer them wrong and... Lose Your Head!=回答错误的话就会……“掉脑袋”！
 But, I think I maybe attracted the wrong crowd for it.=不过我觉得没准会被别的东西盯上。
 Clear out the Mole rat nest.=清剿鼹鼠的巢穴。
-Close but not quite. Time to... Lose Your Head!=很接近了，但是还是错了，看来你要……“掉脑袋”了！
+Close but not quite. Time to... Lose Your Head!=很接近了，但是是错了，看来你要……“掉脑袋”了！
 Did you see Spot run? Not there you didn't. Lose Your Head!=还《警犬追杀令》呢！看来你要“掉脑袋”了！
 Don't get too close. I think I'm coming down with something.=别靠我太近。我猜我可能染了什么病。
 Everybody doing okay? Of course we are!=你问我们都还好吗？那是当然！
 Finally, somebody recognizes how invaluable I am!=终于有人发现我的价值了！
 Get rid of those pesky Mole rats.=解决掉这些讨厌的鼹鼠。
-Good choice, but oh so wrong. So long, you're about to... Lose Your Head!=选得不错，但是还是错了，你要……“掉脑袋”了！
+Good choice, but oh so wrong. So long, you're about to... Lose Your Head!=选得不错，但是是错了，你要……“掉脑袋”了！
 Good guess, but no. So... Lose Your Head!=猜得不错，不过还是错了，你要……“掉脑袋”了！
 Good idea. My feet get so cold in the morning.=好主意。一到早上我的脚就特别冷。
 Ha! I think you need a longer look at our amazing muscles.=哈！我觉得你应该再看看我们那强健的肌肉。
@@ -1387,7 +1380,7 @@ Do these adventuring clothes make me look fat?=这些探险服看上去很胖吗
 Who’s the best? We’re the best!=谁是最棒的？我们是最棒的！
 The G.O.A.T. was right! This is the perfect job for me!=G.O.A.T.是对的！这工作对我来说简直完美！
 From dusty cantinas to the end of the line, a true anti-hero's weapon.=可以从布满灰尘的小酒吧射到天际，真正的平民武器。
-The lever sticks a bit, but it's still a solid long-range weapon.=虽说控制杆有点锈了，但是还是非常强力的远程武器。
+The lever sticks a bit, but it's still a solid long-range weapon.=虽说控制杆有点锈了，但是是非常强力的远程武器。
 Possibly the cruelest high-tech weapon ever made by humankind.=也许是最残忍的高科技武器了吧。
 The ultimate in weaponized rail spike acceleration.=轨道加速炮终极版。
 Increases Perception training speed=加快【感知】训练速度

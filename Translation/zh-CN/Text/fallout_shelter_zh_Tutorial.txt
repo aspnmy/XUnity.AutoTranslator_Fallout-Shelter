@@ -1,10 +1,10 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 05:45:03
-# ==============================================
+#==============================================
 
 # 这些是游戏教程中的引导句子，包含 {XXX} 占位符
 First let's {BUILD} a {ROOM}. Tap on the {HAMMER ICON} to open the {BUILD MENU}.=首先让我们来{建造}一个{房间}。点击{锤子图标}来打开{建造菜单}。
@@ -24,12 +24,12 @@ Now that {DWELLERS} are working, the room will start {PRODUCING RESOURCES}. {DOU
 If you are in dire need of extra resources, you can use the {RUSH MODE}. {TAP} the {RUSH BUTTON} to {OPEN} the {RUSH MENU}.=如果你急需更多的资源，可以开启{加速模式}。{点击}{加速按钮}来{开启}{加速模式}。
 If you are in dire need of extra resources, you can use the {RUSH MODE}. {CLICK} the {RUSH BUTTON} to {OPEN} the {RUSH MENU}.=如果你急需更多的资源，可以开启{加速模式}。{点击}{加速按钮}来{开启}{加速模式}。
 Activating Rush instantly produce {RESOURCES} and also {AWARDS} you {CAPS}. Although be careful, destructive {INCIDENTS} might happen.=激活加速模式能够立即产生{资源}，还会{奖励}你{瓶盖}。但是要当心，可能会产生破坏性的{灾难}。
-Great! You've successfully completed your first Rush and collected {CAPS}.=棒极了！你成功地完成了第一次加速并收集到了{瓶盖}。
-Now {TAP} on the {RESOURCE ICON} to {COLLECT} the resources and {RESTART ROOM PRODUCTION}.=现在{点击}{资源图标}来{收集}资源并{重新开始生产}。
-Now {CLICK} on the {RESOURCE ICON} to {COLLECT} the resources and {RESTART ROOM PRODUCTION}.=现在{点击}{资源图标}来{收集}资源并{重新开始生产}。
+Great! You've successfully completed your first Rush and collected {CAPS}.=棒极了！你成功地完成了第一次加速并搜刮到了{瓶盖}。
+Now {TAP} on the {RESOURCE ICON} to {COLLECT} the resources and {RESTART ROOM PRODUCTION}.=现在{点击}{资源图标}来{搜刮}资源并{重新开始生产}。
+Now {CLICK} on the {RESOURCE ICON} to {COLLECT} the resources and {RESTART ROOM PRODUCTION}.=现在{点击}{资源图标}来{搜刮}资源并{重新开始生产}。
 Congratulations! You've earned your first {REWARD} - a {LUNCH BOX} filled with goodies.=恭喜！你赚到了第一笔{奖励} — 一个装满了好东西的{避难所科技午餐盒}。
-{ADD FRIENDS} to {VISIT} and look at their {VAULT} and {COLLECT CAPS}.={添加好友}后可以{拜访}并查看他们的{避难所}和{收集瓶盖}。
-Send {DWELLERS} to the {WASTELAND} to collect {CAPS}, {OUTFITS} and {WEAPONS}.=派{居民}去{废土}收集{瓶盖}，{服装}和{武器}。
+{ADD FRIENDS} to {VISIT} and look at their {VAULT} and {COLLECT CAPS}.={添加好友}后可以{拜访}并查看他们的{避难所}和{搜刮瓶盖}。
+Send {DWELLERS} to the {WASTELAND} to collect {CAPS}, {OUTFITS} and {WEAPONS}.=派{居民}去{废土}搜刮{瓶盖}，{服装}和{武器}。
 Here you can see and manage all the {WEAPONS} and {OUTFITS} you currently own.=你能在这儿查看当前拥有的全部{武器}和{服装}。
 {TRAIN} your Dwellers to {INCREASE} their {SPECIAL} stats.={训练}你的居民以{提升}他们的{SPECIAL}属性。
 {MALE} and {FEMALE} Dwellers within the {LIVING QUARTERS} have a chance of making {BABIES}.={男性}和{女性}居民同时在{起居室}中时有一定的几率制造{小宝宝}。
@@ -91,12 +91,12 @@ When you are finished assigning and equipping {DWELLERS}, {CLICK} the {START QUE
 ^Your\ \{\#\}\ Theme\ is\ ready!$=你的$1布局已就位！
 ^\{\#\}:\ Your\ Quest\ team\ has\ reached\ its\ destination\.$=$1：你的任务小队已经到达目的地。
 ^Customize\ \{\#\}\ Dwellers$=给$1个居民换脸
-^Collect\ \{\#\}\ CAP\ on\ Quests$=在任务中收集$1个瓶盖
-^Collect\ \{\#\}\ CAPS\ on\ Quests$=在任务中收集$1个瓶盖
-^Collect\ from\ \{\#\}\ container\ on\ Quests$=在任务中收集$1个箱子
-^Collect\ from\ \{\#\}\ containers\ on\ Quests$=在任务中收集$1个箱子
-^Collect\ \{\#\}\ pieces\ of\ Junk$=收集$1件垃圾
-^Collect\ \{\#\}\ Outfits$=收集$1件服装
+^Collect\ \{\#\}\ CAP\ on\ Quests$=在任务中搜刮$1个瓶盖
+^Collect\ \{\#\}\ CAPS\ on\ Quests$=在任务中搜刮$1个瓶盖
+^Collect\ from\ \{\#\}\ container\ on\ Quests$=在任务中搜刮$1个箱子
+^Collect\ from\ \{\#\}\ containers\ on\ Quests$=在任务中搜刮$1个箱子
+^Collect\ \{\#\}\ pieces\ of\ Junk$=搜刮$1件垃圾
+^Collect\ \{\#\}\ Outfits$=搜刮$1件服装
 ^Collect\ \{\#\}\ Pets$=获得$1头宠物
 ^Collect\ \{\#\}\ Rare\ Outfit$=获得$1件稀有服装
 ^Collect\ \{\#\}\ Rare\ Outfits$=获得$1件稀有服装
@@ -121,18 +121,18 @@ When you are finished assigning and equipping {DWELLERS}, {CLICK} the {START QUE
 ^Perform\ \{\#\}\ critical\ hits$=完成$1次致命一击
 ^Perform\ \{\#\}\ perfect\ critical\ hit$=完成$1次完美一击
 ^Perform\ \{\#\}\ perfect\ critical\ hits$=完成$1次完美一击
-^Collect\ \{\#\}\ Power$=收集$1电力
+^Collect\ \{\#\}\ Power$=搜刮$1电力
 ^Have\ \{\#\}\ Female\ Dwellers\ pregnant$=让$1名女居民怀孕
 ^Raise\ any\ SPECIAL\ stat\ of\ \{\#\}\ Dwellers\.$=提升$1个居民的任意属性。
 ^Raise\ the\ \{\#\}\ of\ \{\#\}\ Dwellers\.$=提升$1个居民的$2。
-^Kill\ \{\#\}\ \{\#\}\ without\ a\ weapon$=不使用武器杀死$1个$2
+^Kill\ \{\#\}\ \{\#\}\ without\ a\ weapon$=不使用武器干掉$1个$2
 ^Assign\ \{\#\}\ Dwellers\ in\ the\ right\ room$=将$1个居民分配到正确房间
 ^Successfully\ Rush\ \{\#\}\ rooms$=成功加速$1个房间
 ^Perform\ \{\#\}\ successful\ Rushes$=完成$1次加速
 ^Scrap\ \{\#\}\ Weapons\ or\ Outfits$=分解$1件武器或服装
 ^Sell\ \{\#\}\ Weapons\ or\ Outfits$=出售$1件武器或者服装
 ^Sell\ \{\#\}\ pieces\ of\ Junk$=出售$1份垃圾
-^Collect\ \{\#\}\ Stimpaks$=收集$1个治疗针
+^Collect\ \{\#\}\ Stimpaks$=搜刮$1个治疗针
 ^Use\ \{\#\}\ RadAway$=使用$1个消辐宁
 ^Stop\ \{\#\}\ \{\#\}\ infestations\ before\ they\ spread$=在扩散之前，阻止$1场$2肆虐
 ^Stop\ \{\#\}\ incidents$=阻止$1场灾难
@@ -146,7 +146,7 @@ When you are finished assigning and equipping {DWELLERS}, {CLICK} the {START QUE
 ^Survive\ \{\#\}\ Radscorpion\ attacks\ with\ no\ casualties$=在$1场辐射蝎的攻击中不受损伤
 ^Upgrade\ \{\#\}\ rooms$=升级$1个房间
 ^Use\ \{\#\}\ Stimpaks$=使用$1支治疗针
-^Collect\ \{\#\}\ Water$=收集$1水
+^Collect\ \{\#\}\ Water$=搜刮$1水
 ^Equip\ \{\#\}\ Dwellers\ with\ a\ Weapon$=为$1个居民装备武器
 ^Win\ \{\#\}\ battle\ on\ Quests$=在任务中获得$1场战斗的胜利
 ^Win\ \{\#\}\ battles\ on\ Quests$=在任务中获得$1场战斗的胜利
@@ -226,7 +226,7 @@ It was just a whirlwind of claws, snack cake crumbles and murder!=它就是个�
 Want to find the Gobbler? Just follow the gravy!=你想要找到格布勒？跟着肉汁的痕迹就行了！
 You may have made it this far, but now you're done!=你也许能够走到这一步，但是现在，你完了！
 You'll never defeat all of us!=你永远不会打败我们所有人！
-We just want to have a wedding here... Care to officiate it?=我们只是想在这里举行婚礼... 介意主持一下吗？
+We just want to have a wedding here... Care to officiate it?=我们只是想在这里举行婚礼……. 介意主持一下吗？
 Well, that's unfortunate. I guess we'll have to kill you.=那太不幸了，我想我们得杀了你。
 Sure, but maybe you want to look inside this gun's barrel first?=当然，但也许你想先看看这把枪的枪管内部？
 The big day is almost upon us. The idea was to have a wedding in a natural setting, but since it's too dangerous outside we'll use a nearby cave instead. We just need to sterilize it.=大日子就快到了。我们的想法是在自然环境中举行婚礼，但是因为外面太危险了，我们会用附近的山洞来代替。我们只需要消毒一下。
@@ -339,7 +339,7 @@ Sure, I'll just tell your settlement the Radscorpions got you.=当然，我会�
 Okay, so Holy Heart Hospital was a dead end. But at least we're still alive! Next stop, the ruins of Lakeville Library.=好吧，医院就是个死胡同。但是最起码我们还活着！下一站，莱克维尔图书馆废墟。
 Our salvage team took Bigsby to the Atomatoys warehouse, but hasn't returned. Take this. You'll need it if you look for them.=我们的搜救小队去了玩具仓库寻找大斯派，结果没有回来。带上这个，如果你要去寻找他们，就会用到这个。
 Well it's mine, and you'll never find it! - Coach”=听着，这是我的，你们永远别想找到！ - 教练”
-Tell you what. You kill Frank the Tank. He's in that building down the road. Then we'll talk. This might help.=这么和你说吧，你去帮我们杀死坦克弗兰克，他就在路另一头的建筑里，然后我们再聊聊。
+Tell you what. You kill Frank the Tank. He's in that building down the road. Then we'll talk. This might help.=这么和你说吧，你去帮我们干掉坦克弗兰克，他就在路另一头的建筑里，然后我们再聊聊。
 We sold him to a cannery that's been producing Potted Meat. But you? You, we're just gonna kill!=我们把他买到了生产肉罐头的工厂，而你呢？你的话，我们就打算直接杀了！
 First married, then sold to Slavers... Can we get to Jack in time?=先是结婚，然后又被卖给了奴隶贩子……我们还能及时找到杰克吗？
 Our boy got traded into marriage against his will, sold into slavery, shipped to a meat factory and now some Raiders have him hostage... What's next?=我们的孩子被骗了，他被卖给了奴隶贩子，然后又转手卖到了肉罐头加工工厂……接下来又会是哪里呢？
@@ -363,7 +363,7 @@ They're headed for the local Fallon's office. Think you can stop them?=他们去
 We think we know where a rare Nuka-Cola Quantum is located!=我想我们已经知道稀有的量子型核子可乐的位置了！
 We were trying to get the synths to safety when they took us.=我们想要把合成人送到安全的地方，结果却被抓了。
 Relax, you're safe now.=放松，你现在安全了。
-A group known as “The Railroad” was trying to sneak refugees through the area, when they were captured by Raiders. Find and rescue them before it's too late.=一群名为“铁路”的人想要把难民偷渡出去，结果被掠夺者抓起来了。请对他们实施援救。
+A group known as “The Railroad” was trying to sneak refugees through the area, when they were captured by Raiders. Find and rescue them before it's too late.=一群名为“铁路”的人想要把难民偷渡出去，结果被掠夺者抓起来了。请对他们实施拯救。
 Those horrible Ghouls were trying to steal my Nuka-Cola Quantum.=那些可怕的尸鬼想要偷走我的量子型核子可乐。
 Maybe I should hang on to that Nuka-Cola Quantum so you'll be safe.=也许我该拿着这些量子型核子可乐，这样你才会安全。
 Sierra Petrovita has been trapped by Ghouls at the local Super-Duper Mart. Rescue her before they make her their next meal.=西雅拉被尸鬼困在了当地的大无敌超市，请在她变成尸鬼的晚餐之前去救她。
@@ -385,7 +385,7 @@ Now, scram before I have to rough you up.=在我打死你之前赶紧给我滚�
 The Boss already knows what you've been doing. Better get him before he gets you.=老大早就知道你在做的事情了，先下手为强啊。
 Oh nothing. The Boss just said to take note of anyone who laughs at that story.=哦，没什么，老大刚刚说让我注意一下这些笑的人。
 A group of Raiders is holding a rowdy shindig while their Boss is away. Now's our chance to infiltrate them while they're partying. If we can turn them against their Boss, the whole gang will be destroyed from within!=一群掠夺者在他们老大外出的时候举办了一个吵吵闹闹的晚会。这正是我们深入内部的好时机，如果我们能鼓动他们造反的话，他们的集团就会自己从内部开始崩溃。
-Rescue any settlers that you can.=尽可能地援救更多的居民。
+Rescue any settlers that you can.=尽可能地拯救更多的居民。
 We don't need anything, Santa. We just like doing good!=我们什么都不需要，圣诞老人，我们只是为了做些好事罢了！
 While we were spreading Christmas cheer, someone managed to track down Santa Claus. He's in trouble. Let's go!=在我们庆祝圣诞节的时候，有人发现了圣诞老人。他遇上麻烦了，我们得赶紧！
 If you want to pass this course, you do.=如果你想要通过这个测试，你就得这么做。
@@ -528,7 +528,7 @@ No luck in the pencil factory, but we're not discouraged. Rackie Jobinson's Jers
 Just head all the way to the top.=只要上到顶部就行了。
 Ok, ok, no need to do anything rash. Here.=好吧好吧，不需要这么轻易地去做这些事情，拿着。
 Leave us be and we'll tell you where he is.=别管我们，我们就告诉你他在哪儿。
-THE DWELLER'S ITEMS MUST BE COLLECTED FIRST=居民的物品必须先被收集完成
+THE DWELLER'S ITEMS MUST BE COLLECTED FIRST=居民的物品必须先被搜刮完成
 You have been signed out. The game must now close.=你已被登出。请关闭游戏。
 Invite your Facebook Friends to play Fallout Shelter so you can exchange Junk with each other.=邀请Facebook的好友一起玩辐射，这样你们就可以在游戏中互相交换垃圾了。
 Want to listen to the radio later?=待会儿要不要听广播啊？
@@ -592,7 +592,7 @@ Okay. I’m about ready to go home now.=好吧，我很快就要回家了。
 We'll talk about it later. In Hell.=我们之后再谈这个，该死。
 When we get back, what are you going to do first?=等我们回去，我们该做什么呢？
 Maybe talk to my special someone and, you know. Dance.=我应该会和那个人聊聊吧，你懂的。
-Oh, you know. Having fun. Staying safe. Being happy.= 哦，你也知道的，在享乐呗，安安全全开开心心的。
+Oh, you know. Having fun. Staying safe. Being happy.=哦，你也知道的，在享乐呗，安安全全开开心心的。
 Ever feel like life is just an illusion?=有没有觉得，其实生活其实就是一场梦境？
 Don't worry, we'll be home soon!=别担心，我们很快就能回家的！
 Oh, so I'm your servant now?=哦，你的意思是我现在是你的仆人了？
@@ -635,7 +635,7 @@ Just a little hotter, and a little greener, than the standard model.=比起标�
 For when you absolutely need to turn someone into lime gelatin.=在你需要把某个人变成液体的时候用。
 How fast can rail spikes travel? You don't want to know.=轨道炮的速度究竟能达到多快？我都敢想。
 You'll marry anyone with this bad boy pointed at your head.=不管是谁用这玩意儿指着你的头，你都还是从了的好。
-Better scope, better rounds. You'd have to try NOT to kill the target.=带镜更好，再装填速度更快。你如何才能不杀死敌人？
+Better scope, better rounds. You'd have to try NOT to kill the target.=带镜更好，再装填速度更快。你如何才能不干掉敌人？
 Which save do you want to keep?=你想要保留哪个存档？
 Your cloud save is from a newer version of Fallout Shelter. Please update the game and try again.=你的云存档来自一个较新版本的《辐射避难所》，请更新游戏后重试。
 The Vicious Dog has my scent now! He won't stop till one of us is dead!=那条恶犬闻到了我的味道！在拼出个你死我活之前它是不会罢休的！
@@ -677,7 +677,7 @@ Are you sure you want to keep the Cloud save?=你确定你想保留云端存档�
 *BZZZT* WRONG! Now... Lose Your Head!=扯淡扯淡！你要……“掉脑袋”了！
 A lunatic who calls himself Mole Rat Man has been training Mole rats to attack settlements and steal their Tatos. Now's the time to strike!=有一个自称鼹鼠人的疯子养着一群鼹鼠，并且带着它们攻击人们的住所，偷取他们的食物。现在，是时候进攻了！
 As they say, heads will roll. First... Lose Your Head!=就像人们说的，脑袋要灵光点，你要……“掉脑袋”了！
-Close but no cigar. Now we're going to make you... Lose Your Head!=差不多，但是还不够准确，你要……“掉脑袋”了！
+Close but no cigar. Now we're going to make you... Lose Your Head!=差不多，但是不够准确，你要……“掉脑袋”了！
 Couldn't be more wrong. Now you have to... Lose Your Head!=错得不能再错了，你肯定要……“掉脑袋”了！
 Dang it. Now I'm hungry. Just for that, you're going to... Lose Your Head!=别逗了。我都快饿昏了。就为了这一点，你就要……“掉脑袋”了！
 Eliminate the Alpha Deathclaw known as “Butcher” to collect your bounty!=消灭阿尔法死爪“屠夫”，赢得你的奖励！
@@ -692,8 +692,8 @@ He was there, but not just him. So you have to... Lose Your Head!=他在那里�
 It could sure use it, but no. Now you have to... Lose Your Head!=你很努力，不过还是错了，你要……“掉脑袋”了！
 Just a hair too south. Speaking of hair... Lose Your Head!=偏南了毫发的距离。说到头发……“掉脑袋”了！
 Just that way. But be careful! Because, you know... Deathclaw.=就在那儿，不过你得小心！因为，你也知道的……死爪。
-Kill the first Alpha Deathclaw.=杀死第一只阿尔法死爪。
-Look, I'm not really a Raider, but I gotta kill ya if I want to stay here. So... Die!=听着，我不是一个真正的掠夺者，但如果我想留在这里，我就得杀了你。所以......死吧！
+Kill the first Alpha Deathclaw.=干掉第一只阿尔法死爪。
+Look, I'm not really a Raider, but I gotta kill ya if I want to stay here. So... Die!=听着，我不是一个真正的掠夺者，但如果我想留在这里，我就得杀了你。所以………………死吧！
 Love that gun, but it won't do the trick. So now you... Lose Your Head!=我喜欢这枪，不过还是没用。你要……“掉脑袋”了！
 Minuteman Preston Garvey has gotten himself stuck in the Kendall Hospital surrounded by Feral Ghouls and who knows what else. Save him!=义勇军普雷斯顿·嘉维被困在肯德尔医院了，他身边全是狂尸鬼，还有一些鬼才知道的东西，赶紧去救他！
 My husband would never aband... Oh, you want to go? Fine then. Go.=我的丈夫永远不……哦，你要走了？走吧走吧。
@@ -705,7 +705,7 @@ Really? I never would have known.=真的假的？我一直都不知道。
 Right! Just kidding. Now you have to... Lose Your Head!=答对了！才怪！你要……“掉脑袋”了！
 Right! No, wait, wrong! Totally wrong. Now you... Lose Your Head!=答对了！不，等等，错了！完完全全错了！你要……“掉脑袋”了！
 She did, but not just her. Time to... Lose Your Head!=她确实在，但是不仅仅只有她，你要……“掉脑袋”了！
-So close, and yet wrong. Now... Lose Your Head!=很接近了，但是还是错了，你要……“掉脑袋”了！
+So close, and yet wrong. Now... Lose Your Head!=很接近了，但是是错了，你要……“掉脑袋”了！
 So, so wrong. Let's... Lose Your Head!=错错错，你要……“掉脑袋”了！
 So, so wrong. Now you'll so, so... Lose Your Head!=错得没边，你要……“掉脑袋”了！
 Some nefarious person has been training Mole rats to steal Tatos from under people's noses. We need to meet with a tracker who might have found the source.=一些坏家伙一直在训练鼹鼠，然后派它们从人们的眼皮子底下偷土豆，我们需要去见见那个发现了踪迹的人。
@@ -714,7 +714,7 @@ They woulda if they coulda! But now you have to... Lose Your Head!=他们要是�
 We found a Rackie Jobinson baseball card with a taunting note from Coach. Looks like he really does have the Jersey. But we'll never give up!=我们发现了一张拉基·乔宾逊的棒球卡，上面还有教练嘲讽的话。看起来运动衫真的在他手里。但是我们绝对不会放弃的！
 We need to send a message to a friend who has infiltrated a gang of Raiders. Your mission is to drop the message at a nearby Super-Duper Mart for him to pick up. Try not to get spotted. Or, you know, killed.=我们需要给一个潜入掠夺者帮派的朋友发一条信息。你的任务是把信息送到附近的超级大卖场，让他来取。尽量不要被发现。或者，你知道的，(被发现就会)被杀。
 Well, the Overseer did say to try talking to outsiders first. He's down the hall.=听着，监管者确实说过要和这些外来者先谈谈，他就在大厅里。
-What better way to learn about the deadly Glowing Radscorpion than first-hand observation? Send your research team to the monster's lair. Of course, you'll need to kill it first.=有什么比直接观察更加能够了解这种致命的发光辐射蝎呢？派你的研究小队去怪物的巢穴，哦，当然，你得先杀死那些怪物。
+What better way to learn about the deadly Glowing Radscorpion than first-hand observation? Send your research team to the monster's lair. Of course, you'll need to kill it first.=有什么比直接观察更加能够了解这种致命的发光辐射蝎呢？派你的研究小队去怪物的巢穴，哦，当然，你得先干掉那些怪物。
 What is it with you and donkeys? Now you'll... Lose Your Head!=那驴到底是什么情况，你要……“掉脑袋”了！
 What? Of course! It's so obvious now! Here. A stipend for your insights.=什么？哦！这很明显嘛！请收下这个，作为谢礼。
 Who cares? Super Mutant Behemoth vs. Deathclaw. Now that's a REAL fight.=谁在意这个？变种怪对上死爪。真正的战斗现在才开始。
@@ -736,7 +736,7 @@ You know, I... uhh... I'm just not sure! How strange.=你也知道，我……�
 You know, for a Raider, your vocabulary is exemplary.=你也知道，对一个掠夺者来说，你的用词非常贴切。
 You know, what? We're just going to kill you.=你知道吗？我们刚刚差点就要动手杀你了。
 You know, what? Yeah. It's time. I'm out of here first chance I get.=你知道吗，我就是为了等现在，这是我第一次找到了机会。
-You know, you’d make quite a good soldier yourself.=知道吗，你们已经把自己锻炼成一个非常厉害的士兵了。
+You know, you’d make quite a good soldier yourself.=知道吗，你们已经把自己锻炼成非常厉害的士兵了。
 You must build the Overseer's Office before you can access the Quest List.=你必须建造监管者办公室才能进入任务列表。
 You think I want to do this? But we're starving here! Look, you find our grub, maybe we could consider letting him loose.=你觉得我想要做这种事情？我们只是太饿了！听着，你找到我们的食物，也许我们可以考虑放他走。
 You want to track it down? Well, I think you know what to do...=你想要追查下去？好吧，我想你应该知道该做些什么的……
@@ -785,7 +785,4 @@ Sometimes, late at night, I smell the sweat and steel... and know that you smell
 # 从fallout_shelter_zh.txt主文件补充
 
 # fallout_shelter_zh_Tutorial.txt
-#
-#
-#
 

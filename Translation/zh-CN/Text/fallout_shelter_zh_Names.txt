@@ -1,13 +1,13 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 06:16:19
-# ==============================================
+#==============================================
 # 专有名词
 # 本文件用于保存名字、名词、地名等专有名词译文
-# ==============================================
+#==============================================
 Vault-Tec==避难所科技
 Vault==避难所
 Dweller==居民
@@ -122,7 +122,7 @@ All Sales Final==所有销售的最终决定
 Almost Human==伪人
 Amata's Pistol==阿玛塔的手枪
 American Shorthair==美国短毛猫
-Animal Rescue==动物援救
+Animal Rescue==动物拯救
 Arms Race==军备惊魂
 Assault Rifle==突击步枪
 Australian Shepherd==澳大利亚牧羊犬
@@ -146,7 +146,7 @@ Chemistry Flask==化学烧瓶
 Christmas Diner==圣诞节餐厅
 Cloud Save==云存档
 Collateral Murder==旁系杀手
-Collect Common Items==收集普通物品
+Collect Common Items==搜刮普通物品
 Combat Shotgun==战斗霰弹枪
 Commander Fatigues==指挥迷彩服
 Common Decorations==普通装饰品
@@ -347,7 +347,7 @@ Young Brown Brahmin==年轻的棕双头牛
 Young White Brahmin==年轻的白双头牛
 Zoom Camera In==视角放大
 Zoom Camera Out==视角缩小
-Mine now! ==现在是我的了！
+Mine now!==现在是我的了！
 Nuka-Cola Quantum!==量子型核子可乐！
 Vault Boy!==避难所男孩！
 Vaultopolis Awaits!==避难所之城等待着你！
@@ -403,10 +403,10 @@ Stimpaks Taken=治疗针被使用
 RadAway Taken=消辐宁被使用
 Caps Collected=已获得瓶盖
 Power Collected=获得的电力
-Food Collected=收集的食物
+Food Collected=搜刮的食物
 Emma=艾玛
 Frank=弗兰克
-Junk Collected=收集的垃圾
+Junk Collected=搜刮的垃圾
 Junk Sold=出售的垃圾
 Elevator Rides=乘坐电梯
 Successful Rushes=加速成功
@@ -480,9 +480,9 @@ Sphynxes=斯芬克斯猫
 Toygers=玩具虎猫
 Turkish Vans=土耳其梵猫
 Pregnant Dwellers=怀孕的居民
-Water Collected=收集的水
+Water Collected=搜刮的水
 Vault CAPS=避难所瓶盖
-Collect=收集
+Collect=搜刮
 Infiltrator=渗透者
 Charon's Shotgun=卡隆的霰弹枪
 Hardened Flamer=硬化火焰喷射器
@@ -554,7 +554,7 @@ Need more Dwellers for your Vault? Try assigning Dwellers to the Living Quarters
 Negative, Vault Dweller. The pattern is full.=别想了，避难所居民，这图案太花了。
 Open it to welcome a furry* friend to your Vault.=宠物来到了辐射避难所
 Boss said no new blood 'til we're ready to open the Vault. Kill them!=老大(注:头目)说在我们打开避难所大门之前，不准杀人，那么现在，杀了他们！
-Margo's eczema cleared up, the crop came in full... even our brahmin Ole Jess don't limp no more!=玛戈的湿疹痊愈了，庄稼(也)长满了......甚至我们的婆罗门(注: 种姓)奥莱-杰斯也不再跛脚了！
+Margo's eczema cleared up, the crop came in full... even our brahmin Ole Jess don't limp no more!=玛戈的湿疹痊愈了，庄稼(也)长满了………………甚至我们的婆罗门(注: 种姓)奥莱-杰斯也不再跛脚了！
 Let's see how you fare against a nest full of Radscorpions. Oh, and this time, you can only have two people in your squad.=让我们瞧瞧你是怎么对付一整窝辐射蝎的。哦对了，这一次，你只能带两个人去。
 It's called dinner, and guess who just got added to the menu!=我们称之为晚餐，猜猜谁被加到菜单里了！
 This Vault is full of nothing but ghosts!=这个避难所已经到处都是幽灵了！
@@ -563,15 +563,15 @@ To quickly check on your Dwellers exploring, just click directly on the Wastelan
 It's no good, they won't open the door. I guess I better move on.=没用，他们不肯开门。我猜我最好继续前进。
 - Building multiple types of the same room will increase its price.=建造新的起居室以收容新的居民。
 - Building MedBays and Science Labs will increase the number of Stimpaks and RadAway you can store.=仓库可以增加你的武器，服装，垃圾和宠物的储存空间。
-A {PREGNANT DWELLER} is ready to give birth! {TAP} the {ICON} above her head to welcome a {CHILD} to your Vault.={怀孕的居民}准备进行生产了！{点击}她头上的{图标}来迎接你避难所中的{新成员}。
-A {PREGNANT DWELLER} is ready to give birth! {CLICK} the {ICON} above her head to welcome a {CHILD} to your Vault.={怀孕的居民}准备进行生产了！{点击}她头上的{图标}来迎接你避难所中的{新成员}。
+A {PREGNANT DWELLER} is ready to give birth! {TAP} the {ICON} above her head to welcome a {CHILD} to your Vault.={怀孕的居民}准备生产了！{点击}她头上的{图标}来迎接你避难所中的{新成员}。
+A {PREGNANT DWELLER} is ready to give birth! {CLICK} the {ICON} above her head to welcome a {CHILD} to your Vault.={怀孕的居民}准备生产了！{点击}她头上的{图标}来迎接你避难所中的{新成员}。
 A Raider calling herself the Queen of the Deathclaws has been terrorizing the Wasteland!=一个掠夺者称她是死爪女皇，并且占领了废土！
 Drag a Dweller to the Wasteland and click on the red Vault Door button to evict them from the Vault.=你可以把居民拖动到废土，然后点击避难所入口红色的按钮来把居民逐出避难所。
 Drag a Dweller to the Wasteland and tap the red Vault Door button to evict them from the Vault.=你可以把居民拖动到废土，然后点击避难所入口红色的按钮来把居民逐出避难所。
 Evict a Dweller from the Vault by dragging them to the Wasteland and then clicking the red Vault Door button instead of sending them to explore.\n\nAny items equipped on an evicted Dweller are returned to Storage.=拖动避难所居民至废土，然后选择红色的避难所门按钮就可以驱逐他们。\n\n被驱逐的避难所居民身上的装备会自动存放到仓库中。
-Evict a Dweller from the Vault by dragging them to the Wasteland and then tapping the red Vault Door button instead of sending them to explore.\n\nAny items equipped on an evicted Dweller are returned to Storage.=想要从避难所中驱逐居民，先把他/她拖到避难所外面，再点击红色的避难所大门按钮。\n\n受到驱逐的居民装备的道具会放入储藏室。
+Evict a Dweller from the Vault by dragging them to the Wasteland and then tapping the red Vault Door button instead of sending them to explore.\n\nAny items equipped on an evicted Dweller are returned to Storage.=想要从避难所中驱逐居民，先把他们拖到避难所外面，再点击红色的避难所大门按钮。\n\n受到驱逐的居民装备的道具会放入储藏室。
 ^Your FOOD, WATER and POWER resources are what keeps your Vault going.\n\n- FOOD: Dwellers need to eat to stay healthy. Run low on FOOD and your Dwellers will begin to lose Health.\n\n- WATER: Clean water is hard to come by in the Wasteland. Run low on WATER and your Dwellers will take Radiation damage.\n\n- POWER: Your Vault can't run without POWER. Run low on POWER and your rooms will begin shutting down.\n\nKeep your resources above the required resource lines to keep your Vault happy.\nResources continue to be consumed for a short time after closing the game.$=食物、水源、电力维持避难所运转；资源不足会产生负面效果，退出游戏后资源仍会短时消耗。
-If you run low on any of these resources, the bars at the top of the screen will turn red.\n\nWhen low on Power, rooms will start shutting down.\nWhen low on Food, Dwellers start to lose health.\nWhen low on Water, Dwellers become irradiated.\n\nThe required resource line on the resource bar shows your Vault's current resource needs.=以下资源产量过低时，屏幕顶部的标尺会变红。\n\n电力低时，房间会逐个停电。\n食物紧缺时，居民会开始损失体力。\n水紧缺时，居民会开始受到辐射影响。\n\n最低标准资源刻度会显示你的避难所当前所需的资源量。
+If you run low on any of these resources, the bars at the top of the screen will turn red.\n\nWhen low on Power, rooms will start shutting down.\nWhen low on Food, Dwellers start to lose health.\nWhen low on Water, Dwellers become irradiated.\n\nThe required resource line on the resource bar shows your Vault's current resource needs.=以下资源产量过低时，屏幕顶部的标尺会变红。\n\n电力低时，房间会逐个停电。\n食物紧缺时，居民会开始失去生命值。\n水紧缺时，居民会开始受到辐射影响。\n\n最低标准资源刻度会显示你的避难所当前所需的资源量。
 PETS HAVE COME TO FALLOUT SHELTER\nHere's a free Pet Carrier to get you started!\nOpen it to welcome a furry* friend to your Vault.=宠物来到了辐射避难所\n这里有一个免费的宠物笼！\n打开它然后迎接一个毛茸茸的*朋友吧。
 When you need new Dwellers you can always encourage your Dwellers to procreate.\n\n- Put a man and a woman in the Living Quarters and see if they like each other.\n\n- If all goes well, the woman will become pregnant.\n\n- After some time, the pregnant Dweller will be ready to give birth.\n\n- Tap the icon above her head to welcome a new child in your Vault.\n\n- Once the child has grown up, you will have a new Dweller.=需要新的居民时，你可以鼓励自己的居民生育。\n\n- 将一名男性和一名女性拖至宿舍，看看他们是否互相喜欢。\n\n- 如果一切顺利，女性就会怀孕。\n\n- 一段时间后，怀孕的居民就会生育。\n\n- 轻按她头上的图标来迎接避难所里的新生命。\n\n- 当小孩长大后，你就有了一名新的居民。
 When you need new Dwellers you can always encourage your Dwellers to procreate.\n\n- Put a man and a woman in the Living Quarters and see if they like each other.\n\n- If all goes well, the woman will become pregnant.\n\n- After some time, the pregnant Dweller will be ready to give birth.\n\n- Click on the icon above her head to welcome a new child in your Vault.\n\n- Once the child has grown up, you will have a new Dweller.=需要新的居民时，你可以鼓励自己的居民生育。\n\n- 将一名男性和一名女性拖至宿舍，看看他们是否互相喜欢。\n\n- 如果一切顺利，女性就会怀孕。\n\n- 一段时间后，怀孕的居民就会生育。\n\n- 轻按她头上的图标来迎接避难所里的新生命。\n\n- 当小孩长大后，你就有了一名新的居民。
@@ -597,7 +597,7 @@ When you need new Dwellers you can always encourage your Dwellers to procreate.\
 ^Now you have to determine the ID of your Vault. Choose carefully, because once you select an ID, it can't be changed!\.$=请设置避难所编号，编号一旦确定将无法修改，请谨慎选择！
 ^\[394039FF\]Upgrading your Vault entrance will make it harder for invaders to break in\.\[-\]$=[394039FF]升级你的避难所入口将使入侵者更难闯入。[-]
 ^\[394039FF\]If you are out of building space on a floor, build an elevator to access lower parts of your Vault\.\[-\]$=[394039FF]如果楼层没有空余建造位置，建造电梯前往避难所下层。[-]
-^You can only send a limited amount of Mr. Handys to the Wasteland.$=巧手先生会帮你收集所在楼层的资源。未进行游戏时，它们也会帮你收集一段时间。避难所每层最多只能指派一名巧手先生。
+^You can only send a limited amount of Mr. Handys to the Wasteland.$=巧手先生会帮你搜刮所在楼层的资源。未进行游戏时，它们也会帮你搜刮一段时间。避难所每层最多只能指派一名巧手先生。
 ^You can send Dwellers to explore the Wasteland. Drag a Dweller outside of the Vault and give them supplies to start their adventure.$=你可以派居民探索废土。把居民拖出避难所，给他们装备上补给，他们就能开始冒险了。
 ^You can assign Dwellers to the Vault entrance to act as guards.$=你可以派居民到避难所入口进行守卫。
 ^Are\ you\ sure\ you\ want\ your\ Dwellers\ to\ return\ to\ the\ Vault\?$=确定要居民返回避难所吗？
@@ -624,30 +624,30 @@ Radscorpion Infestations Stopped=Radscorpion感染已停止
 Alien Attacks Stopped=外星人袭击停止
 Dwellers Sent to the Wasteland=被送往荒地的居民
 Wasteland Exploration Time=荒地勘探时间
-Wasteland Creatures Killed=荒地生物被杀死
+Wasteland Creatures Killed=荒地生物被干掉
 Your FOOD, WATER and POWER resources are what keeps your Vault going.\n\n- FOOD: Dwellers need to eat to stay healthy. Run low on FOOD and your Dwellers will begin to lose Health.\n\n- WATER: Clean water is hard to come by in the Wasteland. Run low on WATER and your Dwellers will take Radiation damage.\n\n- POWER: Your Vault can't run without POWER. Run low on POWER and your rooms will begin shutting down.\n\nKeep your resources above the required resource lines to keep your Vault happy.\nResources continue to be consumed for a short time after closing the game.=你的食物，水和电力保证了你的避难所顺利运作。\n\n- 食物：居民需要进食来保持健康。食品生产速度过低会导致居民失去生命值。\n\n- 水：废土中很难得到干净的水。纯净水生产速度过低会导致居民受到辐射伤害。\n\n- 电力：你的避难所必须有充足的电力才能运作。低电力会导致房间无法工作。\n\n保持资源量高于最低标准刻度，这样才能使避难所整体愉悦度保持较高水平。\n退出游戏后一段时间内资源仍会继续消耗。
 Your Vault needs a steady supply of\nPower, Food and Water to run properly.=你的避难所需要稳定的\n电力，食物和水来保持正常运作。
 You can send Dwellers to explore the Wasteland. Drag a Dweller outside of the Vault and give them supplies to start their adventure.=你可以派居民探索废土。把居民拖出避难所，给他们装备上补给，他们就能开始冒险了。
-Your Vault Storage holds all the items your Dwellers get from the Wasteland or Lunchboxes.\nTap on the boxes icon in the Pip-Boy to see your stored items.=你的避难所储藏室会收集居民从废土或避难所科技午餐盒得到的物品。\n点击哔哔小子菜单中的盒子图标查看你收藏的物品。
+Your Vault Storage holds all the items your Dwellers get from the Wasteland or Lunchboxes.\nTap on the boxes icon in the Pip-Boy to see your stored items.=你的避难所储藏室会搜刮居民从废土或避难所科技午餐盒得到的物品。\n点击哔哔小子菜单中的盒子图标查看你收藏的物品。
 Your Vault Storage holds all the items your Dwellers get from the Wasteland or Lunchboxes.\nClick on the boxes icon in the Pip-Boy to see your stored items.=避难所的仓库会存放所有居民从废土或是避难所科技午餐盒获得的物品。\n点击哔哔小子菜单中的箱子按钮来查看你的库存。
 - Press first on a Dweller and then on a room or the Wasteland to send the Dweller there.\n\n- Press on a Storage Room to open your Inventory.\n\n- On your device's home screen, press on the Fallout Shelter icon to enter a Vault directly.=- 选择一个居民，可以将其分配到一个房间或是废土中。\n\n- 选择仓库可以打开你的物品栏。\n\n- 在设备的主界面，选择避难所图标可以直接进入避难所。
 You have already given Pets to {0} Dwellers, the maximum number of Pets allowed by Vault-Tec.=你已经把宠物分配给了{0}居民，已达到避难所科技的最大限度。
 Have {0} Bald Dwellers in the Vault=在避难所中拥有{0}名光头居民
-Collect 200 CAPS in the Vault=在避难所收集200个瓶盖
-Collect {0} CAPS in the Vault=在避难所收集{0}个瓶盖
+Collect 200 CAPS in the Vault=在避难所搜刮200个瓶盖
+Collect {0} CAPS in the Vault=在避难所搜刮{0}个瓶盖
 Complete {0} Quest discovered in the Wasteland=完成{0}次废土探索任务
 Complete {0} Quests discovered in the Wasteland=完成{0}次废土探索任务
 Successfully extinguish {0} Vault fires=成功扑灭{0}次避难所火灾
-Kill {0} creatures in the Wasteland=杀死{0}个废土生物
-Kill 1 {1} at the Vault door=在避难所门口杀死一个{1}
-Kill {0} {1} at the Vault door=在避难所门口杀死{0}个{1}
+Kill {0} creatures in the Wasteland=干掉{0}个废土生物
+Kill 1 {1} at the Vault door=在避难所门口干掉一个{1}
+Kill {0} {1} at the Vault door=在避难所门口干掉{0}个{1}
 Stop {0} Vault invasions=阻止{0}场避难所侵略
 Survive {0} hour in the Vault with no casualties=在避难所中存活{0}小时并且不受损伤
 Survive {0} hours in the Vault with no casualties=在避难所中存活{0}小时并且不受损伤
 Have a {1} happy Vault for 1 hour.=保持{1}避难所中居民心情愉悦1小时。
 Have a {1} happy Vault for {0} hours.=保持{1}避难所中居民心情愉悦{0}小时。
 Send 1 Dweller to the Wasteland=送1个居民去废土
-Collect {0} Caps in the Wasteland=在废土里收集{0}个瓶盖
+Collect {0} Caps in the Wasteland=在废土里搜刮{0}个瓶盖
 Explore {0} location in the Wasteland=探索{0}片废土场景
 Explore {0} locations in the Wasteland=探索{0}片废土场景
 Make {0} friends in the Wasteland=在废土交{0}个朋友
@@ -666,7 +666,7 @@ Craft Rare Weapons=制造稀有武器
 Craft Legendary Weapons=制造传奇武器
 Average Dweller Charisma=居民平均魅力
 Pit Bull Terriers=比特犬
-Total Caps Collected=总共收集的瓶盖
+Total Caps Collected=总共搜刮的瓶盖
 You can assign Dwellers to the Vault entrance to act as guards.=你可以派居民到避难所入口进行守卫。
 Have {0} Dwellers in your Vault=拥有{0}居民在避难所
 Amplified Alien Blaster=增幅外星冲击枪
@@ -806,7 +806,7 @@ You have {#} Dwellers, the maximum number of Dwellers allowed by Vault-Tec.=你�
 Contains {#} Nuka-Cola Quantum which can be used to speed things up in the Vault and the Wasteland.=拥有$1瓶用来加速的量子型核子可乐。
 Have {#} Bald Dweller in the Vault=在避难所中拥有$1名光头居民
 Successfully extinguish {#} Vault fire=成功扑灭$1次避难所火灾
-Kill {#} creature in the Wasteland=杀死一个废土生物
+Kill {#} creature in the Wasteland=干掉一个废土生物
 A new special visitor from Fallout {#} wants to join your Vault=一个来自《辐射$1》的访客想要加入你的避难所。
 Pfft, there are many more singles over at Vault {#}. Like, tons.=噗, 在$1号避难所还有更多单身人士。就像是, 成吨的.
 Confront Vault R{#}D's Raider Boss.=遭遇避难所R$1D的掠夺者头目。
@@ -816,7 +816,7 @@ Come find me at Vault {#}.”=请来$1号避难所找我。”
 Yeah, they took Bottle & Cappy over to Vault {#}. Be careful.=是的……他们带走了瓶瓶和盖盖，带到了$1号避难所，小心。
 We got a back issue from Vault {#}. Until then all we had to read was an old copy of “One Ghoul, Two Ghoul.”=我们从$1号避难所回来了，不过我们在那里只找到了一份写着“一只尸鬼，两只尸鬼……”的信。
 How about clearing Vault {#} of those nasty Ghouls? Good luck, soldier!=把$1号避难所的那些恶心的尸鬼清理掉怎么样？祝你们好运，士兵们！
-No luck in the General Atomics factory, but there's always the abandoned Vault {#}.=在通用原子工厂也没有收获，但是还有一个废弃的$1号避难所。
+No luck in the General Atomics factory, but there's always the abandoned Vault {#}.=在通用原子工厂也没有收获，但是有一个废弃的$1号避难所。
 They're after anyone who gets near Vault {#}.=他们会追赶那些想要靠近$1号避难所的人。
 Herb Vest told me that people who go to Vault {#} end up missing. I'm going to head to Vault-Tec's offices to learn more about the Vault's past.=赫伯·韦斯特告诉我那些去了$1号避难所的人们最后都消失了，我要去避难所科技办公室调查一下这个避难所的过去。
 Track down information about Vault {#}'s past.=寻找有关$1号避难所过去的信息。
@@ -860,7 +860,7 @@ Follow up on the old distress signal emanating from Vault {#}!=追踪位于$1号
 In order to convince the Brotherhood of Steel that the Vault is worthy enough to be one of their outposts, we're clearing the Ghouls out of Vault {#}.=为了向钢铁兄弟会证明避难所是建立哨站的绝佳地点，我们得去清理掉$1号避难所的尸鬼。
 Clear the Ghouls out of Vault {#}.=清理$1号避难所的尸鬼。
 Clear the Ghouls from Vault {#}.=清理掉$1号避难所的尸鬼。
-The Overseer of Vault {#} might help us find Paula Plumbkin, but first we have to kill Frank the Tank.=$1号避难所的监管者也许能够帮助我们找到保拉·普朗布金，但是首先我们得杀死坦克弗兰克。
+The Overseer of Vault {#} might help us find Paula Plumbkin, but first we have to kill Frank the Tank.=$1号避难所的监管者也许能够帮助我们找到保拉·普朗布金，但是首先我们得干掉坦克弗兰克。
 Really? Vault {#}? El Diablo?=真的？$1号避难所？埃尔·迪亚波罗？
 While adventuring, a Dweller discovered a map to Vault {#}. It's not on any official Vault-Tec registry. What secrets could it hold?=在探险的时候，一个居民发现了一张通往$1号避难所的地图，
 Investigate Vault {#}.=调查$1号避难所。
@@ -896,7 +896,7 @@ The Mystery of Vault {#}==神秘的$1号避难所
 The Quest for Vault {#}==$1号避难所
 Instantly return to the Vault for {{#}} Nuka-Cola Quantum?=确定使用{$1}瓶量子型核子可乐立即返回避难所吗？
 ^Congratulations! Vault-Tec has selected you to be the Overseer of Vault (\d+)\.$=祝贺避难所科技选中你，成为$$1号避难所的监管者。
-^Kill\ {#}\ \{\#\}\ at\ the\ Vault\ door$=在避难所门口杀死一个$$1
+^Kill\ {#}\ \{\#\}\ at\ the\ Vault\ door$=在避难所门口干掉一个$$1
 ^Have\ a\ \{\#\}\ happy\ Vault\ for\ {#}\ hour\.$=保持$$1避难所中居民心情愉悦$1小时。
 Return to Vault {#}==返回$1号避难所
 Vault {#}==$1号避难所
@@ -909,7 +909,7 @@ Overseer Patel's journal indicated Paula Plumbkin had gone to Vault {#}, but tha
 [394039FF]Each SPECIAL stat increases a Dweller's effectiveness in the Wasteland in its own way.[-]=[394039FF]各项属性，分别提升居民废土能力。[-]
 [394039FF]Dwellers exploring the Wasteland have a chance of finding surprise locations.[-]=[394039F]外出探索，有几率发现隐藏地点。[-]
 [394039FF]Rescued Dwellers will wait outside your Vault when a Quest is completed.[-]=[394039F]任务完成，获救居民将在避难所外等候。[-]
-[394039FF]Send Mr. Handy to the Wasteland to collect CAPS and items.[-]=[394039FF]派遣巧手先生，前往废土收集物资。[-]
+[394039FF]Send Mr. Handy to the Wasteland to collect CAPS and items.[-]=[394039FF]派遣巧手先生，前往废土搜刮物资。[-]
 [394039FF]A nuclear winter is cold, keep warm with Vault-Tec![-]=[394039F]核冬天严寒，信赖避难所科技。[-]
 [394039FF]Vault-Tec rules limit Vault capacity to 200 Dwellers.[-]=[394039FF]避难所居民上限为200人。[-]
 [394039FF]Radio rooms attract new Dwellers and improve the happiness in your Vault.[-]=[394039FF]广播室吸引新人，提升全员快乐度。[-]
@@ -935,7 +935,7 @@ Guardian of the Wastes: Radscorpions!=废土守卫：辐射蝎！
 That's it? Wow. Glad you didn't get killed for *that*!=就这样? 哇。很高兴你没有因为*那个*被杀！
 Rubarb's Raiders came to me with an offer - join or die!=鲁巴布的掠夺者们找到了我，他们逼我加入他们，不然就要杀了我！
 There's a nest of nasty Radroaches at a Red Rocket Truck Stop.=在红火箭卡车停车站附近有一个恶心的辐射蟑螂巢穴。
-He's the big, bad boss who awards the Super Cup to the nastiest Raider. Like me!=他是一个超级大Boss，有能力竞争超级杯的人，就像我一样！
+He's the big, bad boss who awards the Super Cup to the nastiest Raider. Like me!=他是一个超级大头目，有能力竞争超级杯的人，就像我一样！
 We're the baddest Raiders in these Wastes! Out of our way!=我们是废土里最坏的掠夺者集团！别挡道！
 Rubarb's Raiders came in here, guns blazing. They punctured the reactor!=鲁巴布的掠夺者们来到了这里，枪口冒着火，他们破坏了反应炉！
 Aggh! Somebody's knocking on the Vault door! It's a Raider! He'll kill us all!=啊！有人在敲避难所的门！是掠夺者！他会杀了我们的！
@@ -998,7 +998,7 @@ Your Dweller does not suffer damage or radiation when coming back from the Waste
 Deathclaws are faster, stronger and deadlier than Raiders.=死爪比掠夺者要更加迅捷、强力、致命。
 Dwellers with high Endurance suffer less radiation damage in the Wasteland.=高耐力的居民将会受到更少的辐射伤害。
 All SPECIAL stats help your Dwellers fight creatures in the Wasteland.=所有SPECIAL属性都将会为居民抵抗废土生物提供帮助。
-Rescued Dwellers will wait outside your Vault when a Quest is completed.=被救援的居民将会于任务完成时在避难所外待命。
+Rescued Dwellers will wait outside your Vault when a Quest is completed.=被拯救的居民将会于任务完成时在避难所外待命。
 Dweller died in the Wasteland.=居民在废土中死亡了。
 Dweller died exploring a location in the Wasteland.=有居民在探索废土的某个地方时死亡了。
 Cheerio, Vault Dwellers!==你们好，避难所的居民们！
@@ -1009,7 +1009,7 @@ One of your Dwellers has been out in the Wasteland for a while, you should check
 One of your Dwellers has been out on the Wasteland for a while, you should check on them.=你的某个居民已经出发去废土有一会儿了，你也许应该查看一下。
 We're the Wasteland Coroner's Association. We help catalogue all the dead people out here.=我们是废土的验尸官协会，我们负责把这里死去的人记录下来。
 Nick's old pal Bigsby Brown has gone missing. An old file suggests he'd gone out in search of a missing Vault Dweller, but no one's heard from him since. Track down that sleuth!=尼克的老朋友大斯派·布朗失踪了，一个狡猾的家伙说他有可能去寻找失踪的避难所居民了，不过并没有人听到过他的消息，请去追查下去。
-We're not Vault Dwellers! We killed them, and stole their suits!=我们不是避难所居民！我们杀死了他们，并且偷走了他们的衣服！
+We're not Vault Dwellers! We killed them, and stole their suits!=我们不是避难所居民！我们干掉了他们，并且偷走了他们的衣服！
 Increases chances to call a Dweller from the Wasteland=增加从废土召唤居民的几率
 The longer a Dweller survives in the Wasteland, the better gear they will find.=居民在废土生存得越久，就能够找到越好的装备。
 The {RADIO STUDIO} attracts Dwellers from the Wasteland and boosts {DWELLER HAPPINESS} in the Vault.={广播室}会从废土中召来居民，并且提升避难所中{居民的愉悦度}。
@@ -1022,7 +1022,7 @@ Overworked? Underappreciated? Funny uniform? Vault Dweller or Christmas Elf – 
 A standard Vault Suit modified for the rigors of the Wastes.=一套标准的避难所套装，用于应对废土的恶劣环境。
 Vault-Tec takes some of the Outfits worn by new arrivals and puts them in Lunchboxes.=避难所科技会从新加入的成员身上获取他们的服装并且放到避难所科技午餐盒中。
 A favorite of pre-war cops and Wasteland warriors.=战前警察和废土勇士的最爱。
-Fast-track your progress with Vault-Tec's amazing Lunchboxes.\n\nDWELLERS - Need more Dwellers, fast? Each Lunchbox has a chance of containing a Dweller. \n\nWEAPONS - All the finest in Wasteland survival from BB guns to the powerful Fat Man. \n\nOUTFITS - Equip your Dwellers in these stat boosting, and stylish, outfits. \n\nPETS - Find a faithful companion that will help your Dwellers and liven up your Vault.\n\nNUKA-COLA QUANTUM – Get things done fast with these refreshing beverages.\n\nJUNK - Use these long-forgotten objects to craft items in your Workshops.\n\nRESOURCES - Stock up on resources with CAPS, RadAway, Stimpaks, Extra Food, Power or Water\n\nEvery Lunchbox can give you COMMON, RARE, or LEGENDARY items. Each Lunchbox is guaranteed to either have a Dweller or a RARE item.=快速追踪你从避难所科技午餐盒中获取的神奇物品。\n\n居民 - 迫切地需要更多居民？每个避难所科技午餐盒都有几率包含一名居民。\n\n武器 - 废土中保存下来的最好的武器，从BB枪到胖子原子弹。\n\n服装 - 为你的居民穿上这些能够增加属性又时尚的服装。\n\n宠物 - 找一个忠实的伴侣来帮助你的居民，还能增加避难所的生气。 \n\n量子型核子可乐 - 用这些提神的饮料让所有事情变得更加快速。\n\n垃圾 - 在你的工作间把这些废物制作有用的物品。\n\n资源 - 收集资源，包括消辐宁，治疗针，食物，电力和水，当然还有瓶盖。\n\n每个避难所科技午餐盒都能给你普通，稀有甚至是传说级的物品。每个避难所科技午餐盒中至少有一名居民或是稀有物品。
+Fast-track your progress with Vault-Tec's amazing Lunchboxes.\n\nDWELLERS - Need more Dwellers, fast? Each Lunchbox has a chance of containing a Dweller. \n\nWEAPONS - All the finest in Wasteland survival from BB guns to the powerful Fat Man. \n\nOUTFITS - Equip your Dwellers in these stat boosting, and stylish, outfits. \n\nPETS - Find a faithful companion that will help your Dwellers and liven up your Vault.\n\nNUKA-COLA QUANTUM – Get things done fast with these refreshing beverages.\n\nJUNK - Use these long-forgotten objects to craft items in your Workshops.\n\nRESOURCES - Stock up on resources with CAPS, RadAway, Stimpaks, Extra Food, Power or Water\n\nEvery Lunchbox can give you COMMON, RARE, or LEGENDARY items. Each Lunchbox is guaranteed to either have a Dweller or a RARE item.=快速追踪你从避难所科技午餐盒中获取的神奇物品。\n\n居民 - 迫切地需要更多居民？每个避难所科技午餐盒都有几率包含一名居民。\n\n武器 - 废土中保存下来的最好的武器，从BB枪到胖子原子弹。\n\n服装 - 为你的居民穿上这些能够增加属性又时尚的服装。\n\n宠物 - 找一个忠实的伴侣来帮助你的居民，还能增加避难所的生气。 \n\n量子型核子可乐 - 用这些提神的饮料让所有事情变得更加快速。\n\n垃圾 - 在你的工作间把这些废物制作有用的物品。\n\n资源 - 搜刮资源，包括消辐宁，治疗针，食物，电力和水，当然还有瓶盖。\n\n每个避难所科技午餐盒都能给你普通，稀有甚至是传说级的物品。每个避难所科技午餐盒中至少有一名居民或是稀有物品。
 Institute-sanctioned armor for Wasteland operations.=学院用于废土作业时使用的装甲。
 A Wasteland wanderer's most trusted weapon...=废土流浪汉最信任的武器……
 Mr. Burke's Businesswear=布克先生的商务装
@@ -1149,7 +1149,7 @@ I think they headed to the Wilson Atomatoys Factory. Good luck!=我想他们去�
 I heard you're turning your Vault into a Brotherhood outpost.=我听说你打算把避难所转型成兄弟会的哨站。
 I'm not dying for a kid who can't handle his booze. Stay away from our Vault and we have a deal.=我才不会因为一个孩子去送死，离开我们的避难所，我们可以谈谈。
 I stumbled across a Ghoul who used to be one of Maxson's Roughnecks. He told me the rest of his team is trapped in Vault 390. It's time for a rescue mission!=我偶然发现了一个尸鬼，曾经他是马克森的蛮子。他告诉我小队里剩下的人呢被困在了390号避难所，是时候去营救了。
-I rescued the salvage team, but Bigsby wasn't with them. One said they may have taken shelter in Vault 314.=我救了救援小队，但是大斯派并没有和他们在一起。有人告诉我们，他可能去了314号避难所。
+I rescued the salvage team, but Bigsby wasn't with them. One said they may have taken shelter in Vault 314.=我救了拯救小队，但是大斯派并没有和他们在一起。有人告诉我们，他可能去了314号避难所。
 I think she mentioned visiting some Vault? Vault 333? That's a lot of threes...=我记得她有提到过要去某个避难所？是333号避难所吗？我记得有一堆3……
 I forgive you. The Raiders took your friends to the Nuka-Cola Factory.=我可以原谅你，那些掠夺者把你的朋友带到了核子可乐工厂。
 I'd talk to the settlers at the RobCo Plant. They were the first to get hit. They'd know the more about the Bugle Boy and his Editor.=我想要和机器人工厂的居民们聊几句，他们是第一批遭到攻击的，他们知道更多关于吹号员和编辑的事情。
@@ -1177,7 +1177,7 @@ I've been cornered in the Cave by a family of Yao Guai. I'll try to pacify them.
 I really hope I can find my way back to the Vault...=我真心希望我能找到回避难所的路……
 I'll head back to the Vault. But not yet. Not yet...=我会回避难所的，但现在还不是时候，还不是时候……
 I found an unlocked door into the Broadcasting Tower. There was a supply cache inside.=我发现一扇进入广播塔的门没锁，里面有补给。
-I managed to enter and explore the National Guard Depot.=我成功进入国家警卫队仓库进行探索。
+I managed to enter and explore the National Guard Depot.=我成功进入国家警卫队仓库探索。
 I found out from the Ghouls living in the Poseidon Energy offices that Bottle & Cappy may have been taken to the RobCo Building. Looks like that's my next stop.=我发现那些住在波塞冬能源公司的尸鬼把瓶瓶和盖盖带到了罗布科大楼，看来我们下一站要去那儿了。
 I infused the DNA of a Wasteland creature with an insatiable hunger for preservative-rich food.=我在废土的生物体内植入了一种对富含防腐剂的食物有着极度渴求的DNA。
 I led you here to kill you! Vaultopolis is mine! I will be the Overseer!=我引你来这里是为了杀了你！避难所之城是我的！我将会成为那里的监管者！
@@ -1195,16 +1195,16 @@ A ghastly Glowing One has taken up residence a little too close to the Vault, an
 You came across an old cabin while adventuring in the Wasteland. Perhaps you should see what's inside.=你在探索废土的时候无意中发现了一件小屋，也许你应该看看里面有什么。
 This doesn't seem much like a Vault to me. Are you sure we have the right place?=我怎么感觉这里并不像是避难所，你确定来对地方了吗？
 Gosh, being all civilized is tough! Maybe Vault life ain't for me?=上帝啊，想要创造文明还真是困难！也许避难所并不是为了我而存在的？
-There's a new Vault in the Wasteland, and it's run by Raiders! Vault-Tec is long gone, so who could have possibly constructed Vault R41D? Time to investigate...=在废土出现了一个新的避难所，是由掠夺者管理的！避难所技术早已不复存在，那么谁能建造避难所R41D呢？是时候调查了...
+There's a new Vault in the Wasteland, and it's run by Raiders! Vault-Tec is long gone, so who could have possibly constructed Vault R41D? Time to investigate...=在废土出现了一个新的避难所，是由掠夺者管理的！避难所技术早已不复存在，那么谁能建造避难所R41D呢？是时候调查了…….
 Hey! Someone found the Vault, and they ain't got no invitation!=嘿！有人找到了避难所，而且也不可能弄到邀请函不是吗！
 This is our Vault! You're not welcome here!=这是我们的避难所！这里不欢迎你们！
 To thank you for saving us, we'll visit your Vault once in a while and bring your Dwellers a little bit of Nuka-fun.=感谢你能够救我们，我们稍后回来拜访你们的避难所并且为你们带来一些好东西的。
 Paula Plumbkin wasn't at Vault 730, but a helpful Raider told you she set out for the old Nuka-Cola plant. Go track her down!=保拉·普朗布金没在730号避难所，不过有一个掠夺者告诉过你她去那个旧的核子可乐工厂了，赶紧去追她吧！
-The Wasteland has thrown everything at you, and still you press on!=废土把一切都丢给了你们，并且还持续地向你们施压！
+The Wasteland has thrown everything at you, and still you press on!=废土把一切都丢给了你们，并且持续地向你们施压！
 That's right! We're heading out to hunt some Raiders - I'm destined to be a front page star! Vault 819 look out!=没错！我们就是要出去找几个掠夺者练练手 - 我注定要成为大英雄！819号避难所的人，你们要小心了！
 That flea bag ran off with the others. Probably to Vault 199. It'll be the first place we look once we're finished with you!=那个露宿用的睡袋被别人偷走了，也许被带到了199号避难所，那里将会是我们了解的地方！
 You from that Vault? You bring the things we wanted?=你是从那个避难所来的？带我们想要的东西来了吗？
-A hastily written and grammatically incorrect note was left outside the Vault door: “IF U EVAR WANT TOO SEE YOU'RE DOG AGAN, COME TWO ARE BIG BILDING AND BRING GUNZ, CAPS, AND SNAX.” It must've been written by some really stupid Raiders, because we don't even have a missing dog. But if those jerks really do have a kidnapped canine, it still needs rescuing!=一张十分潦草而且完全不通语法的便条被丢在了避难所门外：“如果你们还想见到自己的小狗的话，带上瓶盖和好吃的。”这肯定是某个白痴掠夺者留下的，但是如果那些掠夺者真的绑架了的话，我们还是需要前去援救的。
+A hastily written and grammatically incorrect note was left outside the Vault door: “IF U EVAR WANT TOO SEE YOU'RE DOG AGAN, COME TWO ARE BIG BILDING AND BRING GUNZ, CAPS, AND SNAX.” It must've been written by some really stupid Raiders, because we don't even have a missing dog. But if those jerks really do have a kidnapped canine, it still needs rescuing!=一张十分潦草而且完全不通语法的便条被丢在了避难所门外：“如果你们还想见到自己的小狗的话，带上瓶盖和好吃的。”这肯定是某个白痴掠夺者留下的，但是如果那些掠夺者真的绑架了的话，我们还是需要前去拯救的。
 Turns out it's just some dumb Vault Dwellers instead!=结果是避难所里一些哑巴居民！
 You came across a small cabin out in the Wasteland. Maybe someone still lives here.=你无意中发现了一间小屋子，也许里面还有人活着。
 What does a Vault Dweller know anyway? You're dead!=避难所居民会知道什么？你死定了！
@@ -1228,7 +1228,7 @@ You think those tin cans are gonna stop me from raiding these Wastes!?=你觉得
 You found an old cabin out in the Wasteland!=你在废土找到了一间旧房子！
 One of your Dwellers stumbled across a Super Duper Mart while out in the Wasteland. Perhaps you'll find something useful inside...=一个居民在探索废土的时候发现了一个大无敌超市，也许你能在那里找到一些有用的东西……
 She headed to Vault 813. If you're following her, this might help!=她去了813号避难所，如果你在找她，那么这个消息应该能帮上你一些忙！
-No, sorry. They just vanished into the Wasteland. Like... *dare I say it?*... Radroaches.=不，对不起。他们就这样消失在废土中了。比如... *我敢说吗？*...辐射蟑螂。
+No, sorry. They just vanished into the Wasteland. Like... *dare I say it?*... Radroaches.=不，对不起。他们就这样消失在废土中了。比如……. *我敢说吗？*…….辐射蟑螂。
 What's the matter, newbie? Why didn't you laugh?=怎么了，新人？你怎么不笑？
 Radroach Rodney and his army of mind-controlled Radroaches are invading the Wasteland!=辐射蟑螂罗德尼和他的大军正在侵略废土！
 Ho ho ho! Thank you, Vault Dwellers.=哈哈！谢谢你们，避难所的居民们。
@@ -1299,7 +1299,7 @@ Geez, and I thought my quarters back in the Vault needed dusting...=呸，我觉
 The Vault really needs a massage therapist. SO much tension in my shoulders...=避难所真的得请个按摩师了，我的肩膀一直都是绷着的……
 Easy! You go to the great Vault in the sky!=哈哈！你会去一个名为天堂的最豪华的避难所！
 Hello! Vault Dweller. Not a vending machine...=嘿！避难所的居民，我可不是自动售货机……
-What do you think they're doing back in the Vault?= 你觉得其他人在避难所做什么呢？
+What do you think they're doing back in the Vault?=你觉得其他人在避难所做什么呢？
 So what do you think of the Wasteland?=你觉得废土怎么样？
 Sorry. I left my clown nose back in the Vault.=抱歉，我的小丑鼻子落避难所没带来。
 To all people out in the Wasteland: We are waiting for you!=致所有在废土中的人：我们大家都在等你们！
@@ -1318,18 +1318,18 @@ Are you sure you want to erase this Vault?=你确定你想要清除这个避难�
 A disgruntled Dweller named Rubarb has joined the Raiders and wants to liberate some local Vaults... with violence! Overseer Mogabe needs your help!=一个名叫鲁巴布满脸不高兴的居民加入了掠夺者的阵营，并且想要解放一些当地的避难所……当然，是暴力解放！监管者莫加布需要你的帮助！
 As Overseer of this Vault, the people look to me!=我是这个避难所的监管者，人们都看着我呢！
 Come on Wasteland show me what you've got!=来吧，废土，让我看看你有什么本事！
-Depending on what you ask your Dwellers to do, they can become happy or sad.\n\nKeeping Dwellers happy is very important! A happy Vault runs more efficiently and produces resources faster.\nYou can see a specific Dweller's happiness by checking their profile.\n\nHappiness Icon status:\n\nGREEN: Your Dweller is happy, way to go!\n\nYELLOW: Your Dweller is doing okay, but could be happier.\n\nRED: Your Dweller is sad, cheer them up!=居民会根据你安排给他们的任务产生情绪变化。\n\n保持居民心情愉悦是十分重要的！一间气氛欢快的避难所运作地更有效率，生产资源也会更快。\n你可以通过查看居民的资料来了解他/她的心情。\n\n心情图标状态：\n\n绿色：你的居民很快乐，继续保持！\n\n黄色：你的居民心情不赖，但是你可以让他/她更开心。\n\n红色：你的居民很难过，快想办法让他们高兴起来！
-Disasters can randomly strike your Vault at any time! Disasters also occur when you fail a room Rush. Watch out for these possible encounters:\n\nFIRES - Put out fires quickly before they spread to other rooms.\n\nRADROACHES - These pesky critters are hard to get rid of. Take them out before they spread.\n\nRAIDERS - Raiders will rush through your Vault and destroy its resources, stop them quickly! Stronger Raiders will even steal CAPS if you're not careful! Upgrading your Vault Entrance will delay Raiders, giving you time to prepare. Putting guards in your Vault Entrance will also provide a front line of defense against the Raiders. You can loot dead Raiders for CAPS and items!\n\nMOLE RATS – These pests are a nuisance and have a nasty habit of burrowing into your Vault from the dirt and chewing on any room's power cables. Kill them quickly, or they'll drain your Vault of Power!\n\nDEATHCLAWS – Any time you open your Vault Door, you're broadcasting an invitation for these beasties to come to your Vault and destroy your resources. Be sure to have Stimpaks and Weapons at the ready, or they'll tear through your Dwellers like a knife through a Fancy Lad Snack Cake! \n\nFERAL GHOULS - Feral Ghouls run through your Vault, wreaking havoc by dealing both physical and radiation damage to the Dwellers they attack.\n\nRADSCORPIONS – These mutated scorpions are able to burrow and attack random rooms in your Vault. Make sure to kill them quickly as their attacks also do radiation damage!\n\nChildren and Pregnant Women will hide whenever an incident occurs.=你的避难所随时都可能遭受灾害的侵袭！加速失败时也会引发灾难。要小心以下敌人：\n\n火灾 - 在火势蔓延至其他房间之前控制它。\n\n辐射蟑螂 - 这些讨厌的东西很难搞定，在它们泛滥之前解决掉。\n\n掠夺者 - 掠夺者会冲入你的避难所破坏你的资源，尽快阻止他们！更强大的掠夺者甚至会偷走你的瓶盖！加固避难所入口可以拖延他们并给予你足够的准备时间。在你的避难所入口派遣守卫也是一项有效的前线防御措施。你能从死亡的掠夺者身上获取瓶盖和其他物品！\n\n鼹鼠 – 这些小东西十分麻烦，它们会从地下钻入你的避难所并咬坏任何一间房内的电缆。快速杀死它们，不然它们会把你避难所里的电力耗尽！\n\n死爪 – 每当你开启避难所大门，就相当于是在邀请这些怪物进来破坏资源。确保你准备好足够的武器和治疗针，不然它们会切碎你的居民，就像你用刀切蛋糕那样！ \n\n狂尸鬼 – 狂尸鬼会疯狂地掠过你的避难所，并且对它们攻击的居民同时造成物理和辐射伤害。\n\n辐射蝎 – 这些突变的蝎子可以挖掘地洞，并且有可能对避难所的任意房间发动攻击。请在第一时间消灭它们，不然它们就会对你们的居民造成辐射伤害！\n\n孩子和孕妇会在危险灾难发生时躲起来。
-Dispatch your Dwellers to scavenge the Wasteland. \n\nOut there they will find CAPS, earn Experience, and bring back Weapons, Outfits and Junk. The further out they go, the better the rewards they'll find, but the harder the encounters will become.\n\n- Drag a Dweller to the Wasteland and equip them with a Weapon, an Outfit, a Pet, RadAway and Stimpaks.\n\n- Send them out exploring, but don't forget to check on their progress.\n\n- Dwellers can be recalled from the Wasteland at any time, and take half as long to return from the Wasteland.\n\n- Make sure you bring them home before they die!\n\n- Dwellers automatically return from the Wasteland if they can't carry any more items.\n\n- Dwellers in the Wasteland may stumble upon a special location. Tap the exclamation point icon to choose between entering this location and continuing to explore the Wasteland.=派你的居民去废土收集物品。\n\n在外面居民能获得瓶盖和经验，还会带回武器、服装和垃圾。他们走得越远，找到的物品也更好，但是遇到的敌人也会更加棘手。\n\n- 将一名居民拖至废土，给其配备武器和服装，治疗针、消辐宁还有宠物。\n\n- 送他们出去探索，但是别忘了检查他们的进程。\n\n- 去探索废土的居民随时都能被召回，回来需要花费一半的时间。\n\n- 确保你能把他们活着带回来！\n\n- 居民拿不下物品时，会自动回到避难所。\n\n- 居民在废土中有时候会发现特殊地点，点击感叹号的图标可以选择是否进入该地点或是继续进行探索。
+Depending on what you ask your Dwellers to do, they can become happy or sad.\n\nKeeping Dwellers happy is very important! A happy Vault runs more efficiently and produces resources faster.\nYou can see a specific Dweller's happiness by checking their profile.\n\nHappiness Icon status:\n\nGREEN: Your Dweller is happy, way to go!\n\nYELLOW: Your Dweller is doing okay, but could be happier.\n\nRED: Your Dweller is sad, cheer them up!=居民会根据你安排给他们的任务产生情绪变化。\n\n保持居民心情愉悦是十分重要的！一间气氛欢快的避难所运作地更有效率，生产资源也会更快。\n你可以通过查看居民的资料来了解他们的心情。\n\n心情图标状态：\n\n绿色：你的居民很快乐，继续保持！\n\n黄色：你的居民心情不赖，但是你可以让他们更开心。\n\n红色：你的居民很难过，快想办法让他们高兴起来！
+Disasters can randomly strike your Vault at any time! Disasters also occur when you fail a room Rush. Watch out for these possible encounters:\n\nFIRES - Put out fires quickly before they spread to other rooms.\n\nRADROACHES - These pesky critters are hard to get rid of. Take them out before they spread.\n\nRAIDERS - Raiders will rush through your Vault and destroy its resources, stop them quickly! Stronger Raiders will even steal CAPS if you're not careful! Upgrading your Vault Entrance will delay Raiders, giving you time to prepare. Putting guards in your Vault Entrance will also provide a front line of defense against the Raiders. You can loot dead Raiders for CAPS and items!\n\nMOLE RATS – These pests are a nuisance and have a nasty habit of burrowing into your Vault from the dirt and chewing on any room's power cables. Kill them quickly, or they'll drain your Vault of Power!\n\nDEATHCLAWS – Any time you open your Vault Door, you're broadcasting an invitation for these beasties to come to your Vault and destroy your resources. Be sure to have Stimpaks and Weapons at the ready, or they'll tear through your Dwellers like a knife through a Fancy Lad Snack Cake! \n\nFERAL GHOULS - Feral Ghouls run through your Vault, wreaking havoc by dealing both physical and radiation damage to the Dwellers they attack.\n\nRADSCORPIONS – These mutated scorpions are able to burrow and attack random rooms in your Vault. Make sure to kill them quickly as their attacks also do radiation damage!\n\nChildren and Pregnant Women will hide whenever an incident occurs.=你的避难所随时都可能遭受灾害的侵袭！加速失败时也会引发灾难。要小心以下敌人：\n\n火灾 - 在火势蔓延至其他房间之前控制它。\n\n辐射蟑螂 - 这些讨厌的东西很难搞定，在它们泛滥之前解决掉。\n\n掠夺者 - 掠夺者会冲入你的避难所破坏你的资源，尽快阻止他们！更强大的掠夺者甚至会偷走你的瓶盖！加固避难所入口可以拖延他们并给你足够的准备时间。在你的避难所入口派遣守卫也是一项有效的前线防御措施。你能从死亡的掠夺者身上获取瓶盖和其他物品！\n\n鼹鼠 – 这些小东西十分麻烦，它们会从地下钻入你的避难所并咬坏任何一间房内的电缆。快速干掉它们，不然它们会把你避难所里的电力耗尽！\n\n死爪 – 每当你开启避难所大门，就相当于是在邀请这些怪物进来破坏资源。确保你准备好足够的武器和治疗针，不然它们会切碎你的居民，就像你用刀切蛋糕那样！ \n\n狂尸鬼 – 狂尸鬼会疯狂地掠过你的避难所，并且对它们攻击的居民同时造成物理和辐射伤害。\n\n辐射蝎 – 这些突变的蝎子可以挖掘地洞，并且有可能对避难所的任意房间发动攻击。请在第一时间消灭它们，不然它们就会对你们的居民造成辐射伤害！\n\n孩子和孕妇会在危险灾难发生时躲起来。
+Dispatch your Dwellers to scavenge the Wasteland. \n\nOut there they will find CAPS, earn Experience, and bring back Weapons, Outfits and Junk. The further out they go, the better the rewards they'll find, but the harder the encounters will become.\n\n- Drag a Dweller to the Wasteland and equip them with a Weapon, an Outfit, a Pet, RadAway and Stimpaks.\n\n- Send them out exploring, but don't forget to check on their progress.\n\n- Dwellers can be recalled from the Wasteland at any time, and take half as long to return from the Wasteland.\n\n- Make sure you bring them home before they die!\n\n- Dwellers automatically return from the Wasteland if they can't carry any more items.\n\n- Dwellers in the Wasteland may stumble upon a special location. Tap the exclamation point icon to choose between entering this location and continuing to explore the Wasteland.=派你的居民去废土搜刮物品。\n\n在外面居民能获得瓶盖和经验，还会带回武器、服装和垃圾。他们走得越远，找到的物品也更好，但是遇到的敌人也会更加棘手。\n\n- 将一名居民拖至废土，给其配备武器和服装，治疗针、消辐宁还有宠物。\n\n- 送他们出去探索，但是别忘了检查他们的进程。\n\n- 去探索废土的居民随时都能被召回，回来需要花费一半的时间。\n\n- 确保你能把他们活着带回来！\n\n- 居民拿不下物品时，会自动回到避难所。\n\n- 居民在废土中有时候会发现特殊地点，点击感叹号的图标可以选择是否进入该地点或是继续探索。
 Great! You created a new Vault. Your main objective is to keep your Dwellers alive and happy. Good luck!=很好！你建造了一个新的避难所。你的任务就是让居民开心地生活。祝你好运！
-Help some Wasteland Settlers who got lost while traveling for the Holidays!=援救一些在度假途中迷路的废土居民！
+Help some Wasteland Settlers who got lost while traveling for the Holidays!=拯救一些在度假途中迷路的废土居民！
 Here's some Junk for you. I hope it helps!=这里有一些送给你的垃圾，希望能够帮上忙！
 If roses still grew, I'd search the Wasteland to get you some.=如果玫瑰还在生长，哪怕找遍整个废土，我也要找来送你。
 It's me - Paula Plumbkin! The Wasteland has toughened me up!=我 - 保拉·普朗布金！废土让我受到了锻炼！
-Mr. Handys will collect resources on the floor they are assigned. They will even collect them for a time when you are not playing the game. There is a limit of one Mr. Handy per Vault floor.\n\nMr. Handy can also help fight Incidents, but be careful, Mr. Handy can be destroyed! Be sure to repair him if he falls apart. \n\nHe can also be sent to the Wasteland to collect CAPS, but he won't face any encounters. \n\nYou can only send a limited amount of Mr. Handys to the Wasteland.=巧手先生会帮你收集所在楼层的资源。未进行游戏时，它们也会帮你收集一段时间。避难所每层最多只能指派一名巧手先生。\n\n巧手先生能在出现危机时帮助战斗，但是小心，它也会被破坏！如果它坏了，千万要修复好。\n\n你也可以派它去探索废土收集瓶盖，但是它不会与敌人战斗。\n\n你只能派遣一定数量的巧手先生到废土探索。
+Mr. Handys will collect resources on the floor they are assigned. They will even collect them for a time when you are not playing the game. There is a limit of one Mr. Handy per Vault floor.\n\nMr. Handy can also help fight Incidents, but be careful, Mr. Handy can be destroyed! Be sure to repair him if he falls apart. \n\nHe can also be sent to the Wasteland to collect CAPS, but he won't face any encounters. \n\nYou can only send a limited amount of Mr. Handys to the Wasteland.=巧手先生会帮你搜刮所在楼层的资源。未进行游戏时，它们也会帮你搜刮一段时间。避难所每层最多只能指派一名巧手先生。\n\n巧手先生能在出现危机时帮助战斗，但是小心，它也会被破坏！如果它坏了，千万要修复好。\n\n你也可以派它去探索废土搜刮瓶盖，但是它不会与敌人战斗。\n\n你只能派遣一定数量的巧手先生到废土探索。
 One of your Dwellers has been out in the Wasteland for a long time, you should check on them.=你的某个居民已经出发去废土有一大段时间了，你也许应该查看一下。
 One of your Wasteland explorers discovered a Super-Duper Mart, but some Raiders beat you to it. Run them off and grab some supplies.=你们当中有人发现了一个大无敌超市，但是有一些掠夺者想要抢你们的生意。把他们赶走，然后把东西拿到手。
-One of your Wasteland explorers has heard a cry for help that's coming from a Red Rocket fuel station. Time to rush to the rescue!=一位废土探险者听到红火箭燃料站里有呼救声，赶紧去援救吧！
+One of your Wasteland explorers has heard a cry for help that's coming from a Red Rocket fuel station. Time to rush to the rescue!=一位废土探险者听到红火箭燃料站里有呼救声，赶紧去拯救吧！
 Rubarb has found another Vault to liberate. Time to head out and rescue Overseer Chang from the Raiders!=鲁巴布又发现了一个有待解放的避难所，是时候冲出去从侵略者手里救出程监督(者)了！
 That's its pre-war name! Too bad you have to... Lose Your Head!=那是战前的名字！你要……“掉脑袋”了！
 There's a Deathclaw there! And Coach needed some batting practice!=那里有死爪！而且教练需要一些击球练习！
@@ -1447,7 +1447,7 @@ Your Vault capacity is already at its maximum.=你的避难所容量已经满了
 Building a Medbay allows your Vault to produce Stimpaks and heal injured Dwellers.=建造制药间能让你的避难所生产治疗针，从而治疗受伤的居民。
 Building a Science Lab allows your Vault to produce RadAway and reduce Dwellers Rads.=建造科学实验室能让你的避难所生产消辐宁，减少居民受到的辐射伤害。
 Nuka-Cola Quantum can be used to:=量子型核子可乐可以用于：
-Automatically collects resources from Vault and CAPS from the Wasteland.=自动收集避难所的资源和废土的瓶盖。
+Automatically collects resources from Vault and CAPS from the Wasteland.=自动搜刮避难所的资源和废土的瓶盖。
 Because the Vault's Caps reserve doesn't count itself.=避难所的瓶盖储备已经算不过来了。
 A stranger at the RobCo Building told me the Raiders took Bottle & Cappy to the Nuka-Cola Factory. I have a feeling I'll finally catch up to them this time.=一个从罗布科大楼来的陌生人告诉我掠夺者拿走了瓶瓶和盖盖并且带到了核子可乐工厂。我有预感这次我能追上他们。
 Explore the old Nuka-Cola Plant.=探索旧核子可乐工厂。
@@ -1471,8 +1471,8 @@ Plants make food from light, but mushrooms get their nutrients from dissolving m
 Explore the Nuka-Cola Plant.=探索核子可乐工厂。
 Search the Nuka-Cola Plant for Maxson's Roughnecks.=在核子可乐工厂寻找马克森的蛮子。
 Feral Ghouls have captured a canine! Rescue the potentially delicious doggie.=狂尸鬼抓住了我的狗！请去救救那条也许马上就变成菜肴的小狗。
-Collects resources in your Vault.=在避难所收集资源。
-Collects Caps from the Wasteland.=在废土收集瓶盖。
+Collects resources in your Vault.=在避难所搜刮资源。
+Collects Caps from the Wasteland.=在废土搜刮瓶盖。
 Nuka-Cola this, Nuka-Cola that. I want some root beer.=核子可乐，核子可乐，天天都是核子可乐。我好想来点啤酒啊。
 Nuka-Cola's got nothin' on you, sugar.=核子可乐对你一点好处也没有，亲爱的。
 Build Storage Rooms to increase your Vault's Weapon and Outfit holding capacity.=建造储藏室来增加避难所中武器和服装的储藏容量。
@@ -1486,7 +1486,7 @@ Nuka-Cola Quantum can be used to:\n\n- Speed up Wasteland travel time\n\n- Craft
 Send Mr. Handy to the Wasteland to collect CAPS and items.=派巧手先生去废土搜寻瓶盖和物品。
 There's a large stash of Caps out there in the Wasteland with your name on it.=在废土，有一个大型瓶盖隐藏点，上面写着你的名字。
 Use Nuka-Cola Quantum to speed up Wasteland travel and skip more Objectives per day.=使用量子型核子可乐可以加快居民在废土中探索的速度以及每天更多次跳过目标。
-We've almost proven the Vault's worthiness to the Brotherhood of Steel! Last task - a rescue mission at the Nuka-Cola Plant.=我们就差一点就能向钢铁兄弟会证明避难所的价值了！最后一个任务，前往核子可乐工厂进行救援行动。
+We've almost proven the Vault's worthiness to the Brotherhood of Steel! Last task - a rescue mission at the Nuka-Cola Plant.=我们就差一点就能向钢铁兄弟会证明避难所的价值了！最后一个任务，前往核子可乐工厂进行拯救行动。
 Perhaps I've misjudged you. The Raiders you want are headed for the RobCo Building.=也许我误解你了，你要找的掠夺者正在往罗布科大楼赶。
 They went to the RobCo Building, but you won't live to insult our kind ever again!=他们去了罗布科大楼，不过你已经没有命去查了！
 If I told you they were at the RobCo Building, would you go away?=如果我告诉你他们去了罗布科大楼，你会走吗？
@@ -1498,7 +1498,7 @@ When a Dweller is assigned to the Radio room it will increase all Vault Dwellers
 Radio rooms attract new Dwellers and improve the happiness in your Vault.=广播室可以吸引新的居民加入，也可以提升避难所的愉悦度。
 Every room in the Vault is linked to one of the SPECIAL stats. The better the Dweller's stat is for that room, the more they influence the room's effects.=每个居民都有属性值，称为SPECIAL
 \n\n- Speed up Wasteland travel time \n\n- Craft items instantly\n\n- Skip more than one Objective per day\n\n- Skip certain Quests\n\n- Complete Barbershop customizations instantly\n\n\n=\n\n- 加快废土旅行时间 \n\n- 立即完成物品的生产\n\n- 跳过更多的每日任务\n\n- 跳过特定的任务\n\n- Complete Barbershop customizations instantly\n\n\n
-LEVEL\n\nDwellers level up over time while working in Production Rooms, exploring the Wasteland, and killing enemies on Quests.\n\nLeveling up increases the health of a Dweller. The higher their level is, the higher their health, but Dwellers with high Endurance gain more health when they level up. \nRooms unlock based on how many Dwellers you have in your Vault.\n\nRARITY\n\nThere are three types of rarity of Dwellers, COMMON, RARE, and LEGENDARY.\n\n- COMMON: Low level and SPECIAL stats\n\n- RARE: Average level and SPECIAL stats\n\n- LEGENDARY: High level and SPECIAL stats=等级 \n居民在生产间工作、去废土探索或是在任务中杀死敌人都会升级。\n\n升级会增加居民体力上限。等级越高，生命值越高，耐力越高的居民在升级时会获得更多的生命值。\n新的房间种类会根据你的避难所中的居民数量解锁。\n\n居民稀有度\n\n居民稀有度分为三级，普通，稀有和传说。\n\n- 普通：等级低，SPECIAL属性低\n\n- 稀有：等级中等，SPECIAL属性中等\n\n- 传说：等级高，SPECIAL属性高
+LEVEL\n\nDwellers level up over time while working in Production Rooms, exploring the Wasteland, and killing enemies on Quests.\n\nLeveling up increases the health of a Dweller. The higher their level is, the higher their health, but Dwellers with high Endurance gain more health when they level up. \nRooms unlock based on how many Dwellers you have in your Vault.\n\nRARITY\n\nThere are three types of rarity of Dwellers, COMMON, RARE, and LEGENDARY.\n\n- COMMON: Low level and SPECIAL stats\n\n- RARE: Average level and SPECIAL stats\n\n- LEGENDARY: High level and SPECIAL stats=等级 \n居民在生产间工作、去废土探索或是在任务中干掉敌人都会升级。\n\n升级会增加居民体力上限。等级越高，生命值越高，耐力越高的居民在升级时会获得更多的生命值。\n新的房间种类会根据你的避难所中的居民数量解锁。\n\n居民稀有度\n\n居民稀有度分为三级，普通，稀有和传说。\n\n- 普通：等级低，SPECIAL属性低\n\n- 稀有：等级中等，SPECIAL属性中等\n\n- 传说：等级高，SPECIAL属性高
 Let's look at the {STATS} of a {DWELLER}. {TAP} on a {DWELLER} to {SEE THEIR INFO}.=让我们来查看一下{居民}的{状态}。{点击}一位{居民}来{查看他们的信息}。
 Let's look at the {STATS} of a {DWELLER}. {CLICK} on a {DWELLER} to {SEE THEIR INFO}.=让我们来查看一下{居民}的{状态}。{点击}一位{居民}来{查看他们的信息}。
 Each {WEEK}, {VAULT-TEC} will inspect your Vault and give you a rating based on your performance.=每{周}，{避难所科技}都会检查你的避难所并根据你的表现来给你打分。
@@ -1511,7 +1511,7 @@ You just used the last available space for Dwellers in the Vault. Build more {LI
 ^You\ have\ already\ given\ Pets\ to\ \{\#\}\ Dwellers,\ the\ maximum\ number\ of\ Pets\ allowed\ by\ Vault\-Tec\.$=你已经把宠物分配给了$1居民，已达到避难所科技的最大限度。
 ^Instantly\ return\ to\ the\ Vault\ for\ \{\#\}\ Nuka\-Cola\ Quantum\?$=确定使用$1瓶量子型核子可乐立即返回避难所吗？
 ^Have\ \{\#\}\ Bald\ Dwellers\ in\ the\ Vault$=在避难所中拥有$1名光头居民
-^Collect\ \{\#\}\ CAPS\ in\ the\ Vault$=在避难所收集$1个瓶盖
+^Collect\ \{\#\}\ CAPS\ in\ the\ Vault$=在避难所搜刮$1个瓶盖
 ^Complete\ \{\#\}\ Quest\ discovered\ in\ the\ Wasteland$=完成$1次废土探索任务
 ^Complete\ \{\#\}\ Quests\ discovered\ in\ the\ Wasteland$=完成$1次废土探索任务
 ^Have\ a\ Dweller\ exploring\ the\ Wasteland\ for\ \{\#\}\ days$=让一个居民探索废土$1天
@@ -1519,13 +1519,13 @@ You just used the last available space for Dwellers in the Vault. Build more {LI
 ^Survive\ \{\#\}\ hours\ in\ the\ Wasteland\ without\ using\ radaway$=不使用消辐宁的情况下，在废土存活$1小时
 ^Have\ a\ Dweller\ exploring\ the\ Wasteland\ for\ \{\#\}\ hours$=让一个居民探索废土$1小时
 ^Successfully\ extinguish\ \{\#\}\ Vault\ fires$=成功扑灭$1次避难所火灾
-^Kill\ \{\#\}\ creatures\ in\ the\ Wasteland$=杀死$1个废土生物
-^Kill\ \{\#\}\ \{\#\}\ at\ the\ Vault\ door$=在避难所门口杀死$1个$2
+^Kill\ \{\#\}\ creatures\ in\ the\ Wasteland$=干掉$1个废土生物
+^Kill\ \{\#\}\ \{\#\}\ at\ the\ Vault\ door$=在避难所门口干掉$1个$2
 ^Stop\ \{\#\}\ Vault\ invasions$=阻止$1场避难所侵略
 ^Survive\ \{\#\}\ hour\ in\ the\ Vault\ with\ no\ casualties$=在避难所中存活$1小时并且不受损伤
 ^Survive\ \{\#\}\ hours\ in\ the\ Vault\ with\ no\ casualties$=在避难所中存活$1小时并且不受损伤
 ^Have\ a\ \{\#\}\ happy\ Vault\ for\ \{\#\}\ hours\.$=保持$2避难所中居民心情愉悦$1小时。
-^Collect\ \{\#\}\ Caps\ in\ the\ Wasteland$=在废土里收集$1个瓶盖
+^Collect\ \{\#\}\ Caps\ in\ the\ Wasteland$=在废土里搜刮$1个瓶盖
 ^Explore\ \{\#\}\ location\ in\ the\ Wasteland$=探索$1片废土场景
 ^Explore\ \{\#\}\ locations\ in\ the\ Wasteland$=探索$1片废土场景
 ^Level\ up\ \{\#\}\ times\ in\ the\ Wasteland$=在废土升级$1次
@@ -1588,7 +1588,7 @@ It's easy when you've nowhere else to go!=在你没有地方可以去的时候�
 Let's see if ghosts can die twice. Attack!=让我们瞧瞧幽灵还会不会再死一次吧，攻击！
 Let's see your counter-move!=让我们看看你们是怎么反击的！
 Who's on First?=谁是第一个？
-Dr. Hurfburg is on a Quest for knowledge and adventure!=赫夫伯格博士正在大自然中进行探索！
+Dr. Hurfburg is on a Quest for knowledge and adventure!=赫夫伯格博士正在大自然中探索！
 Feral Ghouls? Okay, no worries. We'll clean them out!=狂尸鬼？没问题，不用担心，我们可以把它们全部搞定！
 It's just you.=说的就是你。
 Just another great day in the Vault.=避难所的每一天都是如此美好。
@@ -1597,7 +1597,7 @@ Help, there's a mutant in the Vault! Just kidding!=救命，避难所里居然�
 Think we'll ever get to live outside the Vault?=你觉得我们在避难所外面能活下去吗？
 The Vault must be Heaven, cause this place... Ya know.=相比这个地方，避难所简直就是天堂……你懂的。
 Now I know why they call it a Wasteland.=我算是明白人们为什么称这里为废土了。
-Think we'll make it back to the Vault? =你觉得我们能回到避难所吗？
+Think we'll make it back to the Vault?=你觉得我们能回到避难所吗？
 Let's do this.=着手干吧。
 That's one way to gain all the knowledge in the universe.=这是学习知识的一种途径。
 Vault-Tec. We'll be there!=避难所科技，随叫随到！
@@ -1632,7 +1632,7 @@ Explorer's journal. New Entry. The military is gone. Replaced by mercenaries.=�
 They're now as docile as lambs, so I can continue exploring the Cave.=他们现在像小羊羔般温顺，我能继续探索洞穴了。
 A Dweller dies when their health is depleted.\n\nTo avoid Dwellers dying you can:\n- Give them a Stimpak to Heal them.\n- Give them a RadAway to remove Radiation.\n- A dead Dweller can be revived with CAPS, or removed from your Vault.\n\nDwellers that die on a Quest can only be revived once the Quest is over.=居民健康值耗尽的时候会死亡。\n\n为避免居民死亡你可以：\n- 给他们注射一剂治疗针回复健康值。\n- 给他们注射一包消辐宁去除辐射。\n- 死亡的居民可以花费瓶盖复活，或者将他从你的避难所移除。\n\n在任务中死亡的居民只有在任务结束后才能够复活。
 A Synth and Super Mutant battle has trapped me in a room with a Chemistry Station.=一场合成人和超级变种人的战斗把我困在了一个有化学工作站的房间。
-Dwellers out in the Wasteland may stumble upon a special location! You can choose to enter this location or ignore it and continue exploring the Wasteland.=在废土中的居民有几率遇到特殊地区！你可以选择进入该地区或是无视该地区继续进行探索。
+Dwellers out in the Wasteland may stumble upon a special location! You can choose to enter this location or ignore it and continue exploring the Wasteland.=在废土中的居民有几率遇到特殊地区！你可以选择进入该地区或是无视该地区继续探索。
 Explorer's journal. New Entry. Feral Ghouls are basically zombies. Must avoid.=探索者日志。最新记录：狂尸鬼基本上就是丧尸了，必须避开。
 Explorer's journal. New Entry. Slavers prey on the weak. My heart breaks.=探索者日志。最新记录：奴隶贩子欺凌弱小，让我很心痛。
 Explorer's journal. New Entry. Super Mutants hate humans. They'll kill on sight.=探索者日志。最新记录：超级变种人憎恨人类，他们见人就杀。
@@ -1655,18 +1655,18 @@ Need extra CAPS? You can sell weapons and outfits from your Vault storage.=需�
 Last night, we ended up partying with Raiders at an old Warehouse. We should search there for clues to Jack's whereabouts. He's the Overseer's son, after all. If we lose him, we'll end up getting kicked out of the Vault with nothing on our backs... or worse!=昨晚，我们闯入了位于一间旧仓库里的掠夺者聚会。我们得去那里调查一下杰克的下落，毕竟他是监管者的儿子。如果我们没找到他，那么肯定会被赶出避难所的……没准会更糟！
 Let's do our part to protect the Wasteland by clearing out a nearby nest of dangerous, irradiated creatures!=我们干自己的活去吧，把附近一个危险的物种消灭掉！
 One of Maxson's Roughnecks told me his team went to clear out a Nuka-Cola Plant. Looks like that's the next stop on my hunt.=有一个马克森蛮子告诉我他的小队要去扫荡一个核子可乐工厂，那应该就是我下一个目标了。
-There are lots of ways you can earn CAPS.\n- Find them in the Wasteland and on Quests\n- Complete Objectives\n- Level up Dwellers\n- Sell items\n- Every Lunchbox contains CAPS\n- Lucky Dwellers earn them occasionally while collecting resources \n\nCAPS can be spent to:\n- Build Rooms and elevators\n- Destroy rocks \n- Upgrade Rooms\n- Revive Dwellers\n- Craft Weapons, Outfits and Themes\n- Customize Dwellers=你可以通过以下方式获得瓶盖。\n- 在废土或是任务中寻找\n- 完成目标\n- 升级居民\n- 售卖物品\n- 每个避难所科技午餐盒都包含瓶盖\n- 幸运的居民偶尔会在收集资源时获得 \n\n瓶盖可用于：\n- 建造房间和电梯\n- 清理巨石 \n- 升级房间\n- 复活居民\n- 制作武器、服装和布局\n- 自定义居民
+There are lots of ways you can earn CAPS.\n- Find them in the Wasteland and on Quests\n- Complete Objectives\n- Level up Dwellers\n- Sell items\n- Every Lunchbox contains CAPS\n- Lucky Dwellers earn them occasionally while collecting resources \n\nCAPS can be spent to:\n- Build Rooms and elevators\n- Destroy rocks \n- Upgrade Rooms\n- Revive Dwellers\n- Craft Weapons, Outfits and Themes\n- Customize Dwellers=你可以通过以下方式获得瓶盖。\n- 在废土或是任务中寻找\n- 完成目标\n- 升级居民\n- 售卖物品\n- 每个避难所科技午餐盒都包含瓶盖\n- 幸运的居民偶尔会在搜刮资源时获得 \n\n瓶盖可用于：\n- 建造房间和电梯\n- 清理巨石 \n- 升级房间\n- 复活居民\n- 制作武器、服装和布局\n- 自定义居民
 Let's show these losers what Vault teamwork looks like.=让我们给这些失败者看看什么叫团队合作。
 Explorer's journal. New Entry. Some pre-war food is still edible. Preservatives.=探索者日志。最新记录：有些战前食物还能吃。用防腐剂保存下来了。
 Explorer's journal. New entry. Some pre-war robots remain, but programming often faulty.=探索者日志。最新记录：一些战前机器人保存了下来，但是程序经常出错。
 Vault-Tec has detected your advanced technology and enabled features for it:=避难所科技检测到了高科技，新的特性如下：
 Genetically engineered by Vault-Tec to fulfill your pirate fantasies.=由避难所科技制造的基因，专门用于实现你的海盗梦想。
 Wasteland Survival Guide.=《废土生存指南》。
-For your training mission, Vault-Tec asks you to prove yourself as a worthy Overseer and kill a Glowing Radroach.=为了训练任务，避难所科技要求你证明作为监管者的能力，让你去杀死一只发光的辐射蟑螂。
+For your training mission, Vault-Tec asks you to prove yourself as a worthy Overseer and kill a Glowing Radroach.=为了训练任务，避难所科技要求你证明作为监管者的能力，让你去干掉一只发光的辐射蟑螂。
 Don't worry, they're, uh, safe and sound at Vault-Tec Headquarters.=别担心，他们在避难所科技指挥部。
 We think Vault-Tec delivered a Mr. Handy Box to this building. Pip pip cheerio!=我们认为避难所科技派遣了一个巧手先生箱子到了这栋大楼！
 Vaultopolis does exist. Search the Vault-Tec offices to the north!=避难所之城确实存在，搜查北边的避难所科技办公室！
-Overseer Emma said Bigsby stopped by their Vault. Since then, a salvage team took him on a run with them to the Atomatoys warehouse, but hasn’t returned.=监管者艾玛说大斯派跑到了他们避难所的边上，自那以后，就有一支救援队跟着他，不过现在还没回来。
+Overseer Emma said Bigsby stopped by their Vault. Since then, a salvage team took him on a run with them to the Atomatoys warehouse, but hasn’t returned.=监管者艾玛说大斯派跑到了他们避难所的边上，自那以后，就有一支拯救队跟着他，不过现在还没回来。
 We found the Vault-Tec notes on Vaultopolis! They say...=我们在避难所之城发现了避难所科技留下的信息！上面说道……
 Search the Vault-Tec offices for info on Vaultopolis.=在避难所科技办公室搜索避难所之城的信息。
 Vault-Tec Saves Christmas!=避难所科技拯救圣诞节！
@@ -1674,7 +1674,7 @@ The Wasteland Survival Guide never prepared me for THIS.=《废土生存指南�
 A nuclear winter is cold, keep warm with Vault-Tec!=核冬天非常寒冷，用避难所科技保持温暖！
 Anyone that goes near it disappears. I think it's haunted! Vault-Tec's local office might have more.=那些走到附近就消失了的，我想估计是闹鬼了！避难所科技办公室可能有更多信息。
 As Overseer, your job is to expand and maintain the Vault, while keeping your Dwellers safe and happy.=作为监管者，你的工作是扩展和维持你的避难所，同时保持居民安全快乐。
-Congratulations! Vault-Tec has selected you to be the Overseer of Vault XXX. =祝贺Vault Tec已选择您担任Vault XXX的监管者。
+Congratulations! Vault-Tec has selected you to be the Overseer of Vault XXX.=祝贺Vault Tec已选择您担任Vault XXX的监管者。
 Congratulations! Vault-Tec has selected you to be the Overseer of Vault [XXX].=恭喜！避难所科技将你选为了[XXX]号避难所的监管者。
 How's it going, you ask? Why it's going fantastic! *Play along – the Overseer might be listening.*=你问我怎么样了？为什么会变得这么意想不到！ *配合一下 - 监管者可能在听呢*
 Me? The Overseer? No, our Vault is run by this dog.=我？监管者？不，我们的避难所全靠这条狗。
@@ -1790,7 +1790,7 @@ It's so great to see you.=见到你真好。
 Never thought I’d say this, but I miss the Vault.=别觉得我会说这个，但是我真的很怀念避难所。
 Why'd I ever agree to leave the Vault?=我为什么要同意离开避难所？
 Um... Leaving the Vault?=呃……离开避难所？
-It's a complete nightmare. Duh. =这完全是个噩梦，该死。
+It's a complete nightmare. Duh.=这完全是个噩梦，该死。
 It's all about the loot.=这些全部可以拿走。
 So when we get back to the Vault... are we still going to hang out?=等我们回到避难所……我们还会需要出来闲逛吗？
 The sooner we do this, the sooner we get home to the Vault.=我们动作越快，就能够越快地回到避难所。
@@ -1820,7 +1820,7 @@ The more supplies I bring back to the Vault, the better.=我要尽量带补给�
 Here's the Junk you asked for!=这是你需要的垃圾！
 The Road to Vaultopolis==通往避难所之城的路
 Are you a book in the Vault library? 'Cause I am checking you out.=你是避难所图书馆里的书吗？我忍不住想看你。
-Brahmin, leeks and turnips? Yum! But wrong. Lose Your Head!=双头牛(Brahmin)、韭葱(Leek)和萝卜(Turnip)？好的，但是还是错了，你要……“掉脑袋”了！
+Brahmin, leeks and turnips? Yum! But wrong. Lose Your Head!=双头牛(Brahmin)、韭葱(Leek)和萝卜(Turnip)？好的，但是是错了，你要……“掉脑袋”了！
 He's tough. I never said he was smart.=他很固执，不过我从没说过他很聪明。
 My Metal Pony==我的小铁马
 The ultimate Vault fashion statement.=避难所的终极时尚宣言。

@@ -1,13 +1,13 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 06:05:02
-# ==============================================
+#==============================================
 # 宠物系统
 # 本文件用于保存宠物系统译文
-# ==============================================
+#==============================================
 Assign a Pet like you would equip a Weapon or an Outfit.=你可以在避难所科技午餐盒或者从宠物笼获得宠物。
 Catch a baseball, rock or grenade and throw it right back.=抓起一个棒球，一块石头或是一颗手榴弹，然后马上把它扔出去。
 Assign Pets like you equip Weapons and Outfits.=宠物可以增加你的居民的属性。
@@ -18,7 +18,7 @@ His hunting days are over, but this dog never ducks his duties.=打猎的日子�
 Rumor has it there's a cat somewhere under all that fur.=有谣言说，这对毛皮下面藏着一只猫。
 Because who wouldn't want a hairless cat?! Right?!=这样一只无毛猫，谁不想要呢？你说是不是？
 Thinks every day is Caturday.=认为每天都是猫节。
-Struggling with a catnip addiction, but still adorable.=沉溺于和猫尾巴草玩耍，但是还是非常的可爱。
+Struggling with a catnip addiction, but still adorable.=沉溺于和猫尾巴草玩耍，但是是非常的可爱。
 Vacate the premises immediately - or else!=立刻离开(注:搬离)这里，否则！
 Recover the Pet Carrier.=修复宠物笼。
 Find any lost animals.=寻找迷失的动物。

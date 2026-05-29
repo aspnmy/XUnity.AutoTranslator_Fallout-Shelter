@@ -1,71 +1,56 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 05:45:03
-# ==============================================
+#==============================================
 
-#
-# 本文件用于全局统一的专有名词/术语翻译，所有规则均使用 == 分隔
-#
+# 本文件用于全局统一的专有名词/术语翻译，所有规则均使用==分隔
 # 【分类说明】
-#
 # 1. 核心专有名词
 #    - 游戏核心术语：Vault, Dweller, Wasteland, Overseer, Pip-Boy, SPECIAL
 #    - 组织机构：Vault-Tec, Minutemen, Brotherhood of Steel, Institute, Raiders
 #    - 生物名称：Deathclaws, Radscorpions, Radroaches
-#
 # 2. 武器类型（1-2个单词）
 #    - 手枪类：Pistol, Laser Pistol, Plasma Pistol
 #    - 步枪类：Rifle, Laser Rifle, Assault Rifle
 #    - 霰弹枪类：Shotgun, Combat Shotgun
 #    - 其他：Minigun, Flamer, Missile Launcher
-#
 # 3. 装甲/服装类型
 #    - 装甲类：Armor, Power Armor, Battle Armor
 #    - 服装类：Outfit, Uniform, Jumpsuit, Suit
 #    - 特殊服装：Vault Suit, Santa Suit
-#
 # 4. 房间/设施类型
 #    - 居住设施：Living Quarters, Vault
 #    - 生产设施：Diner, Medbay, Water Treatment, Power Generator
 #    - 其他设施：Storage, Laboratory, Workshop, Garden
-#
 # 5. 游戏固定名称（任务/角色/地点）
 #    - 任务名称：Bounty: XXX, The Mystery of Vault XXX
 #    - 角色装备：Autumn's Laser Pistol, Amata's Jumpsuit
 #    - 固定地点：Vault 199, Vault 789, Nuka-Cola plant
-#
 # 6. UI界面词汇
 #    - 操作词汇：Menu, Save, Load, Settings, Cancel, OK
 #    - 方向词汇：Up, Down, Left, Right
 #    - 状态词汇：Ready, Level, Health, Stats
-#
 # 7. 时间单位
 #    - 英文单位：second, minute, hour, day
 #    - 缩写单位：s, m, h, d
-#
 # 8. 宠物类型
 #    - 犬类：Dog, Hound, Shepherd, Retriever, Terrier
 #    - 猫类：Cat, Persian, Siamese
-#
 # 9. 错译修正
 #    - 保险库 → 避难所
 #    - 金库 → 避难所
-#
 # 10. 特殊规则
 #     - 正则表达式：\[-\]\s*\[-\]
 #     - 格式修正：。。（句号重复）
-#
 # 【规则格式】
-#     英文内容 == 中文翻译
-#
+#     英文内容==中文翻译
 # 【注意事项】
-#     - 所有规则使用 == 分隔，不是 =
+#     - 所有规则使用==分隔，不是 =
 #     - 规则按分类组织，便于维护
 #     - 相同key的规则不会被重复添加
-#
 
 # 全局专有名词统一（核心术语标准化，全文替换）
 SPECIAL==七项属性
@@ -105,12 +90,12 @@ ENTER!==进入！
 INCIDENT:==事件：
 KA-KAW!==噶！
 KAAAAAAAAAW!==噶噶噶！
-KHAAANNNNN!!!!==救援！！！！
+KHAAANNNNN!!!!==拯救！！！！
 LaPerm==达拉斯猫
 Pets==宠物
 READY!==准备！
 RETURNED!==已返回！
-SOS!==SOS！
+SOS!==求救信号！
 Survivalist==幸存者
 Whack-a-Mole==打地鼠
 d==天
@@ -400,7 +385,7 @@ WELCOME TO=欢迎来到
 LOADING=加载中
 QUIT=退出
 SHOP=商店
-COLLECT=收集
+COLLECT=搜刮
 NO RATING=无分数
 SCREENSHOTS=屏幕截图
 NOT NOW=现在不行
@@ -541,7 +526,7 @@ ASSIGNMENT=分配
 AVAILABLES=可用的
 BACK=返回
 BUILDING=建造中
-COLLECTION=收集品
+COLLECTION=搜刮品
 CONTROLS=控制
 CREATE VAULT=建造避难所
 CREDITS=感谢名单
@@ -718,11 +703,11 @@ A nice cat kept us safe when those creatures attacked! But otherwise it just sle
 Coach wasn't in the pet store, but there's a warehouse close by. He may have headed there...=教练没有在宠物商店，但是这附近有一个仓库，也许他在那儿……
 But maybe not. Maybe the Khan likes you, and we can make a deal...=也许并不是这样，基力安没准挺喜欢你的，我们可以做笔交易……
 Last Inning! Or not...=最后一局！亦或是……
-You're lucky I didn't shoot you just then...=你很幸运，我刚才没开枪打你......
+You're lucky I didn't shoot you just then...=你很幸运，我刚才没开枪打你………………
 ...=……
 This is ridiculous...=这真是扯淡……
 Fight? No! I'm here to rescue you...=战斗？不！我来这里是为了救你……
-This sure seemed like a good idea at the time...=这一定是一个不错的主意……
+This sure seemed like a good idea at the time...=这一定是不错的主意……
 The synths we were trying to help. I think they headed for the old Atomatoys Offices...=我们要帮的是合成人，我觉得他们去了玩具公司……
 Androids from the Institute! They deserve better than to be dragged off to the Atomatoys Offices...=学院里的机器人！它们可不应该被送到玩具公司去……
 Their definition of freedom leaves something to be desired...=他们对自由的定义看来有点奇怪呢……
@@ -769,7 +754,7 @@ Operating at full efficiency! Sort of...=全速实行！最好……
 If you don't know, we are in a LOT of trouble...=你是不是真的不知道，我们遇上一大堆麻烦了……
 So am I, so am I...=我也是，我也是……
 So tired...=好累……
-Getting a little tired of questing... =执行任务有点累了……
+Getting a little tired of questing...=执行任务有点累了……
 Weird doesn't even begin the describe it...=古怪得不可描述……
 And it's not even my birthday...=还不是我的生日……
 Well HELLO...=呃，你好……
@@ -832,7 +817,7 @@ When it appears, click the checkmark icon to perform a Critical Hit.=当该图�
 Then tap again to stop the arrows. The closer they are, the greater the damage multiplier.=再次点击，尽可能地使箭头靠近中心位置，箭头越靠近中心位置，造成的伤害越高。
 Then click again to stop the arrows. The closer they are, the greater the damage multiplier.=再次点击，尽可能地使箭头靠近中心位置，箭头越靠近中心位置，造成的伤害越高。
 - Apply Themes to fully merged and upgraded Diners and Living Quarters.=布局说明！
-HERE'S A PET CARRIER TO GET YOUR PET COLLECTION STARTED! OPEN IT TO WELCOME A FURRY* FRIEND TO YOUR VAULT.=这是一个宠物笼子，您的宠物收集开始啦！打开并欢迎这个毛茸茸的*朋友来到你的避难所。
+HERE'S A PET CARRIER TO GET YOUR PET COLLECTION STARTED! OPEN IT TO WELCOME A FURRY* FRIEND TO YOUR VAULT.=这是一个宠物笼子，您的宠物搜刮开始啦！打开并欢迎这个毛茸茸的*朋友来到你的避难所。
 A lot safer than the full-sized version.=比完整版的安全多了。
 No, but being on a diet doesn't mean I can't check the menu!=不，但节食并不意味着我不能看菜单！
 So, you're the one trying to take what's rightfully mine.=那么，你就是那个想要把事情搞定的家伙。
@@ -841,7 +826,7 @@ Hear ye, Hear ye! A fierce and loathsome beast has been terrorizing the villager
 Rusty? Full of holes? I don't know!=废铜烂铁？一堆洞的那种？我不知道！
 We need more junk. Go get it!=我们需要更多垃圾，去找过来！
 “Repairs are taking longer than expected. I'm going to get everyone into the lower levels. Hopefully we'll all be safe down there.”=“修理比我想象的要麻烦，我要叫上楼下的所有人，希望我们能一切顺利。”
-Existentially dreadful, but not enough! Die!=确实很可怕，但是还不够！去死吧！
+Existentially dreadful, but not enough! Die!=确实很可怕，但是不够！去死吧！
 Dwellers train to max level without stopping.=居民直接升至满级。
 When do I get a Pip-Boy?=我什么时候能得到一个哔哔小子啊？
 We've gone dark! We need more power!=我们停电了！需要更多电力！

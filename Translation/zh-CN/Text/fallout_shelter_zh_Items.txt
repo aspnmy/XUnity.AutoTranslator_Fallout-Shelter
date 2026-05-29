@@ -57,9 +57,9 @@ We need some outfits. Something stylish.=我们需要一些服装，一些时髦
 We're happy to help you. What would you like?=我们很高兴能够帮上你的忙，你想要些什么？
 We need some new outfits.=我们需要一些新的服装。
 A nearby settlement wants us to pay them a visit. What could go wrong?=一个附近的定居点想要我们前去参观，不知道发生了什么事？
-Bing, bing, bing! That's right.=BINGO！答对了。
+Bing, bing, bing! That's right.=答对了！答对了。
 Sarah Lyons is a member of what group?=莎拉·里昂是什么组织的成员？
-Bing, bing, bing! That's... Wright!=Bingo！答~~~对了，莱特！
+Bing, bing, bing! That's... Wright!=答对了！答~~~对了，莱特！
 What was Moira's last name?=莫伊拉的姓是什么？
 That doesn't even make sense. Go ahead... Lose Your Head!=什么鬼答案，你要……“掉脑袋”了！
 What military group occupied Project Purity before it could be activated?=哪个军事集团在净水工程启动之前就把它占据了？
@@ -218,7 +218,7 @@ You smell that?=你闻到了吗？
 You hear that?=你听到了吗？
 What do you think happens when you die?=你觉得你死的时候会发生什么？
 Did you hear that?=你听到了吗？
-Oh, come on. It's not that bad. Okay, it IS. But still.=嘿，别这样，并没有那么糟糕，好吧，确实有点糟糕，但是还行。
+Oh, come on. It's not that bad. Okay, it IS. But still.=嘿，别这样，并没有那么糟糕，好吧，确实有点糟糕，但是行。
 What are you thinking about?=你在想什么呢？
 That's... a really dumb thing to say.=那……还真是难以评价。
 That should come in handy!=那会有用的！
@@ -233,14 +233,14 @@ Fires multiple Fat-Man shells. At once. That's a lot of fat.=一次可以发射�
 Need revenge? Feeling that furious anger? Oh, are you in for a treat.=想要报仇？觉得非常愤怒？你会喜欢这个的。
 A quick draw, a flash of light, and all that's left is a pile of ash.=快速拔枪，然后一道激光过去，就只剩下一坨灰烬了。
 Take down those black hats like a legend of the Old West.=像传说中的英雄那样把那些家伙干掉。
-A little beat up, but it still works. And that's all that matters.=虽说有点锈了，但是还是可以用的。这才是最关键的。
+A little beat up, but it still works. And that's all that matters.=虽说有点锈了，但是是可以用的。这才是最关键的。
 What this thing does to the human body is beyond comprehension.=这东西究竟对人体造成怎样的伤害根本无法理解。
 Get close, get a kill. It's that simple.=靠近，然后杀了他，简单粗暴。
 what appears to be an Abandoned Diner.=仿佛是一间废弃餐厅。
 That way looks promising.=这条路看起来行得通。
 Running after the Brahmin to help out the Merchant. That thing is fast!=帮商人追上那头双头牛。那东西太快了！
 Searching the Mansion for anything of value that might have been left behind.=找找大厦里面剩没剩下还能用的东西。
-That hill looks like a good vantage point.=这座山看上去是一个非常好的据点。
+That hill looks like a good vantage point.=这座山看上去是非常好的据点。
 What was that?=那是什么？
 It's... a motorboat. Stuck into the side of a church. Don't see that every day.=那是……一台摩托艇，撞进了教堂的一面墙。这可不是每天都见得到的。
 May as well follow this blood trail. What could possibly go wrong?=还是跟着血迹走吧。
@@ -260,7 +260,7 @@ Synths! I hate Synths!==合成人！我讨厌合成人！
 What a bunch of clowns!==一群乌合之众！
 What a great day!==多棒的一天啊！
 Fool. That's a really common flavor. It's time to... Lose Your Head!=愚蠢，那种口味是普通的口味，你要……“掉脑袋”了！
-He did hate them, but that's still wrong. You gotta... Lose Your Head!=他确实讨厌那个，但是还是错了，你要……“掉脑袋”了！
+He did hate them, but that's still wrong. You gotta... Lose Your Head!=他确实讨厌那个，但是是错了，你要……“掉脑袋”了！
 Little Timmy? I don't think so. For that... Lose Your Head!=小蒂米？我不这么想。因此……“掉脑袋”了！
 Meet the tracker who may have found the source of the Mole rat infestation that's targeting Tatos.=去见见发现鼹鼠源头的追踪者。
 My soles are wearing out.=我的鞋底都磨破了。
@@ -329,7 +329,7 @@ Eulogy Jones' Suit==尤罗基·琼斯的服装
 Expert BoS Uniform==专家钢铁兄弟会制服
 Outfit Run==服装储备竞赛
 Tunnel Snakes' Outfit==洞中蛇装
-Outfits Collected=收集的服装
+Outfits Collected=搜刮的服装
 Outfits Crafted=生产的服装
 OUTFITS=服装
 ARMORY=武器室
@@ -352,9 +352,9 @@ Super Sledge.=超级大锤。
 Fat Man.=胖子。
 Gatling Laser.=激光加特林。
 Squirt Gun.=解渴水枪。
-Magnets + Science! = killing just about anything. No really, anything.=磁场+科技！= 无尽的杀戮，不，这是真的，杀戮！
+Magnets + Science!=killing just about anything. No really, anything.=磁场+科技！= 无尽的杀戮，不，这是真的，杀戮！
 Weapons Run==军备竞赛
-Weapons Collected=收集的武器
+Weapons Collected=搜刮的武器
 Weapons Crafted=生产的武器
 Weapons Sold=出售的武器
 Weapons Scrapped=分解的武器

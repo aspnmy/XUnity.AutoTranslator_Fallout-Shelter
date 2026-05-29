@@ -1,13 +1,13 @@
-# ==============================================
+#==============================================
 # Steam版本: 2.4.0
 # Git项目路径: https://github.com/aspnmy/XUnity.AutoTranslator_Fallout-Shelter.git
 # 精翻作者: aspnmy
 # 技术支持: support@e2bank.cn
 # 最后更新: 2026-05-29 06:05:02
-# ==============================================
+#==============================================
 # 任务探索
 # 本文件用于保存任务探索译文
-# ==============================================
+#==============================================
 - Quests are more challenging.=任务更具挑战性。
 You’ve already sent out the maximum number of Quest teams.=您派遣的任务小队人数已达最大值。
 To nap, or not to nap: that is the question.=睡不睡午觉：这是个问题。
@@ -22,7 +22,7 @@ Tricky question, but you got it right!=很狡猾的题目，但是你答对了�
 Trick question. She had no last name.=别逗了，她没有姓。
 Which of the following is not a location in the Commonwealth?=以下哪个地方不是联邦的地点？
 Righto! That was too easy. We need better questions.=答对了！那太简单了，我们需要一些更加优质的问题。
-We've searched a few locations, but still haven't found Coach, or the Jersey. Maybe the old Super Duper Mart holds the key!=我们调查了一些地点，但是还是没有找到教练，运动衫也一样，也许就的大无敌超市里会有线索！
+We've searched a few locations, but still haven't found Coach, or the Jersey. Maybe the old Super Duper Mart holds the key!=我们调查了一些地点，但是是没有找到教练，运动衫也一样，也许就的大无敌超市里会有线索！
 Dang it, we've got questions! And you're going to answer them!=该死，我们有事情要问！你们必须回答！
 Explore the mattress factory to find Coach.=探索床垫工厂找到教练。
 Explore the Poseidon Energy Offices.=探索波塞冬能源公司。
@@ -47,15 +47,15 @@ a Scavenger's Dog, sniffing for salvage.=一只拾荒者的狗，嗅着残骸。
 The location looks secure, but I might be able to find a way in.=这个地方看上去被封锁了，但我应该能找条路进去。
 A note among Nick's files requested his help in recovering a lost family heirloom - a pre-war catcher's mitt with great sentimental value.=在尼克的文件堆里有一张便条上写着他需要有人帮他找回一件失踪了的传家宝 - 一副战前时期的棒球手套，那副手套对他来说非常重要。
 Find Valentine==找到瓦伦汀
-Rescue Operation==救援行动
+Rescue Operation==拯救行动
 Find Junk in Lunchboxes and in the Wasteland.\nFind Recipes on Raiders and in the Wasteland.\nTurn Junk into Weapons and Outfits in the Workshop rooms.\nUpgrade your Workshops to craft Rare and Legendary items.=在避难所科技午餐盒和废土都能找到垃圾。\n在掠夺者和废土中都能找到配方。\n在工作间，你可以把垃圾制作成武器和服装。\n升级工作间以制作稀有及传说级物品。
 Find the Overseer of Vault {#}.=寻找$1号避难所的监管者。
 Exterminate both of the Glowing Radscorpions in Vault {#}!=消灭$1号避难所中两只发光的辐射蝎！
 Find the pool room in Vault {#}.=在$1号避难所寻找泳池房间。
-Rescue Maxson's Roughnecks in Vault {#}.=去$1号避难所援救马克森的蛮子。
+Rescue Maxson's Roughnecks in Vault {#}.=去$1号避难所拯救马克森的蛮子。
 Find Sally and Bigsby in Vault {#}.=在$1号避难所找到萨利和大斯派。
 Find the source of the Vault {#} distress signal.=找到位于$1号避难所的求救信号源。
-Find the salvage team from Vault {#} in the old Atomatoys Warehouse.=在奥拓马托伊仓库寻找$1号避难所的救援小队。
+Find the salvage team from Vault {#} in the old Atomatoys Warehouse.=在奥拓马托伊仓库寻找$1号避难所的拯救小队。
 Rescue the kidnapped Vault Dweller.=拯救被绑架的避难所居民。
 Rescue the kidnapped Vault Dweller from the Raider Boss.=从掠夺者Boss手中救出被绑架的居民。
 Rescue the missing Vault Dweller.=拯救失踪的避难所居民。
@@ -66,14 +66,14 @@ Rescue the soldier from the Raiders at the Nuka-Cola Plant.=在核子可乐工�
 Complete Vault-Tec {OBJECTIVES} to earn {CAPS} and {INCREASE} your {VAULT-TEC RATING}.=完成避难所科技{目标}来赚取{瓶盖}并{增加}你的{避难所科技分数}。
 Find Maxson's Roughnecks in the Vault-Tec Headquarters.=在避难所科技指挥部找到马克森的蛮子。
 Rescue the Vault Overseer.=拯救避难所监管者。
-Rescue the settler trapped in the Corvega Factory.=救援被困在汽车工厂的居民。
+Rescue the settler trapped in the Corvega Factory.=拯救被困在汽车工厂的居民。
 Whack Yak.=打倒牦牛。
 Find Bigsby.=找到大斯派。
 Rescue Fido.=拯救菲多。
 Sounds good, smoothskins.=听上去不错，光皮肤。
-Rescue Maxson's Roughnecks.=援救马克森的蛮子。
-Rescue Paula Plumbkin.=救援保拉·普朗布金。
-Rescue another settler.=救援其它的居民。
+Rescue Maxson's Roughnecks.=拯救马克森的蛮子。
+Rescue Paula Plumbkin.=拯救保拉·普朗布金。
+Rescue another settler.=拯救其它的居民。
 Defeat Slugger.=打败斯拉格。
 Find Bigsby Brown.=找到大斯派·布朗。
 Find Maxson's Roughnecks.=找到马克森的蛮子。
