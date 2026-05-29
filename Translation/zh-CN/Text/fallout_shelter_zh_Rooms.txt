@@ -7,7 +7,6 @@
 # ==============================================
 # 建造/房间管理
 # 本文件用于保存建造/房间管理译文
-# 格式：英文=中文
 # ==============================================
 Hint: Merging the Radio Room increases your chances of attracting a Dweller.=提示：融合广播室能增加吸引居民的概率。
 - Failing a Rush causes a disaster in the room.=- 加速失败会导致房间内发生灾难。

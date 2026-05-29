@@ -7,7 +7,6 @@
 # ==============================================
 # 宠物系统
 # 本文件用于保存宠物系统译文
-# 格式：英文=中文
 # ==============================================
 Assign a Pet like you would equip a Weapon or an Outfit.=你可以在避难所科技午餐盒或者从宠物笼获得宠物。
 Catch a baseball, rock or grenade and throw it right back.=抓起一个棒球，一块石头或是一颗手榴弹，然后马上把它扔出去。

@@ -7,7 +7,6 @@
 # ==============================================
 # 避难所机制
 # 本文件用于保存避难所机制译文
-# 格式：英文=中文
 # ==============================================
 Every Lunchbox can give you COMMON, RARE, or LEGENDARY items. Each Lunchbox is guaranteed to either have a Dweller or a RARE item.=每个避难所科技午餐盒都可以提供普通、稀有或传奇物品。每个避难所科技午餐盒都保证包含一位居民或一件稀有物品。
 You don't have any LunchBoxes, would you like to buy one?=你没有避难所科技午餐盒，是否购买？

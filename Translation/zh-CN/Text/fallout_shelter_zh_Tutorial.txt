@@ -7,7 +7,6 @@
 # ==============================================
 
 # 这些是游戏教程中的引导句子，包含 {XXX} 占位符
-# 格式：原文 == 译文
 First let's {BUILD} a {ROOM}. Tap on the {HAMMER ICON} to open the {BUILD MENU}.=首先让我们来{建造}一个{房间}。点击{锤子图标}来打开{建造菜单}。
 First let's {BUILD} a {ROOM}. Click on the {HAMMER ICON} to open the {BUILD MENU}.=首先，让我们{建造}一个{房间}。点击{锤子图标}打开{建造菜单}。
 First let's {BUILD} a {ROOM}. Press [Y] to open the {BUILD MENU}.=首先，让我们{建造}一个{房间}。按[Y]打开{建造菜单}。

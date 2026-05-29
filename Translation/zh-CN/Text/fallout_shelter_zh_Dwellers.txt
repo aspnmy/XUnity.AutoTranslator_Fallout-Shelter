@@ -7,7 +7,6 @@
 # ==============================================
 # 居民管理
 # 本文件用于保存居民管理译文
-# 格式：英文=中文
 # ==============================================
 Children and Pregnant Women will hide whenever an incident occurs.=儿童和孕妇在灾害发生时都会躲藏起来。
 Tapping on a Dweller will zoom the camera over to them.=点击屏幕左上角的齿轮可以查看居民列表。
